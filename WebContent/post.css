@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+.spoka *
+font-face{
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+}
+
+
+main, div{
+    display: block;
+}
+
+.mainContent{
+    max-width: 1200px;
+    width: 100%;
+    min-height: 60rem;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.main_categoryWrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.main_appWrapper{
+    margin: 0 auto;
+}
+
+.main_category{
+    display: flex;
+}
+
+.toggleSwitch{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0; 
+}
+
+.main_category_item{
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.main_active{
+    color:#444;
+}
+.main_inactive{
+    color:#868e96;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.mainContent_text{
+    margin-left: 0.5rem;
+}
+
+.toggleSwitch_switchTitle{
+    color: #444;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    margin-right: 20px;
+}
+
+.toggleSwitch_Checked{
+    background-color: #ffcd00;
+}
+
+.toggleSwitch_switchLabel{
+    position: relative;
+    display: inline-block;
+    height: 26px;
+    width: 50px;
+    border-radius: 50px;
+   /*  background-color: #c1cbd8; */
+    cursor: pointer;
+}
+
+.toggleSwitch_switchCheckbox{
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.studyItem_hashtag_wrapper{
+    margin-bottom: 40px;
+}
+
+.studyItem_language_wrapper{
+    margin-bottom: 42px;
+}
+
+.toggleSwitch_ball{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: -webkit-transform .2s linear;
+    transition: transform .2s linear;
+    transition: transform .2s linear,-webkit-transform .2s linear;
+    background-color: #fff; 
+}
+
+.toggleSwitch_switchLabel input[type=checkbox]:checked+.toggleSwitch_ball{
+    -webkit-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+.studyList{
+    display: flex;
+    grid-gap: 35px;
+    gap: 35px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.posts_bottomObserver{
+    margin-bottom: 10rem;
+}
+
+.studyItem_open{
+    opacity: 1;
+}
+
+.studyItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 26px 26px 34px;
+    width: 370px;
+    height: 450px;
+    background: #fff;
+    border: 2px solid #d1d1d1;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: .2s ease-in;
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{list-style: none;}
+
+.studyItem li{
+    padding: 0;
+    margin: 0;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.studyItem_schedule{
+    display: flex;
+    font-size: 18px;
+    grid-gap: 10px;
+    gap: 10px;
+    color: rgba(0,0,0,.4);
+}
+
+.studyItem_scheduleTitle{
+    font-size: 18px;
+}
+
+.studyItem_title{
+    font-size: 24px;
+    min-height: 76px;
+    line-height: 36px;
+    font-weight: 400;
+    letter-spacing: -.04em;
+    margin: 16px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    overflow: hidden;
+}
+.studyItem_hashtag{
+    display: flex;
+    grid-gap: 5px;
+    gap: 5px;
+    font-size: 18px;
+    color: rgba(0,0,0,.4);
+    min-height: 30px;
+    padding-bottom: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.studyItem_content{
+    padding-bottom: 42px;
+    padding: 0;
+    display: flex;
+    grid-gap: 12px;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+}
+
+.studyItem_language{
+    width: 48px;
+    height: 48px;
+}
+
+.studyItem_language img{
+    width: 48px;
+    height: 48px;
+}
+.studyItem_info{
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    border-top: 2px solid #f2f2f2;
+    padding-top: 16px;
+}
+
+.avatar_user{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.studyItem_viewsAndComment{
+    display: flex;
+    grid-gap: 12px;
+    gap: 12px;
+}
+
+.avatar_userImg{
+    display: block;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar_small{
+    width: 36px;
+    height: 36px;
+}
+
+.avatar_userName{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.studyItem_infoItem{
+    display: flex;
+    align-items: center;
+    color: #999;
+    grid-gap: 6px;
+    gap: 6px;
+}
+
+.studyItem_hashtag_wrapper{
+	margin-bottom:40px
+}
