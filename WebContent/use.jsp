@@ -8,9 +8,9 @@
 </head>
 <body>
 	<!-- header.jsp 파일 넣으세요 -->
-	<%-- <jsp:include page = 'header.jsp'/> --%>
+	<jsp:include page = 'header.jsp'/>
 	<!--작업하신 페이지 파일 넣으세요 -->
-	<%-- <jsp:include page = ''/> --%>
+	<jsp:include page = 'categorySearch.jsp'/>
 	
 </body>
 </html>
