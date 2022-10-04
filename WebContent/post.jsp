@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,20 +220,24 @@
                             <p>2022.10.10</p>
                         </div>
                         <h1 class="studyItem_title">UI/UX 디자이너 모집합니다 - IT 지식/교육 콘텐츠 큐레이션 플랫폼</h1>
-                        <ul class="studyItem_hashtag">
-                            <li>#프로젝트</li>
-                            <li>#오프라인</li>
-                            <li>#1명</li>
-                        </ul>
-                        <ul class="studyItem_content">
-                            <li class="studyItem_language">
-                                <img src="https://holaworld.io/images/languages/figma.svg" alt="" class="studyItem_languageImage">
-                            </li>
-                            
-                            <li class="studyItem_language">
-                                <img src="https://holaworld.io/images/languages/zeplin.svg" alt="" class="studyItem_languageImage">
-                            </li>
-                        </ul>
+                        <div class="studyItem_hashtag_wrapper">
+                            <ul class="studyItem_hashtag" >
+                                <li>#프로젝트</li>
+                                <li>#오프라인</li>
+                                <li>#1명</li>
+                            </ul>
+                        </div>
+                        <div class="studyItem_language_wrapper">
+                            <ul class="studyItem_content" >
+                                <li class="studyItem_language">
+                                    <img src="https://holaworld.io/images/languages/figma.svg" alt="" class="studyItem_languageImage">
+                                </li>
+                                
+                                <li class="studyItem_language">
+                                    <img src="https://holaworld.io/images/languages/zeplin.svg" alt="" class="studyItem_languageImage">
+                                </li>
+                            </ul>
+                        </div>
                         <section class="studyItem_info">
                             <div class="avatar_user">
                                 <img class="avatar_userImg avatar_small" src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/amoo_2022-07-03_18-07-05.png" alt="avatar">
