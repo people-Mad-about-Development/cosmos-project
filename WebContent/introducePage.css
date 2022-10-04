@@ -17,12 +17,13 @@ body {
 }
 
 .introduce_middle_text{
-    transform: translateY(50%);
+   /*  transform: translateY(20%); */
 
 }
 .introduceTitle{
     display: block;
     text-align: center;
+    margin-top: 1%;
     margin-bottom: 1%;
 }
 

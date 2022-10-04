@@ -20,15 +20,11 @@
         <span class="introduceTitleText">를 체험해보세요!</span>
     </div>
 
-    <hr class="introduceSub">
 
    <div class="introduceContent">
     <section class="introduce_left_section">
         <div class="introduce_middle_text">
             <h1>cosmos 페이지 설명글을 작성하는 곳입니다.</h1>
-            <h2>cosmos 페이지 설명글을 작성하는 곳입니다.</h2>
-            <h2>cosmos 페이지 설명글을 작성하는 곳입니다.</h2>
-            <h2>cosmos 페이지 설명글을 작성하는 곳입니다.</h2>
         </div>
     </section>
     <section class="introduce_right_section">
