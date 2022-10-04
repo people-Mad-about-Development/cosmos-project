@@ -7,10 +7,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- header.jsp 파일 넣으세요 -->
-	<jsp:include page = 'header.jsp'/>
-	<!--작업하신 페이지 파일 넣으세요 -->
-<%-- 	<jsp:include page = 'new'/> 
- --%>	
 </body>
 </html>
