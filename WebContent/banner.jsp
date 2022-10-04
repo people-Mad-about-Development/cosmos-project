@@ -18,9 +18,14 @@
     <!-- Demo styles -->
     <style>
      
+     html{
+     margin:0;
+     padding:0;
+     
       body {
         position: relative;
         height: 374px;
+       
       }
 
       body {
