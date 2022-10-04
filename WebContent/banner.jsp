@@ -75,7 +75,7 @@
       bottom: -84px;
       }
 	
-	.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+	.swiper-horizontal>.swiper-pagination-bullets .swi\per-pagination-bullet, 
 	.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 var(--swiper-pagination-bullet-horizontal-gap,10px);
     }
