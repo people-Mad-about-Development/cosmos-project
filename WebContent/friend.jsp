@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>친구 목록</title>
+<title>친구관리</title>
 <link rel="stylesheet" href="friend.css">
 </head>
 <body>  
@@ -27,12 +27,12 @@
                 <div class="request-button" data-url="/api/users/324116/request_button">
                     <div class="ui mini basic buttons" style="float: right">
                         <a  class="ui basic button" id="btn-modal">
-                            ì¹êµ¬ì¶ê°
+                            친구추가
                          </a>   
                     </div>
               </div>
                 <span class="desc">
-                    ì¹êµ¬ ëª©ë¡
+                    친구 목록
                 </span>
                 
             </div> 
@@ -51,7 +51,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 20ë</span>
+                                    <span class="job-title">경력 20년</span>
                                 </div>
           
                                     <div class="nowrap meta">All Language</div>
@@ -64,7 +64,7 @@
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons" onclick="handleClick()" >
                                 <a  class="ui basic button">
-                                    ì¹êµ¬ì­ì 
+                                    친구삭제
                                  </a>   
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ì ì</span>
+                                    <span class="job-title">신입</span>
                                 </div>
           
                                     <div class="nowrap meta">Java</div>
@@ -98,7 +98,7 @@
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
                                 <a  class="ui basic button">
-                                    ì¹êµ¬ì­ì 
+                                    친구삭제
                                  </a>   
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 1ë</span>
+                                    <span class="job-title">경력 1년</span>
                                 </div>
           
                                     <div class="nowrap meta">JavaScript</div>
@@ -132,7 +132,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 2ë</span>
+                                    <span class="job-title">경력 2년</span>
                                 </div>
           
                                     <div class="nowrap meta">TypeScript</div>
@@ -163,7 +163,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 3ë</span>
+                                    <span class="job-title">경력 3년</span>
                                 </div>
           
                                     <div class="nowrap meta">React</div>
@@ -194,7 +194,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 4ë</span>
+                                    <span class="job-title">경력 4년</span>
                                 </div>
           
                                     <div class="nowrap meta">Nodejs</div>
@@ -225,7 +225,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -240,11 +240,11 @@
                     <div class="stackable content">
                         <div class="main">
                             <div class="user-name">
-                                <span class="name">í¸ê·¼ì´</span>
+                                <span class="name">호근이</span>
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 5ë</span>
+                                    <span class="job-title">경력 5년</span>
                                 </div>
           
                                     <div class="nowrap meta">Spring</div>
@@ -256,7 +256,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -272,11 +272,11 @@
                     <div class="stackable content">
                         <div class="main">
                             <div class="user-name">
-                                <span class="name">ë½ë¡ë¡</span>
+                                <span class="name">뽀로로</span>
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 6ë</span>
+                                    <span class="job-title">경력 6년</span>
                                 </div>
           
                                     <div class="nowrap meta">Phyton</div>
@@ -288,7 +288,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -304,11 +304,11 @@
                     <div class="stackable content">
                         <div class="main">
                             <div class="user-name">
-                                <span class="name">í¬ë¡±</span>
+                                <span class="name">크롱</span>
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 7ë</span>
+                                    <span class="job-title">경력 7년</span>
                                 </div>
           
                                     <div class="nowrap meta">Vue</div>
@@ -320,7 +320,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                                 
                             </div>
                         </div>
@@ -336,11 +336,11 @@
                     <div class="stackable content">
                         <div class="main">
                             <div class="user-name">
-                                <span class="name">ë£¨í¼</span>
+                                <span class="name">루피</span>
                             </div>
           
                                 <div class="user-title nowrap">
-                                    <span class="job-title">ê²½ë ¥ 8ë</span>
+                                    <span class="job-title">경력 8년</span>
                                 </div>
           
                                     <div class="nowrap meta">php</div>
@@ -352,7 +352,7 @@
                     <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons">
-                                <a  class="ui basic button">ì¹êµ¬ì­ì </a>
+                                <a  class="ui basic button">친구삭제</a>
                             </div>
                         </div>
                     </div>
@@ -396,13 +396,13 @@
 
                 <div class="loginModal_modalContent second hidden">
                     <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button" id="close-btn">
-                    <h1 class="setNickname_title__xgVq4">ì¹êµ¬ ì¶ê°ë¥¼ íìë ¤ë©´<br>ì¹êµ¬ì ëë¤ìì ìë ¥í´ì£¼ì¸ì</h1>
+                    <h1 class="setNickname_title__xgVq4">친구 추가를 하시려면<br>친구의 닉네임을 입력해주세요</h1>
                     <div class="setNickname_inputWrapper__2SFvb">
-                        <h3>ì¹êµ¬ ì´ë¦</h3>
+                        <h3>친구 이름</h3>
                         <input class="setNickname_nicknameInput__1J1el" type="text" name="nickNameInput" value=""
                             autocomplete="off">
                     </div>
-                    <button class="setNickname_buttonNext__2pE6g" name="complete">ì¶ê°íê¸°</button>
+                    <button class="setNickname_buttonNext__2pE6g" name="complete">추가하기</button>
                 </div>
             </div>
         </div>
