@@ -8,6 +8,7 @@
 </head>
 <body>
 	<jsp:include page = 'header.jsp'/>
+	<jsp:include page = 'login.jsp'/>
 	<jsp:include page = 'banner.jsp'/>
 	<jsp:include page = 'categorySearch.jsp'/>
 	<jsp:include page = 'post.jsp'/>
