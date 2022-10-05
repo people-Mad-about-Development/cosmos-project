@@ -6,18 +6,28 @@ font-face {
     font-weight: normal;
     font-style: normal;
 }
+
 @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
-.spoka *
-font-face{
-    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+
+.spoka * font-face {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
 }
 
 
-main, div{
+main,
+div {
     display: block;
 }
 
-.mainContent{
+.toggleSwitch_Checked {
+    background-color: #ffcd00;
+}
+
+.toggleSwitch_UnChecked {
+    background-color: #c1cbd8;
+}
+
+.mainContent {
     max-width: 1200px;
     width: 100%;
     min-height: 60rem;
@@ -27,29 +37,37 @@ main, div{
     margin: 0 auto;
 }
 
-.main_categoryWrapper{
+.main_categoryWrapper {
     display: flex;
     align-items: center;
     position: relative;
     margin-bottom: 2rem;
 }
 
-.main_appWrapper{
+.toggleWrapperMain {
+    margin-left: auto;
+}
+
+.toggleSwitchWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.main_appWrapper {
     margin: 0 auto;
 }
 
-.main_category{
+.main_category {
     display: flex;
 }
 
-.toggleSwitch{
+.toggleSwitch {
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 0; 
+    gap: 5px;
 }
 
-.main_category_item{
+.main_category_item {
     display: flex;
     align-items: center;
     margin-right: 1.5rem;
@@ -58,62 +76,69 @@ main, div{
     font-size: 1.5rem;
 }
 
-.main_active{
-    color:#444;
+.main_active {
+    color: #444;
 }
-.main_inactive{
-    color:#868e96;
+
+.main_inactive {
+    color: #868e96;
 }
 
 svg:not(:root) {
     overflow: hidden;
 }
 
-.mainContent_text{
+.mainContent_text {
     margin-left: 0.5rem;
 }
 
-.toggleSwitch_switchTitle{
-    color: #444;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -.03em;
+.toggleFlex {
+    display: flex;
     margin-right: 20px;
 }
 
-.toggleSwitch_Checked{
+.toggleSwitch_switchTitle {
+    position: relative;
+    float: right;
+    color: #444;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+.toggleSwitch_Checked {
     background-color: #ffcd00;
 }
 
-.toggleSwitch_switchLabel{
+.toggleSwitch_switchLabel {
     position: relative;
     display: inline-block;
     height: 26px;
     width: 50px;
     border-radius: 50px;
-   /*  background-color: #c1cbd8; */
+    /*  background-color: #c1cbd8; */
     cursor: pointer;
 }
 
-.toggleSwitch_switchCheckbox{
+.toggleSwitch_switchCheckbox {
     width: 1px;
     height: 1px;
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
 }
 
-.studyItem_hashtag_wrapper{
+.studyItem_hashtag_wrapper {
     margin-bottom: 40px;
 }
 
-.studyItem_language_wrapper{
+.studyItem_language_wrapper {
     margin-bottom: 42px;
 }
 
-.toggleSwitch_ball{
+.toggleSwitch_ball {
     position: absolute;
     width: 22px;
     height: 22px;
@@ -122,16 +147,16 @@ svg:not(:root) {
     left: 2px;
     transition: -webkit-transform .2s linear;
     transition: transform .2s linear;
-    transition: transform .2s linear,-webkit-transform .2s linear;
-    background-color: #fff; 
+    transition: transform .2s linear, -webkit-transform .2s linear;
+    background-color: #fff;
 }
 
-.toggleSwitch_switchLabel input[type=checkbox]:checked+.toggleSwitch_ball{
+.toggleSwitch_switchLabel input[type=checkbox]:checked+.toggleSwitch_ball {
     -webkit-transform: translateX(24px);
     transform: translateX(24px);
 }
 
-.studyList{
+.studyList {
     display: flex;
     grid-gap: 35px;
     gap: 35px;
@@ -139,15 +164,15 @@ svg:not(:root) {
     padding: 0;
 }
 
-.posts_bottomObserver{
+.posts_bottomObserver {
     margin-bottom: 10rem;
 }
 
-.studyItem_open{
+.studyItem_open {
     opacity: 1;
 }
 
-.studyItem{
+.studyItem {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,28 +189,30 @@ svg:not(:root) {
     text-decoration: none;
 }
 
-ul{list-style: none;}
+ul {
+    list-style: none;
+}
 
-.studyItem li{
+.studyItem li {
     padding: 0;
     margin: 0;
     display: list-item;
     text-align: -webkit-match-parent;
 }
 
-.studyItem_schedule{
+.studyItem_schedule {
     display: flex;
     font-size: 18px;
     grid-gap: 10px;
     gap: 10px;
-    color: rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, .4);
 }
 
-.studyItem_scheduleTitle{
+.studyItem_scheduleTitle {
     font-size: 18px;
 }
 
-.studyItem_title{
+.studyItem_title {
     font-size: 24px;
     min-height: 76px;
     line-height: 36px;
@@ -198,12 +225,13 @@ ul{list-style: none;}
     word-break: break-all;
     overflow: hidden;
 }
-.studyItem_hashtag{
+
+.studyItem_hashtag {
     display: flex;
     grid-gap: 5px;
     gap: 5px;
     font-size: 18px;
-    color: rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, .4);
     min-height: 30px;
     padding-bottom: 40px;
     list-style: none;
@@ -211,7 +239,7 @@ ul{list-style: none;}
     padding: 0;
 }
 
-.studyItem_content{
+.studyItem_content {
     padding-bottom: 42px;
     padding: 0;
     display: flex;
@@ -221,52 +249,53 @@ ul{list-style: none;}
     margin: 0;
 }
 
-.studyItem_language{
+.studyItem_language {
     width: 48px;
     height: 48px;
 }
 
-.studyItem_language img{
+.studyItem_language img {
     width: 48px;
     height: 48px;
 }
-.studyItem_info{
+
+.studyItem_info {
     display: flex;
     font-size: 18px;
     justify-content: space-between;
     border-top: 2px solid #f2f2f2;
 }
 
-.avatar_user{
+.avatar_user {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.studyItem_viewsAndComment{
+.studyItem_viewsAndComment {
     display: flex;
     grid-gap: 12px;
     gap: 12px;
 }
 
-.avatar_userImg{
+.avatar_userImg {
     display: block;
     margin-right: 10px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.avatar_small{
+.avatar_small {
     width: 36px;
     height: 36px;
 }
 
-.avatar_userName{
+.avatar_userName {
     font-size: 18px;
     font-weight: 400;
 }
 
-.studyItem_infoItem{
+.studyItem_infoItem {
     display: flex;
     align-items: center;
     color: #999;
@@ -274,6 +303,6 @@ ul{list-style: none;}
     gap: 6px;
 }
 
-.studyItem_hashtag_wrapper{
-	margin-bottom:40px
+.studyItem_hashtag_wrapper {
+    margin-bottom: 40px
 }
