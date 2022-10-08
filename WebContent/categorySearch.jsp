@@ -223,6 +223,10 @@
     var languageListinner;
     var $SlectedLanuge_selectedLanuguage = $('.SlectedLanuge_selectedLanuguage')
     $languageList.click(function () {
+        if ($languageList.filter((i, item) => $languageList.eq(i).hasClass('languageBar_full')).length == 11) {
+            langCount = 0;
+        }
+
         langCount++;
         if (langCount == 1) {
             $languageList.each((i, item) => {
@@ -257,6 +261,8 @@
             $('.SelectedLanguage_resetFilter').remove();
             $languageList.each((i, item) => { $languageList.eq(i).removeClass('languageBar_transparent').addClass('languageBar_full') })
         }
+        	
+
 
     })
 
