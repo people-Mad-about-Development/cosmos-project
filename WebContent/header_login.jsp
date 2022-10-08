@@ -30,10 +30,47 @@
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 10l5 5 5-5z"></path>
                 </svg>
+                 <div class="dropdownBar_menuWrapper_header loginHeaderUnVisibie">
+                    <ul class="dropdownBar_menu_list">
+                        <li class="dropdownBar_menuItem_header dropdownBar_newPost_header">
+                            <a href="#" style="display: inline-block;">새 글 작성</a>
+                        </li>
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="#" style="display: inline-block;">내 작성글</a>
+                        </li>
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="#" style="display: inline-block;">회사</a>
+                        </li>
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="#" style="display: inline-block;">설정</a>
+                        </li>
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="#" style="display: inline-block;">로그아웃</a>
+                        </li>
+                    </ul>
+                </div><!-- 생성 -->
             </div>
         </div>
     </nav>
 
   
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    $loginSvg = $("div.loginUser");
+    console.log($loginSvg)
+    $dropdownBar_menuWrapper_header = $(".dropdownBar_menuWrapper_header");
+    loginSvgCheck = -1;
+
+    $loginSvg.click(function () {
+        loginSvgCheck *= -1;
+        if (loginSvgCheck > 0) {
+            $dropdownBar_menuWrapper_header.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie")
+        } else {
+            $dropdownBar_menuWrapper_header.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie")
+        }
+
+    })
+
+</script>
 </html>

@@ -146,4 +146,54 @@ div{
     color: #fff;
 }
 
+.dropdownBar_menuWrapper_header {
+    position: absolute;
+    top: 100%;
+    margin-top: 0;
+    right: 0;
+}
+
+.dropdownBar_menu_list {
+    position: relative;
+    z-index: 5;
+    width: 12rem;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    list-style: none;
+}
+
+.dropdownBar_newPost_header {
+    display: none;
+}
+
+.dropdownBar_menuItem_header {
+    padding: .75rem 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdownBar_menuItem_header a {
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+    font-style: inherit;
+    font-weight: 500;
+
+}
+
+.loginHeaderUnVisibie {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index:5;
+
+}
+
+.loginHeaderVisibie {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
+    z-index:5;
+}
 
