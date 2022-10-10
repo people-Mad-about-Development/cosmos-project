@@ -23,7 +23,7 @@
        </a>
                 <div class="studyContent_title">[네이버]자기개발 그룹 챌린지 앱 프론트엔드 개발자 2명 모집합니다!</div>
                  <div class="studyContent_userAndDate">
-                    <img class="studyContent_companyImg" src="../../images/naver_logo.png">
+                    <img class="studyContent_companyImg" src="../../images/navericon.png">
                 <div class="studyContent_companyName">네이버</div>
                 
                     <img class="studyContent_userImg" src="../../images/cosmos_pro.png">

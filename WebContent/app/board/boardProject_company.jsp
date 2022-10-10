@@ -25,7 +25,7 @@
                 <div class="studyContent_title">[네이버]Cosmos Team Project 인원 모집합니다 ! </div>
                 
                 <div class="studyContent_userAndDate">
-                    <img class="studyContent_companyImg" src="../../images/naver_logo.png">
+                    <img class="studyContent_companyImg" src="../../images/navericon.png">
                     
                 <div class="studyContent_companyName">네이버</div>
                     <img class="studyContent_userImg" src="../../images/cosmos_pro.png">
