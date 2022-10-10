@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>지원자 정보</title>
-<link rel="stylesheet" href="boardApply.css">
+<link rel="stylesheet" href="../../assets/css/boardApply.css">
 </head>
 <body>  
     <div class="search_results" style="margin-top:50px;">
-         <a href="boardProject_company.jsp">
+         <a href="../../app/board/boardProject_company.jsp">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -34,7 +34,7 @@
             <div class="ui segment">
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -71,7 +71,7 @@
                 <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -109,7 +109,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -141,7 +141,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -173,7 +173,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -205,7 +205,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -237,7 +237,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -270,7 +270,7 @@
             
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -303,7 +303,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -336,7 +336,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="../../images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">

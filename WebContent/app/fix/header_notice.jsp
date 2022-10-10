@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="header_notice.css">
+    <link rel="stylesheet" href="../../assets/css/header_notice.css">
 </head>
 <body>
     <nav class="header">
         <a href="">
-            <img src="banner/logo.png" alt="logo" class="logo">
+            <img src="../../images/banner/logo.png" alt="logo" class="logo">
         </a>
           <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">

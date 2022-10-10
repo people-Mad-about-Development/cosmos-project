@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>스터디 모집</title>
-<link rel="stylesheet" href="boardStudy2.css">
+<link rel="stylesheet" href="../../assets/css/boardStudy2.css">
 </head>
 <body style ="overflow: auto;">
     <div id="root">
         <div class="studyContent_postWrapper">
             <section class="studyContent_postHeader">
-                 <a href="index.jsp">
+                 <a href="../../app/main/index.jsp">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -23,8 +23,7 @@
        </a>
                 <div class="studyContent_title">자기개발 그룹 챌린지 앱 프론트엔드 개발자 2명 모집합니다!</div>
                 <div class="studyContent_userAndDate">
-                    <img class="studyContent_userImg" src="cosmos_pro.png"
-                     alt="userImg">
+                    <img class="studyContent_userImg" src="../../images/cosmos_pro.png">
                 <div class="studyContent_userName">huyn</div>
                 <div class="studyContent_registeredDate">2022.09.28</div>
                 </div>
