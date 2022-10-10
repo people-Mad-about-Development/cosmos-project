@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmos</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/Cosmos-icon.png">
+    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/Cosmos-icon.png">
 </head>
 <body>
        
@@ -17,8 +17,7 @@
         <div class="modalW">
             <div class="modal_first">
                 <div class="loginModal_modalHeader">
-                    <!-- <img class="loginModal_logo" src="img/cosmos_logo.jpg" alt="welcome"> -->
-                    <img class="loginModal_logo" src="img/cosmos_chu.png" alt="welcome">
+                    <img class="loginModal_logo" src="../../images/cosmos_chu.png" alt="welcome">
                     <div class="loginModal_exitWrapper">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
@@ -68,7 +67,7 @@
                 </div>
 
                 <div class="loginModal_modalContent second hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setNickname_title__xgVq4">Cosmos에 처음 오셨군요!<br>우선, 사용하실 닉네임을 설정해 볼까요?</h1>
                     <div class="setNickname_inputWrapper__2SFvb">
                         <h3>닉네임</h3>
@@ -77,7 +76,7 @@
                 </div>
 
                 <div class="loginModal_modalContent third hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
                     <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
                     <div class="setInterest_inputWrapper__2LHrv">
@@ -148,7 +147,7 @@
                 </div>
 
                 <div class="loginModal_modalContent fourth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
                     <div class="setInterest_inputWrapper__2LHrv">
                         <h3>할 수 있는 <br>기술 태그</h3>
@@ -218,34 +217,33 @@
                 </div>
 
                 <div class="loginModal_modalContent fifth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님이<br>다니는 회사를 알려주세요!</h1>
                     <div class="setInterest_inputWrapper__2LHrv">
                         <h3>회사 이름</h3>
                         <div class="setInterest_likeLanguageWrapper__3nMfg">
                             <div class=" css-2b097c-container">
                                 <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
-                                <div class="select__control css-1t8ny5w-control">
+                                <div class="select__control css-1t8ny5w-control" id="select_company">
                                     <div class="select__value-container select__value-container--is-multi css-1hwfws3">
                                         <div class="select__placeholder css-1wa3eu0-placeholder">회사 이름</div>
                                         <div class="css-1g6gooi">
                                             <div class="select__input" style="display: inline-block;">
-                                                <input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
+                                                <input autocapitalize="none" autocomplete="off" autocorrect="off" id="company-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
                                                 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="select_menu css-langage-list hidden_lo">
+                                    <div class="select_menu css-langage-list company hidden_lo">
                                         <div class="">
-                                            <div class="css-list-option" id="react-select-2-option-0" tabindex="-1">HDS컴퍼니</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-1" tabindex="-1">네이버</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-2" tabindex="-1">카카오</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-3" tabindex="-1">쿠팡</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-4" tabindex="-1">배달의민족</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-5" tabindex="-1">라인</div>
+                                            <div class="select_option css-list-option" id="react-select-2-option-5" tabindex="-1">라이엇</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-6" tabindex="-1">넥슨</div>
                                             <div class="select_option css-list-option" id="react-select-2-option-7" tabindex="-1">토스</div>
-                                            
+                                            <div class="select_option css-list-option" id="react-select-2-option-8" tabindex="-1"onclick="javascript:change();" >직접입력</div>
                                         </div>
                                     </div>
                                     <div class="select__indicators css-1wy0on6">
@@ -258,7 +256,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <input name="likeLanguages" type="hidden">
+                                    <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput"/>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +265,7 @@
                 </div>
 
                 <div class="loginModal_modalContent sixth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님은<br>어떤 어느 쪽에 해당 되시나요?</h1>
                     <div class="select_box">
                         <button class="setInterest_buttonNext__1B_lX one" name="complete">경력</button>
@@ -276,7 +274,7 @@
                 </div>
 
                 <div class="loginModal_modalContent seventh hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setNickname_title__xgVq4">경력자이시군요!<br>경력 몇 년차이신지 알려주세요!</h1>
                     <!-- <div>숫자만 입력해주세요.</div> -->
                     <div class="setNickname_inputWrapper__2SFvb">
@@ -286,12 +284,12 @@
                 </div>
 
                 <div class="loginModal_modalContent eighth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="img/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="../../images/arrow-left.png" alt="back-button">
                     <h1 class="setImage_title__1CzhH">개빠사님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
                     <div>미 업로드시 기본 이미지로 자동 설정됩니다.</div>
                     <div class="userImageUpload_image__2lcic">
-                        <img class="userImg" src="img/Cosmos-icon.png" alt="user avatar">
-                        <!-- <img class="userImageUpload_userImg__1VX-j" src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="user avatar"> -->
+                        <img class="userImg" src="../../images/Cosmos-icon.png" alt="user avatar">
+                        
                         <div class="userImageUpload_imageControl__2G4AG">
                             <label class="userImageUpload_customLabelFileUpload__2QkhJ">
                                 이미지 선택<input id="imageUpload" type="file" accept="image/*">
@@ -318,5 +316,5 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="login.js"></script>
+<script src="../../assets/js/login.js"></script>
 </html>
