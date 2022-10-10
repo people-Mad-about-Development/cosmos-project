@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+body {
+    font-family: SpoqaHanSansNeo-Regular;
+}
+
+.menubar-pin #base {
+    padding-left: 230px;
+}
+
+.fold_area {
+    height: 50px;
+    color: #fff;
+    background: #353535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1003;
+    width: 230px;
+    border-bottom: 1px solid #49494a;
+    padding-left: 24px;
+}
+
+.table-cell {
+    display: table-cell !important;
+    padding-right: 45px;
+}
+
+.logo_icon_menu img {
+    max-height: 50px;
+    max-width: 90px;
+}
+
+.logo_icon_menu {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
+}
+
+.menubar-pin .brand-holder {
+    padding-left: 61px;
+    line-height: 38px;
+}
+
+.content {
+    right: -17px;
+}
+
+.adminLogo {
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    line-height: 36px;
+}
+
+.gui-icon i:first-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    bottom: 0;
+    margin: auto;
+    line-height: 39px;
+    width: 1em;
+}
+
+.bar {
+    position: absolute;
+    visibility: hidden;
+    white-space: pre;
+    font-family: SpoqaHanSansNeo-Regular;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    text-indent: 0px;
+    text-rendering: optimizelegibility;
+    text-transform: none;
+}
+
+.serchBar {
+    position: relative;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+.tt-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 100;
+    display: none;
+}
+
+.twitter-typeahead {
+    position: relative;
+}
+
+section.content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.col-xl-10 {
+    width: 100%;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    right: 0px;
+}
+
+
+
+.company-search .form-group {
+    margin: 0;
+}
+
+.company-search .form-group .icon_set {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    z-index: 1;
+}
+
+.company-search .form-group .icon_set.left {
+    left: 18px;
+}
+
+.company-search .form-group .form-control {
+    border: none;
+    height: 48px;
+    padding-left: 64px;
+    padding-right: 50px;
+    width: 100%;
+}
+
+.li_table > ul {
+    text-align: center;
+}
+
+
+
+.companyAdd, .companyDelete {
+    height: 48px;
+}
+
+.companyAdd a, .companyDelete a {
+    display: block;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777777;
+    border-radius: 10px;
+}

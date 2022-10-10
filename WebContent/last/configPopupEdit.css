@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+body {
+    font-family: SpoqaHanSansNeo-Regular;
+}
+
+.menubar-pin #base {
+    padding-left: 230px;
+}
+
+.fold_area {
+    height: 50px;
+    color: #fff;
+    background: #353535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1003;
+    width: 230px;
+    border-bottom: 1px solid #49494a;
+    padding-left: 24px;
+}
+
+.table-cell {
+    display: table-cell !important;
+    padding-right: 45px;
+}
+
+.logo_icon_menu img {
+    max-height: 50px;
+    max-width: 90px;
+}
+
+.logo_icon_menu {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
+}
+
+.menubar-pin .brand-holder {
+    padding-left: 61px;
+    line-height: 38px;
+}
+
+.content {
+    right: -17px;
+}
+
+.adminLogo {
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    line-height: 36px;
+}
+
+.gui-icon i:first-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    bottom: 0;
+    margin: auto;
+    line-height: 39px;
+    width: 1em;
+}
+
+.col-xl-10 {
+    width: 100%;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    right: 0px;
+}
+
+.section-max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.col-sm-6 {
+    width: 42.5%;
+}
+
+#start_time, #end_time {
+    text-align: center;
+}
+
+.card {
+    padding-left: 270px;
+}
