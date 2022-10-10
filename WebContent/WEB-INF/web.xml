@@ -9,4 +9,42 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <servlet>
+     <servlet-name>UserFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.user.UserFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>UserFrontController</servlet-name>
+     <url-pattern>*.us</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>BoardFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.board.BoardFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>BoardFrontController</servlet-name>
+     <url-pattern>*.bo</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+     <servlet-name>InqueryFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.inquery.InqueryFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>InqueryFrontController</servlet-name>
+     <url-pattern>*.in</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
 </web-app>
