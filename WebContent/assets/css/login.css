@@ -259,7 +259,7 @@ a{
     border: 1px solid #ccc;
     font-size: large;
     width: 20rem;
-    height: 3rem;
+    height: 52px;
     padding-left: 1rem;
 }
 
@@ -574,7 +574,7 @@ a{
     overFlow: scroll;
     height: 170px;
 }
-.css-list-option {
+.css-list-option,  .selboxInput{
     background-color: transparent;
     color: inherit;
     cursor: default;
@@ -585,4 +585,27 @@ a{
     user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     box-sizing: border-box;
+}
+
+#selboxDirect {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 3rem;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    max-width: 500px;
+    width: 100%;
+    height: 54px;
+    outline: 0px !important;
 }
