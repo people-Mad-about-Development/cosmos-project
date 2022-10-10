@@ -24,5 +24,6 @@
 
         </div>
     </nav>
+    <jsp:include page = '../fix/login.jsp'/>
 </body>
 </html>
