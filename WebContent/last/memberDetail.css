@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+body {
+    font-family: SpoqaHanSansNeo-Regular;
+}
+
+.menubar-pin #base {
+    padding-left: 230px;
+}
+
+.fold_area {
+    height: 50px;
+    color: #fff;
+    background: #353535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1003;
+    width: 230px;
+    border-bottom: 1px solid #49494a;
+    padding-left: 24px;
+}
+
+.table-cell {
+    display: table-cell !important;
+    padding-right: 45px;
+}
+
+.logo_icon_menu img {
+    max-height: 50px;
+    max-width: 90px;
+}
+
+.logo_icon_menu {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
+}
+
+.menubar-pin .brand-holder {
+    padding-left: 61px;
+    line-height: 38px;
+}
+
+.content {
+    right: -17px;
+}
+
+.adminLogo {
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    line-height: 36px;
+}
+
+.gui-icon i:first-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    bottom: 0;
+    margin: auto;
+    line-height: 39px;
+    width: 1em;
+}
+
+#fileupload_profile_img {
+    width    : 72px;
+    height   : 72px;
+    margin   : 0 auto;
+    position : relative;
+}
+
+#drop_profile_img {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    opacity  : 0;
+    width    : 72px;
+    height   : 72px;
+    z-index  : 50;
+    cursor   : pointer
+}
+
+#drop_profile_img input {
+    width    : 72px;
+    height   : 72px;
+    position : absolute;
+    left     : 0;
+    top      : 0;
+    z-index  : 50;
+    cursor   : pointer
+}
+
+#fileupload_profile_img .over {
+    display       : none;
+    position      : absolute;
+    left          : 0;
+    top           : 0;
+    width         : 72px;
+    height        : 72px;
+    border-radius : 50%;
+    background    : rgba(0, 0, 0, 0.5);
+    z-index       : 5
+}
+
+#fileupload_profile_img:hover .over {
+    display : block;
+}
+
+#fileupload_profile_img .zmdi {
+    position  : absolute;
+    left      : 50%;
+    top       : 50%;
+    margin    : -9px 0 0 -8px;
+    color     : #fff;
+    font-size : 20px;
+}
+
+.profile-info .form .form-group.custom-label > label {
+    position  : static;
+    word-wrap : break-word;
+}
+
+/* 활동 정보 아이콘 */
+.active-info-icons {
+    overflow: hidden;
+}
+.active-info-icons img,
+.active-info-icons i {
+    float: right;
+    margin-top: 12px;
+    margin-right: 20px;
+    width:25px;
+    height:25px;
+}
+.active-info-icons [class*=" zmdi-"], [class^=zmdi-] {
+    font-size: 2em;
+}
+
+.margin-bottom-xxl {
+    margin-bottom: 16px;
+}
+
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+    right: 0px;
+}
+
+.card.style-transparent, .card .style-transparent {
+    z-index: auto;
+    position: relative;
+    top: 0px;
+}
+
+#drop_profile_img input {
+    width: 100%;
+}
+
+.margin-bottom-xxxl {
+    margin-bottom: 13px;
+}
+
+/* .card-body {
+    padding-left: 150px;
+}
+
+.col-xs-3 {
+    width: 50%;
+} */

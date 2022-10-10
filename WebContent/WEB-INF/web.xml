@@ -11,7 +11,7 @@
   </welcome-file-list>
   
   
-  <servlet>
+<servlet>
      <servlet-name>UserFrontController</servlet-name>
      <servlet-class>com.cosmos.app.user.UserFrontController</servlet-class>
   </servlet>
@@ -41,6 +41,7 @@
      <servlet-name>InqueryFrontController</servlet-name>
      <url-pattern>*.in</url-pattern>
   </servlet-mapping>
+  
   
   
   
