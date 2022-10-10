@@ -1,0 +1,856 @@
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-weight: normal;
+    font-style: normal;
+}
+
+#root {
+    min-height: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+div {
+    display: block;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.main_div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    padding-bottom: 5rem;
+}
+
+.userImgUpload {
+    display: flex;
+}
+
+.userImgUpload_userImg {
+    display: block;
+    height: 10rem;
+    width: 10rem;
+    box-shadow: 0 0 8px rgb(0 0 0 / 9%);
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all .125s ease-in 0s;
+    margin: 40px 0;
+}
+
+.userImgUpload_imgControl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-left: 10px;
+}
+
+.userImgUpload_customLabel {
+    background-color: #262626;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 4px;
+    width: 7.5rem;
+    height: 2rem;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.userImgUpload_imgControl input[type=file] {
+    display: none;
+}
+
+input {
+    width: 20rem;
+    height: 2.5rem;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    border: 3px solid #4482f7;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.userImgUpload_buttonImageDelete {
+    width: 7.5rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #262626;
+    margin: 5px 0 5px 5px;
+    padding: 0;
+    font-weight: 600;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.main_inputZone {
+    display: flex;
+    align-items: center;
+}
+
+.main_inputZone h3 {
+    width: 14rem;
+}
+
+#introduce {
+    width: 29rem;
+}
+
+#company_h3 {
+    width: 19rem;
+}
+
+.main_inputZone input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: large;
+    width: 16rem;
+    height: 1rem;
+    padding: 1rem;
+}
+
+.main_description {
+    margin-top: 0.875rem;
+    color: #868e96;
+    font-size: .875rem;
+    margin-left: 225px;
+}
+
+li, p {
+    margin: 0;
+}
+
+.setting_Languages {
+    margin-top: 3rem;
+}
+
+.setting_titleWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.setting_titleWrapper h3 {
+    width: 20rem;
+}
+
+.setting_LanguageWrapper {
+    width: 100%;
+}
+
+.css-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.css-a11yText {
+    z-index: 9999;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+.css-control {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 3rem;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    max-width: 500px;
+    width: 100%;
+    outline: 0px !important;
+}
+
+.css-1hwfws3 {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.css-multiValue {
+    background-color: rgb(230, 230, 230);
+    border-radius: 2px;
+    display: flex;
+    margin: 2px;
+    min-width: 0px;
+    box-sizing: border-box;
+}
+
+.css-12jo7m5 {
+    border-radius: 2px;
+    color: rgb(51, 51, 51);
+    font-size: 85%;
+    overflow: hidden;
+    padding: 6px 6px 6px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.css-xb97g8 {
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+    display: flex;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+}
+
+.css-8mmkcg {
+    display: inline-block;
+    fill: currentcolor;
+    line-height: 1;
+    stroke: currentcolor;
+    stroke-width: 0;
+}
+
+.css-1g6gooi {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    box-sizing: border-box;
+}
+
+.css-1wy0on6 {
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.css-indicatorContainer {
+    color: rgb(204, 204, 204);
+    display: flex;
+    padding: 8px;
+    transition: color 150ms ease 0s;
+    box-sizing: border-box;
+}
+
+.css-indicatorSeparator {
+    align-self: stretch;
+    background-color: rgb(204, 204, 204);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.setting_description {
+    margin-top: 0.875rem;
+    color: #868e96;
+    font-size: .875rem;
+    margin-left: 225px;
+}
+
+.setting_buttonComplete {
+    margin-top: 1.5rem;
+    background-color: #262626;
+}
+
+.setting_mainButton {
+    font-weight: 800;
+    color: #fff;
+    border-radius: 4px;
+    width: 90px;
+    margin-right: 10px;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.setting_buttonSignOut {
+    background: #ff3217;
+}
+
+.css_placeholder {
+    color: rgb(128, 128, 128);
+    margin-left: 2px;
+    margin-right: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+.company{
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    grid-gap: 15px;
+    gap: 15px;
+    /* margin-bottom: 40px; */
+}
+
+.companyBar{
+    display: flex;
+    grid-gap: 10px;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #d0d0d0;
+    border-radius: 100px;
+    padding: 12px 20px 12px 15px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.companyBar img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.companyBar span{
+    font-weight: bold;
+    font-family: "SpoqaHanSansNeo";
+}
+
+.main_nickNameZone h4 {
+    margin-left: 15px;
+}
+
+.css-langage-list {
+    top: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px, rgb(0 0 0 / 10%) 0px 4px 11px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    overFlow: scroll;
+    height: 170px;
+    display: block;
+}
+
+.css-11unzgr {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.css-list-option {
+    background-color: transparent;
+    color: inherit;
+    cursor: default;
+    display: block;
+    font-size: inherit;
+    padding: 8px 12px;
+    width: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+
+
+
+
+#modal {
+    display: none;
+}
+
+
+.hjmEWy {
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    inset: 0px;
+    background: rgba(77, 77, 77, 0.5);
+    z-index: 999;
+}
+
+.kZNtJp {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    inset: 0px;
+    background: rgba(77, 77, 77, 0.5);
+    z-index: 999;
+}
+
+.MTMzf {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    inset: 0px;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0px;
+}
+
+.cancelButton_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 12px 0rgb(0 0 0/20%);
+    -webkit-animation: cancelButton_modalAnimation__2D2Vp .5s ease-in-out 0s 1 normal forwards running;
+    animation: cancelButton_modalAnimation__2D2Vp .5s ease-in-out 0s 1 normal forwards running;
+}
+
+.cancelButton_buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.cancelButton_cancelButton, .cancelButton_registerButton {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 0 1.25rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.cancelButton_cancelButton {
+    background: #e9ecef;
+    margin-right: 1rem;
+}
+
+.cancelButton_registerButton {
+    font-weight: 700;
+    background-color: #262626;
+    color: #fff;
+}
+
+.list1, .list2 {
+    display: none;
+}
+
+
+ .css-1wa3eu0-placeholder {
+    color: rgb(128, 128, 128);
+    margin-left: 2px;
+    margin-right: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+.css-xb97g8:hover {
+    background-color: rgb(255, 189, 173);
+    color: rgb(222, 53, 11);
+}
+
+.css-list-option:hover {
+    background: rgb(222, 235, 255);
+}
+
+
+
+.css-multiValue {
+    display: none;
+}
+
+.x {
+    display: none;
+    position: absolute;
+    font-size: 40px;
+    top: 40%;
+    padding-left: 37px;
+    /* right: 3rem; */
+    transform: translate(-50%, -50%);
+}
+
+.hover{
+    background:rgb(222, 235, 255); 
+    cursor:pointer;
+}
+.hover2{background: rgb(222, 235, 255);}
+
+
+
+
+
+
+
+.loginModal_modalContent {
+    background: #fff;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+.topBar_backButton__3HlkH {
+    position: absolute;
+    left: 1rem;
+    opacity: .6;
+    cursor: pointer;
+    width: 3rem;
+}
+.setInterest_title__Me11d {
+    margin-top: 4rem;
+    text-align: center;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: setNickname_opacityAnimation__1UWJt;
+    animation-name: setNickname_opacityAnimation__1UWJt;
+}
+.setInterest_inputWrapper__2LHrv {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    width: 80%;
+}
+.setInterest_inputWrapper__2LHrv h3 {
+    margin-right: 1rem;
+    font-size: 1rem;
+    width: 15%;
+}
+.setInterest_likeLanguageWrapper__3nMfg {
+    width: 100%;
+}
+.css-2b097c-container {
+    position: relative;
+    box-sizing: border-box;
+}
+.css-7pg0cj-a11yText {
+    z-index: 9999;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+}
+.css-1t8ny5w-control {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 3rem;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    max-width: 500px;
+    width: 100%;
+    outline: 0px !important;
+}
+.css-1hwfws3 {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.css-1wa3eu0-placeholder {
+    color: rgb(128, 128, 128);
+    margin-left: 2px;
+    margin-right: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+.css-1g6gooi {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    box-sizing: border-box;
+}
+.css-langage-list {
+    top: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px, rgb(0 0 0 / 10%) 0px 4px 11px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    overFlow: scroll;
+    height: 170px;
+}
+.css-list-option, .selboxInput {
+    background-color: transparent;
+    color: inherit;
+    cursor: default;
+    display: block;
+    font-size: inherit;
+    padding: 8px 12px;
+    width: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+.css-1wy0on6 {
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.css-1okebmr-indicatorSeparator {
+    align-self: stretch;
+    background-color: rgb(204, 204, 204);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.css-tlfecz-indicatorContainer {
+    color: rgb(204, 204, 204);
+    display: flex;
+    padding: 8px;
+    transition: color 150ms ease 0s;
+    box-sizing: border-box;
+}
+.css-8mmkcg {
+    display: inline-block;
+    fill: currentcolor;
+    line-height: 1;
+    stroke: currentcolor;
+    stroke-width: 0;
+}
+#selboxDirect {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 3rem;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    max-width: 500px;
+    width: 100%;
+    height: 54px;
+    outline: 0px !important;
+}
+.company_buttonNext {
+    margin-top: 5rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 4px;
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    background-color: #262626;
+}
+.active_lo {
+    display: flex;
+}
+
+.hidden_lo {
+    display: none;
+}
+
+
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li, p {
+    margin: 0;
+}
+
+button{
+    outline: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+input {
+    width: 20rem;
+    height: 2.5rem;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    border: 3px solid #4482f7;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+.black_bg {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    inset: 0px;
+    background: rgba(77, 77, 77, 0.5);
+    z-index: 999;
+}
+
+
+.modalW {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    inset: 0px;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0px;
+}
+.loginModal_modalHeader {
+    background: #f8f9fa;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    height: 3rem;
+}
+.loginModal_logo{
+    width: 4rem;
+    height: auto;
+    display: block;
+}
+.loginModal_exitWrapper {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: #868e96;
+    cursor: pointer;
+}
+.loginModal_modalContent {
+    background: #fff;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+.modal_first {
+    display: flex;
+    width: 800px;
+    height: 550px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    flex-direction: column;
+    box-shadow: 0 2px 12px 0rgb(0 0 0/9%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-animation: loginModal_loginAnimation__1_BmT .5s ease 0s 1 normal forwards running;
+    animation: loginModal_loginAnimation__1_BmT .5s ease 0s 1 normal forwards running;
+    top: 50%;
+}
+
+
+.modal{
+    display: none;
+}
+
+
+
+@-webkit-keyframes setNickname_opacityAnimation__1UWJt{0%{opacity:0}to{opacity:1}};
+@keyframes setNickname_opacityAnimation__1UWJt{0%{opacity:0}to{opacity:1}};
+
+
+
+
+
+
