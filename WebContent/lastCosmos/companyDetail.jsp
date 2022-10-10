@@ -57,7 +57,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/tinycolor-min.js?1577682292"></script>
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
-	<link rel="stylesheet" href="statAnalytics.css">
+	<link rel="stylesheet" href="companyDetail.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,11 +76,20 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">기간별 분석</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="#">회사 추가 및 수정</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
 					</ul>
+				</div>
+
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options _option_list">
+						<li>
+							<a class="btn btn-primary hidden-xs" onclick="location.href='/admin/config/popup/?mode=add'">저장</a>
+							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" onclick="location.href='#'"><i class="btl bt-plus vertical-middle"></i></a>
+						</li>
+					</ul><!--end .header-nav-options -->
 				</div>
 			</div>
 		</header> <!-- END HEADER -->
@@ -129,7 +138,7 @@
 							</a>
 						</li>
 
-						<li class="gui-folder" data-title="member"> <!-- 현재 이동한 페이지의 카테고리를 활성화 시켜줘야함 -->
+						<li class="active gui-folder expanded" data-title="member"> <!-- 현재 이동한 페이지의 카테고리를 활성화 시켜줘야함 -->
 							<a href="#" class="sidebar-nav-menu" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-user"></i>
@@ -142,8 +151,8 @@
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
-								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="#">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+								<li class="active expanded" data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
+									<a href="#" class=" active">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -181,7 +190,7 @@
 							</ul>
 						</li>
 							
-						<li class="active gui-folder expanded" data-title="stat">
+						<li class="gui-folder" data-title="stat">
 							<a href="#" class="sidebar-nav-menu" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-status-up"></i>
@@ -189,8 +198,8 @@
 								<span class="title">통계</span>
 							</a>
 							<ul>
-								<li class="active expanded" data-title="statAnalytics">
-									<a href="#" class=" active">
+								<li class="  " data-title="statAnalytics">
+									<a href="#">
 										<span class="title">기간별 분석</span>
 									</a>
 								</li>
@@ -225,128 +234,121 @@
 		<!-- START MAIN CONTENT -->
 
 		<div id="content">
-			<section class="section-max-width">
-				<div class="section-body">
-					<div class="cosmos_banner">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="cosmos_banner_main">
-									<div class="cosmos_banner_logo">
-										<img src="/cosmos_new/new_cosmos.png" alt="">
-									</div>
-	
-									<div class="cosmos_banner_content">
-										<!-- <img src="/cosmos_new/cosmos_banner.png" alt=""> -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card analytics_card">
-								<div class="card-head">
-									<div class="form-group no-margin">
-										<select id="analyticsType" name="type" onchange="moveUrl('type')" class="form-control inline-blocked static dirty width-3">
-											<option value="days" selected="selected">일자별 요약</option>
-											<option value="month">월별 요약</option>
-										</select>
-										
-										<select id="analyticsYear" name="year" onchange="moveUrl('year')" class="form-control inline-blocked static dirty width-3">
-											<option value="2022" selected="selected">2022년</option>
-										</select>
-										
-										<select id="analyticsMonth" name="month" onchange="moveUrl('month')" class="form-control inline-blocked static dirty width-3">
-											<option value="9">9월</option>
-											<option value="10" selected="selected">10월</option>
-										</select>
-									</div>
-								</div>
-
-								<div class="card-body border-top no-padding">
-									<div class="table-responsive">
-										<table class="table no-margin summary-table"><!-- 일자별 -->
-											<thead>
-												<tr>
-													<th class="text-13 text-center opacity-50">일자</th>
-													<th class="text-13 text-center opacity-50">페이지뷰</th>
-													<th class="text-13 text-center opacity-50">방문자</th>
-													<th class="text-13 text-center opacity-50">가입</th>
-													<th class="text-13 text-center opacity-50">문의</th>
-													<th class="text-13 text-center opacity-50">새 글</th>
-													<th class="text-13 text-center opacity-50">댓글</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="today">
-													<td class="text-left">2022-10-03 (월)</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-												</tr>
-
-												<tr class="">
-													<td class="text-left">2022-10-02 (일)</td>
-												<td class="text-right">0</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-												</tr>
-
-												<tr class="">
-													<td class="text-left">2022-10-01 (토)</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0명</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-													<td class="text-right">0</td>
-												</tr>
-											</tbody>
-
-											<tfoot>
-												<tr>
-													<td class="text-left no-border">10월 합계</td>
-													<td class="text-right no-border">1</td>
-													<td class="text-right no-border">1명</td>
-													<td class="text-right no-border">0명</td>
-													<td class="text-right no-border">0</td>
-													<td class="text-right no-border">0</td>
-													<td class="text-right no-border">0</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-12">
-									<div class="card">
-										<div class="card-head">
-											<header><strong>요약 집계 기준</strong></header>
-										</div>
-										<div class="card-body no-padding-top">
-											<ul class="description-list">
-												<li>페이지뷰 : 페이지 클릭 수<br>제외 : 동일한 IP 주소에서는 추가 카운팅이 되지 않습니다.</li>
-												<li>방문자 : 홈페이지 방문자 수</li>
-												<li>가입 : 금일 홈페이지 가입자 수
-												<li>문의 : 금일 작성된 문의글</li>
-												<li>새 글 : 금일 작성된 모든 게시글(스터디, 프로젝트)</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+			<section>
+				<div class="card style-transparent card-top no-tab">
+					<div class="card-head">
+						<header>
+							<a href="#" onclick="window.location = '#';"> <!-- 회사 목록 리스트 주소 입력 필요 / 이 전 페이지 -->
+								<i class="zmdi zmdi-arrow-back"></i>리스트로 돌아가기
+							</a>
+						</header>
 					</div>
 				</div>
+		
+				<div class="section-body">
+					<div class="tab-pane" id="daily">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-head">
+										<header>회사 정보</header>
+									</div>
+									<div class="card-body border-top">										
+										<div class="profile-image text-center margin-bottom-xxl">
+											<div id="fileupload_profile_img">
+												<img class="company" src="nexon.png" id="profile_img" width="72" height="72" class="img-circle">
+												<div id="drop_profile_img">
+													<input type="file" name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
+												</div>
+												<div class="over">
+													<i class="zmdi zmdi-camera"></i>
+												</div>
+											</div>
+											
+											<h3 class="text-15">관리자</h3>
+										</div><!--end.profile-image-->
+		
+										<div class="profile-info">
+											<form id="dof" method="post" class="form-horizontal form-validate" role="form" target="hidden_frame" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+												<!-- 해당 회사 상세내용 아래 방법으로 코드 작성  -->
+												<!-- <input type="hidden" name="idx" value="22645265">
+												<input type="hidden" name="code" value="m20220929a41c742d48942">
+												<input type="hidden" name="join_type_code" value="t20220929dd5f7889009e5">
+												<input type="hidden" name="photo" value="">
+												<input type="hidden" name="photo_tmp_idx" value="" id="photo_tmp_idx">
+												<input type="hidden" name="from_permission" value=""> -->
+												<!-- 해당 사용자 상세내용 -->
+																													
+												<div class="form-group">
+													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">홈페이지
+														<span class="text-danger">(필수)</span>
+													</label>
+													<div class="col-md-9">
+														<input type="text" required="required" name="uid" id="member_item_m20220929a41c742d48942" class="form-control" value="slions1113@gmail.com" data-nick="slions1113@gmail.com" aria-required="true">
+														<div class="form-control-line"></div>
+													</div>
+												</div>
+		
+												<div class="_type_form_wrap">
+													<div class="form-group">
+														<label class="col-sm-3 control-label text-right" for="user_name">설명
+															<span class="text-danger">(필수)</span>
+														</label>
+														<div class="col-md-9">
+															<input type="text" autocomplete="off" required="" name="name" id="user_name" class="form-control" value="메이플스토리로 유명한 게임회사" aria-required="true">
+															<div class="form-control-line"></div>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
+	
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-head">
+										<header>관련 정보</header>
+									</div>
+									<div class="card-body border-top">
+										<div class="row">
+											<div>
+												<div class="form-group margin-bottom-xxxl">
+													<label class="col-sm-3 control-label text-right margin-top-5">등록일</label>
+													<div class="col-sm-9">
+														<p class="form-control-static">2022-09-29 00:00</p>
+													</div>
+												</div>
+											</div>
+	
+										</div>
+	
+										<div class="row">
+											<div>
+												<div class="form-group margin-bottom-xxxl">
+													<label class="control-label col-sm-3 text-right margin-top-5">관련</label>
+													<div class="form-control-static col-sm-9">
+														<div class="row margin-bottom-12">
+															<span style="display:inline-block;" class="col-xs-3">프로젝트</span>
+															<p>0</p>
+														</div>
+
+														<div class="row margin-bottom-12">
+															<span style="display:inline-block;" class="col-xs-3">스터디</span>
+															<p>0</p>
+														</div>
+	
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
 			</section>
 		</div>
 
@@ -354,5 +356,6 @@
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="statAnalytics.js"></script>
+<script src="companyDetail.js"></script>
+
 </html>

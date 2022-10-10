@@ -57,7 +57,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/tinycolor-min.js?1577682292"></script>
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
-	<link rel="stylesheet" href="companyDetail.css">
+	<link rel="stylesheet" href="configPopup.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,7 +76,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">회사 추가 및 수정</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="#">배너 관리</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -86,8 +86,16 @@
 				<div class="headerbar-right">
 					<ul class="header-nav header-nav-options _option_list">
 						<li>
-							<a class="btn btn-primary hidden-xs" onclick="location.href='/admin/config/popup/?mode=add'">저장</a>
-							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" onclick="location.href='#'"><i class="btl bt-plus vertical-middle"></i></a>
+							<a class="btn btn-default-bright hidden-xs" href="#" target="_blank">사이트 확인하기</a> <!-- 우리 사이트 메인페이지 링크 필요 -->
+							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" href="#" target="_blank"> <!-- 우리 사이트 메인페이지 링크 필요 -->
+								<i class="btl bt-external-link vertical-middle"></i>
+							</a>
+						</li>
+						<li>
+							<a class="btn btn-primary hidden-xs" onclick="location.href='#'">배너 추가</a> <!-- 팝업 추가 페이지 링크 필요 -->
+							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" onclick="location.href='#'">  <!-- 팝업 추가 페이지 링크 필요 -->
+								<i class="btl bt-plus vertical-middle"></i>
+							</a>
 						</li>
 					</ul><!--end .header-nav-options -->
 				</div>
@@ -138,7 +146,7 @@
 							</a>
 						</li>
 
-						<li class="active gui-folder expanded" data-title="member"> <!-- 현재 이동한 페이지의 카테고리를 활성화 시켜줘야함 -->
+						<li class="gui-folder" data-title="member"> <!-- 현재 이동한 페이지의 카테고리를 활성화 시켜줘야함 -->
 							<a href="#" class="sidebar-nav-menu" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-user"></i>
@@ -151,8 +159,8 @@
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
-								<li class="active expanded" data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="#" class=" active">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
+									<a href="#">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -211,7 +219,7 @@
 							</ul>
 						</li>
 
-						<li class="gui-folder" data-title="config">
+						<li class="active gui-folder expanded" data-title="config">
 							<a href="#" class="sidebar-nav-menu1" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-settings"></i>
@@ -219,8 +227,8 @@
 								<span class="title">환경설정</span>
 							</a>
 							<ul>
-								<li class="  " data-title="configPopup">
-									<a href="#">
+								<li class="active expanded" data-title="configPopup">
+									<a href="#"  class=" active">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>
@@ -235,126 +243,93 @@
 
 		<div id="content">
 			<section>
-				<div class="card style-transparent card-top no-tab">
-					<div class="card-head">
-						<header>
-							<a href="#" onclick="window.location = '#';"> <!-- 회사 목록 리스트 주소 입력 필요 / 이 전 페이지 -->
-								<i class="zmdi zmdi-arrow-back"></i>리스트로 돌아가기
-							</a>
-						</header>
-					</div>
-				</div>
-		
 				<div class="section-body">
-					<div class="tab-pane" id="daily">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-head">
-										<header>회원 정보</header>
-									</div>
-									<div class="card-body border-top">										
-										<div class="profile-image text-center margin-bottom-xxl">
-											<div id="fileupload_profile_img">
-												<img src="nexon.png" id="profile_img" width="72" height="72" class="img-circle">
-												<div id="drop_profile_img">
-													<input type="file" name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
-												</div>
-												<div class="over">
-													<i class="zmdi zmdi-camera"></i>
-												</div>
-											</div>
-											
-											<h3 class="text-15">관리자</h3>
-										</div><!--end.profile-image-->
-		
-										<div class="profile-info">
-											<form id="dof" method="post" class="form-horizontal form-validate" role="form" target="hidden_frame" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
-												<!-- 해당 회사 상세내용 아래 방법으로 코드 작성  -->
-												<!-- <input type="hidden" name="idx" value="22645265">
-												<input type="hidden" name="code" value="m20220929a41c742d48942">
-												<input type="hidden" name="join_type_code" value="t20220929dd5f7889009e5">
-												<input type="hidden" name="photo" value="">
-												<input type="hidden" name="photo_tmp_idx" value="" id="photo_tmp_idx">
-												<input type="hidden" name="from_permission" value=""> -->
-												<!-- 해당 사용자 상세내용 -->
-																													
-												<div class="form-group">
-													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">홈페이지
-														<span class="text-danger">(필수)</span>
-													</label>
-													<div class="col-md-9">
-														<input type="text" readonly="" required="required" name="uid" id="member_item_m20220929a41c742d48942" class="form-control" value="slions1113@gmail.com" data-nick="slions1113@gmail.com" aria-required="true">
-														<div class="form-control-line"></div>
-													</div>
-												</div>
-		
-												<div class="_type_form_wrap">
-													<div class="form-group">
-														<label class="col-sm-3 control-label text-right" for="user_name">설명
-															<span class="text-danger">(필수)</span>
-														</label>
-														<div class="col-md-9">
-															<input type="text" autocomplete="off" required="" name="name" id="user_name" class="form-control" value="메이플스토리로 유명한 게임회사" aria-required="true">
-															<div class="form-control-line"></div>
-														</div>
-													</div>
-												</div>
-											</form>
-										</div>
-									</div><!--end.card-body-->
-								</div><!--end.card-->
-							</div><!--end.col-->
+					<div class="row" id="popup_list">
+						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
+							<div class="card">
+								<div class="card-head">
+									<header>
+										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
+										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
+									</header>
+									
+									<div class="tools">
+										<div class="btn-group">
+											<div class="btn-chil">
+												<a href="#" class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown" >
+													<i class="zmdi zmdi-more"></i>
+												</a>
 	
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-head">
-										<header>관련 정보</header>
-									</div>
-									<div class="card-body border-top">
-										<div class="row">
-											<div>
-												<div class="form-group margin-bottom-xxxl">
-													<label class="col-sm-3 control-label text-right margin-top-5">등록일</label>
-													<div class="col-sm-9">
-														<p class="form-control-static">2022-09-29 00:00</p>
-													</div>
-												</div>
-											</div>
-	
-										</div>
-	
-										<div class="row">
-											<div>
-												<div class="form-group margin-bottom-xxxl">
-													<label class="control-label col-sm-3 text-right margin-top-5">관련</label>
-													<div class="form-control-static col-sm-9">
-														<div class="row margin-bottom-12">
-															<span style="display:inline-block;" class="col-xs-3">프로젝트</span>
-															<p>0</p>
-														</div>
-
-														<div class="row margin-bottom-12">
-															<span style="display:inline-block;" class="col-xs-3">스터디</span>
-															<p>0</p>
-														</div>
-	
-													</div>
-												</div>
+												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
+													<li>
+														<a href="#">수정</a> <!-- 수정페이지 링크 -->
+													</li>
+													<li class="divider"></li>
+													<li>
+														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
+								
+								<a href="#">	<!-- 수정페이지 링크 -->
+									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
+								</a>
+								
+								<div class="card-body">
+									<p>기간: 2022-10-05 ~ 2022-10-07</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
+							<div class="card">
+								<div class="card-head">
+									<header>
+										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
+										<span class="badge">기간만료</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
+									</header>
+									
+									<div class="tools">
+										<div class="btn-group">
+											<div class="btn-chil">
+												<a href="#" class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown" >
+													<i class="zmdi zmdi-more"></i>
+												</a>
+	
+												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
+													<li>
+														<a href="#">수정</a> <!-- 수정페이지 링크 -->
+													</li>
+													<li class="divider"></li>
+													<li>
+														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<a href="#">	<!-- 수정페이지 링크 -->
+									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
+								</a>
+								
+								<div class="card-body">
+									<p>기간: 2022-01-01 ~ 2022-02-03</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div> 
-			</section>
+				</div>
+			</section><!--섹션 끝 -->
 		</div>
 
 		<!-- END MAIN CONTENT -->
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="companyDetail.js"></script>
+<script src="configPopup.js"></script>
 </html>

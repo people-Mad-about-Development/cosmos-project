@@ -57,7 +57,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/tinycolor-min.js?1577682292"></script>
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
-	<link rel="stylesheet" href="configPopupEdit.css">
+	<link rel="stylesheet" href="notice.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,20 +76,9 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">배너 편집 및 추가</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="#">공지사항 관리</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options _option_list">
-						<li>
-							<a class="btn btn-default-bright" onclick="history.go(-1);">취소</a>
-						</li>
-						<li>
-							<a class="btn btn-primary disabled">저장</a> <!-- 값이 입력되면 disabled 삭제 -->
 						</li>
 					</ul>
 				</div>
@@ -161,7 +150,7 @@
 							</ul>
 						</li>
 							
-						<li class="gui-folder" data-title="contents"> 
+						<li class="active gui-folder expanded" data-title="contents"> 
 							<a href="#" class="sidebar-nav-menu1" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-pencil"></i>
@@ -184,8 +173,8 @@
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
-								<li class=" " data-title="contentsNotice">
-									<a href="#">
+								<li class="active expanded" data-title="contentsNotice">
+									<a href="#" class=" active">
 										<span class="title">공지사항 관리</span>
 									</a>
 								</li>
@@ -213,7 +202,7 @@
 							</ul>
 						</li>
 
-						<li class="active gui-folder expanded" data-title="config">
+						<li class="gui-folder" data-title="config">
 							<a href="#" class="sidebar-nav-menu1" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-settings"></i>
@@ -221,8 +210,8 @@
 								<span class="title">환경설정</span>
 							</a>
 							<ul>
-								<li class="active expanded" data-title="configPopup">
-									<a href="#"  class=" active">
+								<li class="  " data-title="configPopup">
+									<a href="#">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>
@@ -236,96 +225,65 @@
 		<!-- START MAIN CONTENT -->
 
 		<div id="content">
-			<div id="alertBox" class="alert__wrap"></div>
-			<section class="section-max-width">
+			<section>
 				<div class="section-body">
-					<!-- 입력화면 -->
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-body">
-									<form id="dof" method="post" enctype="multipart/form-data" class="form-horizontal form-validate" action="" role="form" target="hidden_frame" novalidate="novalidate">
-										<input type="hidden" name="popup_idx" id="popup_idx" value="0">
-										<input type="hidden" name="img_name" id="img_name" value="">
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="">제목</label>
-											<div class="col-sm-6">
-												<input type="text" class="form-control" name="subject" id="title" placeholder="관리용 제목(사용자에겐 표시되지 않습니다)" value="">
-												<div class="form-control-line"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="">기간</label>
-											<div class="col-sm-6 time_duration">
-												<div class="input-group">
-													<div class="input-group-content">
-														<div style="position:relative">
-															<input type="datetime-local" class="form-control" name="start_time" id="start_time" placeholder="날짜를 입력해주세요" value="2022-10-06 15:00" aria-invalid="false">
-															<div class="form-control-line"></div>
-														</div>
-													</div>
-													<span class="input-group-addon">~</span>
-													<div class="input-group-content">
-														<div style="position:relative">
-															<input type="datetime-local" class="form-control" name="end_time" id="end_time" placeholder="날짜를 입력해주세요" value="2023-10-06 15:00" aria-invalid="false">
-															<div class="form-control-line"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>		
-		
-										<input type="hidden" name="content_type" value="image">
-	
-										<div class="_body_image_options">
+					<div class="tab-pane" id="daily">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-head style-default-light">
+										<header>공지사항 작성</header>
+									</div>							
+									<div class="card-body">
+										<form role="form" class="form-horizontal form-validate" novalidate="novalidate">		
 											<div class="form-group">
-												<label class="col-sm-2 control-label">이미지</label>
-												<div class="col-sm-4">
-													<div class="wrap-image-upload"> <!-- 파일 첨부 후 .image-include 추가 -->
-														<div class="image-list" id="icon_img_wrap" style="display:none">
-															<div class="item">
-																<img src="" id="icon_src">
-																<a href="javascript:;" class="close" onclick="removeImg('icon')"><i class="zmdi zmdi-close"></i></a>
-															</div>
-														</div>
-														<div class="wrap-upload-button btn-file" id="icon_img_upload_wrap" style="display:block">
-															<button class="btn-image-upload" role="button">
-																<div class="btn-content">
-																	<p class="icon">
-																	   <i class="fa fa-picture-o"></i> <!--파일 첨부 후 .fa-plus로 변환 -->
-																	</p>
-																	<div>이미지 선택</div>
-																</div>
-															</button>
-															<a href="javascript:;">
-																<input type="file" id="icon_img">
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>      							
-										</div>
-										<div class="_body_html_options" style="display:none;">
-											<div class="form-group">
-												<label class="col-sm-2 control-label"></label>
 												<div class="col-sm-10">
-													<div class="_body_html_editor"></div>
+													<input type="text" required="" name="alarm_subject" id="alarm_subject" class="form-control" aria-required="true" placeholder="제목">
+													<div class="form-control-line"></div>
 												</div>
 											</div>
+											<div class="form-group">
+												<div class="col-sm-12">
+													<textarea rows="3" required="" name="alarm_content" id="alarm_content" class="form-control" maxlength="925" placeholder="내용" aria-required="true" data-autosize-on="true"></textarea>
+													<div class="form-control-line"></div>
+													<!-- <p class="help-block chars" id="chars_app_title">0/2500</p> --> <!-- 사용할거면 기능 구현 필요 -->
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-10">
+													<div class="wrap-image-upload style-default-bright margin-bottom-xl">
+														<div class="image-list no-padding">
+															<label for="attach">
+																<div class="item" id="item">
+																	<a href="javascript:" class="close">																																				
+																		<!-- <i class="zmdi zmdi-close"></i> -->
+																	</a>
+																</div>
+															</label>	
+														</div>
+													</div>
+													<input type="file" id="attach" style='display:none;' name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
+													<span class="help-block">권장 해상도 : 720 x 320</span>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="card-actionbar">
+										<div class="card-actionbar-row">
+											<a class="btn btn-raised btn-primary ink-reaction" id="sendsms" onclick="send_alarm()">보내기</a>
 										</div>
-										<!-- end 에디터 선택시 -->
-									</form>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section><!--섹션 끝 -->
+			</section>
 		</div>
 
 		<!-- END MAIN CONTENT -->
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="configPopupEdit.js"></script>
+<script src="notice.js"></script>
 </html>

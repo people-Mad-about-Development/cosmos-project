@@ -57,7 +57,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/tinycolor-min.js?1577682292"></script>
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
-	<link rel="stylesheet" href="configPopup.css">
+	<link rel="stylesheet" href="configPopupEdit.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,7 +76,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">배너 관리</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="#">배너 편집 및 추가</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -86,18 +86,12 @@
 				<div class="headerbar-right">
 					<ul class="header-nav header-nav-options _option_list">
 						<li>
-							<a class="btn btn-default-bright hidden-xs" href="#" target="_blank">사이트 확인하기</a> <!-- 우리 사이트 메인페이지 링크 필요 -->
-							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" href="#" target="_blank"> <!-- 우리 사이트 메인페이지 링크 필요 -->
-								<i class="btl bt-external-link vertical-middle"></i>
-							</a>
+							<a class="btn btn-default-bright" onclick="history.go(-1);">취소</a>
 						</li>
 						<li>
-							<a class="btn btn-primary hidden-xs" onclick="location.href='#'">팝업 추가</a> <!-- 팝업 추가 페이지 링크 필요 -->
-							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" onclick="location.href='#'">  <!-- 팝업 추가 페이지 링크 필요 -->
-								<i class="btl bt-plus vertical-middle"></i>
-							</a>
+							<a class="btn btn-primary">저장</a> <!-- 값이 입력되면 disabled 삭제 -->
 						</li>
-					</ul><!--end .header-nav-options -->
+					</ul>
 				</div>
 			</div>
 		</header> <!-- END HEADER -->
@@ -242,83 +236,76 @@
 		<!-- START MAIN CONTENT -->
 
 		<div id="content">
-			<section>
+			<div id="alertBox" class="alert__wrap"></div>
+			<section class="section-max-width">
 				<div class="section-body">
-					<div class="row" id="popup_list">
-						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
+					<!-- 입력화면 -->
+					<div class="row">
+						<div class="col-md-12">
 							<div class="card">
-								<div class="card-head">
-									<header>
-										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
-										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
-									</header>
-									
-									<div class="tools">
-										<div class="btn-group">
-											<div class="btn-chil">
-												<a href="#" class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown" >
-													<i class="zmdi zmdi-more"></i>
-												</a>
-	
-												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
-													<li>
-														<a href="#">수정</a> <!-- 수정페이지 링크 -->
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
-													</li>
-												</ul>
+								<div class="card-body">
+									<form id="dof" method="post" enctype="multipart/form-data" class="form-horizontal form-validate" action="" role="form" target="hidden_frame" novalidate="novalidate">
+										<input type="hidden" name="popup_idx" id="popup_idx" value="0">
+										<input type="hidden" name="img_name" id="img_name" value="">
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="">제목</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" name="subject" id="title" placeholder="관리용 제목(사용자에겐 표시되지 않습니다)" value="">
+												<div class="form-control-line"></div>
 											</div>
 										</div>
-									</div>
-								</div>
-								
-								<a href="#">	<!-- 수정페이지 링크 -->
-									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
-								</a>
-								
-								<div class="card-body">
-									<p>기간: 2022-10-05 ~ 2022-10-07</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
-							<div class="card">
-								<div class="card-head">
-									<header>
-										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
-										<span class="badge">기간만료</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
-									</header>
-									
-									<div class="tools">
-										<div class="btn-group">
-											<div class="btn-chil">
-												<a href="#" class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown" >
-													<i class="zmdi zmdi-more"></i>
-												</a>
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="">기간</label>
+											<div class="col-sm-6 time_duration">
+												<div class="input-group">
+													<div class="input-group-content">
+														<div style="position:relative">
+															<input type="datetime-local" class="form-control" name="start_time" id="start_time" placeholder="날짜를 입력해주세요" value="2022-10-06 15:00" aria-invalid="false">
+															<div class="form-control-line"></div>
+														</div>
+													</div>
+													<span class="input-group-addon">~</span>
+													<div class="input-group-content">
+														<div style="position:relative">
+															<input type="datetime-local" class="form-control" name="end_time" id="end_time" placeholder="날짜를 입력해주세요" value="2023-10-06 15:00" aria-invalid="false">
+															<div class="form-control-line"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>		
+		
+										<input type="hidden" name="content_type" value="image">
 	
-												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
-													<li>
-														<a href="#">수정</a> <!-- 수정페이지 링크 -->
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
-													</li>
-												</ul>
+										<div class="_body_image_options">
+											<div class="form-group">
+												<label class="col-sm-2 control-label" for="">이미지</label>
+												<div class="col-sm-6">
+													<div class="wrap-image-upload style-default-bright margin-bottom-xl">
+														<div class="image-list no-padding">
+															<label for="attach">
+																<div class="item" id="alarm_img_group">
+																	<a href="javascript:" class="close">																																				
+																		<!-- <i class="zmdi zmdi-close"></i> -->
+																	</a>
+																</div>
+															</label>	
+														</div>
+													</div>
+													<input type="file" id="attach" style='display:none;' name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
+												</div>
+											</div>  							
+										</div>
+										<div class="_body_html_options" style="display:none;">
+											<div class="form-group">
+												<label class="col-sm-2 control-label"></label>
+												<div class="col-sm-10">
+													<div class="_body_html_editor"></div>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								
-								<a href="#">	<!-- 수정페이지 링크 -->
-									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
-								</a>
-								
-								<div class="card-body">
-									<p>기간: 2022-01-01 ~ 2022-02-03</p>
+										<!-- end 에디터 선택시 -->
+									</form>
 								</div>
 							</div>
 						</div>
@@ -331,5 +318,5 @@
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="configPopup.js"></script>
+<script src="configPopupEdit.js"></script>
 </html>

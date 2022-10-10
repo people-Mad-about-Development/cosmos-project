@@ -57,7 +57,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/tinycolor-min.js?1577682292"></script>
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
-	<link rel="stylesheet" href="notice.css">
+	<link rel="stylesheet" href="statAnalytics.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,7 +76,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">공지사항 관리</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="#">기간별 분석</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -150,7 +150,7 @@
 							</ul>
 						</li>
 							
-						<li class="active gui-folder expanded" data-title="contents"> 
+						<li class="gui-folder" data-title="contents"> 
 							<a href="#" class="sidebar-nav-menu1" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-pencil"></i>
@@ -173,15 +173,15 @@
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
-								<li class="active expanded" data-title="contentsNotice">
-									<a href="#" class=" active">
+								<li class=" " data-title="contentsNotice">
+									<a href="#">
 										<span class="title">공지사항 관리</span>
 									</a>
 								</li>
 							</ul>
 						</li>
 							
-						<li class="gui-folder" data-title="stat">
+						<li class="active gui-folder expanded" data-title="stat">
 							<a href="#" class="sidebar-nav-menu" onclick="return false;">
 								<div class="gui-icon">
 									<i class="db-status-up"></i>
@@ -189,8 +189,8 @@
 								<span class="title">통계</span>
 							</a>
 							<ul>
-								<li class="  " data-title="statAnalytics">
-									<a href="#">
+								<li class="active expanded" data-title="statAnalytics">
+									<a href="#" class=" active">
 										<span class="title">기간별 분석</span>
 									</a>
 								</li>
@@ -225,51 +225,121 @@
 		<!-- START MAIN CONTENT -->
 
 		<div id="content">
-			<section>
+			<section class="section-max-width">
 				<div class="section-body">
-					<div class="tab-pane" id="daily">
+					<div class="cosmos_banner">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
-									<div class="card-head style-default-light">
-										<header>공지사항 작성</header>
-									</div>							
-									<div class="card-body">
-										<form role="form" class="form-horizontal form-validate" novalidate="novalidate">		
-											<div class="form-group">
-												<div class="col-sm-10">
-													<input type="text" required="" name="alarm_subject" id="alarm_subject" class="form-control" aria-required="true" placeholder="제목">
-													<div class="form-control-line"></div>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-12">
-													<textarea rows="3" required="" name="alarm_content" id="alarm_content" class="form-control" maxlength="925" placeholder="내용" aria-required="true" data-autosize-on="true"></textarea>
-													<div class="form-control-line"></div>
-													<!-- <p class="help-block chars" id="chars_app_title">0/2500</p> --> <!-- 사용할거면 기능 구현 필요 -->
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-10">
-													<div class="wrap-image-upload style-default-bright margin-bottom-xl">
-														<div class="image-list no-padding">
-															<div class="item" id="alarm_img_group" style="display: none">
-																<img id="alarm_img">
-																<a href="javascript:" class="close" onclick="remove_alarm_img()"><i class="zmdi zmdi-close"></i></a>
-															</div>
-														</div>
-													</div>
-													<div class="btn btn-file ink-reaction btn-raised btn-default-bright margin-bottom-lg btn-sm" id="image_container">
-														이미지 첨부<input type="file" id ="image" name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" onchange="setThumbnail(event);">
-													</div>
-													<span class="help-block">권장 해상도 : 720 x 320</span>
-												</div>
-											</div>
-										</form>
+								<div class="cosmos_banner_main">
+									<div class="cosmos_banner_logo">
+										<img src="new_cosmos.png" alt="">
 									</div>
-									<div class="card-actionbar">
-										<div class="card-actionbar-row">
-											<a class="btn btn-raised btn-primary ink-reaction" id="sendsms" onclick="send_alarm()">보내기</a>
+	
+									<div class="cosmos_banner_content" style="background-image: url(cosmos_banner.png)">
+										<!-- <img src="cosmos_banner.png"> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card analytics_card">
+								<div class="card-head">
+									<div class="form-group no-margin">
+										<select id="analyticsType" name="type" onchange="moveUrl('type')" class="form-control inline-blocked static dirty width-3">
+											<option value="days" selected="selected">일자별 요약</option>
+											<option value="month">월별 요약</option>
+										</select>
+										
+										<select id="analyticsYear" name="year" onchange="moveUrl('year')" class="form-control inline-blocked static dirty width-3">
+											<option value="2022" selected="selected">2022년</option>
+										</select>
+										
+										<select id="analyticsMonth" name="month" onchange="moveUrl('month')" class="form-control inline-blocked static dirty width-3">
+											<option value="9">9월</option>
+											<option value="10" selected="selected">10월</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="card-body border-top no-padding">
+									<div class="table-responsive">
+										<table class="table no-margin summary-table"><!-- 일자별 -->
+											<thead>
+												<tr>
+													<th class="text-13 text-center opacity-50">일자</th>
+													<th class="text-13 text-center opacity-50">페이지뷰</th>
+													<th class="text-13 text-center opacity-50">방문자</th>
+													<th class="text-13 text-center opacity-50">가입</th>
+													<th class="text-13 text-center opacity-50">문의</th>
+													<th class="text-13 text-center opacity-50">새 글</th>
+													<th class="text-13 text-center opacity-50">댓글</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="today">
+													<td class="text-left">2022-10-03 (월)</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+												</tr>
+
+												<tr class="">
+													<td class="text-left">2022-10-02 (일)</td>
+												<td class="text-right">0</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+												</tr>
+
+												<tr class="">
+													<td class="text-left">2022-10-01 (토)</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+												</tr>
+											</tbody>
+
+											<tfoot>
+												<tr>
+													<td class="text-left no-border">10월 합계</td>
+													<td class="text-right no-border">1</td>
+													<td class="text-right no-border">1명</td>
+													<td class="text-right no-border">0명</td>
+													<td class="text-right no-border">0</td>
+													<td class="text-right no-border">0</td>
+													<td class="text-right no-border">0</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card">
+										<div class="card-head">
+											<header><strong>요약 집계 기준</strong></header>
+										</div>
+										<div class="card-body no-padding-top">
+											<ul class="description-list">
+												<li>페이지뷰 : 페이지 클릭 수<br>제외 : 동일한 IP 주소에서는 추가 카운팅이 되지 않습니다.</li>
+												<li>방문자 : 홈페이지 방문자 수</li>
+												<li>가입 : 금일 홈페이지 가입자 수
+												<li>문의 : 금일 작성된 문의글</li>
+												<li>새 글 : 금일 작성된 모든 게시글(스터디, 프로젝트)</li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -284,5 +354,5 @@
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="notice.js"></script>
+<script src="statAnalytics.js"></script>
 </html>
