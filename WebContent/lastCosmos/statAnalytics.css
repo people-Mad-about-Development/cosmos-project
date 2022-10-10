@@ -75,29 +75,56 @@ body {
     width: 1em;
 }
 
-.col-xl-10 {
+.cosmos_banner {
+    position: relative;
+    background-color: #B8D8F9;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 10px;
+}
+
+.cosmos_banner_main {
+    text-align: center;
+    position: relative;
+    display: block;
+}	
+
+.cosmos_banner_logo {
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    z-index: 20;
+}
+
+.cosmos_banner_logo img {
+width: 100px;
+}
+
+
+
+.cosmos_banner_content {
+    position: relative;
+    z-index: 10;
     width: 100%;
+    height: 152px;
+    margin: 0;
+    /* background-image: url(cosmos_banner.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* transform: translate(-50%, -50%); */
 }
 
-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    right: 0px;
-}
-
-.section-max-width {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.col-sm-6 {
-    width: 42.5%;
-}
-
-#start_time, #end_time {
+.text-right {
     text-align: center;
 }
 
-.card {
-    padding-left: 270px;
+.text-left {
+    text-align: center !important;
 }
+
+.analytics_card .card-head .form-control {
+    margin-right: 10px;
+    text-align: center;
+}
+
