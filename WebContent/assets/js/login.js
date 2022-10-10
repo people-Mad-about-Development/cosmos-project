@@ -2,7 +2,7 @@
  * 
  */
  
- var $login = $(".navbar_login");
+var $login = $(".navbar_login");
 var $modal = $(".modal");
 var $black_bg = $(".black_bg");
 var $first = $(".first");
@@ -16,9 +16,9 @@ var $eighth = $(".eighth");
 var $exit = $(".loginModal_exitWrapper");
 var $back = $(".topBar_backButton__3HlkH");
 
-var $google =$(".googleButton_buttonWrapper");
-var $github =$(".githubButton_buttonWrapper__5pwEe");
-var $kakao =$(".kakaoButton_buttonWrapper__2BAZP");
+var $google = $(".googleButton_buttonWrapper");
+var $github = $(".githubButton_buttonWrapper__5pwEe");
+var $kakao = $(".kakaoButton_buttonWrapper__2BAZP");
 
 var $one = $(".one");
 var $two = $(".two");
@@ -128,37 +128,45 @@ var $complete = $(".setImage_buttonNext__3RJzU");
 $complete.click(function(){
     $(this).parents().closest(".modal").toggleClass("active_lo");
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
-    // $(this).parents().closest(".modal").next().toggleClass("active");
-    // $ninth.slideDown(1500);
-    $ninth.toggleClass("active_lo hidden_lo");
     
-    // setTimeout(function() {
-        //     $ninth.fadeOut();
-        // }, 3000);
-
+    $ninth.toggleClass("active_lo hidden_lo");
         setTimeout(function() {
             $ninth.toggleClass("active_lo hidden_lo");
-            // $ninth.slideUp();
     }, 2000);
 });
 
 /*=============================================================== */
 var $liOp = $(".css-list-option");
 
-// $liOp.mouseenter(function(){
-//     console.log("들어옴");
-//     $liOp.css("background-color", "#DEEBFF");
-// });
-
-// $liOp.mousemove(function(){
-//     $liOp.css("background-color", "transparent");
-// });
-
 var $setInterest = $(".setInterest_likeLanguageWrapper__3nMfg");
 var $selectMenu = $(".select_menu");
 
 $setInterest.click(function(){
     $selectMenu.toggleClass("hidden_lo");
+});
+
+$liOp.hover(function(){
+    $(this).css("background-color", "#DEEBFF");
+},function(){
+    $(this).css("background-color", "transparent");
+});
+
+$(document).ready(function(){
+    $("#selboxDirect").hide();
+ });
+ 
+ function change(){
+    $("#select_company").hide();
+    $("#selboxDirect").show();
+}
+
+var $company = $(".selboxInput");
+
+$company.blur(function(){
+    $company.hide();
+    $selectMenu.addClass("hidden_lo");
+    $("#select_company").show();
+
 });
 
  
