@@ -27,23 +27,22 @@ public class UserFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/user/checkIdOk.us")) {	// 중복검사 
-			
+		if(request.equals("/user/checkNameOk.us")) {	// 닉네임중복검사 
+			new CheckNameOkController().execute(req, resp);
 		}else if(request.equals("/user/join.us")) {	// 회원가입
-			
-			
+			new JoinController().execute(req, resp);
 		}else if(request.equals("/user/joinOk.us")) {	// 회원가입 완료
-		
-			
-			
+			new JoinOkController().execute(req, resp);
 		}else if(request.equals("/user/login.us")) {	// 로그인 
-			
-			
+			new LoginController().execute(req, resp);
 		}else if(request.equals("/user/loginOk.us")) {	// 로그인 완료
-			
-			
+			new LoginOkController().execute(req, resp);
 		}else if(request.equals("/user/logout.us")) {	// 로그아웃 완료 
-			
+			new LogoutController().execute(req, resp);
+		}else if(request.equals("/user/skillInfo.us")) {//관심기술 db불러올 페이지
+			new SkillInfoController().execute(req, resp);
+		}else if(request.equals("/user/companyInfo.us")) {//회사정보를 불러온 페이지
+			new CompanyInfoController().execute(req, resp);
 		}
 			
 			

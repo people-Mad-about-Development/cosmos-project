@@ -28,15 +28,15 @@ public class BoardFrontController extends HttpServlet {
 		Result result = null;
 		
 		if(request.equals("/board/writeOk.bo")) {	// 생성
-			
+			new WriteOkController().execute(req, resp);
 		}else if(request.equals("/board/deleteOk.bo")) {	// 삭제
-			
+			new BoardDeleteOkController().execute(req, resp);
 		}else if(request.equals("/board/modifyOk.bo")) {	// 수정
-			
+			new BoardModifyOkController().execute(req, resp);
 		}else if(request.equals("/board/detailOk.bo")) {	// 상세보기 
-			
+			new BoardDetailOkController().execute(req, resp);
 		}else if(request.equals("/board/listOk.bo")) {		// 게시판 목록
-			
+			new BoardListController().execute(req, resp);
 		}
 		
 			

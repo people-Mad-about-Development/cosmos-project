@@ -12,7 +12,7 @@ import org.json.simple.JSONObject;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 
-public class CheckIdOkController implements Execute{
+public class CheckNameOkController implements Execute{
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

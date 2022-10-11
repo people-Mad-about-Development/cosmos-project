@@ -1,4 +1,4 @@
-package com.cosmos.app.inquery.dao;
+package com.cosmos.app.inquiry.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -6,11 +6,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
 
-public class InqueryDAO {
+public class InquiryDAO {
 	 SqlSessionFactory sqlSessionFactory = MyBatisConfig.getSqlsessionFactory();
 	   SqlSession sqlSession;
 	   
-	   public InqueryDAO() {
+	   public InquiryDAO() {
 	      sqlSession = sqlSessionFactory.openSession(true);
 	   }
 	   

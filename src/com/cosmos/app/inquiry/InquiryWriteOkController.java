@@ -1,20 +1,20 @@
-package com.cosmos.app.board;
+package com.cosmos.app.inquiry;
 
 import java.io.IOException;
-import java.util.Base64;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 
-public class BoardDeleteOkController implements Execute{
+public class InquiryWriteOkController extends HttpServlet implements Execute {
+
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		return null;
-	
 	}
-}
 
+}

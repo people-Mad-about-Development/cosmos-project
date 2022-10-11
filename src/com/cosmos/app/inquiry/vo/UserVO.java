@@ -1,4 +1,4 @@
-package com.cosmos.app.user.vo;
+package com.cosmos.app.inquiry.vo;
 
 public class UserVO {
 	private int userNumber;
