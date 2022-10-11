@@ -218,7 +218,7 @@
                                     <li class="commentItem_commentContainer">
                                         <section class="commentItem_commentHeader">
                                             <div class="commentItem_avatarWrapper">
-                                                <img class="commentItem_userImg" src="cosmos_pro.png" alt="사용자 이미지">
+                                                <img class="commentItem_userImg" src="../../images/cosmos_pro.png" alt="사용자 이미지">
                                                 <div class="commentItem_commentInfo">
                                                     <div class="commentItem_title">
                                                         <div class="commentItem_userNickname">hyun</div>
