@@ -4,56 +4,38 @@ public class SkillVO {
 	private int skillNumber;
 	private String skillName;
 	private String skillCategory;
-	private int fileNumber;
-	
+	private String skillFile;
 	
 	public SkillVO() {}
-
-
+	
 	public int getSkillNumber() {
 		return skillNumber;
 	}
-
-
 	public void setSkillNumber(int skillNumber) {
 		this.skillNumber = skillNumber;
 	}
-
-
 	public String getSkillName() {
 		return skillName;
 	}
-
-
 	public void setSkillName(String skillName) {
 		this.skillName = skillName;
 	}
-
-
 	public String getSkillCategory() {
 		return skillCategory;
 	}
-
-
 	public void setSkillCategory(String skillCategory) {
 		this.skillCategory = skillCategory;
 	}
-
-
-	public int getFileNumber() {
-		return fileNumber;
+	public String getSkillFile() {
+		return skillFile;
 	}
-
-
-	public void setFileNumber(int fileNumber) {
-		this.fileNumber = fileNumber;
+	public void setSkillFile(String skillFile) {
+		this.skillFile = skillFile;
 	}
-
-
 	@Override
 	public String toString() {
 		return "SkillVO [skillNumber=" + skillNumber + ", skillName=" + skillName + ", skillCategory=" + skillCategory
-				+ ", fileNumber=" + fileNumber + "]";
+				+ ", skillFile=" + skillFile + "]";
 	}
 	
 	

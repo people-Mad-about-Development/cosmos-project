@@ -1,4 +1,4 @@
-package com.cosmos.app.inquery;
+package com.cosmos.app.board;
 
 import java.io.IOException;
 import java.util.Base64;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 
-public class AnswerOkController implements Execute{
+public class BoardDetailOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		return null;

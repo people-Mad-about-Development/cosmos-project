@@ -42,7 +42,15 @@
      <url-pattern>*.in</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+     <servlet-name>MainFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.main.MainFrontController</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+     <servlet-name>MainFrontController</servlet-name>
+     <url-pattern>*.ma</url-pattern>
+  </servlet-mapping>
   
   
   

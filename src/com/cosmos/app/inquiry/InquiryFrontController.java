@@ -1,4 +1,4 @@
-package com.cosmos.app.inquery;
+package com.cosmos.app.inquiry;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Result;
 
-public class InqueryFrontController extends HttpServlet{
+public class InquiryFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
@@ -27,18 +27,15 @@ public class InqueryFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/inquery/writeOk.in")) {	// 생성
+		if(request.equals("/inquiry/writeOk.in")) {	// 문의하기
+			new InquiryWriteOkController().execute(req, resp);
 			
-		}else if(request.equals("/inquery/deleteOk.in")) {	// 삭제
-			
-		}else if(request.equals("/inquery/modifyOk.in")) {	// 수정
-			
-		}else if(request.equals("/inquery/detailOk.in")) {	// 상세보기 
-			
-		}else if(request.equals("/inquery/answerOk.in")) {	// 문의 답변
-			
-		}else if(request.equals("/inquery/listOk.in")) {	// 문의 목록 
-		
+		}else if(request.equals("/inquiry/listOk.in")) {// 문의한 사람의 문의 목록 
+			new InquiryListOkController().execute(req, resp);
+		}else if(request.equals("/inquiry/listAllOk.in")) {//관리자 페이지의 모든 문의 목록
+			new InquiryListAllOkController().execute(req, resp);
+		}else if(request.equals("/inquiry/mainListOk.in")) {//메인페이지의 한줄 목록
+			new InquiryMainListOkController().execute(req, resp);
 		}
 		
 		if(result != null) {

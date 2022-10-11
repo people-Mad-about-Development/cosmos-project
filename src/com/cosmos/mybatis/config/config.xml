@@ -14,7 +14,7 @@
 		<typeAlias type="com.cosmos.app.board.vo.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.cosmos.app.board.vo.CommentVO" alias="commentVO"/>	
 		<typeAlias type="com.cosmos.app.board.vo.RecruitVO" alias="recruitVO"/>
-		<typeAlias type="com.cosmos.app.inquery.vo.InqueryVO" alias="inqueryVO"/>
+		<typeAlias type="com.cosmos.app.inquiry.vo.InqueryVO" alias="inquiryVO"/>
 	</typeAliases>
 
 	<environments default="mysql">
@@ -32,7 +32,7 @@
 	<mappers>
 		<mapper resource="com/cosmos/mybatis/mapper/UserMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/BoardMapper.xml"/>
-		<mapper resource="com/cosmos/mybatis/mapper/InqueryMapper.xml"/>
+		<mapper resource="com/cosmos/mybatis/mapper/InquiryMapper.xml"/>
 	</mappers>
 	
 </configuration>
