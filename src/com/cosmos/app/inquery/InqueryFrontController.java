@@ -27,8 +27,18 @@ public class InqueryFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/user/login.in")) {
+		if(request.equals("/inquery/writeOk.in")) {	// 생성
 			
+		}else if(request.equals("/inquery/deleteOk.in")) {	// 삭제
+			
+		}else if(request.equals("/inquery/modifyOk.in")) {	// 수정
+			
+		}else if(request.equals("/inquery/detailOk.in")) {	// 상세보기 
+			
+		}else if(request.equals("/inquery/answerOk.in")) {	// 문의 답변
+			
+		}else if(request.equals("/inquery/listOk.in")) {	// 문의 목록 
+		
 		}
 		
 		if(result != null) {
