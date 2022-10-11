@@ -27,11 +27,19 @@ public class BoardFrontController extends HttpServlet {
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/user/login.bo")) {
+		if(request.equals("/board/writeOk.bo")) {	// 생성
 			
-		}else if(request.equals("/user/login.bo")) {
+		}else if(request.equals("/board/deleteOk.bo")) {	// 삭제
+			
+		}else if(request.equals("/board/modifyOk.bo")) {	// 수정
+			
+		}else if(request.equals("/board/detailOk.bo")) {	// 상세보기 
+			
+		}else if(request.equals("/board/listOk.bo")) {		// 게시판 목록
 			
 		}
+		
+			
 		
 		if(result != null) {
 			if(result.isRedirect()) {

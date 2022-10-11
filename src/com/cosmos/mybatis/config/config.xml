@@ -8,6 +8,13 @@
 	
 	<typeAliases>
 		<typeAlias type="com.cosmos.app.user.vo.UserVO" alias="userVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.CompanyVO" alias="companyVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.FileVO" alias="fileVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.SkillVO" alias="skillVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.CommentVO" alias="commentVO"/>	
+		<typeAlias type="com.cosmos.app.board.vo.RecruitVO" alias="recruitVO"/>
+		<typeAlias type="com.cosmos.app.inquery.vo.InqueryVO" alias="inqueryVO"/>
 	</typeAliases>
 
 	<environments default="mysql">
@@ -15,7 +22,7 @@
 			<transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost:3306/board"/> <!-- 테이블 use -->
+				<property name="url" value="jdbc:mysql://localhost:3306/cosmos"/> <!-- 테이블 use -->
 				<property name="username" value="root"/>
 				<property name="password" value="1234"/>
 			</dataSource>

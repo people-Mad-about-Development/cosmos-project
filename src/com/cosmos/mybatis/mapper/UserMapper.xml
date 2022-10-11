@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="User">
+<mapper namespace="user">
+	<select id="checkId" parameterType="string" resultType="_int">
+		select count(user_nickname) from tbl_user where user_nickname = #{memberId}
+	</select>
+	
+	<insert id="join" parameterType="userVO">
+		insert into tbl_member
+		(user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_date)
+		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userDate})
+	</insert>
 	
 </mapper>
 

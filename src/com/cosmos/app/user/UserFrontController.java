@@ -27,9 +27,29 @@ public class UserFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/user/login.us")) {
+		if(request.equals("/user/checkIdOk.us")) {	// 중복검사 
+			
+		}else if(request.equals("/user/join.us")) {	// 회원가입
+			
+			
+		}else if(request.equals("/user/joinOk.us")) {	// 회원가입 완료
+		
+			
+			
+		}else if(request.equals("/user/login.us")) {	// 로그인 
+			
+			
+		}else if(request.equals("/user/loginOk.us")) {	// 로그인 완료
+			
+			
+		}else if(request.equals("/user/logout.us")) {	// 로그아웃 완료 
 			
 		}
+			
+			
+		
+			
+		
 	
 		
 		if(result != null) {
