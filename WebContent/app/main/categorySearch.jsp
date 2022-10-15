@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../assets/css/categorySearch.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/categorySearch.css">
 </head>
 
 <body>
@@ -29,19 +29,19 @@
                     alt="" class="languageBarLogo"><span>TypeScript</span></li>
             <li class="languageBar languageBar_full"><img src="https://holaworld.io/images/languages/react.svg" alt=""
                     class="languageBarLogo"><span>React</span></li>
-            <li class="languageBar languageBar_full"><img src="../../images/navericon.png" alt=""
+            <li class="languageBar languageBar_full"><img src="${pageContext.request.contextPath}/assets/images/navericon.png" alt=""
                     class="languageBarLogo"><span>네이버</span></li>
-            <li class="languageBar languageBar_full"><img src="../../images/kakaoicon.jpg" alt=""
+            <li class="languageBar languageBar_full"><img src="${pageContext.request.contextPath}/assets/images/kakaoicon.jpg" alt=""
                     class="languageBarLogo"><span>카카오</span></li>
-            <li class="languageBar languageBar_full"><img src="../../images/liotIcon.png" alt=""
+            <li class="languageBar languageBar_full"><img src="${pageContext.request.contextPath}/assets/images/liotIcon.png" alt=""
                     class="languageBarLogo"><span>라이엇</span></li>
-            <li class="languageBar languageBar_full"><img src="../../images/coupangicon.jpg" alt=""
+            <li class="languageBar languageBar_full"><img src="${pageContext.request.contextPath}/assets/images/coupangicon.jpg" alt=""
                     class="languageBarLogo"><span>쿠팡</span></li>
             <li class="languageBar languageBar_full"><img src="https://holaworld.io/images/languages/java.svg" alt=""
                     class="languageBarLogo"><span>Java</span></li>
             <li class="languageBar languageBar_full"><img src="https://holaworld.io/images/languages/spring.svg" alt=""
                     class="languageBarLogo"><span>Spring</span></li>
-            <li class="languageBar languageBar_full"><img src="../../images/baeminicon.png" alt=""
+            <li class="languageBar languageBar_full"><img src="${pageContext.request.contextPath}/assets/images/baeminicon.png" alt=""
                     class="languageBarLogo"><span>배달의민족</span></li>
             <li class="languageBar languageBar_full"><img src="https://holaworld.io/images/languages/nestjs.svg" alt=""
                     class="languageBarLogo"><span>Nestjs</span></li>
@@ -57,7 +57,7 @@
         <img src="https://holaworld.io/images/info/topButton.png" alt="default" class="Topbutton_image">
     </div>
     <div class="Inquery">
-        <img src="../../images/inquery1.png" alt="default" class="Topbutton_image">
+        <img src="${pageContext.request.contextPath}/assets/images/inquery1.png" alt="default" class="Topbutton_image">
     </div>
     <div class="inqueryWrapper inqueryoff">
         <div class="inquery">
@@ -65,7 +65,7 @@
                 <div class="inqueryHeaderLeft">
                     <div class="inqueryHeaderLeftWrapper">
                         <div class="inqeuryHeaderLogo">
-                            <img width="30" height="30" src="banner/logo.png" alt="avatar">
+                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/logo.png" alt="avatar">
                         </div>
                         <span class="inqueryHeaderTitle">
                             <div class="inqueryheaderTitleText">코스모스</div>
@@ -170,7 +170,7 @@
                 <div class="inqueryHeaderLeft">
                     <div class="inqueryHeaderLeftWrapper">
                         <div class="inqeuryHeaderLogo">
-                            <img width="30" height="30" src="banner/logo.png" alt="avatar">
+                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/logo.png" alt="avatar">
                         </div>
                         <span class="inqueryHeaderTitle">
                             <div class="inqueryheaderTitleText">코스모스</div>

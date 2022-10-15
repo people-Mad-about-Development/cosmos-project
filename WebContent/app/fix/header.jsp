@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/header.css">
 </head>
 <body>
     <nav class="header">
         <a href="">
-            <img src="../../images/logo.png" alt="logo" class="logo">
+            <img src="${pageContext.request.contextPath}/assets/images/logo.png" alt="logo" class="logo">
         </a>
          <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
@@ -24,6 +24,6 @@
 
         </div>
     </nav>
-    <jsp:include page = '../fix/login.jsp'/>
+	    <jsp:include page = "${pageContext.request.contextPath}/app/fix/login.jsp"/>
 </body>
 </html>

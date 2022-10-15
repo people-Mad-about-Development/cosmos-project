@@ -12,7 +12,7 @@
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
-      href="../../assets/css/bannerFinal.css"
+      href="${pageContext.request.contextPath}/assets/css/board/bannerFinal.css"
     />
 
     <!-- Demo styles -->
@@ -93,8 +93,8 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../../images/banner2.png" alt=""></div>
-        <div class="swiper-slide"><img src="../../images/banner1.png" alt="" style="cursor:pointer"' onclick="movePage()"></div>
+        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner2.png" alt=""></div>
+        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner1.png" alt="" style="cursor:pointer"' onclick="movePage()"></div>
       </div>
       <!-- <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div> -->

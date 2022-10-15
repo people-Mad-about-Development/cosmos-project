@@ -758,6 +758,7 @@ ul {
     width: 80%;
     padding: 14px;
     cursor: pointer;
+    line-height:0;
 }
 
 .inqueryQuestionOn {
