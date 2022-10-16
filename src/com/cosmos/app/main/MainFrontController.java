@@ -36,6 +36,10 @@ public class MainFrontController extends HttpServlet{
 			new MainSearchController().execute(req, resp);
 		}else if(request.equals("/main/mainSearchOk.ma")) {//모집글 검색기능
 			new MainSearchOkController().execute(req, resp);
+		}else if(request.equals("/main/alarmList.ma")) {//  알림함 이동 
+			new AlarmListController().execute(req, resp);
+		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
+			new AlarmListOkController().execute(req, resp);
 		}
 }
 }
