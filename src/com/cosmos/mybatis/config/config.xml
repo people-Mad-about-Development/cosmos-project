@@ -7,14 +7,23 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.cosmos.app.user.vo.UserVO" alias="userVO"/>
-		<typeAlias type="com.cosmos.app.user.vo.CompanyVO" alias="companyVO"/>
-		<typeAlias type="com.cosmos.app.user.vo.FileVO" alias="fileVO"/>
-		<typeAlias type="com.cosmos.app.user.vo.SkillVO" alias="skillVO"/>
 		<typeAlias type="com.cosmos.app.board.vo.BoardVO" alias="boardVO"/>
-		<typeAlias type="com.cosmos.app.board.vo.CommentVO" alias="commentVO"/>	
-		<typeAlias type="com.cosmos.app.board.vo.RecruitVO" alias="recruitVO"/>
-		<typeAlias type="com.cosmos.app.inquiry.vo.InqueryVO" alias="inquiryVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.BoardReplyVO" alias="boardReplyVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.BoardSkillVO" alias="boardSkillVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.SupporterVO" alias="supporterVO"/>
+		<typeAlias type="com.cosmos.app.community.vo.CommunityVO" alias="communityVO"/>
+		<typeAlias type="com.cosmos.app.community.vo.CommunityReplyVO" alias="communityReplyVO"/>
+		<typeAlias type="com.cosmos.app.community.vo.FileVO" alias="fileVO"/>
+		<typeAlias type="com.cosmos.app.inquiry.vo.InquiryVO" alias="inquiryVO"/>
+		<typeAlias type="com.cosmos.app.main.vo.AlarmVO" alias="alarmVO"/>
+		<typeAlias type="com.cosmos.app.main.vo.BannerVO" alias="bannerVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.CompanyVO" alias="companyVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.FriendVO" alias="friendVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.SkillVO" alias="skillVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.UserCanSkillVO" alias="userCanSkillVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.UserCompanyVO" alias="userCompanyVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.UserInterestSkillVO" alias="userInterestSkillVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.UserVO" alias="userVO"/>
 	</typeAliases>
 
 	<environments default="mysql">
@@ -31,6 +40,8 @@
 	
 	<mappers>
 		<mapper resource="com/cosmos/mybatis/mapper/UserMapper.xml"/>
+		<mapper resource="com/cosmos/mybatis/mapper/MainMapper.xml"/>
+		<mapper resource="com/cosmos/mybatis/mapper/CommunityMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/BoardMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/InquiryMapper.xml"/>
 	</mappers>

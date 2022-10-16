@@ -4,7 +4,9 @@ public class UserCanSkillVO {
 	private int userNumber;
 	private int skillNumber;
 	
-	public UserCanSkillVO() {}
+	public UserCanSkillVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -24,8 +26,10 @@ public class UserCanSkillVO {
 
 	@Override
 	public String toString() {
-		return "UserCanSkill [userNumber=" + userNumber + ", skillNumber=" + skillNumber + "]";
+		return "UserCanSkillVO [userNumber=" + userNumber + ", skillNumber=" + skillNumber + "]";
 	}
+	
+	
 	
 	
 }

@@ -33,12 +33,12 @@
   
   
   <servlet>
-     <servlet-name>InqueryFrontController</servlet-name>
-     <servlet-class>com.cosmos.app.inquery.InqueryFrontController</servlet-class>
+     <servlet-name>InquiryFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.inquiry.InquiryFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-     <servlet-name>InqueryFrontController</servlet-name>
+     <servlet-name>InquiryFrontController</servlet-name>
      <url-pattern>*.in</url-pattern>
   </servlet-mapping>
   
