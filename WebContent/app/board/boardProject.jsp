@@ -26,6 +26,11 @@
                     <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png">
                 <div class="studyContent_userName">hyun</div>
                 <div class="studyContent_registeredDate">2022.10.04</div>
+                <div class = "goCommunity">
+                 <a href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" class="community_go">
+                	커뮤니티
+                </a>
+                </div>
                 </div>
                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons1">마감</button>
