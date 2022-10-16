@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../assets/css/header_notice.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/header_notice.css">
 </head>
 <body>
     <nav class="header">
         <a href="">
-            <img src="../../images/banner/logo.png" alt="logo" class="logo">
+            <img src="${pageContext.request.contextPath}/assets/images/logo.png" alt="logo" class="logo">
         </a>
           <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
@@ -87,17 +87,25 @@
 
     $noticeSvg = $("div.notice_wrapper");
     console.log($noticeSvg)
-    $noticeDropdownBar_noticeWrapper = $(".noticeDropdownBar_noticeWrapper");
+    $noticeWrapper = $(".noticeDropdownBar_noticeWrapper");
     noticeSvgCheck = -1;
 	
     $noticeSvg.click(function () {
     	noticeSvgCheck *= -1;
         if (noticeSvgCheck > 0) {
-            $noticeDropdownBar_noticeWrapper.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie")
+            $noticeWrapper.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie")
         } else {
-            $noticeDropdownBar_noticeWrapper.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie")
+            $noticeWrapper.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie")
         }
 
     })
+    
+    $exit = $("div.noticeDropdownBar_exitWrapper");
+    exitCheck = -1;
+	
+    $exit.click(function () {
+    	$(this).closest($noticeWrapper).removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie");
+    })
+    
 </script>
 </html>
