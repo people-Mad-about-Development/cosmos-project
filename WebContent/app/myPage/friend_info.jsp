@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/my_page.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend_info.css">
     <title>친구 정보 상세보기</title>
 </head>
 
@@ -19,7 +19,7 @@
             <h1>친구 정보 상세보기</h1>
             <div class="userImgUpload">
                 <img class="userImgUpload_userImg userImg"
-                    src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="user avatar">
+                    src="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png" alt="user avatar">
             </div>
 
             <!-- <div class="userImageUpload_image__2lcic">

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>자료실 상세보기</title>
-<link rel="stylesheet" href="../../assets/css/in_anything.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/in_anything.css">
 </head>
 <body style ="overflow: auto;">
     <div id="root">
@@ -23,7 +23,7 @@
        </a>
                 <div class="studyContent_title">[자료실] 대회 참가 신청 서식.</div>
                 <div class="studyContent_userAndDate">
-                    <img class="studyContent_userImg" src="img/default.png".png"
+                    <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/default.png".png"
                      alt="userImg">
                 <div class="studyContent_userName">hyun</div>
                 <div class="studyContent_registeredDate">2022.10.04</div>
@@ -171,7 +171,7 @@
                                     <li class="commentItem_commentContainer">
                                         <section class="commentItem_commentHeader">
                                             <div class="commentItem_avatarWrapper">
-                                                <img class="commentItem_userImg" src="img/default.png" alt="사용자 이미지">
+                                                <img class="commentItem_userImg" src="${pageContext.request.contextPath}/assets/images/default.png" alt="사용자 이미지">
                                                 <div class="commentItem_commentInfo">
                                                     <div class="commentItem_title">
                                                         <div class="commentItem_userNickname">hyun</div>

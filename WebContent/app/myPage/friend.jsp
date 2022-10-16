@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>친구관리</title>
-<link rel="stylesheet" href="../../assets/css/friend.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend.css">
 </head>
 <body>  
     <div class="search_results" style="margin-top:50px;">
@@ -22,11 +22,11 @@
         <div class="ui segments">
             
             <div class="ui segment">
-              <div class="header">
+              <div class="friend_header">
                 <div class="extra">
                         <div class="request-button" data-url="/api/users/324116/request_button">
                             <div class="ui mini basic buttons friend_btn" style="float: right;">
-                                <a  class="ui basic button friend_btn" id="btn-modal">친구삭제</a>
+                                <a  class="ui basic button friend_btn" id="btn-modal">친구 추가</a>
                                 
                             </div>
                         </div>
@@ -42,7 +42,7 @@
             <div class="ui segment">
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -77,7 +77,7 @@
                 <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -113,7 +113,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -145,7 +145,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -177,7 +177,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -209,7 +209,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -241,7 +241,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="https://image.rocketpunch.com/user/203605/203605_3d52307d3ce9.jpg?s=80x80&amp;t=cover">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -274,7 +274,7 @@
             
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -307,7 +307,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -340,7 +340,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="images/default.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="${pageContext.request.contextPath}/assets/images/default.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -393,7 +393,7 @@
         <div class="modalW">
             <div class="modal_first">
                 <div class="loginModal_modalHeader">
-                    <img class="loginModal_logo" src="images/cosmos_chu.png" alt="welcome">
+                    <img class="loginModal_logo" src="../../assets/images/cosmos_chu.png" alt="welcome">
                     <div class="loginModal_exitWrapper">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1"
                             height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -405,7 +405,7 @@
                 </div>
 
                 <div class="loginModal_modalContent second hidden">
-                    <img class="topBar_backButton__3HlkH" src="images/arrow_left.png" alt="back-button" id="close-btn">
+                    <img class="topBar_backButton__3HlkH" src="../../assets/images/arrow-left.png" alt="back-button" id="close-btn">
                     <h1 class="setNickname_title__xgVq4">친구 추가를 하시려면<br>친구의 닉네임을 입력해주세요</h1>
                     <div class="setNickname_inputWrapper__2SFvb">
                         <h3>친구 이름</h3>
@@ -422,5 +422,5 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="../../assets/js/friend.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/myPage/friend.js"></script>
 </html>
