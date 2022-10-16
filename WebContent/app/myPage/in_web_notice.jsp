@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자료실 상세보기</title>
+<title>전체 공지사항 상세페이지</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/in_anything.css">
 </head>
 <body style ="overflow: auto;">
@@ -12,25 +12,21 @@
         <div class="studyContent_postWrapper">
             <section class="studyContent_postHeader">
                  <a href="index.jsp">
-          <svg class="svg" stroke="currentColosr" fill="currentColor" stroke-width="0"
+          <svg svg="svg" stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
-         <path class="path" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.90L7
+         <path path="path" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.90L7
           273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5
            9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
            ></path>
        </svg>
        </a>
-                <div class="studyContent_title">[자료실] 대회 참가 신청 서식.</div>
+                <div class="studyContent_title">[공지사항] 경진 대회 안내.</div>
                 <div class="studyContent_userAndDate">
                     <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/default.png".png"
                      alt="userImg">
                 <div class="studyContent_userName">hyun</div>
                 <div class="studyContent_registeredDate">2022.10.04</div>
-                <div class="brc   DfhG " data-index="0" tabindex="0" title="콘텐츠 촬영 1:1 Class" aria-disabled="false" data-docurl="https://docs.google.com/spreadsheets/d/1C_j1scfbIQ4abrGiv5f174Id-0mNWtASBNrCITalsWY/edit?usp=sharing_eil_m&amp;ts=61972235" data-chipenabled="true" jsaction="lkS8Jd" jsname="DMMSG" style="margin-left: auto;">
-                    <img class="brf" aria-hidden="true" src="//ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_spreadsheet_x16.png" srcset="//ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_spreadsheet_x32.png 2x">
-                    <span class="brg">콘텐츠 촬영 1:1 Class</span>
-                </div>
                 </div>
 <!--                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons">마감</button>
