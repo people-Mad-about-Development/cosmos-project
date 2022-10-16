@@ -6,13 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 모집</title>
-<link rel="stylesheet" href="../../assets/css/boardProject_company.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/boardProject2.css">
 </head>
 <body style ="overflow: auto;">
     <div id="root">
         <div class="studyContent_postWrapper">
             <section class="studyContent_postHeader">
-                <a href="../../app/main/index.jsp">
+                <a href="${pageContext.request.contextPath}/app/main/index.jsp">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -25,10 +25,10 @@
                 <div class="studyContent_title">[네이버]Cosmos Team Project 인원 모집합니다 ! </div>
                 
                 <div class="studyContent_userAndDate">
-                    <img class="studyContent_companyImg" src="../../images/navericon.png">
+                    <img class="studyContent_companyImg" src="${pageContext.request.contextPath}/assets/images/navericon.png">
                     
                 <div class="studyContent_companyName">네이버</div>
-                    <img class="studyContent_userImg" src="../../images/cosmos_pro.png">
+                    <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png">
                      
                 <div class="studyContent_userName">hyun</div>
                 <div class="studyContent_registeredDate">2022.10.04</div>
