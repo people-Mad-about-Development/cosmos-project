@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>공지사항 관리</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -58,6 +59,7 @@
 	<script src="https://vendor-cdn.imweb.me/js/common.js?1661221108"></script>
 	<script src="https://vendor-cdn.imweb.me/js/table_list.js?1633057104"></script>
 	<link rel="stylesheet" href="notice.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/notice.css">
 </head>
 
 <body class="menubar-hoverable header-fixed menubar-pin menubar-visible">
@@ -76,7 +78,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="#">공지사항 관리</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="${pageContext.request.contextPath}/app/admin/notice.jsp">공지사항 관리</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -89,7 +91,7 @@
 		<div class="fold_area tabled animate"> 
 			<div class="table-cell vertical-middle">
 				<a href="#" class="logo_icon_menu"> <!-- 관리자 메인 메뉴로 이동 -->
-					<img src="white_cosmos.png"> <!-- 좌측 상단 로고 -->
+					<img src="${pageContext.request.contextPath}/assets/images/white_cosmos.png"> <!-- 좌측 상단 로고 -->
 				</a>
 			</div>
 		</div> <!-- END MENUBAR HEADER -->
@@ -110,7 +112,7 @@
 				
 					<ul id="main-menu" class="gui-controls">
 						<li class="  " data-title="preview">
-							<a href="#" target="_blank"> <!-- 우리 cosmos 홈페이지 url 교체 필요 -->
+							<a href="${pageContext.request.contextPath}/app/main/index.jsp" target="_blank"> <!-- 우리 cosmos 홈페이지 url 교체 필요 -->
 								<div class="gui-icon">
 									<i class="db-preview"></i>
 								</div>
@@ -121,7 +123,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="#"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -138,12 +140,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="#">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
 								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="#">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+									<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -159,22 +161,22 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="#"> 
+									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
 								<li class="active expanded" data-title="contentsNotice">
-									<a href="#" class=" active">
+									<a href="${pageContext.request.contextPath}/app/admin/notice.jsp" class=" active">
 										<span class="title">공지사항 관리</span>
 									</a>
 								</li>
@@ -190,12 +192,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="statAnalytics">
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/app/admin/statAnalytics.jsp">
 										<span class="title">기간별 분석</span>
 									</a>
 								</li>
 								<li class="  " data-title="statVisitor">
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/app/admin/statVisitor.jsp">
 										<span class="title">방문자 통계</span>
 									</a>
 								</li>
@@ -211,7 +213,7 @@
 							</a>
 							<ul>
 								<li class="  " data-title="configPopup">
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>
@@ -254,10 +256,8 @@
 													<div class="wrap-image-upload style-default-bright margin-bottom-xl">
 														<div class="image-list no-padding">
 															<label for="attach">
-																<div class="item" id="item">
-																	<a href="javascript:" class="close">																																				
-																		<!-- <i class="zmdi zmdi-close"></i> -->
-																	</a>
+																<div class="item" id="item" style='background-image: url(${pageContext.request.contextPath}/assets/images/imageSelect.jpg)'>
+																	
 																</div>
 															</label>	
 														</div>
@@ -285,5 +285,5 @@
 	</div> <!-- END BASE -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="notice.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/admin/notice.js"></script>
 </html>
