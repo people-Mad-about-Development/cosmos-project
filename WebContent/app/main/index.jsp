@@ -9,7 +9,8 @@
 <title>메인 페이지</title>
 </head>
 <body>
-	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header.jsp"/> 
+<%-- 	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header.jsp"/>  --%>
+	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/> 
 	<jsp:include page = "${pageContext.request.contextPath}/app/fix/login.jsp"/>
 <%-- 	<jsp:include page="../fix/header_login.jsp"/>  --%>
 	<jsp:include page = "${pageContext.request.contextPath}/app/main/banner.jsp"/>

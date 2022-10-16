@@ -55,7 +55,7 @@
     
     <div class="noticeDropdownBar_noticeWrapper loginHeaderUnVisibie">
         <div class="noticeDropdownBar_noticeHeader">
-            <span>읽지 않은 알림 (0) </span>
+            <span>읽지 않은 알림 (<span class="noticeCount">0</span>) </span>
             <div class="noticeDropdownBar_exitWrapper">
                 <svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
