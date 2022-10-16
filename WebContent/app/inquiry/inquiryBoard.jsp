@@ -17,7 +17,9 @@
             <nav class="community-body__navigation">
                 <ul class="community-aside">
                     <li class="community-aside_group">
-                        <h6 class="community-aside__group-name">코스모스</h6>
+                    
+                    
+                        <a href="${pageContext.request.contextPath}/app/main/index.jsp" class="community-aside__group-name">cosmos</a>
                         <ul class="community-aside__menu-list">
                             <li class="community-aside__menu community-aside__menu--selected">
                             </li>

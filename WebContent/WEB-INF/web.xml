@@ -52,6 +52,16 @@
      <url-pattern>*.ma</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+     <servlet-name>CommunityFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.community.CommunityFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>CommunityFrontController</servlet-name>
+     <url-pattern>*.co</url-pattern>
+  </servlet-mapping>
+  
   
   
   
