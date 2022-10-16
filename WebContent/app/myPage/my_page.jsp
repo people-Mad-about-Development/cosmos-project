@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/my_page.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/my_page.css">
     <title>내 정보 수정</title>
 </head>
 
@@ -19,7 +19,7 @@
             <h1>내 정보 수정</h1>
             <div class="userImgUpload">
                 <img class="userImgUpload_userImg userImg"
-                    src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="user avatar">
+                    src="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png" alt="user avatar">
                 <div class="userImgUpload_imgControl">
                     <label class="userImgUpload_customLabel">이미지 선택
                         <input id="imageUpload" type="file" accept="image/*">
@@ -1015,6 +1015,6 @@
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../assets/js/my_page.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/myPage/my_page.js"></script>
 
 </html>

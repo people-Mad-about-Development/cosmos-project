@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/my_text_list.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/my_text_list.css">
     <title>내 작성글</title>
 </head>
 
