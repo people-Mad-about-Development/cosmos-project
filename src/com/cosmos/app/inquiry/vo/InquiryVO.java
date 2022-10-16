@@ -1,13 +1,16 @@
 package com.cosmos.app.inquiry.vo;
 
 public class InquiryVO {
+
 	private int inquiryNumber;
 	private String inquiryContent;
 	private String inquiryStatus;
 	private String inquiryReply;
 	private int userNumber;
 	
-	public InquiryVO() {}
+	public InquiryVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getInquiryNumber() {
 		return inquiryNumber;
@@ -51,11 +54,8 @@ public class InquiryVO {
 
 	@Override
 	public String toString() {
-		return "Inquiry [inquiryNumber=" + inquiryNumber + ", inquiryContent=" + inquiryContent + ", inquiryStatus="
+		return "InquiryVO [inquiryNumber=" + inquiryNumber + ", inquiryContent=" + inquiryContent + ", inquiryStatus="
 				+ inquiryStatus + ", inquiryReply=" + inquiryReply + ", userNumber=" + userNumber + "]";
 	}
-	
-	
-	
 	
 }

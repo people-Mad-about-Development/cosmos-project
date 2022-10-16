@@ -1,10 +1,12 @@
 package com.cosmos.app.user.vo;
 
 public class UserCompanyVO {
+
 	private int userNumber;
 	private int companyNumber;
 	
-	public UserCompanyVO() {}
+	public UserCompanyVO() {
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -24,8 +26,10 @@ public class UserCompanyVO {
 
 	@Override
 	public String toString() {
-		return "UserCompany [userNumber=" + userNumber + ", companyNumber=" + companyNumber + "]";
+		return "CompanyVO [userNumber=" + userNumber + ", companyNumber=" + companyNumber + "]";
 	}
+	
+	
 	
 	
 }

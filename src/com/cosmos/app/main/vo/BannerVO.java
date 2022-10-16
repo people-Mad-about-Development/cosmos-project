@@ -1,19 +1,13 @@
-package com.cosmos.app.user.vo;
+package com.cosmos.app.main.vo;
 
 public class BannerVO {
-	private String fileName;
 	private String bannerTitle;
 	private String bannerDate;
+	private String fileName;
 	private String bannerUrl;
 	
-	public BannerVO() {}
-
-	public String getFileName() {
-		return fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public BannerVO() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getBannerTitle() {
@@ -32,6 +26,14 @@ public class BannerVO {
 		this.bannerDate = bannerDate;
 	}
 
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
 	public String getBannerUrl() {
 		return bannerUrl;
 	}
@@ -42,9 +44,10 @@ public class BannerVO {
 
 	@Override
 	public String toString() {
-		return "BannerVO [fileName=" + fileName + ", bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate
+		return "BannerVO [bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate + ", fileName=" + fileName
 				+ ", bannerUrl=" + bannerUrl + "]";
 	}
+	
 	
 	
 }

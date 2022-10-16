@@ -2,10 +2,12 @@ package com.cosmos.app.board.vo;
 
 public class SupporterVO {
 	private String supporterStatus;
-	private int recruitNumber;
+	private int boardNumber;
 	private int supporterNumber;
 	
-	public SupporterVO() {}
+	public SupporterVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getSupporterStatus() {
 		return supporterStatus;
@@ -15,12 +17,12 @@ public class SupporterVO {
 		this.supporterStatus = supporterStatus;
 	}
 
-	public int getRecruitNumber() {
-		return recruitNumber;
+	public int getBoardNumber() {
+		return boardNumber;
 	}
 
-	public void setRecruitNumber(int recruitNumber) {
-		this.recruitNumber = recruitNumber;
+	public void setBoardNumber(int boardNumber) {
+		this.boardNumber = boardNumber;
 	}
 
 	public int getSupporterNumber() {
@@ -33,9 +35,10 @@ public class SupporterVO {
 
 	@Override
 	public String toString() {
-		return "Supporter [supporterStatus=" + supporterStatus + ", recruitNumber=" + recruitNumber
-				+ ", supporterNumber=" + supporterNumber + "]";
+		return "SupporterVO [supporterStatus=" + supporterStatus + ", boardNumber=" + boardNumber + ", supporterNumber="
+				+ supporterNumber + "]";
 	}
+	
 	
 	
 }

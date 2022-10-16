@@ -4,7 +4,9 @@ public class UserInterestSkillVO {
 	private int userNumber;
 	private int skillNumber;
 	
-	public UserInterestSkillVO() {}
+	public UserInterestSkillVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -26,6 +28,9 @@ public class UserInterestSkillVO {
 	public String toString() {
 		return "UserInterestSkill [userNumber=" + userNumber + ", skillNumber=" + skillNumber + "]";
 	}
+	
+	
+	
 	
 	
 }

@@ -1,11 +1,15 @@
-package com.cosmos.app.board.vo;
+package com.cosmos.app.community.vo;
 
 public class FileVO {
+
 	private String fileName;
 	private String fileOriginal;
 	private String fileUrl;
+	private int communityNumber;
 	
-	public FileVO() {}
+	public FileVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getFileName() {
 		return fileName;
@@ -31,10 +35,20 @@ public class FileVO {
 		this.fileUrl = fileUrl;
 	}
 
+	public int getCommunityNumber() {
+		return communityNumber;
+	}
+
+	public void setCommunityNumber(int communityNumber) {
+		this.communityNumber = communityNumber;
+	}
+
 	@Override
 	public String toString() {
-		return "FileVO [fileName=" + fileName + ", fileOriginal=" + fileOriginal + ", fileUrl=" + fileUrl + "]";
+		return "FileVO [fileName=" + fileName + ", fileOriginal=" + fileOriginal + ", fileUrl=" + fileUrl
+				+ ", communityNumber=" + communityNumber + "]";
 	}
+	
 	
 	
 	
