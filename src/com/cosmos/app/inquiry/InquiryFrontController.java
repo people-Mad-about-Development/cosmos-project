@@ -36,6 +36,8 @@ public class InquiryFrontController extends HttpServlet{
 			new InquiryListAllOkController().execute(req, resp);
 		}else if(request.equals("/inquiry/mainListOk.in")) {//메인페이지의 한줄 목록
 			new InquiryMainListOkController().execute(req, resp);
+		}else if(request.equals("/inquiry/inquiryDetail.in"))	{ 	// 문의 페이지 이동
+			result = new InquiryDetailController().execute(req, resp);
 		}
 		
 		if(result != null) {

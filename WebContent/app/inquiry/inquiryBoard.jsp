@@ -98,7 +98,7 @@
 
 
             <div class="side-banner" width="196px" height="296px">
-                <img id="inquery_side-img" src="${pageContext.request.contextPath}/assets/images/banner1.png" alt="" width="100%" height="100%">
+                <img id="inquery_side-img" src="${pageContext.request.contextPath}/assets/images/banner/inquiryBoardBanner.jpg" alt="" width="100%" height="100%">
             </div>
         </section>
     </main>

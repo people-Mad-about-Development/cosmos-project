@@ -6,6 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     font-family: "SpoqaHanSansNeo-Regular";
     font-weight: normal;
@@ -108,7 +109,7 @@ ul {
     white-space: nowrap;
 }
 
-li{
+li {
     list-style: none;
     text-align: -webkit-match-parent;
 
@@ -241,6 +242,7 @@ input {
     border-radius: 0.5rem;
     margin-right: 0.5rem;
 }
+
 .postinfo_listItem__OFhXr {
     flex: 1 1;
 }
@@ -603,7 +605,7 @@ input {
 .ql-toolbar.ql-snow {
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding: 8px;
 }
 
@@ -611,7 +613,8 @@ input {
     margin-right: 15px;
 }
 
-.ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+.ql-snow.ql-toolbar button,
+.ql-snow .ql-toolbar button {
     background: none;
     border: none;
     cursor: pointer;
@@ -622,12 +625,14 @@ input {
     width: 28px;
 }
 
-.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill {
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
     fill: #444;
 }
 
 
-.ql-snow.ql-toolbar button svg, .ql-snow .ql-toolbar button svg {
+.ql-snow.ql-toolbar button svg,
+.ql-snow .ql-toolbar button svg {
     float: left;
     height: 100%;
 }
@@ -641,7 +646,8 @@ input {
     stroke-width: 2;
 }
 
-.ql-snow .ql-stroke.ql-thin, .ql-snow .ql-thin {
+.ql-snow .ql-stroke.ql-thin,
+.ql-snow .ql-thin {
     stroke-width: 1;
 }
 
@@ -705,7 +711,8 @@ input {
 }
 
 
-.writebutton_cancelButton__2W7b_, .writebutton_registerButton__n_O2M {
+.writebutton_cancelButton__2W7b_,
+.writebutton_registerButton__n_O2M {
     cursor: pointer;
     outline: none;
     border: none;
@@ -751,18 +758,19 @@ input {
     left: 1rem;
 }
 
-.ql-snow, .ql-snow * {
+.ql-snow,
+.ql-snow * {
     box-sizing: border-box;
 }
 
 .ql-toolbar.ql-snow {
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding: 8px;
 }
 
-#input{
+#input {
     width: 93%;
     height: 56px;
     min-height: 56px;
@@ -785,12 +793,22 @@ input {
     line-height: 1.5;
 }
 
-.writebutton_cancelButton__2W7b_{
+.writebutton_cancelButton__2W7b_ {
     margin: 0px 16px 0px 0px;
 
 }
 
-.ql-editor blockquote, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor ol, .ql-editor p, .ql-editor pre, .ql-editor ul {
+.ql-editor blockquote,
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6,
+.ql-editor ol,
+.ql-editor p,
+.ql-editor pre,
+.ql-editor ul {
     margin: 0;
     padding: 0;
     counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
@@ -847,8 +865,12 @@ element.style {
     box-sizing: border-box;
 }
 
+.select__option {
+    cursor: pointer;
+}
+
 .css-1n7v3ny-option {
-    background-color: rgb(222, 235, 255);
+    /* background-color: rgb(222, 235, 255); */
     color: inherit;
     cursor: default;
     display: block;
@@ -874,25 +896,23 @@ element.style {
     font-size: 16px;
 }
 
-.newT ,.newT1 ,.newT2 ,.newT3 , .newT4 , .newT5 , .newT6{
+/*  .newT ,.newT1 ,.newT2 ,.newT3 , .newT4 , .newT5 , .newT6{
     display: none;
 
+} */
+ 
+
+.newAction {
+    visibility: visible;
+}
+
+.newInAction {
+    visibility: hidden;
+    overflow: hidden;
 }
 
 
-.note-editing-area{
+.note-editing-area {
     height: 500px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

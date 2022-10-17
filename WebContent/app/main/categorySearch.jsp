@@ -93,7 +93,7 @@
                             <div class="inqeuryCardHeaderTitle">상담목록</div>
                         </div>
                         <div class="inqueryCardHeaderMoveWrapper">
-                            <button class="inqeuryCardHeaderMovePage">
+                            <button class="inqeuryCardHeaderMovePage" onclick="location.href = '${pageContext.request.contextPath}/inquiry/inquiryDetail.in'">
                                 <div name="check-circle" height="16" width="20" size="16" class="SVGIconstyled"></div>
                                 <div>전체읽기</div>
                             </button>
