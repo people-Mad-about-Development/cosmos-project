@@ -656,7 +656,7 @@ $(document).ready(function(){
         $modal.hide();
     });
     
-    $exit.click(function(){
+    /*$exit.click(function(){
         $modal.toggleClass("active_lo");
         $modalContent.removeClass("active_lo");
         $modalContent.addClass("hidden_lo");
@@ -664,11 +664,10 @@ $(document).ready(function(){
     
     
     var $setInterest = $(".setInterest_likeLanguageWrapper__3nMfg");
-    var $selectMenu = $(".select_menu");
     
     $setInterest.click(function(){
         $selectMenu.toggleClass("hidden_lo");
-    });
+    });*/
     
     /* var $liOp = $(".css-list-option");
     $liOp.hover(function(){
@@ -676,21 +675,100 @@ $(document).ready(function(){
     },function(){
         $(this).css("background-color", "transparent");
     }); */
+    /*
+    var $selectMenu = $(".c_select_menu");*/
+	
+
+
+
+    var $c_list = $(".c_select_menu");
+    var $c_list_btn = $("#c_select_btn");
     
-    $(document).ready(function(){
+    $c_list_btn.click(function(){
+	console.log("드러옴");
+        $c_list.toggleClass("company_list");
+    });
+    
+    
+    var $c_clear = $(".c_list");
+    var $c_clear_btn = $("#c_clear_btn");
+    
+    $c_clear_btn.click(function(){
+	console.log("x들어옴");
+        $c_clear.hide();
+    });
+
+
+	$(document).ready(function(){
         $("#selboxDirect").hide();
      });
      
      function change(){
         $("#select_company").hide();
         $("#selboxDirect").show();
+		$c_list.toggleClass("company_list");
     }
     
     var $company = $(".selboxInput");
     
     $company.blur(function(){
         $company.hide();
-        $selectMenu.addClass("hidden_lo");
         $("#select_company").show();
     
     });
+
+	$.fn.showFlex = function(){this.css('display', 'flex');}
+    
+    $("#c_react-select-1-options-1").click(function(){
+	console.log("1들어옴");
+        $("#c_box1").showFlex();
+        $c_list.toggleClass("company_list");
+    });
+    $("#c_react-select-1-options-2").click(function(){
+        $("#c_box2").showFlex();
+        $c_list.toggleClass("company_list");
+
+    });
+    $("#c_react-select-1-options-3").click(function(){
+        $("#c_box3").showFlex();
+        $c_list.toggleClass("company_list");
+
+    });
+    $("#c_react-select-1-options-4").click(function(){
+        $("#c_box4").showFlex();
+        $c_list.toggleClass("company_list");
+    });
+    $("#c_react-select-1-options-5").click(function(){
+        $("#c_box5").showFlex();
+        $c_list.toggleClass("company_list");
+    });
+    $("#c_react-select-1-options-6").click(function(){
+        $("#c_box6").showFlex();
+        $c_list.toggleClass("company_list");
+    });
+    $("#c_react-select-1-options-7").click(function(){
+        $("#c_box7").showFlex();
+        $c_list.toggleClass("company_list");
+    });
+
+    $("#xxx_btn1").click(function(){
+        $("#c_box1").hide();
+    });
+    $("#xxx_btn2").click(function(){
+        $("#c_box2").hide();
+    });
+    $("#xxx_btn3").click(function(){
+        $("#c_box3").hide();
+    });
+    $("#xxx_btn4").click(function(){
+        $("#c_box4").hide();
+    });
+    $("#xxx_btn5").click(function(){
+        $("#c_box5").hide();
+    });
+    $("#xxx_btn6").click(function(){
+        $("#c_box6").hide();
+    });
+    $("#xxx_btn7").click(function(){
+        $("#c_box7").hide();
+	});

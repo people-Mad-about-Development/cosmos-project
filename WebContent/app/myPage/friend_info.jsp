@@ -19,7 +19,7 @@
             <h1>친구 정보 상세보기</h1>
             <div class="userImgUpload">
                 <img class="userImgUpload_userImg userImg"
-                    src="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png" alt="user avatar">
+                    src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
             </div>
 
             <!-- <div class="userImageUpload_image__2lcic">
@@ -55,13 +55,13 @@
             <div class="main_inputZone" >
                 <h3 id="company_h3">현재 등록한 회사</h3>
                 <ul class="company">
-                    <li class="companyBar" id="kakao"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>네이버</span></li>
-                    <li class="companyBar" id="baemin"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>카카오</span></li>
-                    <li class="companyBar" id="naver"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>쿠팡</span></li>
-                    <li class="companyBar" id="nexon"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>배달의민족</span></li>
-                    <li class="companyBar" id="nexon"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>라이엇</span></li>
-                    <li class="companyBar" id="nexon"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>넥슨</span></li>
-                    <li class="companyBar" id="nexon"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span>토스</span></li>
+                    <li class="companyBar" id="naver"><img src="${pageContext.request.contextPath}/assets/images/company/navericon.png" alt="" class="languageBarLogo"><span>네이버</span></li>
+                    <li class="companyBar" id="kakao"><img src="${pageContext.request.contextPath}/assets/images/company/kakaoicon.png" alt="" class="languageBarLogo"><span>카카오</span></li>
+                    <li class="companyBar" id="coupang"><img src="${pageContext.request.contextPath}/assets/images/company/coupangicon.png" alt="" class="languageBarLogo"><span>쿠팡</span></li>
+                    <li class="companyBar" id="baemin"><img src="${pageContext.request.contextPath}/assets/images/company/baeminicon.png" alt="" class="languageBarLogo"><span>배달의민족</span></li>
+                    <li class="companyBar" id="riot"><img src="${pageContext.request.contextPath}/assets/images/company/liotIcon.png" alt="" class="languageBarLogo"><span>라이엇</span></li>
+                    <li class="companyBar" id="nexon"><img src="${pageContext.request.contextPath}/assets/images/company/nexon.png" alt="" class="languageBarLogo"><span>넥슨</span></li>
+                    <li class="companyBar" id="toss"><img src="${pageContext.request.contextPath}/assets/images/company/company.png" alt="" class="languageBarLogo"><span>토스</span></li>
                 </ul>
             </div>
             <hr>
