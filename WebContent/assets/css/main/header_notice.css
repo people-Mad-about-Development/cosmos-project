@@ -159,6 +159,7 @@ div{
     background: #fff;
     box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
     list-style: none;
+    padding: 5px 0 5px 30px;
 }
 
 .dropdownBar_newPost_header {
