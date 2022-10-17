@@ -466,4 +466,12 @@ button {
     padding-top: 7px;
 }
 
+.studyContent_companyImg{
+    cursor: pointer;
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
