@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="header">
-        <a href="${pageContext.request.contextPath}/app/main/index.jsp">
+        <a href="">
             <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
           <div class="header_search">
@@ -78,9 +78,9 @@
     $loginSvg.click(function () {
         loginSvgCheck *= -1;
         if (loginSvgCheck > 0) {
-            $dropdownBar_menuWrapper_header.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie");
+            $dropdownBar_menuWrapper_header.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie")
         } else {
-            $dropdownBar_menuWrapper_header.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie");
+            $dropdownBar_menuWrapper_header.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie")
         }
 
     })
@@ -93,9 +93,9 @@
     $noticeSvg.click(function () {
     	noticeSvgCheck *= -1;
         if (noticeSvgCheck > 0) {
-            $noticeWrapper.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie");
+            $noticeWrapper.removeClass("loginHeaderUnVisibie").addClass("loginHeaderVisibie")
         } else {
-            $noticeWrapper.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie");
+            $noticeWrapper.removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie")
         }
 
     })
@@ -105,12 +105,6 @@
 	
     $exit.click(function () {
     	$(this).closest($noticeWrapper).removeClass("loginHeaderVisibie").addClass("loginHeaderUnVisibie");
-    })
-    
-    $post = $(".navbar_post");
-    
-    $post.click(function(){
-    	$(location).attr("href", "${pageContext.request.contextPath}/app/board/newPage.jsp");n
     })
     
 </script>
