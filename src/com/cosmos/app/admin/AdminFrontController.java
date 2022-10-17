@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Result;
-import com.cosmos.app.board.WriteOkController;
 
-public class AdminForntController extends HttpServlet {
+public class AdminFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
