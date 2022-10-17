@@ -61,6 +61,18 @@
      <servlet-name>CommunityFrontController</servlet-name>
      <url-pattern>*.co</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+     <servlet-name>AdminFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.admin.AdminFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>AdminFrontController</servlet-name>
+     <url-pattern>*.ad</url-pattern>
+  </servlet-mapping>
+
+
   
   
   

@@ -34,7 +34,7 @@
             <div class="ui segment">
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -71,7 +71,7 @@
                 <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -109,7 +109,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -141,7 +141,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -173,7 +173,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -205,7 +205,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -237,7 +237,7 @@
             <div class="ui divider"></div>
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -270,7 +270,7 @@
             
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" >
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" >
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -303,7 +303,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">
@@ -336,7 +336,7 @@
 
                 <div class="ui user card" data-search-item-user-id="203605" relationship-data-setted="true">
                     <div class="image">
-                        <img src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png" alt="" class="ui circular image lazyloaded" src="">
+                        <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="" class="ui circular image lazyloaded" src="">
                     </div>
                     <div class="stackable content">
                         <div class="main">

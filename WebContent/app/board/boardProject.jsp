@@ -23,7 +23,7 @@
        </a>
                 <div class="studyContent_title">Cosmos Team Project 인원 모집합니다 ! </div>
                 <div class="studyContent_userAndDate">
-                    <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/cosmos_pro.png">
+                    <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
                 <div class="studyContent_userName">hyun</div>
                 <div class="studyContent_registeredDate">2022.10.04</div>
                 <div class = "goCommunity">
