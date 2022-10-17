@@ -65,7 +65,7 @@
                 <div class="inqueryHeaderLeft">
                     <div class="inqueryHeaderLeftWrapper">
                         <div class="inqeuryHeaderLogo">
-                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="avatar">
+                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="avatar">
                         </div>
                         <span class="inqueryHeaderTitle">
                             <div class="inqueryheaderTitleText">코스모스</div>
@@ -106,7 +106,7 @@
                                 <div class="UserChatItemLogoWrapper">
                                     <div class="UserChatItemLogo">
                                         <img width='36' height="36"
-                                            src="https://cf.channel.io/thumb/200x200/pub-file/4627/616e1a5a481cc127ffdd/inflearn_white_310.png"
+                                            src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png"
                                             alt="">
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                                 <div class="UserChatItemLogoWrapper">
                                     <div class="UserChatItemLogo">
                                         <img width='36' height="36"
-                                            src="https://cf.channel.io/thumb/200x200/pub-file/4627/616e1a5a481cc127ffdd/inflearn_white_310.png"
+                                            src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png"
                                             alt="">
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
                 <div class="inqueryHeaderLeft">
                     <div class="inqueryHeaderLeftWrapper">
                         <div class="inqeuryHeaderLogo">
-                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="avatar">
+                            <img width="30" height="30" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="avatar">
                         </div>
                         <span class="inqueryHeaderTitle">
                             <div class="inqueryheaderTitleText">코스모스</div>
