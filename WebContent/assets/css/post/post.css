@@ -176,7 +176,7 @@ svg:not(:root) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 26px 26px 34px;
+    padding: 40px 26px 0px 34px;
     width: 370px;
     height: 450px;
     background: #fff;
@@ -262,6 +262,7 @@ ul {
 .studyItem_info {
     display: flex;
     font-size: 18px;
+    padding-top: 10px;
     justify-content: space-between;
     border-top: 2px solid #f2f2f2;
 }

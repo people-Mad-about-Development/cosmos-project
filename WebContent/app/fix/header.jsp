@@ -12,7 +12,7 @@
 <body>
     <nav class="header">
         <a href="">
-            <img src="${pageContext.request.contextPath}/assets/images/logo.png" alt="logo" class="logo">
+            <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
          <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
