@@ -12,7 +12,7 @@
 <body>
     <nav class="header">
         <a href="">
-            <img src="${pageContext.request.contextPath}/assets/images/logo.png" alt="logo" class="logo">
+            <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
           <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
@@ -32,14 +32,14 @@
                 </svg>
                  <div class="dropdownBar_menuWrapper_header loginHeaderUnVisibie">
                     <ul class="dropdownBar_menu_list">
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="#" style="display: inline-block;">관리자 페이지</a>
+                        </li>
                         <li class="dropdownBar_menuItem_header dropdownBar_newPost_header">
                             <a href="#" style="display: inline-block;">새 글 작성</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
                             <a href="#" style="display: inline-block;">내 작성글</a>
-                        </li>
-                        <li class="dropdownBar_menuItem_header">
-                            <a href="#" style="display: inline-block;">회사</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
                             <a href="#" style="display: inline-block;">설정</a>

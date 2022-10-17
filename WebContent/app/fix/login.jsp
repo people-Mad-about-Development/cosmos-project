@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmos</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/login.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 <body>
        
@@ -17,7 +17,7 @@
         <div class="modalW">
             <div class="modal_first">
                 <div class="loginModal_modalHeader">
-                    <img class="loginModal_logo" src="${pageContext.request.contextPath}/assets/images/cosmos_chu.png" alt="welcome">
+                    <img class="loginModal_logo" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="welcome">
                     <div class="loginModal_exitWrapper">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="loginModal_modalContent second hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setNickname_title__xgVq4">Cosmos에 처음 오셨군요!<br>우선, 사용하실 닉네임을 설정해 볼까요?</h1>
                     <div class="setNickname_inputWrapper__2SFvb">
                         <h3>닉네임</h3>
@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="loginModal_modalContent fourth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
                     <div class="setInterest_inputWrapper__2LHrv">
                         <h3>할 수 있는 <br>기술 태그</h3>
@@ -217,7 +217,7 @@
                 </div>
 
                 <div class="loginModal_modalContent fifth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님이<br>다니는 회사를 알려주세요!</h1>
                     <div class="setInterest_inputWrapper__2LHrv">
                         <h3>회사 이름</h3>
@@ -265,7 +265,7 @@
                 </div>
 
                 <div class="loginModal_modalContent sixth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님은<br>어떤 어느 쪽에 해당 되시나요?</h1>
                     <div class="select_box">
                         <button class="setInterest_buttonNext__1B_lX one" name="complete">경력</button>
@@ -274,7 +274,7 @@
                 </div>
 
                 <div class="loginModal_modalContent seventh hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setNickname_title__xgVq4">경력자이시군요!<br>경력 몇 년차이신지 알려주세요!</h1>
                     <!-- <div>숫자만 입력해주세요.</div> -->
                     <div class="setNickname_inputWrapper__2SFvb">
@@ -284,11 +284,11 @@
                 </div>
 
                 <div class="loginModal_modalContent eighth hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setImage_title__1CzhH">개빠사님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
                     <div>미 업로드시 기본 이미지로 자동 설정됩니다.</div>
                     <div class="userImageUpload_image__2lcic">
-                        <img class="userImg" src="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png" alt="user avatar">
+                        <img class="userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
                         
                         <div class="userImageUpload_imageControl__2G4AG">
                             <label class="userImageUpload_customLabelFileUpload__2QkhJ">
