@@ -19,7 +19,7 @@
             <h1>내 정보 수정</h1>
             <div class="userImgUpload">
                 <img class="userImgUpload_userImg userImg"
-                    src="${pageContext.request.contextPath}/assets/images/Cosmos-icon.png" alt="user avatar">
+                    src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
                 <div class="userImgUpload_imgControl">
                     <label class="userImgUpload_customLabel">이미지 선택
                         <input id="imageUpload" type="file" accept="image/*">
@@ -69,13 +69,13 @@
             <div class="main_inputZone" >
                 <h3 id="company_h3">현재 등록한 회사</h3>
                 <ul class="company">
-                    <li class="companyBar" id="naver"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span>네이버</span></li>
-                    <li class="companyBar" id="kakao"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x2">ⓧ</span><span>카카오</span></li>
-                    <li class="companyBar" id="coupang"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x3">ⓧ</span><span>쿠팡</span></li>
-                    <li class="companyBar" id="baemin"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x4">ⓧ</span><span>배달의민족</span></li>
-                    <li class="companyBar" id="riot"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x5">ⓧ</span><span>라이엇</span></li>
-                    <li class="companyBar" id="nexon"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x6">ⓧ</span><span>넥슨</span></li>
-                    <li class="companyBar" id="toss"><img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="" class="languageBarLogo"><span class="x" id="x7">ⓧ</span><span>토스</span></li>
+                    <li class="companyBar" id="naver"><img src="${pageContext.request.contextPath}/assets/images/company/navericon.png" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span>네이버</span></li>
+                    <li class="companyBar" id="kakao"><img src="${pageContext.request.contextPath}/assets/images/company/kakaoicon.png" alt="" class="languageBarLogo"><span class="x" id="x2">ⓧ</span><span>카카오</span></li>
+                    <li class="companyBar" id="coupang"><img src="${pageContext.request.contextPath}/assets/images/company/coupangicon.png" alt="" class="languageBarLogo"><span class="x" id="x3">ⓧ</span><span>쿠팡</span></li>
+                    <li class="companyBar" id="baemin"><img src="${pageContext.request.contextPath}/assets/images/company/baeminicon.png" alt="" class="languageBarLogo"><span class="x" id="x4">ⓧ</span><span>배달의민족</span></li>
+                    <li class="companyBar" id="riot"><img src="${pageContext.request.contextPath}/assets/images/company/liotIcon.png" alt="" class="languageBarLogo"><span class="x" id="x5">ⓧ</span><span>라이엇</span></li>
+                    <li class="companyBar" id="nexon"><img src="${pageContext.request.contextPath}/assets/images/company/nexon.png" alt="" class="languageBarLogo"><span class="x" id="x6">ⓧ</span><span>넥슨</span></li>
+                    <li class="companyBar" id="toss"><img src="${pageContext.request.contextPath}/assets/images/company/company.png" alt="" class="languageBarLogo"><span class="x" id="x7">ⓧ</span><span>토스</span></li>
                     <li class="companyBar" id="add_company"><span>+ 추가</span></li>
                 </ul>
             </div>
@@ -951,7 +951,7 @@
             <div class="modal_first">
                 <div class="loginModal_modalHeader">
                     <!-- <img class="loginModal_logo" src="img/cosmos_logo.jpg" alt="welcome"> -->
-                    <img class="loginModal_logo" src="img/cosmos_chu.png" alt="welcome">
+                    <img class="loginModal_logo" src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="welcome">
                     <div class="loginModal_exitWrapper">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
@@ -965,38 +965,137 @@
                         <div class="setInterest_likeLanguageWrapper__3nMfg">
                             <div class=" css-2b097c-container">
                                 <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
-                                <div class="select__control css-1t8ny5w-control" id="select_company">
-                                    <div class="select__value-container select__value-container--is-multi css-1hwfws3">
-                                        <div class="select__placeholder css-1wa3eu0-placeholder">회사 이름</div>
-                                        <div class="css-1g6gooi">
-                                            <div class="select__input" style="display: inline-block;">
-                                                <input autocapitalize="none" autocomplete="off" autocorrect="off" id="company-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
-                                                
-                                            </div>
-                                        </div>
+                                <div class="select__control css-control" id="select_company">
+                            <div
+                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3 ">
+                                <div class="css-multiValue select__multi-value c_list" id="c_box1">
+                                    <div class="css-12jo7m5 select__multi-value__label">네이버</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn1">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
                                     </div>
-                                    <div class="select_menu css-langage-list company hidden_lo">
-                                        <div class="">
-                                            <div class="select_option css-list-option" id="react-select-2-option-1" tabindex="-1">네이버</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-2" tabindex="-1">카카오</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-3" tabindex="-1">쿠팡</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-4" tabindex="-1">배달의민족</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-5" tabindex="-1">라이엇</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-6" tabindex="-1">넥슨</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-7" tabindex="-1">토스</div>
-                                            <div class="select_option css-list-option" id="react-select-2-option-8" tabindex="-1"onclick="javascript:change();" >직접입력</div>
-                                        </div>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box2">
+                                    <div class="css-12jo7m5 select__multi-value__label">카카오</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn2">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
                                     </div>
-                                    <div class="select__indicators css-1wy0on6">
-                                        <span class="select__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                        <div class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer" aria-hidden="true">
-                                            <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">
-                                                <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
-                                            </svg>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box3">
+                                    <div class="css-12jo7m5 select__multi-value__label">쿠팡</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn3">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box4">
+                                    <div class="css-12jo7m5 select__multi-value__label">배달의 민족</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn4">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box5">
+                                    <div class="css-12jo7m5 select__multi-value__label">라이엇</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn5">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box6">
+                                    <div class="css-12jo7m5 select__multi-value__label">넥슨</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn6">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="css-multiValue select__multi-value c_list" id="c_box7">
+                                    <div class="css-12jo7m5 select__multi-value__label">토스</div>
+                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn7">
+                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
+                                            focusable="false" class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="css-1g6gooi">
+                                    <div class="select__input" style="display: inline-block;">
+                                        <input autocapitalize="none" autocomplete="off" autocorrect="off"
+                                            id="react-select-2-input" spellcheck="false" tabindex="0" type="text"
+                                            aria-autocomplete="list" value=""
+                                            style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
+                                        <div
+                                            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: Arial; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;">
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                            </div>
+                            <div class="select__indicators css-1wy0on6">
+                                <div class="select__indicator select__clear-indicator css-indicatorContainer"
+                                    aria-hidden="true">
+                                    <label for="btnSubmit"  class="css-8mmkcg" id="c_clear_btn">
+                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+                                            class="css-8mmkcg">
+                                            <path
+                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
+
+                                            </path>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <span class="select__indicator-separator css-indicatorSeparator"></span>
+                                <div class="select__indicator select__dropdown-indicator css-indicatorContainer"
+                                    aria-hidden="true">
+                                    <label for="btnSubmit"  class="css-8mmkcg" id="c_select_btn">
+                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                                        <path
+                                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+                                        </path>
+                                        </svg>
+                                    </label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c_select_menu css-langage-list select_menu2 company_list">
+                            <div class="">
+                                <div class="select_option css-list-option" id="c_react-select-1-options-1" tabindex="-1">네이버</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-2" tabindex="-1">카카오</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-3" tabindex="-1">쿠팡</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-4" tabindex="-1">배달의 민족</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-5" tabindex="-1">라이엇</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-6" tabindex="-1">넥슨</div>
+                                <div class="select_option css-list-option" id="c_react-select-1-options-7" tabindex="-1">토스</div>
+                                <div class="select_option css-list-option" id="react-select-2-option-8" tabindex="-1"onclick="javascript:change();" >직접입력</div>
+                            </div>
+                        </div>
+                               	<div>
                                     <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput"/>
                                 </div>
                             </div>
