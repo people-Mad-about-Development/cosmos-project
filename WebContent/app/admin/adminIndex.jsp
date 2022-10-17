@@ -90,7 +90,7 @@
 		<div class="fold_area tabled animate"> 
 			<div class="table-cell vertical-middle">
 				<a href="#" class="logo_icon_menu"> <!-- 관리자 메인 메뉴로 이동 -->
-					<img src="${pageContext.request.contextPath}/assets/images/white_cosmos.png"> <!-- 좌측 상단 로고 -->
+					<img src="${pageContext.request.contextPath}/assets/images/fix/white_cosmos.png"> <!-- 좌측 상단 로고 -->
 				</a>
 			</div>
 		</div> <!-- END MENUBAR HEADER -->
@@ -533,7 +533,7 @@
 											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#"> <!-- 각 회원별 상세페이지로 이동할 수 있도록 주소 변경 필요 -->
 													<div class="tile-icon">
-														<img class="" src="${pageContext.request.contextPath}/assets/images/nexon.png" alt=""> <!-- 나중에 개인별 설정한 프로필 사진으로 변경 필요 -->
+														<img class="" src="${pageContext.request.contextPath}/assets/images/company/nexon.png" alt=""> <!-- 나중에 개인별 설정한 프로필 사진으로 변경 필요 -->
 													</div>
 													<div class="tile-text">
 														<div>

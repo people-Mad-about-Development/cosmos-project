@@ -100,7 +100,7 @@
 		<div class="fold_area tabled animate"> 
 			<div class="table-cell vertical-middle">
 				<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp" class="logo_icon_menu"> <!-- 관리자 메인 메뉴로 이동 -->
-					<img src="${pageContext.request.contextPath}/assets/images/white_cosmos.png"> <!-- 좌측 상단 로고 -->
+					<img src="${pageContext.request.contextPath}/assets/images/fix/white_cosmos.png"> <!-- 좌측 상단 로고 -->
 				</a>
 			</div>
 		</div> <!-- END MENUBAR HEADER -->
@@ -258,7 +258,7 @@
 									<div class="card-body border-top">										
 										<div class="profile-image text-center margin-bottom-xxl">
 											<div id="fileupload_profile_img">
-												<img class="company" src="${pageContext.request.contextPath}/assets/images/nexon.png" id="profile_img" width="72" height="72" class="img-circle">
+												<img class="company" src="${pageContext.request.contextPath}/assets/images/company/nexon.png" id="profile_img" width="72" height="72" class="img-circle">
 												<div id="drop_profile_img">
 													<input type="file" name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
 												</div>
