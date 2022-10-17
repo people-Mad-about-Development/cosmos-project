@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심민성 </title>
+    <title>프로젝트/스터디 생성</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/newPage.css">
@@ -16,6 +17,13 @@
 <body>
     <div id="root">
     <div class="postRegister_postWrapper__1s7mv">
+    <a href="${pageContext.request.contextPath}/app/main/index.jsp">
+          <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
+        viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
+         xmlns="http://www.w3.org/2000/svg">
+         <path d="M 257.5 445.1 l -22.2 22.2 c -9.4 9.4 -24.6 9.4 -33.9 0 L 7 273 c -9.4 -9.4 -9.4 -24.6 0 -33.9 L 201.4 44.7 c 9.4 -9.4 24.6 -9.4 33.9 0 l 22.2 22.2 c 9.5 9.5 9.3 25 -0.4 34.3 L 136.6 216 H 424 c 13.3 0 24 10.7 24 24 v 32 c 0 13.3 -10.7 24 -24 24 H 136.6 l 120.5 114.8 c 9.8 9.3 10 24.8 0.4 34.3 Z" style="color: rgb(128, 128, 128);"></path>
+       </svg>
+       </a>
         <section>
             <div class="postRegister_postContentWrapper__3BXZ6">
                 <span class="postRegister_sequence__nC1Px">1</span>
@@ -72,7 +80,7 @@
         <!-- 모집 인원 -->
         <li class="postinfo_listItem__OFhXr"> 
             <label class="selectbox_labelText__3Q9iz" for="onoffline">모집 인원</label>
-            <div class="css-2b097c-container css_newT1 >
+            <div class="css-2b097c-container css_newT1" >
                 <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
                 <div class="select__control css-1iewm1a-control ">
                     <div class="select__value-container css-1hwfws3">
@@ -351,7 +359,7 @@
                             <div class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1bn53lx">
         
                                 <!-- 시작 예정일 안 달력 바  -->
-                                <input aria-invalid="false" placeholder="yyyy-mm-dd" type="date" class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-1uvydh2" value="2022-09-29" id="mui-1">
+                                <input aria-invalid="false" placeholder="yyyy-mm-dd" type="date" class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-1uvydh2" value="2022-09-29" id="mui-1" onchange="setMinValue()">
                                 
 
                                 
@@ -588,5 +596,18 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/newPage.js"></script>
+<script>
 
+let dateElement = document.getElementById('mui-1');
+let date = new Date().toISOString().substring(0, 10);
+dateElement.value = date;
+dateElement.setAttribute("min", date);
+
+function setMinValue() {
+    if(dateElement.value < date) {
+        alert('현재 시간보다 이전의 날짜는 설정할 수 없습니다.');
+        dateElement.value = date;
+    }
+}
+</script>
 </html>
