@@ -1,76 +1,58 @@
-/* 모집구분 누르면 리스트 촤라락 */
-var $newTdiv = $(".css_newT");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
 
-$newTdiv.click(function(){
-    $select__menu.toggleClass("newT")
+let dateElement = document.getElementById('mui-1');
+let date = new Date().toISOString().substring(0, 10);
+dateElement.value = date;
+dateElement.setAttribute("min", date);
 
+function setMinValue() {
+    if(dateElement.value < date) {
+        alert('현재 시간보다 이전의 날짜는 설정할 수 없습니다.');
+        dateElement.value = date;
+    }
+}
 
-});
-/* 모집 인원 누르면 리스트 촤라락 */
-var $newT1div = $(".css_newT1");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
-
-$newT1div.click(function(){
-    $select__menu.toggleClass("newT1")
+var innerhtml;
 
 
-});
-/* 진행 방식 누르면 촤라락 */
-var $newT2div = $(".css_newT2");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
+const new_comboBox = $('.select__menu');
+const select_div = $('.select__control');
+const select_option = $('.select__option');
 
-$newT2div.click(function(){
-    $select__menu.toggleClass("newT2")
+select_div.click(function () {
 
+    if ($(this).closest('.postinfo_listItem__OFhXr').find(".select__menu").hasClass("newInAction")) {
+        select_div.closest('.postinfo_listItem__OFhXr').find(".select__menu").each((i, item) => {
+            if (select_div.closest('.postinfo_listItem__OFhXr').find(".select__menu").eq(i).hasClass("newAction")) {
+                select_div.closest('.postinfo_listItem__OFhXr').find(".select__menu").eq(i).removeClass("newAction").addClass("newInAction");
+            }
+        })
+        $(this).closest('.postinfo_listItem__OFhXr').find(".select__menu").removeClass("newInAction").addClass("newAction");
+    } else {
+        $(this).closest('.postinfo_listItem__OFhXr').find(".select__menu").removeClass("newAction").addClass("newInAction");
+    }
 
-});
+})
 
-/* 진행 기간 누르면 촤라락 */
-var $newT3div = $(".css_newT3");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
+select_option.mouseover(function () {
+    $(this).css("background-color", "rgb(222, 235, 255)");
+    $(this).css("cursor", "pointer")
+})
 
-$newT3div.click(function(){
-    $select__menu.toggleClass("newT3")
-
-
-});
-
-/* 기술스택  누르면 촤라락 */
-var $newT4div = $(".css_newT4");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
-
-$newT4div.click(function(){
-    $select__menu.toggleClass("newT4")
+select_option.mouseout(function () {
+    $(this).css("background-color", "#fff");
+})
 
 
-});
+select_option.click(function () {
+    innerhtml = $(this).html();
+    $(this).closest(".postinfo_listItem__OFhXr").find(".select__placeholder").html(innerhtml);
+ 	$(this).closest(".postinfo_listItem__OFhXr").find(".select__single-value").html(innerhtml);
+    $(this).closest(".postinfo_listItem__OFhXr").find(".select__menu").removeClass("newAction").addClass("newInAction");
 
-var $newT5div = $(".css_newT5");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
-
-$newT5div.click(function(){
-    $select__menu.toggleClass("newT5")
-
-
-});
+})
 
 
-var $newT6div = $(".css_newT6");
-/* var $newT = $(".newT") */
-var $select__menu = $(".select__menu");
 
-$newT6div.click(function(){
-    $select__menu.toggleClass("newT6")
-
-
-});
 
 
 $(document).ready(function() {
@@ -101,3 +83,9 @@ $(document).ready(function() {
         });
     }
 });
+
+
+
+
+
+
