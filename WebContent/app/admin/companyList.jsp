@@ -90,7 +90,7 @@
 		<div class="fold_area tabled animate"> 
 			<div class="table-cell vertical-middle">
 				<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp" class="logo_icon_menu"> <!-- 관리자 메인 메뉴로 이동 -->
-					<img src="${pageContext.request.contextPath}/assets/images/white_cosmos.png"> <!-- 좌측 상단 로고 -->
+					<img src="${pageContext.request.contextPath}/assets/images/fix/white_cosmos.png"> <!-- 좌측 상단 로고 -->
 				</a>
 			</div>
 		</div> <!-- END MENUBAR HEADER -->
