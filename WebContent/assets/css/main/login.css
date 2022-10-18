@@ -301,7 +301,8 @@ a{
 }
 
 .setting_titleWrapper h3 {
-    width: 18rem;
+	font-size: 1rem;
+    width: 6.5rem;
 }
 
 .setting_LanguageWrapper {
