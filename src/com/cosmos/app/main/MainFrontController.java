@@ -2,6 +2,7 @@ package com.cosmos.app.main;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,11 +36,24 @@ public class MainFrontController extends HttpServlet{
 		}else if(request.equals("/main/mainSearch.ma")) {//모집글 검색기능
 			new MainSearchController().execute(req, resp);
 		}else if(request.equals("/main/mainSearchOk.ma")) {//모집글 검색기능
-			new MainSearchOkController().execute(req, resp);
+			result = new MainSearchOkController().execute(req, resp);
 		}else if(request.equals("/main/alarmList.ma")) {//  알림함 이동 
 			new AlarmListController().execute(req, resp);
 		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
 			new AlarmListOkController().execute(req, resp);
 		}
+		
+		if(result != null) {
+			if(result.isRedirect()) {
+				resp.sendRedirect(result.getPath());
+			}else {
+				RequestDispatcher dispatcher = req.getRequestDispatcher(result.getPath());
+				dispatcher.forward(req, resp);
+			}
+		}
+		
+		
+		
+		
 }
 }

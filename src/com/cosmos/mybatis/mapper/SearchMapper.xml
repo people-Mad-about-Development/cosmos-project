@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Search">
+	<select id="selectBoard" parameterType="string" resultType="boardVO">
+		select board_number, board_start_date, board_title, board_category, board_way, board_recruit_number, board_period, board_views 
+		from tbl_board 
+		WHERE board_title LIKE CONCAT('%',#{searchContent}, '%')
+	
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
