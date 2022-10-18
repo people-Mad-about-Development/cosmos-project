@@ -140,4 +140,29 @@
             }
         }
     });
+
+        function send(){
+               if(!insertForm.bannerTitle.value){
+                  alert("제목을 작성해주세요.");
+                  return;
+               }
+               
+               if(!insertForm.bannerDate.value){
+                  alert("날짜를 입력해주세요.");
+                  return;
+               }
+
+               if(!insertForm.bannerDateEnd.value){
+                  alert("날짜를 입력해주세요.");
+                  return;
+               }
+
+               if(!insertForm.fileName.value){
+                  alert("파일을 추가해주세요.");
+                  return;
+               }
+               
+               insertForm.submit();
+            }
+	
  

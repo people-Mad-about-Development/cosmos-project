@@ -2,6 +2,7 @@ package com.cosmos.app.admin;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,25 +27,32 @@ public class AdminFrontController extends HttpServlet {
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/admin/listOk.ad")) {	// 목록 조회
-			new ListOkController().execute(req, resp);
+		if(request.equals("/admin/bannerListOk.ad")) {	// 목록 조회
+			result = new BannerListOkController().execute(req, resp);
 		
-		}else if(request.equals("/admin/deleteOk.ad")) {	//	삭제   
-			new AdminOkController().execute(req, resp);
+		}else if(request.equals("/admin/bannerDeleteOk.ad")) {	//	삭제   
+			result = new BannerDeleteController().execute(req, resp);
 		
-		}else if(request.equals("/admin/modifyOk.ad")) {	//	수정  
-			new ModifyOkController().execute(req, resp);
+		}else if(request.equals("/admin/bannerModifyOk.ad")) {	//	수정  
+			result =new BannerModifyOkController().execute(req, resp);
 		
-		}else if(request.equals("/admin/insertOk.ad")) {	//	추가 
-			new InsertOkController().execute(req, resp);
+		}else if(request.equals("/admin/bannerInsertOk.ad")) {	//	추가 
+			result =new BannerInsertOkController().execute(req, resp);
 
-		}else if(request.equals("/admin/searchOk.ad")) {	// 검색
-			new SearchOkController().execute(req, resp);
+		}else if(request.equals("/admin/bannerSearchOk.ad")) {	// 검색
+			result =new BannerSearchOkController().execute(req, resp);
 		
 		}
 	
-	
+		if(result != null) {
+			if(result.isRedirect()) {
+				resp.sendRedirect(result.getPath());
+			}else {
+				RequestDispatcher dispatcher = req.getRequestDispatcher(result.getPath());
+				dispatcher.forward(req, resp);
+			}
+		}
 	}
+}
 
 	
-}
