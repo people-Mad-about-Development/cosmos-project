@@ -84,7 +84,7 @@
 
 
             <div class="setting_titleWrapper setting_Languages">
-                <h3>할 수 있는 기술 태그</h3>
+                <h3>관심 기술 태그</h3>
                 <div class="setting_LanguageWrapper">
                     <div class=" css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -499,12 +499,12 @@
                     </div>
                 </div>
             </div>
-            <p class="setting_description">&nbsp할 수 있는 기술 태그를 등록해주세요.</p>
+            <p class="setting_description">&nbsp관심 기술 태그를 등록해주세요.</p>
             <hr>
            
            
             <div class="setting_titleWrapper setting_Languages">
-                <h3>관심 기술 태그</h3>
+                <h3>할 수 있는 기술 태그</h3>
                 <div class="setting_LanguageWrapper">
                     <div class=" css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -919,7 +919,7 @@
                     </div>
                 </div>
             </div>
-            <p class="setting_description">&nbsp관심 있는 기술 태그를 등록해주세요.</p>
+            <p class="setting_description">&nbsp할 수 있는 기술 태그를 등록해주세요.</p>
             <hr>
             <button class="setting_buttonComplete setting_mainButton" name="complete">완료</button>
             <button class="setting_buttonSignOut setting_mainButton" name="signOut" id="signOunt_btn">회원탈퇴</button>
