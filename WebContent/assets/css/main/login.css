@@ -276,42 +276,185 @@ a{
 
 /*--------------------------------------------------------------------------------*/
 
-.setInterest_title__Me11d {
-    margin-top: 4rem;
-    text-align: center;
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-    -webkit-animation-name: setNickname_opacityAnimation__1UWJt;
-    animation-name: setNickname_opacityAnimation__1UWJt;
+
+
+.css-1hwfws3 {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 20rem;
 }
 
-.setInterest_inputWrapper__2LHrv {
+.setting_titleWrapper {
     display: flex;
     align-items: center;
+}
+
+.setting_Languages {
     margin-top: 3rem;
-    width: 80%;
 }
 
-.setInterest_inputWrapper__2LHrv h3 {
-    margin-right: 1rem;
-    font-size: 1rem;
-    width: 15%;
+.setting_titleWrapper h3 {
+    width: 18rem;
 }
 
-.setInterest_likeLanguageWrapper__3nMfg {
+.setting_LanguageWrapper {
     width: 100%;
 }
 
-.setInterest_buttonNext, .can_buttonNext, .company_buttonNext, .career_buttonNext{
-    margin-top: 5rem;
-    font-weight: 700;
-    color: #fff;
-    border-radius: 4px;
-    width: 6rem;
-    height: 2.5rem;
-    font-size: 1.25rem;
-    background-color: #262626;
+div {
+    display: block;
 }
+
+.css-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.css-a11yText {
+    z-index: 9999;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+.css-control {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 3rem;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    max-width: 500px;
+    width: 100%;
+    outline: 0px !important;
+}
+
+
+
+
+.css-multiValue {
+    background-color: rgb(230, 230, 230);
+    border-radius: 2px;
+    display: flex;
+    margin: 2px;
+    min-width: 0px;
+    box-sizing: border-box;
+}
+
+.css-1g6gooi {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    box-sizing: border-box;
+}
+
+.css-1wy0on6 {
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.css-indicatorContainer {
+    color: rgb(204, 204, 204);
+    display: flex;
+    padding: 8px;
+    transition: color 150ms ease 0s;
+    box-sizing: border-box;
+}
+
+.css-8mmkcg {
+    display: inline-block;
+    fill: currentcolor;
+    line-height: 1;
+    stroke: currentcolor;
+    stroke-width: 0;
+}
+
+.css-langage-list {
+    top: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px, rgb(0 0 0 / 10%) 0px 4px 11px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    position: absolute;
+    width: 98%;
+    z-index: 1;
+    box-sizing: border-box;
+    overFlow: scroll;
+    height: 170px;
+}
+
+.css-list-option, .selboxInput {
+    background-color: transparent;
+    color: inherit;
+    cursor: default;
+    display: block;
+    font-size: inherit;
+    padding: 8px 12px;
+    width: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.css-12jo7m5 {
+    border-radius: 2px;
+    color: rgb(51, 51, 51);
+    font-size: 85%;
+    overflow: hidden;
+    padding: 6px 6px 6px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.css-xb97g8 {
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+    display: flex;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+}
+
+.css-indicatorSeparator {
+    align-self: stretch;
+    background-color: rgb(204, 204, 204);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 1px;
+    box-sizing: border-box;
+}
+
 
 /*--------------------------------------------------------------------------------*/
 .css-2b097c-container {
@@ -353,17 +496,6 @@ a{
     outline: 0px !important;
 }
 
-.css-1hwfws3 {
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    flex: 1 1 0%;
-    flex-wrap: wrap;
-    padding: 2px 8px;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-}
 
 .css-1wa3eu0-placeholder {
     color: rgb(128, 128, 128);
@@ -609,3 +741,33 @@ a{
     height: 54px;
     outline: 0px !important;
 }
+
+.setInterest_buttonNext, .can_buttonNext, .company_buttonNext, .career_buttonNext {
+    margin-top: 5rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 4px;
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    background-color: #262626;
+}
+
+
+.list1, .list2, .company_list {
+	display: none;
+}
+
+.css-multiValue {
+	display: none;
+}
+
+.css-xb97g8:hover {
+    background-color: rgb(255, 189, 173);
+    color: rgb(222, 53, 11);
+}
+
+.css-list-option:hover {
+    background: rgb(222, 235, 255);
+}
+
