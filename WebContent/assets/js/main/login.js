@@ -728,13 +728,8 @@ $company.blur(function(){
     
     
     
-    var $modal = $(".modal");
-    var $modalContent = $(".loginModal_modalContent");
     var $add = $("#add_company");
-    var $exit = $(".loginModal_exitWrapper");
     var $add_btn = $(".company_btn_add");
-    
-   
 
     $add.click(function(){
         $modal.showFlex();

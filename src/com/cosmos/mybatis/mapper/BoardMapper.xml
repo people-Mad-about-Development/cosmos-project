@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 	
+	<insert id="insert" parameterType="boardVO">
+		insert into tbl_board (board_title, board_content, board_category, board_way, board_recruit_number, board_support, board_start_date, board_period, board_contact)
+		values(${boardTitle}, ${boardContent}, ${boardCategory}, ${boardWay}, ${boardRecruitNumber}, ${boardSupport}, ${boardStartDate}, ${boardPeriod}, ${boardContact})
+	</insert>
+	
+	
 </mapper>
 
 
