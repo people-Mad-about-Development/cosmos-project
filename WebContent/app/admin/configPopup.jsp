@@ -102,7 +102,7 @@
 				</div>
 			</div>
 		</header> <!-- END HEADER -->
-
+h
 		<!-- START MENUBAR HEADER -->
 		<div class="fold_area tabled animate"> 
 			<div class="table-cell vertical-middle">
@@ -250,7 +250,7 @@
 							<div class="card">
 								<div class="card-head">
 									<header>
-										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
+										<a href="#"><c:out value="${boardTitle}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
 										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
 									</header>
 									
@@ -276,11 +276,13 @@
 								</div>
 								
 								<a href="#">	<!-- 수정페이지 링크 -->
-									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
+									<img class="" src="${pageContext.request.contextPath}/assets/images/banner/'${fileName}'" style="width:100%">
+								
 								</a>
 								
 								<div class="card-body">
-									<p>기간: 2022-10-05 ~ 2022-10-07</p>
+									<p>기간: <c:out value="${bannerDate}"/>~</p>
+									<p><c:out value="${bannerDateEnd}"/></p>
 								</div>
 							</div>
 						</div>

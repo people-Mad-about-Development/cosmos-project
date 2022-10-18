@@ -41,7 +41,7 @@
 	<mappers>
 		<mapper resource="com/cosmos/mybatis/mapper/UserMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/MainMapper.xml"/>
-		<mapper resource="com/cosmos/mybatis/mapper/CommunityMapper.xml"/>
+	<!-- 	<mapper resource="com/cosmos/mybatis/mapper/CommunityMapper.xml"/> -->
 		<mapper resource="com/cosmos/mybatis/mapper/BoardMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/InquiryMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/AdminMapper.xml"/>

@@ -90,7 +90,7 @@
 							<a class="btn btn-default-bright" onclick="history.go(-1);">취소</a>
 						</li>
 						<li>
-							<a class="btn btn-primary">저장</a> <!-- 값이 입력되면 disabled 삭제 -->
+							<a class="btn btn-primary" onclick = "send()" href ="javascript:void(0);">저장</a> <!-- 값이 입력되면 disabled 삭제 -->
 						</li>
 					</ul>
 				</div>
@@ -245,13 +245,14 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-body">
-									<form id="dof" method="post" enctype="multipart/form-data" class="form-horizontal form-validate" action="" role="form" target="hidden_frame" novalidate="novalidate">
+									<form name = "insertForm"id="dof" method="post" enctype="multipart/form-data" class="form-horizontal form-validate" action="${pageContext.request.contextPath}/admin/bannerInsertOk.ad" role="form" target="hidden_frame" novalidate="novalidate">
 										<input type="hidden" name="popup_idx" id="popup_idx" value="0">
 										<input type="hidden" name="img_name" id="img_name" value="">
+										
 										<div class="form-group">
 											<label class="col-sm-2 control-label" for="">제목</label>
 											<div class="col-sm-6">
-												<input type="text" class="form-control" name="subject" id="title" placeholder="관리용 제목(사용자에겐 표시되지 않습니다)" value="">
+												<input type="text" class="form-control" name="bannerTitle" id="title" placeholder="관리용 제목(사용자에겐 표시되지 않습니다)" value="">
 												<div class="form-control-line"></div>
 											</div>
 										</div>
@@ -261,14 +262,14 @@
 												<div class="input-group">
 													<div class="input-group-content">
 														<div style="position:relative">
-															<input type="datetime-local" class="form-control" name="start_time" id="start_time" placeholder="날짜를 입력해주세요" value="2022-10-06 15:00" aria-invalid="false">
+															<input type="datetime-local" class="form-control" name="bannerDate" id="start_time" placeholder="날짜를 입력해주세요" value="" aria-invalid="false">
 															<div class="form-control-line"></div>
 														</div>
 													</div>
 													<span class="input-group-addon">~</span>
 													<div class="input-group-content">
 														<div style="position:relative">
-															<input type="datetime-local" class="form-control" name="end_time" id="end_time" placeholder="날짜를 입력해주세요" value="2023-10-06 15:00" aria-invalid="false">
+															<input type="datetime-local" class="form-control" name="bannerDateEnd" id="end_time" placeholder="날짜를 입력해주세요" value="" aria-invalid="false">
 															<div class="form-control-line"></div>
 														</div>
 													</div>
@@ -290,7 +291,7 @@
 															</label>	
 														</div>
 													</div>
-													<input type="file" id="attach" style='display:none;' name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
+													<input type="file" id="attach" style='display:none;' name="fileName" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
 												</div>
 											</div>  							
 										</div>

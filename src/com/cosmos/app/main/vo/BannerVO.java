@@ -3,6 +3,7 @@ package com.cosmos.app.main.vo;
 public class BannerVO {
 	private String bannerTitle;
 	private String bannerDate;
+	private String bannerDateEnd;
 	private String fileName;
 	private String bannerUrl;
 	
@@ -26,6 +27,14 @@ public class BannerVO {
 		this.bannerDate = bannerDate;
 	}
 
+	public String getBannerDateEnd() {
+		return bannerDateEnd;
+	}
+
+	public void setBannerDateEnd(String bannerDateEnd) {
+		this.bannerDateEnd = bannerDateEnd;
+	}
+
 	public String getFileName() {
 		return fileName;
 	}
@@ -44,9 +53,10 @@ public class BannerVO {
 
 	@Override
 	public String toString() {
-		return "BannerVO [bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate + ", fileName=" + fileName
-				+ ", bannerUrl=" + bannerUrl + "]";
+		return "BannerVO [bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate + ", bannerDateEnd="
+				+ bannerDateEnd + ", fileName=" + fileName + ", bannerUrl=" + bannerUrl + "]";
 	}
+
 	
 	
 	

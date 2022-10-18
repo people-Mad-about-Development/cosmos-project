@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Admin">
 	
+<!-- 배너 추가 -->
+	<insert id ="insert" parameterType = "bannerVO">
+		insert into tbl_banner (banner_title, banner_date, banner_date_end, file_name, banner_url) 
+		values (#{bannerTitle},#{bannerDate},#{bannerDateEnd},#{fileName},#{bannerUrl})
+	</insert>
+	
+<!-- 배너 조회 -->
+ 	<select id = "selectAll" resultType = "bannerVO">
+		select * from tbl_banner 
+	</select> 
+	
+<!-- 배너 삭제 -->
+	
+<!-- 배너 수정 -->
+	
 </mapper>
 
 
