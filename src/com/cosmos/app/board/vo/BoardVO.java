@@ -8,17 +8,16 @@ public class BoardVO {
 	private String boardContent;
 	private String boardCategory;
 	private String boardWay;
-	private int boardPersonnel;
+	private int boardRecruitNumber;
 	private int boardSupport;
 	private String boardStartDate;
 	private String boardDate;
 	private String boardPeriod;
 	private int boardViews;
+	private String boardContact;
 	private int userNumber;
 	
-	public BoardVO() {
-		// TODO Auto-generated constructor stub
-	}
+	public BoardVO() {;}
 
 	public int getBoardNumber() {
 		return boardNumber;
@@ -60,12 +59,12 @@ public class BoardVO {
 		this.boardWay = boardWay;
 	}
 
-	public int getBoardPersonnel() {
-		return boardPersonnel;
+	public int getBoardRecruitNumber() {
+		return boardRecruitNumber;
 	}
 
-	public void setBoardPersonnel(int boardPersonnel) {
-		this.boardPersonnel = boardPersonnel;
+	public void setBoardRecruitNumber(int boardRecruitNumber) {
+		this.boardRecruitNumber = boardRecruitNumber;
 	}
 
 	public int getBoardSupport() {
@@ -107,6 +106,14 @@ public class BoardVO {
 	public void setBoardViews(int boardViews) {
 		this.boardViews = boardViews;
 	}
+	
+	public String getBoardContact() {
+		return boardContact;
+	}
+
+	public void setBoardContact(String boardContact) {
+		this.boardContact = boardContact;
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -119,13 +126,11 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [boardNumber=" + boardNumber + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
-				+ ", boardCategory=" + boardCategory + ", boardWay=" + boardWay + ", boardPersonnel=" + boardPersonnel
-				+ ", boardSupport=" + boardSupport + ", boardStartDate=" + boardStartDate + ", boardDate=" + boardDate
-				+ ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews + ", userNumber=" + userNumber + "]";
-	}
-	
-	
-	
+				+ ", boardCategory=" + boardCategory + ", boardWay=" + boardWay + ", boardRecruitNumber="
+				+ boardRecruitNumber + ", boardSupport=" + boardSupport + ", boardStartDate=" + boardStartDate
+				+ ", boardDate=" + boardDate + ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews
+				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + "]";
+	}	
 	
 	
 

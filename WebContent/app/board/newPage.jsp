@@ -267,7 +267,7 @@
 			                        <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
 			                            class="css-a11yText">
 			                        </span>
-			                        <div class="select__control css-control" id="first_list">
+			                        <div class="select__control css-1iewm1a-control" id="first_list">
 			                            <div
 			                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
 			                                <div class="css-multiValue select__multi-value up_list" id="box1">
@@ -688,7 +688,7 @@
                                         <!-- 시작 예정일 안 달력 바  -->
                                         <input aria-invalid="false" placeholder="yyyy-mm-dd" type="date"
                                             class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-1uvydh2"
-                                            value="" id="mui-1" style="font-size: 18px;">
+                                            value="" id="mui-1" style="font-size: 18px;" name="boardStartDate">
                                         <fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac">
                                             <legend class="css-hdw1oc" style="display: none;">
                                                 <span class="notranslate">​</span>
@@ -710,7 +710,7 @@
                             <input class="input_customInput__1e1Il" id="input0" style="pointer-events: none;" value="카카오톡 오픈채팅">
                         </div>
                         <div class="postinfo_contactInput__3nnsb">
-                            <input class="input_customInput__1e1Il" id="input1" placeholder="링크를 입력해주세요" value="">
+                            <input class="input_customInput__1e1Il" id="input1" placeholder="링크를 입력해주세요" value="" name="boardContact">
                         </div>
                         
                         
@@ -790,10 +790,10 @@
                 </div>
 
                 <section>
-                    <label class="input_labelText__3R2TI" for="input">제목</label> <input class="input_customInput__1e1Il"
-                        id="input" placeholder="글 제목을 입력해주세요!" value="">
+                    <label class="input_labelText__3R2TI" for="input">제목</label> 
+                    <input class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="" name="boardTitle">
                     <form method="post">
-                        <textarea id="summernote" name="editordata" placeholder=""> </textarea>
+                        <textarea id="summernote" name="editordata" placeholder="" name="boardContent"> </textarea>
                         <div></div>
                     </form>
 

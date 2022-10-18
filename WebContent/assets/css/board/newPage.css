@@ -193,15 +193,6 @@ element.style {
     text-transform: none;
 }
 
-.css-1wy0on6 {
-    -webkit-box-align: center;
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex-shrink: 0;
-    box-sizing: border-box;
-}
-
 
 .css-1okebmr-indicatorSeparator {
     align-self: stretch;
@@ -220,18 +211,7 @@ element.style {
     box-sizing: border-box;
 }
 
-.css-8mmkcg {
-    display: inline-block;
-    fill: currentcolor;
-    line-height: 1;
-    stroke: currentcolor;
-    stroke-width: 0;
-}
 
-/* path[Attributes Style] {
-    d: path("M 4.516 7.548 c 0.436 -0.446 1.043 -0.481 1.576 0 l 3.908 3.747 l 3.908 -3.747 c 0.533 -0.481 1.141 -0.446 1.574 0 c 0.436 0.445 0.408 1.197 0 1.615 c -0.406 0.418 -4.695 4.502 -4.695 4.502 c -0.217 0.223 -0.502 0.335 -0.787 0.335 s -0.57 -0.112 -0.789 -0.335 c 0 0 -4.287 -4.084 -4.695 -4.502 s -0.436 -1.17 0 -1.615 Z");
-}
- */
 input {
     width: 20rem;
     height: 2.5rem;
@@ -336,15 +316,6 @@ input {
     box-sizing: border-box;
 }
 
-.css-1wy0on6 {
-    -webkit-box-align: center;
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex-shrink: 0;
-    box-sizing: border-box;
-}
-
 .css-1okebmr-indicatorSeparator {
     align-self: stretch;
     background-color: rgb(204, 204, 204);
@@ -362,13 +333,6 @@ input {
     box-sizing: border-box;
 }
 
-.css-8mmkcg {
-    display: inline-block;
-    fill: currentcolor;
-    line-height: 1;
-    stroke: currentcolor;
-    stroke-width: 0;
-}
 
 .datepicker_datepickerWrapper__aUl1_ {
     width: 100%;
@@ -978,7 +942,7 @@ element.style {
 .css-12jo7m5 {
     border-radius: 2px;
     color: rgb(51, 51, 51);
-    font-size: 85%;
+    font-size: 16px;
     overflow: hidden;
     padding: 6px 6px 6px 10px;
     text-overflow: ellipsis;
@@ -1000,6 +964,9 @@ element.style {
     line-height: 1;
     stroke: currentcolor;
     stroke-width: 0;
+}
+label.css-8mmkcg{
+	margin-bottom:0;
 }
 .css-1wy0on6 {
     -webkit-box-align: center;
@@ -1043,7 +1010,7 @@ element.style {
     color: inherit;
     cursor: default;
     display: block;
-    font-size: inherit;
+    font-size: 16px;
     padding: 8px 12px;
     width: 100%;
     user-select: none;
