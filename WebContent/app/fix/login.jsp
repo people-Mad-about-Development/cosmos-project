@@ -17,7 +17,7 @@
         <div class="modalW">
             <div class="modal_first">
                 <div class="loginModal_modalHeader">
-                    <img class="loginModal_logo" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="welcome">
+                    <img class="loginModal_logo" src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="welcome">
                     <div class="loginModal_exitWrapper">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
@@ -76,11 +76,11 @@
                 </div>
 
                 <div class="loginModal_modalContent third hidden_lo">
-                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/arrow-left.png" alt="back-button">
+                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
                     <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
                     <div class="setting_titleWrapper setting_Languages">
-                <h3>관심 있는 기술 태그</h3>
+                <h3>관심 있는<br>기술 태그</h3>
                 <div class="setting_LanguageWrapper">
                     <div class=" css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -502,7 +502,7 @@
                     <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
                     <div class="setting_titleWrapper setting_Languages">
-                <h3>할 수 있는 기술 태그</h3>
+                <h3>할 수 있는<br>기술 태그</h3>
                 <div class="setting_LanguageWrapper">
                     <div class=" css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -924,7 +924,7 @@
                     <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
                     <h1 class="setInterest_title__Me11d">개빠사님이<br>다니는 회사를 알려주세요!</h1>
                     <div class="setInterest_inputWrapper__2LHrv">
-                        <h3>회사 이름</h3>
+                        <h3 style="width: 14%;">회사 이름</h3>
                         <div class="setInterest_likeLanguageWrapper__3nMfg">
                             <div class=" css-2b097c-container">
                                 <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>

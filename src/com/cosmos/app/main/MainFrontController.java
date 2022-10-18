@@ -30,8 +30,8 @@ public class MainFrontController extends HttpServlet{
 			new MainBannerController().execute(req, resp);
 		}else if(request.equals("/main/mainCategory.ma")) {//카테고리가져올정보
 			new MainCategoryController().execute(req, resp);
-		}else if(request.equals("/main/mainRecruit.ma")) {//전체모집글가져올정보
-			new MainRecruitController().execute(req, resp);
+		}else if(request.equals("/main/mainBoard.ma")) {//전체모집글가져올정보
+			new MainBoardController().execute(req, resp);
 		}else if(request.equals("/main/mainSearch.ma")) {//모집글 검색기능
 			new MainSearchController().execute(req, resp);
 		}else if(request.equals("/main/mainSearchOk.ma")) {//모집글 검색기능

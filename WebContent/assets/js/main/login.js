@@ -734,25 +734,17 @@ $company.blur(function(){
     var $exit = $(".loginModal_exitWrapper");
     var $add_btn = $(".company_btn_add");
     
-    
-    
+   
+
     $add.click(function(){
         $modal.showFlex();
     });
-    
-    $exit.click(function(){
-        $modal.hide();
-    });
-    
+        
     $add_btn.click(function(){
         $modal.hide();
     });
     
-    /*$exit.click(function(){
-        $modal.toggleClass("active_lo");
-        $modalContent.removeClass("active_lo");
-        $modalContent.addClass("hidden_lo");
-    });
+    /*
     
     
     var $setInterest = $(".setInterest_likeLanguageWrapper__3nMfg");
