@@ -13,7 +13,8 @@ public class AlarmListController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		
 		return null;
 	}
 

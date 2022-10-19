@@ -10,6 +10,8 @@
 	<select id="selectAll" parameterType="_int" resultType="inquiryDTO">
 		select inquiry_content, inquiry_status, inquiry_reply, inquiry_date ,u.user_nickname 
 		from tbl_user u join tbl_inquiry i on u.user_number = i.user_number and i.user_number = #{userNumber}
+		
+		
 	</select>
 	
 	
