@@ -44,12 +44,16 @@
 			                            <li>#<c:out value="${board.getBoardPeriod()}"/></li>
 			                        </ul>
 			                        <ul class="studyItem_content">
-			                            <li class="studyItem_language"><img class="studyItem_languageImage"
-			                                    src="https://holaworld.io/images/languages/java.svg" alt="language"></li>
+			                        		<c:forEach var="skillFile" items="${board.getSkillFile()}">
+					                            <li class="studyItem_language"><img class="studyItem_languageImage"
+					                                    src="${skillFile}" alt="language"></li>
+		                            		</c:forEach>
 			                        </ul>
 			                        <section class="studyItem_info">
 			                            <div class="avatar_user"><img class="avatar_userImg avatar_small"
-			                                    src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png"
+			                                    <c:out value="src=${board.getUserFile()}"/>
+			                                   <%--  src="${pageContext.request.contextPath}<c:out value="${board.getUserFile()}"/>" --%>
+			                                    <%-- src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" --%>
 			                                    alt="avatar">
 			                                <div class="avatar_userName"><c:out value="${board.getUserNickname()}"/></div>
 			                            </div>
@@ -72,7 +76,7 @@
 			                                            d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
 			                                        </path>
 			                                    </svg>
-			                                    <p>0</p>
+			                                    <p><c:out value="${board.countReply}"/></p>
 			                                </div>
 			                            </div>
 			                        </section>

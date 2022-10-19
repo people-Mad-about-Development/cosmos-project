@@ -5,8 +5,21 @@
 		select board_number, board_start_date, board_title, board_category, board_way, board_recruit_number, board_period, board_views, user_nickname, user_file 
 		from tbl_user u join tbl_board b on u.user_number = b.user_number
 		WHERE board_title LIKE CONCAT('%',#{searchContent}, '%')
-	
 	</select>
+	
+	<select id="countReply" parameterType="_int" resultType="_int">
+		select count(board_reply_number)
+		from tbl_board b join tbl_board_reply  r on b.board_number = r.board_number 
+		where b.board_number = #{boardNumber};
+	</select>
+	
+	<select id="skillFile" parameterType="_int" resultType="string">
+		select ts.skill_file from tbl_board b inner join tbl_board_skill tbs on b.board_number = tbs.board_number inner join tbl_skill ts on tbs.skill_number = ts.skill_number 
+		where b.board_number = #{boardNumber};
+	</select>
+	
+
+	
 </mapper>
 
 
