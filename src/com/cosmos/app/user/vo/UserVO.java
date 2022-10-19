@@ -9,6 +9,7 @@ public class UserVO {
 	private int userCareerYear;
 	private String userFile;
 	private String userDate;
+	private String userId;
 	
 	public UserVO() {
 		// TODO Auto-generated constructor stub
@@ -70,14 +71,20 @@ public class UserVO {
 		this.userDate = userDate;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVO [userNumber=" + userNumber + ", userNickname=" + userNickname + ", userIntroduce="
 				+ userIntroduce + ", userCareer=" + userCareer + ", userCareerYear=" + userCareerYear + ", userFile="
-				+ userFile + ", userDate=" + userDate + "]";
+				+ userFile + ", userDate=" + userDate + ", userId=" + userId + "]";
 	}
-	
-	
-	
+
 	
 }

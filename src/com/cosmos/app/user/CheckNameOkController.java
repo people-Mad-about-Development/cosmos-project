@@ -18,7 +18,6 @@ public class CheckNameOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String userNickname = req.getParameter("userNickname");
-		new UserDAO().checkNickName(userNickname);  
 		PrintWriter out = resp.getWriter();
 		JSONObject jsonObject = new JSONObject(); 
 		
