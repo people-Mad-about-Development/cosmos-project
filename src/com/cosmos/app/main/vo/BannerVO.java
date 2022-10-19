@@ -1,6 +1,7 @@
 package com.cosmos.app.main.vo;
 
 public class BannerVO {
+	private int bannerNumber;
 	private String bannerTitle;
 	private String bannerDate;
 	private String bannerDateEnd;
@@ -9,6 +10,14 @@ public class BannerVO {
 	
 	public BannerVO() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getBannerNumber() {
+		return bannerNumber;
+	}
+
+	public void setBannerNumber(int bannerNumber) {
+		this.bannerNumber = bannerNumber;
 	}
 
 	public String getBannerTitle() {
@@ -53,8 +62,8 @@ public class BannerVO {
 
 	@Override
 	public String toString() {
-		return "BannerVO [bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate + ", bannerDateEnd="
-				+ bannerDateEnd + ", fileName=" + fileName + ", bannerUrl=" + bannerUrl + "]";
+		return "BannerVO [bannerNumber=" + bannerNumber + ", bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate
+				+ ", bannerDateEnd=" + bannerDateEnd + ", fileName=" + fileName + ", bannerUrl=" + bannerUrl + "]";
 	}
 
 	

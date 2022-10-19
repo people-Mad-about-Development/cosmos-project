@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -246,11 +248,14 @@ h
 			<section>
 				<div class="section-body">
 					<div class="row" id="popup_list">
-						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
-							<div class="card">
-								<div class="card-head">
+				<c:choose>
+					<c:when test="${banners != null and fn:length(banners)>0}">
+						<c:forEach var="banner" items="${banners}">
+							<div class="ma-item col-md-3 col-sm-6 col-xs-12">
+								<div class="card">
+									<div class="card-head">
 									<header>
-										<a href="#"><c:out value="${boardTitle}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
+										<a href="#"><c:out value="${banner.getBannerTitle()}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
 										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
 									</header>
 									
@@ -276,17 +281,23 @@ h
 								</div>
 								
 								<a href="#">	<!-- 수정페이지 링크 -->
-									<img class="" src="${pageContext.request.contextPath}/assets/images/banner/'${fileName}'" style="width:100%">
+									<img class="" src="/assets/images/banner/${banner.getFileName()}" style="width:100%">
 								
 								</a>
-								
 								<div class="card-body">
-									<p>기간: <c:out value="${bannerDate}"/>~</p>
-									<p><c:out value="${bannerDateEnd}"/></p>
+									<p>기간: <c:out value="${banner.getBannerDate()}"/>~<c:out value="${banner.getBannerDateEnd()}"/></p>
+
 								</div>
 							</div>
 						</div>
-
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<div>
+									검색결과없다
+								</div>
+							</c:otherwise>
+						</c:choose>
 						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
 							<div class="card">
 								<div class="card-head">

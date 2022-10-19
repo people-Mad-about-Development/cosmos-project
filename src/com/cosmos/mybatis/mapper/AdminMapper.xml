@@ -10,7 +10,7 @@
 	
 <!-- 배너 조회 -->
  	<select id = "selectAll" resultType = "bannerVO">
-		select * from tbl_banner 
+		select banner_title, banner_date, banner_date_end, file_name, banner_url from tbl_banner order by banner_number desc
 	</select> 
 	
 <!-- 배너 삭제 -->

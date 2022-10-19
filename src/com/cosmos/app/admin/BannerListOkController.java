@@ -19,14 +19,27 @@ public class BannerListOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		  resp.setContentType("text/html;charset=utf-8");
+		System.out.println("들어옴");
+		
+	      req.setCharacterEncoding("UTF-8");
+	      resp.setCharacterEncoding("UTF-8");
+	      resp.setContentType("text/html; charset=utf-8");
 	      AdminDAO adminDAO = new AdminDAO();
-	      PrintWriter out = resp.getWriter();
+	      Result result = new Result();
+	      req.setAttribute("banners", adminDAO.selectAll());
 	      
-	      JSONArray banners = new JSONArray();
-	      adminDAO.selectAll().forEach(bannerVO -> {JSONObject banner = new JSONObject(bannerVO); banners.put(banner);});
-	      out.close();
-	      return null;
+	      
+//	      PrintWriter out = resp.getWriter();
+//	      JSONArray banners = new JSONArray();
+//	      adminDAO.selectAll().forEach(bannerVO -> {JSONObject banner = new JSONObject(bannerVO); banners.put(banner);});
+//	      out.print(banners.toString());
+//	      out.close();
+
+
+	      result.setPath(req.getContextPath() + "/app/admin/configPopup.jsp");
+	      
+	      return result;
+	      
 	}
 
 }
