@@ -39,5 +39,11 @@ function searchSend(){
 	
 	searchForm.submit()
 }
+
+$post = $(".navbar_post");
+
+$post.click(function(){
+	$(location).attr("href", "${pageContext.request.contextPath}/app/board/newPage.jsp");
+})
 </script>
 </html>

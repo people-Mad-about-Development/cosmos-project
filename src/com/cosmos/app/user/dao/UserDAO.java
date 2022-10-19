@@ -38,5 +38,8 @@ public class UserDAO {
 		   return sqlSession.selectList("user.skillTotalInfo");
 	   }
 	
+	   public boolean checkNickName(String userNickname) {
+		   return (Integer)sqlSession.selectOne("User.checkNickName", userNickname) == 1;
+	   }
 	   
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -41,7 +42,7 @@
                         </div>
                         <div class="githubButton_buttonWrapper__5pwEe">
                             <button class="githubButton_button__Fhoyv">
-                                <a href="https://github.com/login/oauth/authorize?client_id=2c7dce0b1bf64e82196f&amp;redirect_uri=https://holaworld.io/auth/github">
+                                <a href="javascript:;">
                                     <svg width="50" height="50" fill="currentColor" viewBox="0 0 20 20">
                                         <mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse">
                                             <path fill="#ffffff" fill-rule="evenodd" d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z" clip-rule="evenodd"></path>
@@ -71,13 +72,14 @@
                     <h1 class="setNickname_title__xgVq4">Cosmos에 처음 오셨군요!<br>우선, 사용하실 닉네임을 설정해 볼까요?</h1>
                     <div class="setNickname_inputWrapper__2SFvb">
                         <h3>닉네임</h3>
-                        <input class="setNickname_nicknameInput__1J1el" type="text" name="nickNameInput" value="" autocomplete="off"></div>
-                        <button class="setNickname_buttonNext__2pE6g" name="complete">다음</button>
+                        <input class="setNickname_nicknameInput__1J1el" type="text" id="nickNameInput" name="nickNameInput" value="" autocomplete="off"></div>
+                        <span id="checkResult" style="font-size:0.8em; height:52px; width:20rem; margin-left: 65px;"></span> <!-- 중복검사 결과 -->
+                        <button type="button" class="setNickname_buttonNext__2pE6g" name="complete" onclick="nickSend()">다음</button>
                 </div>
 
                 <div class="loginModal_modalContent third hidden_lo">
                     <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-                    <h1 class="setInterest_title__Me11d">개빠사님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
+                    <h1 class="setInterest_title__Me11d" id="choo">님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
                     <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
                     <div class="setting_titleWrapper setting_Languages">
                 <h3>관심 있는<br>기술 태그</h3>
@@ -495,7 +497,7 @@
                     </div>
                 </div>
             </div>
-                    <button class="setInterest_buttonNext" name="complete">다음</button>
+                    <button type="button" class="setInterest_buttonNext" name="complete" onclick="send()">다음</button>
                 </div>
 
                 <div class="loginModal_modalContent fourth hidden_lo">
@@ -1118,7 +1120,10 @@
 
 
 </body>
+<script>var contextPath = "${pageContext.request.contextPath}";</script>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main/login.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>Kakao.init('61e98904c3024813eecedb7a5c5b3bf9')</script>
 </html>

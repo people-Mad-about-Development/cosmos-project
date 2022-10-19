@@ -22,6 +22,11 @@ var $one = $(".one");
 var $two = $(".two");
 
 var $modalContent = $(".loginModal_modalContent");
+var userId;
+var nickname;
+var nickCheck;
+var inputNick;
+var userCareer;
 
 /*=============================================================== */
 $login.click(function(){
@@ -51,11 +56,10 @@ $github.click(function(){
     $second.toggleClass("active_lo hidden_lo");
 });
 $kakao.click(function(){
-    $first.toggleClass("active_lo hidden_lo");
-    $second.toggleClass("active_lo hidden_lo");
+	kakaoLogin();
 });
 
-$(".setNickname_buttonNext__2pE6g, .setInterest_buttonNext, .can_buttonNext, .company_buttonNext, .career_buttonNext").click(function(){
+$(".setInterest_buttonNext, .can_buttonNext, .company_buttonNext, .career_buttonNext").click(function(){
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
     $(this).parents().closest($modalContent).next().toggleClass("active_lo hidden_lo");
 });
@@ -77,11 +81,15 @@ $two.hover(function(){
 
 
 $one.click(function(){
+	userCareer = "career";
+	console.log(userCareer);
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
     $(this).parents().closest($modalContent).next().toggleClass("active_lo hidden_lo");
 });
 
 $two.click(function(){
+	userCareer = "newcomer";
+	console.log(userCareer);
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
     $(this).parents().closest($modalContent).next().next().toggleClass("active_lo hidden_lo");
 });
@@ -858,5 +866,164 @@ $company.blur(function(){
     $("#xxx_btn7").click(function(){
         $("#c_box7").hide();
 	});
+	
+	/*=============================================================== */
+
+// 아이디 중복검사
+let check = false;
+function checkNickname(userNickname){
+	nickCheck = false;
+			
+	if(!userNickname){
+		$("#checkResult").text("닉네임을 입력해주세요.");
+		$("#checkResult").css("color", "red");
+		return;
+	}
+	
+	$.ajax({
+		url: contextPath + "/user/checkNameOk.us",
+		type: "get",
+		data: {userNickname: userNickname},
+		dataType: "json",
+
+		success: function(data){
+			
+			if(!data.result){
+				$("#checkResult").text("사용 가능한 닉네임입니다.")
+				$("#checkResult").css("color", "blue");
+				nickCheck = true;
+				console.log(userId);
+			}else{
+				$("#checkResult").text("중복된 닉네임입니다.")
+				$("#checkResult").css("color", "red");
+				nickCheck = false;
+			}
+		}
+	});
+}
+
+$("input[name='nickNameInput']").on("blur", function(){
+	inputNick = $(this).val();
+	checkNickname(inputNick);
+});
+
+/*=============================================================== */
+
+// 카카오 로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+        success: function(response) {
+            Kakao.API.request({  // 사용자 정보 가져오기 
+                url: '/v2/user/me',
+                success: (response) => {
+                   userId = response.id+"K"; // 카카오 로그인 id 확인
+
+					    $first.toggleClass("active_lo hidden_lo");
+					    $second.toggleClass("active_lo hidden_lo");						
+					if(userId) {
+					}
+					
+					// 로그인
+					/*$.ajax({
+						url: contextPath + "/user/checkNameOk.us",
+						type: "get",
+						data: {userNickname: userNickname},
+						dataType: "json",
+				
+						success: function(data){
+							
+							if(!data.result){
+								$("#checkResult").text("사용 가능한 닉네임입니다.")
+								$("#checkResult").css("color", "blue");
+								nickCheck = true;
+								console.log(userId);
+							}else{
+								$("#checkResult").text("중복된 닉네임입니다.")
+								$("#checkResult").css("color", "red");
+								nickCheck = false;
+							}
+						}
+					});*/
+
+
+/*                        $.ajax({
+                        type : "post",
+                        url : '/member/idDuplicateCheck.go', // ID중복체크를 통해 회원가입 유무를 결정한다.
+                        data : {"userid":kakaoId},
+                        dataType:"json",
+                        success : function(json){               
+                           if(json.idExists){
+                              // 존재하는 경우 로그인 처리
+                              createHiddenLoginForm(kakaoId);
+                              
+                           } else{
+                              // 회원가입
+                              $.ajax({
+                                 type : "post",
+                                  url : '/member/kakaoSignUp.go',
+                                  data : {"userid":kakaoId},
+                                  dataType :"json",
+                                  success : function(json){
+                                     if(json.success){
+                                        // 로그인
+                                        createHiddenLoginForm(kakaoId);                               
+                                     } else {
+                                        alert('카카오 회원가입 실패. 다른 방식으로 회원가입을 진행해주세요.');
+                                     }
+                                  },
+                                  error: function(request, status, error){
+                                            alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+                                         }
+                              });
+                           }                  
+                        },
+                        error: function(request, status, error){
+                                  alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+                               }
+                     }); */
+                }
+            });
+            // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
+        },
+        fail: function(error) {
+            alert(error);
+        }
+    });
+}
+
+/*=============================================================== */
+	
+function nickSend() { // 닉네임 유효성 검사
+
+	console.log(inputNick);
+	console.log(nickCheck); // 사용 가능 true, 중복 false
+		
+	if(!inputNick){
+		console.log("미입력 상태");
+		$("input[name='nickNameInput']").focus();
+		return;
+	}else if(nickCheck){
+		console.log("입력했고, 사용가능할때");
+		    $(".setNickname_buttonNext__2pE6g").parents().closest($modalContent).toggleClass("active_lo hidden_lo");
+		    $(".setNickname_buttonNext__2pE6g").parents().closest($modalContent).next().toggleClass("active_lo hidden_lo");
+			
+
+	}else{
+		$("input[name='nickNameInput']").focus();		
+	}
+		
+/*		if(!joinForm.memberPw.value){
+		joinForm.memberPw.focus();
+		return;*/
+	
+}
+
+/*=============================================================== */
+	
+
+
+/*=============================================================== */
+
+ 
  
  

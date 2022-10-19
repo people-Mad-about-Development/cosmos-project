@@ -13,8 +13,6 @@ import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.inquiry.dao.InquiryDAO;
 import com.cosmos.app.inquiry.vo.InquiryVO;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class InquiryWriteOkController extends HttpServlet implements Execute {
 // ajax에선 result 없어야함 , 
