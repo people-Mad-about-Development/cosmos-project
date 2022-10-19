@@ -9,12 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
+import com.cosmos.app.board.dao.BoardDAO;
 
 public class MainCategoryController extends HttpServlet implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		BoardDAO boardDAO = new BoardDAO();
+		Result result = new Result();
+		
+		
+		
 		return null;
 	}
 

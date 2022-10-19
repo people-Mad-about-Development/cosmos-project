@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/boardStudy2.css">
 </head>
 <body style ="overflow: auto;">
+<jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/>
     <div id="root">
         <div class="studyContent_postWrapper">
             <section class="studyContent_postHeader">

@@ -15,7 +15,7 @@ public class BoardDAO {
     }
     
     public void insert(BoardVO boardVO) {
-    	sqlSession.insert("Board.insert", boardVO);
+    	sqlSession.insert("Board.insertBoard", boardVO);
     }
 	   
 }

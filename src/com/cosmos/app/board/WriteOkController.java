@@ -21,18 +21,23 @@ public class WriteOkController implements Execute{
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = new BoardVO();
 		
+		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));
+		
 		
 		boardVO.setBoardTitle(req.getParameter("boardTitle"));
 		boardVO.setBoardContent(req.getParameter("boardContent"));
 		boardVO.setBoardCategory(req.getParameter("boardCategory"));
 		boardVO.setBoardWay(req.getParameter("boardWay"));
-		boardVO.setBoardRecruitNumber(Integer.valueOf(req.getParameter("boardRecruitNumber")));
-		boardVO.setBoardSupport(Integer.valueOf(req.getParameter("boardSupport")));
+		boardVO.setBoardRecruitNumber(boardRecruitNumber);
 		boardVO.setBoardStartDate(req.getParameter("boardStartDate"));
 		boardVO.setBoardPeriod(req.getParameter("boardPeriod"));
 		boardVO.setBoardContact(req.getParameter("boardContact"));
 		
-		return null;
+		boardDAO.insert(boardVO);
+		
+		result.setPath("/app/board/listOk.bo");
+		
+		return result;
 	
 	}
 }
