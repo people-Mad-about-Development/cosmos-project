@@ -95,7 +95,7 @@
                         <div class="inqueryCardHeaderMoveWrapper">
                             <button class="inqeuryCardHeaderMovePage" onclick="location.href = '${pageContext.request.contextPath}/inquiry/inquiryDetail.in'">
                                 <div name="check-circle" height="16" width="20" size="16" class="SVGIconstyled"></div>
-                                <div>전체읽기</div>
+                                <div>문의하기페이지바로가기</div>
                             </button>
                         </div>
 
@@ -106,8 +106,7 @@
                                 <div class="UserChatItemLogoWrapper">
                                     <div class="UserChatItemLogo">
                                         <img width='36' height="36"
-                                            src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png"
-                                            alt="">
+                                            src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png"  alt="">
                                     </div>
                                 </div>
                                 <div class="UserChatItemContent">
@@ -194,8 +193,9 @@
                 <section class="inqueryAnswerWrapper">
                     <p class="inquerySubTitle inqueryInnerSubTitle">문의 내용</p>
                     <textarea name="inqeuryQuestion" id="inqeuryQuestion" cols="30" rows="10"
-                        placeholder="문의 내용을 작성해주세요"></textarea>
-                    <input class="inquerySubmitButton" name='inquerySubmit' type="button" value="문의 전송">
+                        placeholder="문의 내용을 작성해주세요">${inquiry.getInquiryContent()}</textarea>
+          <!--  보류   -->
+                    <input class="inquerySubmitButton" name='inquerySubmit' type="button" value="문의 전송" onclick="send()" >
                 </section>
 
 
@@ -288,11 +288,11 @@
         $(this).closest('.inqueryQuestWrapper').removeClass('inqueryQuestionOn').addClass('inqueryQuestionOff')
     })
 
-    $inquerySubmit.click(function () {
+    /* $inquerySubmit.click(function () {
         inqeuryCheck *= -1;
         $(this).closest('.inqueryQuestWrapper').removeClass('inqueryQuestionOn').addClass('inqueryQuestionOff')
     })
-
+ */
     $inqueryPageStart.click(function () {
         inqeuryCheck *= -1;
         if (inqeuryCheck > 0) {
@@ -336,8 +336,96 @@
         }
     })
 
-
-
+  
+    
+    
+    
+    
+    
+    
+    
+    
+	/*  show();
+    
+    function show(){
+		$.ajax({
+			url: "${pageContext.request.contextPath}/writeOk.in",
+			dataType: "json",
+			data: {inquiryContent: $inquiryContent.val()},
+			success: function () {
+				 $inquiryContent.val("")
+			show();
+		}
+		});
+			
+	}  
+	 */	
+	 
+	 /*  function send(){
+			const $inquiryNumber = $("input[name=''inquerySubmit'']");
+			const $inquiryContent = $("input[name=''inquerySubmit'']");
+			
+			if(!$inquiryNumberInput.val()){
+				$inquiryNumberInput.focus();
+				return;
+			} if(!$inquiryContentInput.val()){
+				$inquiryContentInput.focus();
+				return;
+			}  */
+	 
+	 
+	/* 	  	function send() {
+				const $inquiryContentInput = $("#inqeuryQuestion");
+				var content =  $("#inqeuryQuestion").val();
+				if(!$inquiryContentInput.val()){
+					$inquiryContentInput.focus();
+					return;
+				}
+	 
+				$.ajax({
+					url : "/inquiry/writeOk.in?content="+content,
+					type:"get",
+					contentType: "application/json; charset=utf-8",
+					success : function(data){
+						$inquiryContent.html("");
+					
+					},
+				});
+	 
+			} 
+	  
+	 
+	  */
+	  
+	  
+	  
+	  function send(){
+		  var content =  $("#inqeuryQuestion").val();
+		  if(!content){
+				alert("빈 내용은 입력하실 수 없습니다.")
+				return;
+		  }
+		  inqeuryCheck *= -1;
+		  $('.inquerySubmitButton').closest('.inqueryQuestWrapper').removeClass('inqueryQuestionOn').addClass('inqueryQuestionOff')
+		  $.ajax({
+			url: "/inquiry/writeOk.in",	
+		  	type:"get",
+		  	data:{content:content},
+		  
+			success:function(data){
+				alert("문의 등록이 완료되었습니다.")							
+				
+			},
+		  	error:function(data){
+		  		console.log(data)
+		  		console.log("에러들어옴")		
+		  	}
+				
+		  })
+		  }
+		
+	  
+	 
 </script>
 
 </html>

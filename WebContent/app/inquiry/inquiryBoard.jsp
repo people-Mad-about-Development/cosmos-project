@@ -18,8 +18,11 @@
                 <ul class="community-aside">
                     <li class="community-aside_group">
                     
-                    
-                        <a href="${pageContext.request.contextPath}/app/main/index.jsp" class="community-aside__group-name">cosmos</a>
+                    	<div>
+                    	<a href="${pageContext.request.contextPath}/app/main/index.jsp">
+						<img   src="/assets/images/fix/logo.png" alt="logo" class="logo" style="width: 105px" >
+						</a>
+                    	</div>
                         <ul class="community-aside__menu-list">
                             <li class="community-aside__menu community-aside__menu--selected">
                             </li>
@@ -39,7 +42,7 @@
                     </div>
                 </div>
                 <ul class="question-list">
-                    <li class="question-container">
+                  <!--   <li class="question-container">
                         <a href="" class="question_wrap_atag">
                             <div class="question">
                                 <div class="question-info">
@@ -92,16 +95,97 @@
                                 </div>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
 
             <div class="side-banner" width="196px" height="296px">
                 <img id="inquery_side-img" src="${pageContext.request.contextPath}/assets/images/banner/inquiryBoardBanner.jpg" alt="" width="100%" height="100%">
+                <img id="inquery_side-img" src="${pageContext.request.contextPath}/assets/images/banner/inquiryBoardBanner1.png" alt="" width="100%" height="100%">
             </div>
         </section>
     </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+	listOk();
+
+	function listOk(){
+		
+		$.ajax({
+			url: "/inquiry/listOk.in",
+			type:"get",
+			contentType: "application/json; charset=utf-8",
+			success: showList
+			
+		})
+		
+	}
+
+
+	function showList(result){
+		const start = Date.now();
+		var resultInquiry = JSON.parse(result);
+		if(resultInquiry.length > 0){
+			let text="";
+			var count=0;
+			resultInquiry.forEach(result=>{
+				console.log(result.inquiryContent)
+				count++;
+				text+=	`<li class="question-container">`;
+				text+=	`<a href="" class="question_wrap_atag">`;
+				text+=	`<div class="question">`;
+				text+=	 `<div class="question-info">`;
+				text+=	`<div class="question-title">`;
+				text+=	`<h3 class="title-text"><span class="question_number">`+count+`</span>.`+result.inquiryContent+`</h3>`;
+				if(result.inquiryStatus=="complete"){
+				text+=	`<div class="question_status questionSuccess">답변 완료</div>`;
+				}else{
+				text+=	`<div class="question_status questionWait">답변 대기중</div>`;
+				}
+				text+=  `</div>`;
+				if(result.inquiryReply==""){
+				text+=	`<p class="question-body">답변 대기중입니다. 최대한 빨리 답변해드리도록 노력하겠습니다^^</p>`;
+				}else{
+				text+=	`<p class="question-body">답변 : `+ result.inquiryReply +`</p>`;
+				}
+				text+= 	`<div class="question-tag"></div>`;
+				text+=	`<div class="question-info-footer">`;
+				text+=	`<span class="question__info-user-name">`+result.userNickname+`</span>`;
+				text+=	`<span>&nbsp;·&nbsp;</span>`;
+				text+=	 `<span>`+start+`</span>`;
+				text+=	`</div>`;
+				text+=	`</div>`;
+				text+=	`</div>`;
+				text+=	`</a>`;
+				text+=	`</li>`;
+               
+			});
+                
+                
+			$(".question-list").html(text);
+		}
+	}
+
+				
+				
+				
+				
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 </html>

@@ -1,26 +1,32 @@
 package com.cosmos.app.inquiry.vo;
 
-public class InquiryVO {
+public class InquiryDTO {
 
 	private int inquiryNumber;
 	private String inquiryContent;
 	private String inquiryStatus;
 	private String inquiryReply;
 	private int userNumber;
+	private String userNickname;
 	private String inquiryDate;
 	
-	
-	public InquiryVO() {
+	public InquiryDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
 	public String getInquiryDate() {
 		return inquiryDate;
 	}
 
+
+
 	public void setInquiryDate(String inquiryDate) {
 		this.inquiryDate = inquiryDate;
 	}
+
+
 
 	public int getInquiryNumber() {
 		return inquiryNumber;
@@ -62,13 +68,24 @@ public class InquiryVO {
 		this.userNumber = userNumber;
 	}
 
-	@Override
-	public String toString() {
-		return "InquiryVO [inquiryNumber=" + inquiryNumber + ", inquiryContent=" + inquiryContent + ", inquiryStatus="
-				+ inquiryStatus + ", inquiryReply=" + inquiryReply + ", userNumber=" + userNumber + ", inquiryDate="
-				+ inquiryDate + "]";
+	public String getUserNickname() {
+		return userNickname;
 	}
 
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "InquiryDTO [inquiryNumber=" + inquiryNumber + ", inquiryContent=" + inquiryContent + ", inquiryStatus="
+				+ inquiryStatus + ", inquiryReply=" + inquiryReply + ", userNumber=" + userNumber + ", userNickname="
+				+ userNickname + ", inquiryDate=" + inquiryDate + "]";
+	}
+
+	
 	
 	
 }
