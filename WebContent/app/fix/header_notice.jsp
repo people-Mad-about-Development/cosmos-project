@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +44,7 @@
                             <a href="#" style="display: inline-block;">내 작성글</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
-                            <a href="#" style="display: inline-block;">설정</a>
+                            <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">설정</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
                             <a href="#" style="display: inline-block;">로그아웃</a>

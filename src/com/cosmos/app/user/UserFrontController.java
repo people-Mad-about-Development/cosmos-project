@@ -43,6 +43,8 @@ public class UserFrontController extends HttpServlet{
 			new SkillInfoController().execute(req, resp);
 		}else if(request.equals("/user/companyInfo.us")) {//회사정보를 불러온 페이지
 			new CompanyInfoController().execute(req, resp);
+		}else if(request.equals("/user/userInfo.us")) {
+			result = new UserInfoController().execute(req,resp);
 		}
 			
 			
