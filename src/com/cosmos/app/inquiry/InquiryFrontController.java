@@ -26,9 +26,10 @@ public class InquiryFrontController extends HttpServlet{
 		String contextPath = req.getContextPath();
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
-		
+		System.out.println("프론트컨트롤드러와랑");
 		if(request.equals("/inquiry/writeOk.in")) {	// 문의하기
 			new InquiryWriteOkController().execute(req, resp);
+			System.out.println("주소 체크");
 			
 		}else if(request.equals("/inquiry/listOk.in")) {// 문의한 사람의 문의 목록 
 			new InquiryListOkController().execute(req, resp);
