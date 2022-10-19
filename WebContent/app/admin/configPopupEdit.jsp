@@ -90,7 +90,7 @@
 							<a class="btn btn-default-bright" onclick="history.go(-1);">취소</a>
 						</li>
 						<li>
-							<a class="btn btn-primary" onclick = "send()" href ="javascript:void(0);">저장</a> <!-- 값이 입력되면 disabled 삭제 -->
+							<button type = "button" class="btn btn-primary" onclick = "send()" >저장</button> <!-- 값이 입력되면 disabled 삭제 -->
 						</li>
 					</ul>
 				</div>

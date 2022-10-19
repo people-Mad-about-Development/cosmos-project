@@ -19,7 +19,9 @@ public class BannerInsertOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+		 req.setCharacterEncoding("UTF-8");
+	      resp.setCharacterEncoding("UTF-8");
+	      resp.setContentType("text/html; charset=utf-8");
 
 		AdminDAO adminDAO = new AdminDAO();
 		BannerVO bannerVO = new BannerVO();
@@ -46,9 +48,12 @@ public class BannerInsertOkController implements Execute {
 	    bannerVO.setFileName(filename); 
 		System.out.println(bannerVO);
 		
-		result.setPath(req.getContextPath() +"/app/admin/configPopup.jsp");
 		
 		adminDAO.insert(bannerVO);
+		req.setAttribute("banners", adminDAO.selectAll());
+		
+	    result.setPath(req.getContextPath() + "/app/admin/configPopup.jsp");
+//		result.setPath("/app/admin/configPopup.jsp");
 		return result;
 	}
 

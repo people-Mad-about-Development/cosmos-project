@@ -5,18 +5,18 @@
  	// base.html
 
 	// 문서로드 완료 후 자바 스크립트 진행
-	document.addEventListener('DOMContentLoaded', function() {
+/*	document.addEventListener('DOMContentLoaded', function() {
 		const alertBox = document.querySelector('#alertBox');
 		const contentArea = document.querySelector('#content');
 
 		alertBox.classList.remove('alert__wrap-fixed');
 		alertBox.classList.add('alert__wrap');
 		contentArea.prepend(alertBox);
-	});
+	});*/
 
-	$(function(){
+/*	$(function(){
 		SADMIN_MENU_ALERT.openAlert();
-	});
+	});*/
 
 	// 좌측 슬라이드 배너 작동
 	$('.gui-folder').click(function(){
@@ -30,4 +30,52 @@
 		$(this).parent().children('.open').not(this).removeClass('open');	
 
 	});
+	
+/*show();
+
+function show(){
+	console.log("ajax")
+	
+	$.ajax({
+		url: "/admin/bannerListOk.ad",
+		type: "post",
+		data: insertForm,
+		success: showList
+		})
+	};*/
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+function newFunction() {
+    134836;
+}
  
