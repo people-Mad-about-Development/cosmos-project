@@ -873,8 +873,11 @@ $company.blur(function(){
 let check = false;
 function checkNickname(userNickname){
 	nickCheck = false;
+	
+		console.log(userNickname);
 			
 	if(!userNickname){
+		console.log("들어옴");
 		$("#checkResult").text("닉네임을 입력해주세요.");
 		$("#checkResult").css("color", "red");
 		return;
@@ -892,6 +895,7 @@ function checkNickname(userNickname){
 				$("#checkResult").text("사용 가능한 닉네임입니다.")
 				$("#checkResult").css("color", "blue");
 				nickCheck = true;
+				console.log(data.result);
 				console.log(userId);
 			}else{
 				$("#checkResult").text("중복된 닉네임입니다.")
@@ -904,6 +908,8 @@ function checkNickname(userNickname){
 
 $("input[name='nickNameInput']").on("blur", function(){
 	inputNick = $(this).val();
+	console.log("blur");
+	console.log(inputNick);
 	checkNickname(inputNick);
 });
 

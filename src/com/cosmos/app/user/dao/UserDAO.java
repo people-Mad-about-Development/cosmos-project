@@ -18,6 +18,10 @@ public class UserDAO {
 	      sqlSession = sqlSessionFactory.openSession(true);
 	   }
 	   
+	   public boolean checkNickName(String userNickname) {
+		   return (Integer)sqlSession.selectOne("user.checkNickName", userNickname) == 1;
+	   }
+	   
 	   public UserVO userInfo(int userNumber) {
 		   return sqlSession.selectOne("user.userInfo",userNumber);
 	   }
@@ -38,8 +42,6 @@ public class UserDAO {
 		   return sqlSession.selectList("user.skillTotalInfo");
 	   }
 	
-	   public boolean checkNickName(String userNickname) {
-		   return (Integer)sqlSession.selectOne("User.checkNickName", userNickname) == 1;
-	   }
+
 	   
 }
