@@ -27,7 +27,7 @@ public class MainSearchOkController extends HttpServlet implements Execute {
 		req.setAttribute("boards", mainDAO.selectAll(searchContent));
 		System.out.println(mainDAO.selectAll(searchContent));
 		
-		result.setPath("/app/myPage/search_list.jsp");
+		result.setPath("/app/myPage/searchIndex.jsp");
 		
 		return result;
 	}
