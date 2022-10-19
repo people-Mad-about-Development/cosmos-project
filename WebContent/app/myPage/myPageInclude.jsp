@@ -10,16 +10,16 @@
 </head>
 <body>
 	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/> 
+	<jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_page.jsp"/>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/friend_info.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/friend.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/in_lib.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/in_notice.jsp"/> --%>
-	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_page.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_project_lib.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_text_list.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/new_lib.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/new_notice.jsp"/> --%>
-	<jsp:include page = "${pageContext.request.contextPath}/app/myPage/search_list.jsp"/>
+	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/search_list.jsp"/> --%>
 </body>
 </html>

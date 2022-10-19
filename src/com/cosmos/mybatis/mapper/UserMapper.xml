@@ -11,6 +11,36 @@
 		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userDate})
 	</insert>
 	
+	
+	<!-- <select id="userSkillInfo" parameterType="_int" resultType="userSkillDTO">
+		SELECT  u.user_nickname, user_introduce, user_career, user_file, ts.skill_file, ts.skill_name  FROM tbl_user u INNER JOIN tbl_user_can_skill c ON u.user_number  = c.user_number  INNER JOIN tbl_skill ts ON c.skill_number  = ts.skill_number
+		where u.user_number = #{userNumber};
+	</select> -->
+	
+	<select id="userInfo" parameterType="_int" resultType="userVO">
+		select user_nickname, user_introduce,user_career, user_career_year, user_file from tbl_user
+		where user_number = #{userNumber}
+		
+	</select>
+	
+	<select id="userCompanyInfo" parameterType="_int" resultType="companyVO">
+		select tc.company_name, tc.company_url  from tbl_user_company tuc join tbl_company tc on tuc.company_number = tc.company_number and tuc.user_number =#{userNumber}
+	</select>
+	
+	<select id="userInterestInfo" parameterType="_int" resultType="skillVO">
+		select ts.skill_name , ts.skill_file  from tbl_user_interest_skill tuis join tbl_skill ts on tuis.skill_number = ts.skill_number and tuis.user_number =#{userNumber}
+	</select>
+	
+	<select id="userCanInfo" parameterType="_int" resultType="skillVO">
+		select ts.skill_name, ts.skill_file from tbl_user_can_skill tucs join tbl_skill ts on tucs.skill_number =ts.skill_number and tucs.user_number =#{userNumber}
+	</select>
+	
+	<select id="skillTotalInfo" resultType="skillVO">
+		select skill_name, skill_file from tbl_skill
+	</select>
+	
+	
+	
 </mapper>
 
 

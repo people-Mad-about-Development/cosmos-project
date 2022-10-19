@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +21,7 @@
             <h1>내 정보 수정</h1>
             <div class="userImgUpload">
                 <img class="userImgUpload_userImg userImg"
-                    src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
+                    src="${pageContext.request.contextPath}${UserInfo.getUserFile()}" alt="user avatar">
                 <div class="userImgUpload_imgControl">
                     <label class="userImgUpload_customLabel">이미지 선택
                         <input id="imageUpload" type="file" accept="image/*">
@@ -42,7 +44,7 @@
                 <h3 style="position: absolute; top: 10px">닉네임</h3>
                 <div class="main_inputZone">
                         <h3></h3>
-                        <input type="text" name="nickNameInput" value="오메가호근몬">
+                        <input type="text" name="nickNameInput" value="${UserInfo.getUserNickname()}">
                 </div>
                 <p class="main_description">Hola에서 사용되는 이름입니다.</p>
             </div>
@@ -51,7 +53,7 @@
                 <h3 style="position: absolute; top: 10px">한 줄 소개</h3>
                 <div class="main_inputZone" >
                     <h3></h3>
-                    <input type="text" name="nickNameInput" value="잘 부탁드립니다." id="introduce">
+                    <input type="text" name="nickNameInput" value="${UserInfo.getUserIntroduce()}." id="introduce">
                 </div>
                 <p class="main_description">나를 소개하는 한 줄을 작성하세요.</p>
             </div>
@@ -60,7 +62,14 @@
                 <h3 style="position: absolute; top: 10px">경력</h3>
                 <div class="main_inputZone">
                     <h3></h3>
-                    <input type="text" name="nickNameInput" value="10년" >
+                    <c:choose>
+                    <c:when test="${UserInfo.getUserCareer() eq 'career'}">
+                    <input type="text" name="nickNameInput" value="${UserInfo.getUserCareerYear()}년" >
+                    </c:when>
+                    <c:otherwise>
+                    <input type="text" name="nickNameInput" value="신입" >
+                    </c:otherwise>
+                    </c:choose>
                 </div>
                 <p class="main_description">경력 연차를 입력해주세요.</p>
             </div>
