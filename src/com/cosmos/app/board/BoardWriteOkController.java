@@ -12,7 +12,7 @@ import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
 import com.cosmos.app.board.vo.BoardVO;
 
-public class WriteOkController implements Execute{
+public class BoardWriteOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");

@@ -12,7 +12,9 @@
 		values(#{boardTitle}, #{boardContent}, #{boardCategory}, #{boardWay}, #{boardRecruitNumber}, #{boardStartDate}, #{boardPeriod}, #{boardContact})
 	</insert>
 	
-	
+	<select id="selectUserCompany" parameterType="_int" resultType="string">
+		select company_name from tbl_user_company join tbl_company on user_number = #{userNumber}
+	</select>
 </mapper>
 
 

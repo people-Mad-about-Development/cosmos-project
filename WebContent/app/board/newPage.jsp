@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -761,13 +763,21 @@
                             <div class="select__menu css-26l3qy-menu newInAction">
                                 <div class="select__menu-list css-11unzgr">
                                     <div class="select__option select__option--is-focused css-1n7v3ny-option" id="react-select-3-option-0" tabindex="-1" onclick="javascript:change();">직접입력</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1">네이버</div>
+                                    <c:choose>
+                                    	<c:when test="${boards != null and fn:length(boards) > 0}">
+                                    		<c:forEach var="board" items="${boards}">
+                                    				<div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1"><c:out value="${board.getCompanyName()}"></c:out> </div>
+                                    		</c:forEach>
+                                    	</c:when>
+                                    </c:choose>
+                                    
+                                    <!-- <div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1">네이버</div>
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-2" tabindex="-1">카카오</div>
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-3" tabindex="-1">쿠팡</div>
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-4" tabindex="-1">배달의민족</div>
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-5" tabindex="-1">라이엇</div>
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-6" tabindex="-1">넥슨</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">토스</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">토스</div> -->
                                 </div>
                             </div>
                             <div>
