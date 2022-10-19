@@ -8,6 +8,7 @@
 	
 	<typeAliases>
 		<typeAlias type="com.cosmos.app.board.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.cosmos.app.board.vo.BoardDTO" alias="boardDTO"/>
 		<typeAlias type="com.cosmos.app.board.vo.BoardReplyVO" alias="boardReplyVO"/>
 		<typeAlias type="com.cosmos.app.board.vo.BoardSkillVO" alias="boardSkillVO"/>
 		<typeAlias type="com.cosmos.app.board.vo.SupporterVO" alias="supporterVO"/>
