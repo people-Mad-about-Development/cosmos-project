@@ -1,5 +1,7 @@
 package com.cosmos.app.board.vo;
 
+import java.util.List;
+
 public class BoardDTO {
 
 	private int boardNumber;
@@ -17,10 +19,31 @@ public class BoardDTO {
 	private int userNumber;
 	private String userFile;
 	private String userNickname;
+	private int countReply;
+	private List<String> skillFile;
 
 	public BoardDTO() {
 		;
 	}
+
+	
+	
+	
+
+
+	public List<String> getSkillFile() {
+		return skillFile;
+	}
+
+
+	public void setSkillFile(List<String> skillFile) {
+		this.skillFile = skillFile;
+	}
+
+
+
+
+
 
 	public int getBoardNumber() {
 		return boardNumber;
@@ -141,6 +164,17 @@ public class BoardDTO {
 	public void setUserNickname(String userNickname) {
 		this.userNickname = userNickname;
 	}
+	
+
+	public int getCountReply() {
+		return countReply;
+	}
+
+	public void setCountReply(int countReply) {
+		this.countReply = countReply;
+	}
+
+
 
 	@Override
 	public String toString() {
@@ -149,9 +183,11 @@ public class BoardDTO {
 				+ boardRecruitNumber + ", boardSupport=" + boardSupport + ", boardStartDate=" + boardStartDate
 				+ ", boardDate=" + boardDate + ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews
 				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + ", userFile=" + userFile
-				+ ", userNickname=" + userNickname + "]";
+				+ ", userNickname=" + userNickname + ", countReply=" + countReply + ", skillFile=" + skillFile + "]";
 	}
 
+	
+	
 	
 
 }
