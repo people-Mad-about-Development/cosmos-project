@@ -387,3 +387,15 @@ $(document).ready(function(){
 	console.log("x들어옴");
         $c_clear.hide();
     });
+
+
+
+	$(document).ready(function(){
+        $("#selboxDirect").hide();
+     });
+     
+     function change(){
+        $("#select_company").hide();
+        $("#selboxDirect").show();
+		$c_list.toggleClass("company_list");
+    }

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/newPage.css"> 
 </head>
 <body>
+<form action="${pageContext.request.contextPath}/board/writeOk.bo" method="post" name="newPage">
 	<div id="root">
         <div class="postRegister_postWrapper__1s7mv">
             <a href="${pageContext.request.contextPath}/app/main/index.jsp">
@@ -44,7 +45,8 @@
                                     <!-- 이거다 -->
                                     <!-- 스터디/프로젝트 바 -->
                                     <div class="css-1g6gooi">
-                                        <div class="select__placeholder css-1wa3eu0-placeholder" name="boardCategory">스터디/프로젝트</div>
+                                        <div name="Category" class="select__placeholder css-1wa3eu0-placeholder">스터디/프로젝트</div>
+                                        <input style="display:none !important;" name="boardCategory">
                                         <div class="select__input" style="display:inline-block;">
 
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -96,7 +98,8 @@
                             <div class="select__control css-1iewm1a-control ">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 인원 미정 ~ 10 명 이상 바  -->
-                                    <div class="select__placeholder css-1wa3eu0-placeholder" name="boardRecruitNumber">인원 미정~10명 이상</div>
+                                    <div name="RecruitNumber" class="select__placeholder css-1wa3eu0-placeholder" >인원 미정~10명 이상</div>
+                                    <input style="display:none !important;" name="boardRecruitNumber">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -156,7 +159,8 @@
                             <div class="select__control css-1iewm1a-control ">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 안에 온라인 / 오프라인 바  -->
-                                    <div class="select__placeholder css-1wa3eu0-placeholder" name="boardWay">온라인/오프라인</div>
+                                    <div name="Way" class="select__placeholder css-1wa3eu0-placeholder" >온라인/오프라인</div>
+                                    <input style="display:none !important;" name="boardWay">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -207,7 +211,8 @@
                             <div class="select__control css-1iewm1a-control">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 기간 미정 ~ 6개월 이상 선택 바  -->
-                                    <div class="select__placeholder css-1wa3eu0-placeholder" name="boardPeriod">기간 미정~6개월 이상</div>
+                                    <div name="Period" class="select__placeholder css-1wa3eu0-placeholder" >기간 미정~6개월 이상</div>
+                                    <input style="display:none !important;" name="boardPeriod">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -722,7 +727,7 @@
                                 class="css-7pg0cj-a11yText"></span>
                             <div class="select__control css-1iewm1a-control">
                                 <div class="select__value-container select__value-container--has-value css-1hwfws3">
-                                    <div class="select__single-value css-1uccc91-singleValue">회사
+                                    <div name="Company" class="select__single-value css-1uccc91-singleValue">회사
                                         선택</div>
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
@@ -755,24 +760,24 @@
                             <!-- 연락방법 누르면 더 보기 DIV  -->
                             <div class="select__menu css-26l3qy-menu newInAction">
                                 <div class="select__menu-list css-11unzgr">
-                                    <div class="select__option select__option--is-focused css-1n7v3ny-option"
-                                        id="react-select-3-option-0" tabindex="-1">직접입력</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-1"
-                                        tabindex="-1">네이버</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-2"
-                                        tabindex="-1">카카오</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-3"
-                                        tabindex="-1">쿠팡</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-4"
-                                        tabindex="-1">배달의민족</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-5"
-                                        tabindex="-1">라이엇</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-6"
-                                        tabindex="-1">넥슨</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7"
-                                        tabindex="-1">토스</div>
+                                    <div class="select__option select__option--is-focused css-1n7v3ny-option" id="react-select-3-option-0" tabindex="-1" onclick="javascript:change();">직접입력</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1">네이버</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-2" tabindex="-1">카카오</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-3" tabindex="-1">쿠팡</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-4" tabindex="-1">배달의민족</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-5" tabindex="-1">라이엇</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-6" tabindex="-1">넥슨</div>
+                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">토스</div>
                                 </div>
                             </div>
+                            <div>
+                                    <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput" 
+                                    		 style="border: 1px solid rgb(204, 204, 204);
+												    border-radius: 4px;
+												    min-height: 54.5px;
+												    margin-top: 12px;"/>
+                            </div>
+                            <input style="display:none !important;" name="boardCompany">
 
                             <input name="onoffline" type="hidden" value="ok">
                         </div>
@@ -792,38 +797,84 @@
                 <section>
                     <label class="input_labelText__3R2TI" for="input">제목</label> 
                     <input class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="" name="boardTitle">
-                    <form method="post">
-                        <textarea id="summernote" name="editordata" placeholder="" name="boardContent"> </textarea>
+                        <textarea id="summernote" placeholder="" name="boardContent"> </textarea>
                         <div></div>
-                    </form>
 
                     <section class="writebutton_buttons__2qW83">
-                        <button type="button" class="writebutton_cancelButton__2W7b_">취소</button>
-                        <button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button>
+                        <!-- <button type="button" class="writebutton_cancelButton__2W7b_">취소</button> -->
+                        <!-- <button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button> -->
+                        
+                        <input type="button" class="writebutton_cancelButton__2W7b_" style="width:50px; height:35px;" value="취소" onclick=""/>
+                        <input type="button" class="writebutton_registerButton__n_O2M" style="width:70px; height:35px;" value="글 등록" onclick="send()"/>
                     </section>
                 </section>
             </section>
         </div>
     </div>
+</form>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/newPage.js"></script>
 <script>
+	var $company = $(".selboxInput");
+	var Company = document.getElementsByName('Company');
+	$("#selboxDirect").keydown(function(key) {
+		if( key.keyCode == 13 ){
+			console.log('Enter');
+			console.log(Company);
+			console.log($("#selboxDirect").val());
+			newPage.boardCompany.value = $("#selboxDirect").val();
+			Company[0].innerHTML = $("#selboxDirect").val();
+			$company.hide();
+		}
+	});
+
+
+
 	function send(){
-	    if(!writeForm.boardTitle){
+	  	if(!newPage.boardTitle.value){
 	       alert("제목을 작성해주세요.");
 	       return;
 	    }
 	    
-	    if(!writeForm.boardContent){
+	    if(!newPage.boardContent.value){
 	       alert("내용을 작성해주세요.");
 	       return;
 	    }
 	    
-	    submit();
+	    var boardCategory= document.getElementsByName('Category');
+	    var boardRecruitNumber= document.getElementsByName('RecruitNumber');
+	    var boardWay= document.getElementsByName('Way');
+	    var boardPeriod= document.getElementsByName('Period');
+	
+	    newPage.boardCategory.value = boardCategory[0].innerText;
+	    newPage.boardRecruitNumber.value = boardRecruitNumber[0].innerText;
+	    newPage.boardWay.value = boardWay[0].innerText;
+	    newPage.boardPeriod.value = boardPeriod[0].innerText;
+	
+	    if(newPage.boardCategory.value =="스터디/프로젝트"){
+	    	alert("모집 구분을 선택해주세요.");
+		    return;
+	    }
+	    if(newPage.boardRecruitNumber.value =="인원 미정~10명 이상"){
+	    	alert("모집 인원을 선택해주세요.");
+		    return;
+	    }
+	    if(newPage.boardRecruitNumber.value =="온라인/오프라인"){
+	    	alert("진행 방식을 선택해주세요.");
+		    return;
+	    }
+	    if(newPage.boardRecruitNumber.value =="기간 미정~6개월 이상"){
+	    	alert("진행 기간을 선택해주세요.");
+		    return;
+	    }
+	
+	    newPage.submit();
 	 }
+
+
 
 
 </script>
