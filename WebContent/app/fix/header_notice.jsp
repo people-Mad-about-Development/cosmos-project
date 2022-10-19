@@ -24,6 +24,7 @@
             <button class="navbar_post">새 글 쓰기</button>
             <div class="notice">
                 <div class="notice_wrapper">
+                <div class="notice_alarmNoticer__18fSt"></div>
                     <img src="https://holaworld.io/images/info/notification.svg" alt="notification" class="notice">
                 </div>
             </div>

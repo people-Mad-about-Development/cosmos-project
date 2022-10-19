@@ -2,7 +2,7 @@ package com.cosmos.app.inquiry.vo;
 
 public class InquiryDTO {
 
-	private int inquiryNumber;
+	private int inquiryNumber;	
 	private String inquiryContent;
 	private String inquiryStatus;
 	private String inquiryReply;

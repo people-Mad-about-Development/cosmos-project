@@ -29,16 +29,22 @@ public class MainFrontController extends HttpServlet{
 		
 		if(request.equals("/main/mainbanner.ma")) {	//메인페이지.(배너를 가저올 용도)
 			new MainBannerController().execute(req, resp);
+		
 		}else if(request.equals("/main/mainCategory.ma")) {//카테고리가져올정보
 			new MainCategoryController().execute(req, resp);
+		
 		}else if(request.equals("/main/mainBoard.ma")) {//전체모집글가져올정보
 			new MainBoardController().execute(req, resp);
+		
 		}else if(request.equals("/main/mainSearch.ma")) {//모집글 검색기능
 			new MainSearchController().execute(req, resp);
+		
 		}else if(request.equals("/main/mainSearchOk.ma")) {//모집글 검색기능
 			result = new MainSearchOkController().execute(req, resp);
+		
 		}else if(request.equals("/main/alarmList.ma")) {//  알림함 이동 
-			new AlarmListController().execute(req, resp);
+		result = new AlarmListController().execute(req, resp);
+		
 		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
 			new AlarmListOkController().execute(req, resp);
 		}

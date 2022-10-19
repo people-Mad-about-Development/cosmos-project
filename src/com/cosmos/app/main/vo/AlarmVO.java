@@ -1,14 +1,27 @@
 package com.cosmos.app.main.vo;
 
 public class AlarmVO {
-	private int alarmNumber;
-	private int userNumber;
-	private int communityNumber;
-	private int boardNumber;
+	private int alarmNumber;	// 알림 번호
+	private int userNumber;		// 유저 번호
+	private int communityNumber;	// 커뮤니티 번호 
+	private int boardNumber;	//게시판 번호 
+	private int inquiryNumber;
 	
-	public AlarmVO() {
-		// TODO Auto-generated constructor stub
+	public AlarmVO() {;}
+
+	
+	
+	public int getInquiryNumber() {
+		return inquiryNumber;
 	}
+
+
+
+	public void setInquiryNumber(int inquiryNumber) {
+		this.inquiryNumber = inquiryNumber;
+	}
+
+
 
 	public int getAlarmNumber() {
 		return alarmNumber;
@@ -42,11 +55,16 @@ public class AlarmVO {
 		this.boardNumber = boardNumber;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "AlarmVO [alarmNumber=" + alarmNumber + ", userNumber=" + userNumber + ", communityNumber="
-				+ communityNumber + ", boardNumber=" + boardNumber + "]";
+				+ communityNumber + ", boardNumber=" + boardNumber + ", inquiryNumber=" + inquiryNumber + "]";
 	}
+
+	
+	
 	
 	
 	
