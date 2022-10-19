@@ -106,9 +106,6 @@
 		<div class="main_appWrapper">
 			<ul class="studyList">
 
-				<c:choose>
-					<c:when test="${boards != null and fn:length(boards) > 0}">
-						<c:forEach var="board" items="${boards}">
 
 							<a href="" class="studyItem studyItem_open">
 								<li>
@@ -171,10 +168,7 @@
 									</section>
 							</li>
 							</a>
-							
-						</c:forEach>
-					</c:when>
-				</c:choose>
+					
 
 			</ul>
 			<div class="posts_bottomObserver"></div>

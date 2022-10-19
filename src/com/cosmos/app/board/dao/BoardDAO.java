@@ -1,7 +1,10 @@
 package com.cosmos.app.board.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+
 
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
@@ -17,5 +20,10 @@ public class BoardDAO {
     public void insert(BoardVO boardVO) {
     	sqlSession.insert("Board.insertBoard", boardVO);
     }
+    
+    public List<String> selectUserCompany(int userNumber){
+    	return sqlSession.selectList("Board.selectUserCompany", userNumber);
+    }
+    
 	   
 }

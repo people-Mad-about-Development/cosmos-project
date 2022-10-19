@@ -113,7 +113,7 @@
     $post = $(".navbar_post");
     
     $post.click(function(){
-    	$(location).attr("href", "${pageContext.request.contextPath}/app/board/newPage.jsp");
+    	$(location).attr("href", "${pageContext.request.contextPath}/board/write.bo");
     })
     
 </script>
