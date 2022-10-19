@@ -109,6 +109,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
+
 	listOk();
 
 	function listOk(){
@@ -125,12 +126,15 @@
 
 
 	function showList(result){
-		const start = Date.now();
-		var resultInquiry = JSON.parse(result);
+			  
+	
+			  var resultInquiry = JSON.parse(result);
 		if(resultInquiry.length > 0){
 			let text="";
 			var count=0;
 			resultInquiry.forEach(result=>{
+				var dateTime = new Date(result.inquiryDate);
+				
 				console.log(result.inquiryContent)
 				count++;
 				text+=	`<li class="question-container">`;
@@ -154,7 +158,7 @@
 				text+=	`<div class="question-info-footer">`;
 				text+=	`<span class="question__info-user-name">`+result.userNickname+`</span>`;
 				text+=	`<span>&nbsp;·&nbsp;</span>`;
-				text+=	 `<span>`+start+`</span>`;
+				text+=	 `<span>`+dateTime.getFullYear()+ "년"+ ( (dateTime.getMonth()+1) < 9 ? "0" + (dateTime.getMonth()+1) : (dateTime.getMonth()+1) )+ "월"+ ( (dateTime.getDate()) < 9 ? "0" + (dateTime.getDate()) : (dateTime.getDate()) ) + "일"+`</span>`;
 				text+=	`</div>`;
 				text+=	`</div>`;
 				text+=	`</div>`;
