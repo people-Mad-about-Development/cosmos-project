@@ -22,6 +22,10 @@ public class UserDAO {
 		   return (Integer)sqlSession.selectOne("user.checkNickName", userNickname) == 1;
 	   }
 	   
+	   public boolean checkId(String userId) {
+		   return (Integer)sqlSession.selectOne("user.checkId", userId) == 1;
+	   }
+	   
 	   public UserVO userInfo(int userNumber) {
 		   return sqlSession.selectOne("user.userInfo",userNumber);
 	   }

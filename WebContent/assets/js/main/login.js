@@ -1,5 +1,7 @@
+/**
+ * 
+ */ 
 
- 
 var $login = $(".navbar_login");
 var $modal = $(".modal");
 var $black_bg = $(".black_bg");
@@ -131,17 +133,23 @@ $file.change(function(e){
 /*=============================================================== */
 var $ninth = $(".modal_ninth");
 var $complete = $(".setImage_buttonNext__3RJzU");
+var $last = $(".last");
 
 
 $complete.click(function(){
     $(this).parents().closest(".modal").toggleClass("active_lo");
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
-    
-    $ninth.toggleClass("active_lo hidden_lo");
-        setTimeout(function() {
-            $ninth.toggleClass("active_lo hidden_lo");
-    }, 2000);
+	
+	    $ninth.toggleClass("active_lo hidden_lo");
 });
+
+/*$last.click(function(){
+    
+   $(this).toggleClass("active_lo hidden_lo");
+        setTimeout(function() {
+           $(this).toggleClass("active_lo hidden_lo");
+    }, 2000);
+});*/
 
 /*=============================================================== */
 var $liOp = $(".css-list-option");
@@ -926,11 +934,35 @@ function kakaoLogin() {
                 success: (response) => {
                    userId = response.id+"K"; // 카카오 로그인 id 확인
 
+					$.ajax({
+						url: contextPath + "/user/loginOk.us",
+						type: "get",
+						data: {userId: userId},
+						dataType: "json",
+				
+						success: function(data){
+							
+							if(!data.result){
+							    $first.toggleClass("active_lo hidden_lo");
+							    $second.toggleClass("active_lo hidden_lo");		
+								console.log(data.result);
+								console.log(userId);
+							}else if(data.result){
+								console.log("중복없음, 로그인 진행")
+								console.log(data.result);		
+								$modal.addClass("hidden_lo");
+								$modal.removeClass("active_lo");
+							    $(".ten").toggleClass("active_lo hidden_lo");
+
+							}
+						}
+					});
+
+/*					if(userId) {
 					    $first.toggleClass("active_lo hidden_lo");
 					    $second.toggleClass("active_lo hidden_lo");						
-					if(userId) {
 					}
-					
+					*/
 					// 로그인
 					/*$.ajax({
 						url: contextPath + "/user/checkNameOk.us",
@@ -1031,6 +1063,11 @@ function nickSend() { // 닉네임 유효성 검사
 }
 
 /*=============================================================== */
+
+
+
+ 
+/*=============================================================== */
 	
 function join() { // 유저 정보 정리
 /*	document.getElementsByName("userNickname").value(inputNick);
@@ -1042,8 +1079,14 @@ function join() { // 유저 정보 정리
 
 	/*임시값*/
 	var userIntroduce = "테스트";
-	var userCareerYear = 0;
+	var userCareerYear = $("input[name='careerInput']").val();
+	/*var userFile = $(".userImg").attr("src");*/
 	var userFile;
+	
+	
+	
+	console.log(userFile);
+	console.log($("input[name='careerInput']").val());
 	
 	$.ajax({
 		url: contextPath + "/user/joinOk.us",
@@ -1056,7 +1099,21 @@ function join() { // 유저 정보 정리
 
 }
 /*=============================================================== */
-
+// 이미지 경로
+ $(".files").change(function(e){
+               var file = e.target.files[0];
+               var img = $(this).find("img");
+               var reader = new FileReader();
+               reader.readAsDataURL(file);
+               
+                reader.onload = function(e){
+                   if(e.target.result.indexOf("image") != -1){
+                      img.attr("src", e.target.result)
+                   }else{
+                      img.attr("src", "${pageContext.request.contextPath}/images/no_img.jpg");
+                   }
+                }
+             });
  
  
- 
+/*=============================================================== */

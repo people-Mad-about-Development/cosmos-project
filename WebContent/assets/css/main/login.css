@@ -274,6 +274,17 @@ a{
     background-color: #262626;
 }
 
+.last {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 4px;
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background-color: #262626;
+}
+
 /*--------------------------------------------------------------------------------*/
 
 

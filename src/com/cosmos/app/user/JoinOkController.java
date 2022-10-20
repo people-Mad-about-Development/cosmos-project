@@ -38,6 +38,8 @@ public class JoinOkController implements Execute{
 		String userId = req.getParameter("userId");
 		
 		System.out.println("변수 저장");
+		
+//		, new String(Base64.getDecoder().decode(userFile.getBytes()))
 			
 		userVO.setUserNickname(userNickname);
 		userVO.setUserIntroduce(userIntroduce);
@@ -49,6 +51,9 @@ public class JoinOkController implements Execute{
 		System.out.println("userVO 저장");
 
 		userDAO.join(userVO);
+		
+		
+		
 		
 		System.out.println("메소드");
 		
