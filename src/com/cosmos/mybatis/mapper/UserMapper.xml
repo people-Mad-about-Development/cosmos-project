@@ -5,6 +5,10 @@
 		select count(user_nickname) from tbl_user where user_nickname = #{userNickname}
 	</select>
 	
+	<select id="checkId" parameterType="string" resultType="_int">
+		select count(user_id) from tbl_user where user_id = #{userId}
+	</select>
+	
 	<insert id="join" parameterType="userVO">
 		insert into tbl_user
 		(user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_id)

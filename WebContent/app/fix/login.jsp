@@ -1095,7 +1095,7 @@
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
 	                    <h1 class="setImage_title__1CzhH">개빠사님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
 	                    <div>미 업로드시 기본 이미지로 자동 설정됩니다.</div>
-	                    <div class="userImageUpload_image__2lcic">
+	                    <div class="userImageUpload_image__2lcic imageUpload">
 	                        <img class="userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
 	                        
 	                        <div class="userImageUpload_imageControl__2G4AG">
@@ -1119,11 +1119,22 @@
 	            </div>
 	        </div>
 	    </div>
-    <div class="modal_ninth hidden_lo">
+    <div class="modal_ninth ninth hidden_lo">
         <div class="black_bg"></div>
         <div class="modalW">
             <div class="auto_alert">
                 <div>회원가입이 완료되었습니다!</div>
+                <button type="button" class="last" name="complete">확인</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal_ten ten hidden_lo">
+        <div class="black_bg"></div>
+        <div class="modalW">
+            <div class="auto_alert">
+                <div>로그인되었습니다!</div>
+                <button type="button" class="last" name="complete">확인</button>
             </div>
         </div>
     </div>
