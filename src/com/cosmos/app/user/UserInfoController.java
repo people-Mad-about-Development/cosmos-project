@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.user.dao.UserDAO;
@@ -20,10 +23,11 @@ public class UserInfoController implements Execute {
 	     resp.setContentType("text/html; charset=utf-8");
 		 Result result = new Result();
 //		 int userNumber = (Integer)req.getSession().getAttribute("userNumber");
-		 int userNumber = 3;
+		 int userNumber = 2;
 		UserDAO userDAO = new UserDAO();
-		 
-		 
+		JSONArray replies = new JSONArray();
+		userDAO.userCanInfo(userNumber).forEach(skill -> {JSONObject reply = new JSONObject(skill); replies.put(reply);});
+		req.setAttribute("UserCanInfoJson", replies.toString());
 		 req.setAttribute("UserInfo", userDAO.userInfo(userNumber));
 		 req.setAttribute("UserCompanyInfo", userDAO.userCompanyInfo(userNumber));
 		 req.setAttribute("UserCanInfo", userDAO.userCanInfo(userNumber));
