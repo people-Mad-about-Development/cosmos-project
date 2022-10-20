@@ -20,7 +20,7 @@ public class InquiryListOkController extends HttpServlet implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+		 req.setCharacterEncoding("UTF-8");
 	     resp.setCharacterEncoding("UTF-8");
 	      resp.setContentType("text/html; charset=utf-8");
 		

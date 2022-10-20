@@ -398,7 +398,7 @@
 	  */
 	  
 	  
-	  
+	  /*    문의 하기 내용 전송     */
 	  function send(){
 		  var content =  $("#inqeuryQuestion").val();
 		  if(!content){

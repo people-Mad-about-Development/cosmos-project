@@ -1,4 +1,4 @@
-package com.cosmos.app.inquiry;
+	package com.cosmos.app.inquiry;
 
 import java.io.IOException;
 import java.io.PrintWriter;

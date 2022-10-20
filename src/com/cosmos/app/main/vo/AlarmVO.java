@@ -1,11 +1,11 @@
 package com.cosmos.app.main.vo;
 
 public class AlarmVO {
-	private int alarmNumber;	// 알림 번호
-	private int userNumber;		// 유저 번호
+	private int alarmNumber;	// 알림 번호									// 이놈 번호 
+	private int userNumber;		// 유저 번호																	
 	private int communityNumber;	// 커뮤니티 번호 
 	private int boardNumber;	//게시판 번호 
-	private int inquiryNumber;
+	private int inquiryNumber;	// 문의사항 번호 											// 이놈 필요 
 	
 	public AlarmVO() {;}
 
