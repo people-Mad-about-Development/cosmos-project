@@ -66,6 +66,9 @@
             </div>
         </div>
         <div class="noticeDropdownBar_empty">알림함이 비어있습니다.</div>
+        
+        
+        
     </div>
 
   

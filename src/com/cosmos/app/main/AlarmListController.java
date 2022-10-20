@@ -13,7 +13,8 @@ public class AlarmListController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		Result result = new Result();
+		result.setPath("app/inquiry/inquiryBoard.jsp");
 		
 		return null;
 	}

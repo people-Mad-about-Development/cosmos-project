@@ -2,17 +2,18 @@ package com.cosmos.app.inquiry.vo;
 
 public class InquiryVO {
 
-	private int inquiryNumber;
+	private int inquiryNumber;							
 	private String inquiryContent;
 	private String inquiryStatus;
 	private String inquiryReply;
-	private int userNumber;
+	private int userNumber;									
 	private String inquiryDate;
 	
 	
-	public InquiryVO() {
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
+	public InquiryVO() {;}
 
 	public String getInquiryDate() {
 		return inquiryDate;
