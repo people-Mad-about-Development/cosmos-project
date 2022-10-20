@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
+import com.cosmos.app.board.vo.BoardDTO;
 import com.cosmos.app.board.vo.BoardVO;
 
 public class BoardWriteOkController implements Execute{
@@ -20,6 +21,7 @@ public class BoardWriteOkController implements Execute{
 		Result result = new Result();
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = new BoardVO();
+		BoardDTO boardDTO = new BoardDTO();
 		
 		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));
 		
@@ -32,8 +34,10 @@ public class BoardWriteOkController implements Execute{
 		boardVO.setBoardStartDate(req.getParameter("boardStartDate"));
 		boardVO.setBoardPeriod(req.getParameter("boardPeriod"));
 		boardVO.setBoardContact(req.getParameter("boardContact"));
+		boardVO.setBoardCompany(req.getParameter("boardCompany"));
 		
 		boardDAO.insert(boardVO);
+		
 		
 		result.setPath("/app/board/listOk.bo");
 		

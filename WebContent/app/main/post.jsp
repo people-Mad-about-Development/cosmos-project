@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,9 +76,9 @@
 					<div class="toggleSwitch">
 						<span class="toggleSwitch_switchTitle">최신 순</span> <label
 							for="swtichInput"
-							class="toggleSwitch_switchLabel toggleSwitch_UnChecked">
+							class="toggleSwitch_switchLabel toggleSwitch_Checked">
 							<input type="checkbox" class="toggleSwitch_switchCheckbox"
-							id="switchInput" name="switchInputtag">
+							id="switchInput" name="switchInputtag" checked>
 							<div class="toggleSwitch_ball"></div>
 						</label>
 					</div>
@@ -89,7 +91,7 @@
 							<div class="toggleSwitch_ball"></div>
 						</label>
 					</div>
-					<div class="toggleSwitch">
+					<!-- <div class="toggleSwitch">
 						<span class="toggleSwitch_switchTitle">모집 중만 보기</span> <label
 							for="swtichInput"
 							class="toggleSwitch_switchLabel toggleSwitch_Checked"> <input
@@ -97,7 +99,7 @@
 							id="switchInput" name="switchInputtag" checked>
 							<div class="toggleSwitch_ball"></div>
 						</label>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
@@ -105,7 +107,9 @@
 		</div>
 		<div class="main_appWrapper">
 			<ul class="studyList">
-
+				<c:choose>
+					<c:when test="${boards != null and fn:length(boards) > 0}">
+			            <c:forEach var="board" items="${boards}">
 
 							<a href="" class="studyItem studyItem_open">
 								<li>
@@ -166,8 +170,12 @@
 
 										</div>
 									</section>
-							</li>
+								</li>
 							</a>
+							
+						</c:forEach>
+					</c:when>
+				</c:choose>
 					
 
 			</ul>
@@ -182,6 +190,7 @@
     var $label = $('.toggleSwitch_switchLabel');
     var $title = $('.main_category_item');
     console.log($switch)
+    
     $toggle.click(function () {
         if ($(this).prev().is(":checked")) {
             $(this).prev().prop('checked', false);
@@ -196,7 +205,6 @@
                 $label.eq(i).addClass('toggleSwitch_UnChecked').removeClass('toggleSwitch_Checked')
             }
         })
-
     })
 
 
