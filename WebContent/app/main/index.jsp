@@ -16,6 +16,6 @@
 	<jsp:include page = "${pageContext.request.contextPath}/app/main/banner.jsp"/>
 	<jsp:include page = "${pageContext.request.contextPath}/app/main/categorySearch.jsp"/>  
 	<%-- <jsp:include page="${pageContext.request.contextPath}/app/main/categoryCheck.jsp"/> --%> 
-	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/main/post.jsp"/> --%>
+	<jsp:include page = "${pageContext.request.contextPath}/app/main/post.jsp"/>
 </body>
 </html>

@@ -37,7 +37,7 @@ public class MainFrontController extends HttpServlet{
 			new MainBoardController().execute(req, resp);
 		
 		}else if(request.equals("/main/mainSearch.ma")) {//모집글 검색기능
-			new MainSearchController().execute(req, resp);
+			result = new MainSearchController().execute(req, resp);
 		
 		}else if(request.equals("/main/mainSearchOk.ma")) {//모집글 검색기능
 			result = new MainSearchOkController().execute(req, resp);
