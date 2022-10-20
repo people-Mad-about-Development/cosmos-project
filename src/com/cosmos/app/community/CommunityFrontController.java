@@ -32,28 +32,42 @@ public class CommunityFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/community/commumityCreateOk.co")) {	// 공지사항 생성하기 
-			result=new CommumityCreateOkController().execute(req, resp);
+		if(request.equals("/community/noticeCreateOk.co")) {	// 공지사항 생성하기 
+			result=new noticeCreateOkController().execute(req, resp);
 			
-		}else if(request.equals("/community/commumityListOk.co")){	// 공지사항 목록 
-			result=new CommumityListOkController().execute(req, resp);
+		}else if(request.equals("/community/noticeListOk.co")){	// 공지사항 목록 
+			result=new noticeListOkController().execute(req, resp);
 		
-		}else if(request.equals("/community/commumityDeleteOk.co")){	// 공지사항 삭제 
-			result=new CommumityDeleteOkController().execute(req, resp);
+		}else if(request.equals("/community/noticeDeleteOk.co")){	// 공지사항 삭제 
+			result=new noticeDeleteOkController().execute(req, resp);
 		
+		}else if(request.equals("/community/noticeModifyOk.co")){	// 공지사항 수정 
+			result=new noticeModifyOkController().execute(req, resp);
 		
-		}else if(request.equals("/community/commumityModifyOk.co")){	// 공지사항 수정 
-			result=new CommumityModifyOkController().execute(req, resp);
-		
-		}else if(request.equals("/community/commumityList.co")){	// 공지사항 페이지 이동 
-			result = new Result();
-			result.setPath("/app/myPage/in_notice.jsp");
-
-		}else if(request.equals("/community/commumityCreate.co")){	// 공지사항 글작성 페이지로 이동  
+		}else if(request.equals("/community/noticeCreate.co")){	// 공지사항 글작성 페이지로 이동  
 			result = new Result();
 			result.setPath("/app/myPage/new_notice.jsp");
 	
+		}else if(request.equals("/community/libraryCreateOk.co")) {	// 자료실 생성하기
+			result=new libraryCreateOkController().execute(req, resp);
+		
+		}else if(request.equals("/community/libraryListOk.co")){	// 자료실 목록 
+			result=new libraryListOkController().execute(req, resp);
+		
+		}else if(request.equals("/community/libraryDeleteOk.co")){	// 자료실 삭제 
+			result=new libraryDeleteOkController().execute(req, resp);
+		
+		}else if(request.equals("/community/libraryModifyOk.co")){	// 자료실 수정 
+			result=new libraryModifyOkController().execute(req, resp);
+		
+		}else if(request.equals("/community/libraryCreate.co")){	// 자료실 글작성 페이지로 이동  
+			result = new Result();
+			result.setPath("/app/myPage/new_lib.jsp");
+	
 		}
+		
+		
+		
 		
 		if(result != null) {
 			if(result.isRedirect()) {

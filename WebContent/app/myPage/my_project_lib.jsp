@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
                             <li class="community-aside__menu community-aside__menu--selected">
                             </li>
                             <li class="community-aside__menu ">
-                                <a href=""><span>공지사항</span></a>
+                                <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=1"><span>공지사항</span></a>
                             </li>
                             <li class="community-aside__menu ">
                                 <a href="" style="color: #80008087;"><span>자료실</span></a>
@@ -47,32 +49,39 @@
                         </button>
                     </div>
                 </div>
-                <ul class="question-list">
-                    <li class="question-container">
-                        <a href="">
-                            <div class="question">
-                                <div class="question-info">
-                                    <div class="question-title">
-                                        <h3 class="title-text">테스트
-                                            <span>[3]</span>
-                                        </h3>
-                                    </div>
-                                    <p class="question-body">
-                                        테스트
-                                    </p>
-                                    <div class="question-tag"></div>
-                                    <div class="question-info-footer">
-                                        <span class="question__info-user-name">오메가호근몬</span>
-                                        <span>&nbsp;·&nbsp;</span>
-                                        <span>1시간 전</span>
-                                        <span>&nbsp;·&nbsp;</span>
-                                        <span class="question__info-course-title">테스트</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                <c:choose>
+                	<c:when test="${LibList != null and fn:length(LibList) > 0}">
+                		<c:forEach var="list" items="${LibList}">
+			                <ul class="question-list">
+			                    <li class="question-container">
+			                        <a href="">
+			                            <div class="question">
+			                                <div class="question-info">
+			                                    <div class="question-title">
+			                                        <h3 class="title-text"><c:out value="${list.getCommunityTitle()}"/>&nbsp;·&nbsp;[<c:out value="${list.getCountFile()}"/>]</h3>
+			                                    </div>
+			                                    <p class="question-body">
+			                                        <c:out value="${list.getCommunityContent()}"/>
+			                                    </p>
+			                                    <div class="question-tag"></div>
+			                                    <div class="question-info-footer">
+			                                        <span class="question__info-user-name"><c:out value="${list.getUserNickname()}"/></span>
+			                                        <span>&nbsp;·&nbsp;</span>
+			                                        <span><c:out value="${list.getCommunityDate()}"/></span>
+			                                        <span>&nbsp;·&nbsp;</span>
+			                                        <span class="question__info-course-title">자료실</span>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </a>
+			                    </li>
+			                </ul>
+		                </c:forEach>
+	            	</c:when> 
+	            	<c:otherwise>
+	            		<div>등록된 글이 없습니다.</div>
+	            	</c:otherwise>
+               	</c:choose>
             </div>
 
 

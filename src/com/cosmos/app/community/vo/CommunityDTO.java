@@ -1,7 +1,6 @@
 package com.cosmos.app.community.vo;
 
-public class CommunityVO {
-
+public class CommunityDTO {
 	private int communityNumber;
 	private String communityTitle;
 	private String communityContent;
@@ -9,8 +8,10 @@ public class CommunityVO {
 	private String communityCategory;
 	private int userNumber;
 	private int boardNumber;
+	private String userNickname;
+	private int countFile;
 	
-	public CommunityVO() {
+	public CommunityDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -70,14 +71,32 @@ public class CommunityVO {
 		this.boardNumber = boardNumber;
 	}
 
+	public String getUserNickname() {
+		return userNickname;
+	}
+
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
+	public int getCountFile() {
+		return countFile;
+	}
+
+	public void setCountFile(int countFile) {
+		this.countFile = countFile;
+	}
+
 	@Override
 	public String toString() {
-		return "CommunityVO [communityNumber=" + communityNumber + ", communityTitle=" + communityTitle
+		return "CommunityDTO [communityNumber=" + communityNumber + ", communityTitle=" + communityTitle
 				+ ", communityContent=" + communityContent + ", communityDate=" + communityDate + ", communityCategory="
-				+ communityCategory + ", userNumber=" + userNumber + ", boardNumber=" + boardNumber + "]";
+				+ communityCategory + ", userNumber=" + userNumber + ", boardNumber=" + boardNumber + ", userNickname="
+				+ userNickname + ", countFile=" + countFile + "]";
 	}
 
 	
+
 	
 	
 	
