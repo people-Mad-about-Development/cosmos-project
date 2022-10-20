@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -212,7 +214,7 @@
 							</a>
 							<ul>
 								<li class="  " data-title="configPopup">
-									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp">
+									<a href="${pageContext.request.contextPath}/admin/bannerListOk.ad">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>
@@ -260,7 +262,7 @@
 									<div class="col-md-2 hidden-xs">
 										<div class="card">
 											<div class="memberDelete">
-												<a href="#modal;" rel="modal:open">선택 사용자 삭제</a>
+												<a href="#modal;" rel="modal:open" >선택 사용자 삭제</a>
 												<span>
 													<!-- <button type="button" class="button" style="display:none";></button> -->
 												</span>
@@ -288,7 +290,7 @@
 									</div><!-- /.modal -->
 									<!-- 모달 끝 -->
 		
-		
+								
 									<div class="col-md-12">
 										<div class="card">
 											<div class="card-head" id="card-head">
@@ -309,7 +311,7 @@
 															</div>
 														</li>
 														<li class="nick"><a href="#">닉네임</a></li>
-														<li class="account">계정</li>
+														<li class="account">아이디</li>
 														<li class="dateJoin">가입일</li>
 														<li class="participationProject">프로젝트</li>
 														<li class="participationStudy">스터디</li>
@@ -318,9 +320,12 @@
 														<li class="countQuestion">문의</li>
 														<li class="action"></li>
 													</ul>
-		
+												<c:choose>
+												<c:when test="${users != null and fn:length(users)>0}">
+													<c:forEach var="user" items="${users}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check"> <!-- CHECKBOX -->
+														<input type="text"  style="display:none" value = "${userNumber}" name =userNumber>
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input type="checkbox" class="terms">
@@ -331,18 +336,18 @@
 		
 														<li class="nick">
 															<a href="#" onclick=""> 
-																COSMOS    <span class="badge">운영자</span>
+																<c:out value = "${user.getUserNickname()}"/>    <span class="badge"></span>
 															</a>
 														</li>		
-														<li class="account">slions1113@gmail.com</li>
-														<li class="dateJoin">2022-09-29</li>				
-														<li class="participationProject">3</li>
-														<li class="participationStudy">8</li>														
+														<li class="account"><c:out value = "${user.getUserId()}"/></li>
+														<li class="dateJoin"><c:out value = "${user.getUserDate()}"/></li>				
+														<li class="participationProject">${project}</li>
+														<li class="participationStudy">${study}</li>														
 														<li class="countPost">
-															<a href="#" onclick="">5</a> <!-- 마이페이지 내 게시글로 이동 -->
+															<a href="#" onclick="">${count}</a> <!-- 마이페이지 내 게시글로 이동 -->
 														</li>
-														<li class="countComment">0</li>
-														<li class="countQuestion">0</li>
+														<li class="countComment">${reply}</li>
+														<li class="countQuestion">${inquiry}</li>
 																									
 														<li class="action">
 															<div class="dropdown">
@@ -351,7 +356,7 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
+																		<a href="javascript:;" onclick="location.href='${pageContext.request.contextPath}/admin/memberDeleteOk.ad?userNickname=${user.getUserNickname()}'">
 																			삭제
 																		</a>
 																	</li>																										
@@ -360,199 +365,10 @@
 														</li>
 													</ul>
 
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check"> <!-- CHECKBOX -->
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-		
-														<li class="nick">
-															<a href="#" onclick="">성현성현</a>
-														</li>		
-														<li class="account">cosmos01@gmail.com</li>
-														<li class="dateJoin">2022-10-09</li>				
-														<li class="participationProject">5</li>
-														<li class="participationStudy">7</li>														
-														<li class="countPost">
-															<a href="#" onclick="">6</a> <!-- 마이페이지 내 게시글로 이동 -->
-														</li>
-														<li class="countComment">0</li>
-														<li class="countQuestion">1</li>
-																									
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																										
-																</ul>
-															</div>
-														</li>
-													</ul>
+													</c:forEach>
+														</c:when>
+															</c:choose>
 
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check"> <!-- CHECKBOX -->
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-		
-														<li class="nick">
-															<a href="#" onclick="">종우종우</a>
-														</li>		
-														<li class="account">cosmos1127@gmail.com</li>
-														<li class="dateJoin">2022-10-09</li>				
-														<li class="participationProject">3</li>
-														<li class="participationStudy">8</li>														
-														<li class="countPost">
-															<a href="#" onclick="">5</a> <!-- 마이페이지 내 게시글로 이동 -->
-														</li>
-														<li class="countComment">0</li>
-														<li class="countQuestion">0</li>
-																									
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																										
-																</ul>
-															</div>
-														</li>
-													</ul>
-
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check"> <!-- CHECKBOX -->
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-		
-														<li class="nick">
-															<a href="#" onclick="">호근호근</a>
-														</li>		
-														<li class="account">cosmos1127@gmail.com</li>
-														<li class="dateJoin">2022-10-09</li>				
-														<li class="participationProject">3</li>
-														<li class="participationStudy">0</li>														
-														<li class="countPost">
-															<a href="#" onclick="">5</a> <!-- 마이페이지 내 게시글로 이동 -->
-														</li>
-														<li class="countComment">2</li>
-														<li class="countQuestion">1</li>
-																									
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																										
-																</ul>
-															</div>
-														</li>
-													</ul>
-
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check"> <!-- CHECKBOX -->
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-		
-														<li class="nick">
-															<a href="#" onclick="">민성민성</a>
-														</li>		
-														<li class="account">cosmos1157@gmail.com</li>
-														<li class="dateJoin">2022-10-09</li>				
-														<li class="participationProject">3</li>
-														<li class="participationStudy">8</li>														
-														<li class="countPost">
-															<a href="#" onclick="">5</a> <!-- 마이페이지 내 게시글로 이동 -->
-														</li>
-														<li class="countComment">0</li>
-														<li class="countQuestion">0</li>
-																									
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																										
-																</ul>
-															</div>
-														</li>
-													</ul>
-
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check"> <!-- CHECKBOX -->
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-		
-														<li class="nick">
-															<a href="#" onclick="">로사로사</a>
-														</li>		
-														<li class="account">cosmos@gmail.com</li>
-														<li class="dateJoin">2022-10-09</li>				
-														<li class="participationProject">3</li>
-														<li class="participationStudy">8</li>														
-														<li class="countPost">
-															<a href="#" onclick="">5</a> <!-- 마이페이지 내 게시글로 이동 -->
-														</li>
-														<li class="countComment">0</li>
-														<li class="countQuestion">0</li>
-																									
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																										
-																</ul>
-															</div>
-														</li>
 													</ul>
 
 												</div>
@@ -560,6 +376,7 @@
 											</div>
 										</div>
 									</div>
+							
 								</div>
 							</div>
 						</div>

@@ -223,7 +223,7 @@
 							</a>
 							<ul>
 								<li class="active expanded" data-title="configPopup">
-									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp"  class=" active">
+									<a href="${pageContext.request.contextPath}/admin/bannerListOk.ad"  class=" active">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>

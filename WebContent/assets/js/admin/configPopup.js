@@ -31,51 +31,7 @@
 
 	});
 	
-/*show();
-
-function show(){
-	console.log("ajax")
-	
-	$.ajax({
-		url: "/admin/bannerListOk.ad",
-		type: "post",
-		data: insertForm,
-		success: showList
-		})
-	};*/
-	
 
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-function newFunction() {
-    134836;
-}
- 
