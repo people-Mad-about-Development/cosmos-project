@@ -13,6 +13,7 @@
 		<typeAlias type="com.cosmos.app.board.vo.BoardSkillVO" alias="boardSkillVO"/>
 		<typeAlias type="com.cosmos.app.board.vo.SupporterVO" alias="supporterVO"/>
 		<typeAlias type="com.cosmos.app.community.vo.CommunityVO" alias="communityVO"/>
+		<typeAlias type="com.cosmos.app.community.vo.CommunityDTO" alias="communityDTO"/>
 		<typeAlias type="com.cosmos.app.community.vo.CommunityReplyVO" alias="communityReplyVO"/>
 		<typeAlias type="com.cosmos.app.community.vo.FileVO" alias="fileVO"/>
 		<typeAlias type="com.cosmos.app.inquiry.vo.InquiryVO" alias="inquiryVO"/>

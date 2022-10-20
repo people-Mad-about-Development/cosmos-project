@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 
-public class CommumityDeleteOkController implements Execute {
+public class noticeDeleteOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
