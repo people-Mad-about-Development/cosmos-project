@@ -17,8 +17,19 @@ public class BoardVO {
 	private String boardContact;
 	private int userNumber;
 	
+	private String boardCompany;
+	
 	public BoardVO() {;}
+	
+	
 
+	public String getBoardCompany() {
+		return boardCompany;
+	}
+	public void setBoardCompany(String boardCompany) {
+		this.boardCompany = boardCompany;
+	}
+	
 	public int getBoardNumber() {
 		return boardNumber;
 	}
@@ -129,7 +140,8 @@ public class BoardVO {
 				+ ", boardCategory=" + boardCategory + ", boardWay=" + boardWay + ", boardRecruitNumber="
 				+ boardRecruitNumber + ", boardSupport=" + boardSupport + ", boardStartDate=" + boardStartDate
 				+ ", boardDate=" + boardDate + ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews
-				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + "]";
+				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + ", boardCompany=" + boardCompany
+				+ "]";
 	}	
 	
 	

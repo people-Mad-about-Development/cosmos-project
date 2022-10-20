@@ -421,7 +421,7 @@
 			                                    </div>
 			                                </div>
 			                                <div class="css-multiValue select__multi-value up_list" id="box14">
-			                                    <div class="css-12jo7m5 select__multi-value__label">Djang</div>
+			                                    <div class="css-12jo7m5 select__multi-value__label">Django</div>
 			                                    <div class="css-xb97g8 select__multi-value__remove" id="x_btn14">
 			                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
 			                                            focusable="false" class="css-8mmkcg">
@@ -647,7 +647,7 @@
 			                        </div>
 			                        <div class="select_menu css-langage-list select_menu1 list1">
 			                            <div class="">
-			                                <div class="select_option css-list-option" id="react-select-1-option-1" tabindex="-1">JavaScript</div>
+			                                <div class="select_option css-list-option" id="react-select-1-option-1" tabindex="-1" name="JavaScript">JavaScript</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-2" tabindex="-1">TypeScript</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-3" tabindex="-1">React</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-4" tabindex="-1">Vue</div>
@@ -660,7 +660,7 @@
 			                                <div class="select_option css-list-option" id="react-select-1-option-11" tabindex="-1">Go</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-12" tabindex="-1">C</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-13" tabindex="-1">Python</div>
-			                                <div class="select_option css-list-option" id="react-select-1-option-14" tabindex="-1">Djang</div>
+			                                <div class="select_option css-list-option" id="react-select-1-option-14" tabindex="-1">Django</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-15" tabindex="-1">Swift</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-16" tabindex="-1">Kotlin</div>
 			                                <div class="select_option css-list-option" id="react-select-1-option-17" tabindex="-1">MySQL</div>
@@ -729,8 +729,7 @@
                                 class="css-7pg0cj-a11yText"></span>
                             <div class="select__control css-1iewm1a-control">
                                 <div class="select__value-container select__value-container--has-value css-1hwfws3">
-                                    <div name="Company" class="select__single-value css-1uccc91-singleValue">회사
-                                        선택</div>
+                                    <div name="Company" class="select__single-value css-1uccc91-singleValue">회사 선택</div>
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -762,11 +761,11 @@
                             <!-- 연락방법 누르면 더 보기 DIV  -->
                             <div class="select__menu css-26l3qy-menu newInAction">
                                 <div class="select__menu-list css-11unzgr">
-                                    <div class="select__option select__option--is-focused css-1n7v3ny-option" id="react-select-3-option-0" tabindex="-1" onclick="javascript:change();">직접입력</div>
+                                   
                                     <c:choose>
                                     	<c:when test="${boards != null and fn:length(boards) > 0}">
                                     		<c:forEach var="board" items="${boards}">
-                                    				<div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1"><c:out value="${board.getCompanyName()}"></c:out> </div>
+                                    				<div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1"><c:out value="${board.getCompanyName()}"></c:out></div>
                                     		</c:forEach>
                                     	</c:when>
                                     </c:choose>
@@ -780,16 +779,9 @@
                                     <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">토스</div> -->
                                 </div>
                             </div>
-                            <div>
-                                    <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput" 
-                                    		 style="border: 1px solid rgb(204, 204, 204);
-												    border-radius: 4px;
-												    min-height: 54.5px;
-												    margin-top: 12px;"/>
-                            </div>
+                            
                             <input style="display:none !important;" name="boardCompany">
 
-                            <input name="onoffline" type="hidden" value="ok">
                         </div>
 
                         <div class="postinfo_contactInput__3nnsb"></div>
@@ -828,21 +820,18 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/newPage.js"></script>
 <script>
-	var $company = $(".selboxInput");
-	var Company = document.getElementsByName('Company');
-	$("#selboxDirect").keydown(function(key) {
-		if( key.keyCode == 13 ){
-			console.log('Enter');
-			console.log(Company);
-			console.log($("#selboxDirect").val());
-			newPage.boardCompany.value = $("#selboxDirect").val();
-			Company[0].innerHTML = $("#selboxDirect").val();
-			$company.hide();
-		}
-	});
-
-
-
+	/* var $JavaScript = document.getElementsByName('JavaScript'); */
+	var $JavaScript = $("#react-select-1-option-1");
+	var $Exit = $(".css-8mmkcg");
+	
+	$JavaScript.on("click", function(){
+		newPage.likeLanguages.value = $JavaScript[0].innerText;	
+	})
+		
+	$Exit.on("click", function(){
+		newPage.likeLanguages.value = "";	
+	})
+	
 	function send(){
 	  	if(!newPage.boardTitle.value){
 	       alert("제목을 작성해주세요.");
@@ -858,11 +847,13 @@
 	    var boardRecruitNumber= document.getElementsByName('RecruitNumber');
 	    var boardWay= document.getElementsByName('Way');
 	    var boardPeriod= document.getElementsByName('Period');
+	    var boardCompany= document.getElementsByName('Company');
 	
 	    newPage.boardCategory.value = boardCategory[0].innerText;
 	    newPage.boardRecruitNumber.value = boardRecruitNumber[0].innerText;
 	    newPage.boardWay.value = boardWay[0].innerText;
 	    newPage.boardPeriod.value = boardPeriod[0].innerText;
+	    newPage.boardCompany.value = boardCompany[0].innerHTML;
 	
 	    if(newPage.boardCategory.value =="스터디/프로젝트"){
 	    	alert("모집 구분을 선택해주세요.");
@@ -878,6 +869,10 @@
 	    }
 	    if(newPage.boardRecruitNumber.value =="기간 미정~6개월 이상"){
 	    	alert("진행 기간을 선택해주세요.");
+		    return;
+	    }
+	    if(newPage.boardCompany.value =="회사 선택"){
+	    	alert("회사를 선택해주세요.");
 		    return;
 	    }
 	

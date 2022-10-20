@@ -21,15 +21,13 @@ public class BoardDTO {
 	private String userNickname;
 	private int countReply;
 	private List<String> skillFile;
+	
+	private String companyName;
+	private String boardCompany;
 
-	public BoardDTO() {
-		;
-	}
+	public BoardDTO() {;}
 
 	
-	
-	
-
 
 	public List<String> getSkillFile() {
 		return skillFile;
@@ -41,7 +39,28 @@ public class BoardDTO {
 	}
 
 
+	
 
+
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	
+
+	public String getBoardCompany() {
+		return boardCompany;
+	}
+
+
+
+	public void setBoardCompany(String boardCompany) {
+		this.boardCompany = boardCompany;
+	}
 
 
 
@@ -183,7 +202,8 @@ public class BoardDTO {
 				+ boardRecruitNumber + ", boardSupport=" + boardSupport + ", boardStartDate=" + boardStartDate
 				+ ", boardDate=" + boardDate + ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews
 				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + ", userFile=" + userFile
-				+ ", userNickname=" + userNickname + ", countReply=" + countReply + ", skillFile=" + skillFile + "]";
+				+ ", userNickname=" + userNickname + ", countReply=" + countReply + ", skillFile=" + skillFile
+				+ ", companyName=" + companyName + ", boardCompany=" + boardCompany + "]";
 	}
 
 	
