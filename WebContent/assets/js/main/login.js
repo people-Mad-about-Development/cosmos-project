@@ -89,7 +89,9 @@ $one.click(function(){
 
 $two.click(function(){
 	userCareer = "newcomer";
-	console.log(userCareer);
+/*	console.log(userCareer);
+	$(userCareerInput).val(userCareer);
+	console.log($(userCareerInput).val(userCareer));*/
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
     $(this).parents().closest($modalContent).next().next().toggleClass("active_lo hidden_lo");
 });
@@ -1010,6 +1012,10 @@ function nickSend() { // 닉네임 유효성 검사
 		return;
 	}else if(nickCheck){
 		console.log("입력했고, 사용가능할때");
+		
+		document.getElementById("nickh1").innerHTML = document.getElementById("nickNameInput").value + document.getElementById("nickh1").innerHTML;
+		
+	
 		    $(".setNickname_buttonNext__2pE6g").parents().closest($modalContent).toggleClass("active_lo hidden_lo");
 		    $(".setNickname_buttonNext__2pE6g").parents().closest($modalContent).next().toggleClass("active_lo hidden_lo");
 			
@@ -1026,8 +1032,29 @@ function nickSend() { // 닉네임 유효성 검사
 
 /*=============================================================== */
 	
+function join() { // 유저 정보 정리
+/*	document.getElementsByName("userNickname").value(inputNick);
+	document.getElementsByName("userIntroduce").value();
+	document.getElementsByName("userCareer").value(userCareer);
+	document.getElementsByName("userCareerYear").value();
+	document.getElementsByName("userFile").value();
+	document.getElementsByName("userId").value(userId);*/
 
+	/*임시값*/
+	var userIntroduce = "테스트";
+	var userCareerYear = 0;
+	var userFile;
+	
+	$.ajax({
+		url: contextPath + "/user/joinOk.us",
+		type: "post",
+		data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId},
+		dataType: "json"
+	});
 
+		
+
+}
 /*=============================================================== */
 
  

@@ -41,6 +41,10 @@ public class UserDAO {
 	   public List<SkillVO> skillTotalInfo(){
 		   return sqlSession.selectList("user.skillTotalInfo");
 	   }
+	   
+	   public void join(UserVO userVO){
+		   sqlSession.selectList("user.join", userVO);
+	   }
 	
 
 	   

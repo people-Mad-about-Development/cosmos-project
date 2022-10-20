@@ -6,9 +6,9 @@
 	</select>
 	
 	<insert id="join" parameterType="userVO">
-		insert into tbl_member
-		(user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_date)
-		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userDate})
+		insert into tbl_user
+		(user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_id)
+		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userId})
 	</insert>
 	
 	<!-- <select id="userSkillInfo" parameterType="_int" resultType="userSkillDTO">
