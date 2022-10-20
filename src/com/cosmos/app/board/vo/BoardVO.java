@@ -2,7 +2,6 @@ package com.cosmos.app.board.vo;
 
 public class BoardVO {
 	
-	
 	private int boardNumber;
 	private String boardTitle;
 	private String boardContent;

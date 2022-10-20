@@ -79,7 +79,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp">배너 관리</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="${pageContext.request.contextPath}/admin/bannerListOk.ad">배너 관리</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -231,7 +231,7 @@ h
 							</a>
 							<ul>
 								<li class="active expanded" data-title="configPopup">
-									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp"  class=" active">
+									<a href="${pageContext.request.contextPath}/admin/bannerListOk.ad"  class=" active">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>
@@ -255,7 +255,7 @@ h
 								<div class="card">
 									<div class="card-head">
 									<header>
-										<a href="#"><c:out value="${banner.getBannerTitle()}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
+										<a href="#" id = "title"><c:out value="${banner.getBannerTitle()}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
 										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
 									</header>
 									
@@ -267,12 +267,10 @@ h
 												</a>
 	
 												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
-													<li>
-														<a href="#">수정</a> <!-- 수정페이지 링크 -->
-													</li>
+												
 													<li class="divider"></li>
 													<li>
-														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
+														<a id="deleteButton" onclick="location.href='${pageContext.request.contextPath}/admin/bannerDeleteOk.ad?bannerNumber=${banner.getBannerNumber()}'">삭제</a>
 													</li>
 												</ul>
 											</div>
@@ -292,11 +290,7 @@ h
 						</div>
 								</c:forEach>
 							</c:when>
-							<c:otherwise>
-								<div>
-									검색결과없다
-								</div>
-							</c:otherwise>
+						
 						</c:choose>
 						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
 							<div class="card">
@@ -314,12 +308,10 @@ h
 												</a>
 	
 												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left;">
-													<li>
-														<a href="#">수정</a> <!-- 수정페이지 링크 -->
-													</li>
+												
 													<li class="divider"></li>
 													<li>
-														<a href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
+														<a id ="deleteButton" href="javascript:;" onclick="CONFIG_POPUP.deletePopup('134836')">삭제</a>
 													</li>
 												</ul>
 											</div>

@@ -31,17 +31,16 @@ public class AdminFrontController extends HttpServlet {
 			result = new BannerListOkController().execute(req, resp);
 		
 		}else if(request.equals("/admin/bannerDeleteOk.ad")) {	//	삭제   
+			System.out.println("들어옴");
 			result = new BannerDeleteController().execute(req, resp);
-		
-		}else if(request.equals("/admin/bannerModifyOk.ad")) {	//	수정  
-			result =new BannerModifyOkController().execute(req, resp);
 		
 		}else if(request.equals("/admin/bannerInsertOk.ad")) {	//	추가 
 			result =new BannerInsertOkController().execute(req, resp);
 
-		}else if(request.equals("/admin/bannerSearchOk.ad")) {	// 검색
-			result =new BannerSearchOkController().execute(req, resp);
-		
+		}else if(request.equals("/admin/memberListOk.ad")) {	// 사용자 조회
+			result =new MemberListOkController().execute(req, resp);
+		}else if(request.equals("/admin/memberDeletetOk.ad")) {	// 사용자 조회
+			result =new MemberDeleteOkController().execute(req, resp);
 		}
 		
 		if(result != null) {

@@ -10,13 +10,45 @@
 	
 <!-- 배너 조회 -->
  	<select id = "selectAll" resultType = "bannerVO">
-		select banner_title, banner_date, banner_date_end, file_name, banner_url from tbl_banner order by banner_number desc
+		select * from tbl_banner order by banner_number desc
 	</select> 
 	
 <!-- 배너 삭제 -->
+	<delete id="bannerDelete" parameterType = "_int">
+		delete from tbl_banner where banner_number = #{bannerNumber}	
+	</delete>
 	
-<!-- 배너 수정 -->
 	
+<!-- 사용자 관리 -->	
+	<!-- 사용자 조회 -->
+	<select id="userSelect" resultType = "userVO" >
+		select user_nickname,user_id,user_date from tbl_user ;
+	</select>
+	<!-- 프로젝트 게시글 수 -->
+	<select id="projectSelect" parameterType = "_int" resultType = "_int" >
+		select count(board_number) from tbl_board where user_number = #{userNumber} and board_category = "프로젝트"
+	</select>
+	<!-- 스터디 게시글 수 -->
+	<select id="studySelect" parameterType = "_int" resultType = "_int" >
+		select count(board_number) from tbl_board where user_number = #{userNumber} and board_category = "스터디"
+	</select>
+	<!-- 게시글 총 갯수 -->
+	<select id="countSelect" resultType = "_int">
+		select count(board_number) from tbl_board
+	</select>
+	<!-- 댓글 총 갯수 -->
+	<select id="replySelect" parameterType="_int" resultType = "_int" >
+		select count(board_reply_number) from tbl_board_reply where user_number = #{userNumber};
+	</select>
+	<!-- 문의 총 갯수 -->
+	<select id="inquirySelect" parameterType="_int" resultType = "_int" >
+		select count(inquiry_number) from tbl_inquiry where user_number = #{userNumber};
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="memberDelete" parameterType ="String">
+		delete from tbl_user where user_nickname = #{userNickname}
+	</delete>
 </mapper>
 
 

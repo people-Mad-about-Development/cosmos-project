@@ -222,7 +222,7 @@
 							</a>
 							<ul>
 								<li class="  " data-title="configPopup">
-									<a href="${pageContext.request.contextPath}/app/admin/configPopup.jsp">
+									<a href="${pageContext.request.contextPath}/admin/bannerListOk.ad">
 										<span class="title">배너 관리</span>
 									</a>
 								</li>

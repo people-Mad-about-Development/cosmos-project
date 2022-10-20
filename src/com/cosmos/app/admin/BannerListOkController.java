@@ -19,13 +19,14 @@ public class BannerListOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("들어옴");
+		System.out.println("listOk들어옴");
 		
 	      req.setCharacterEncoding("UTF-8");
 	      resp.setCharacterEncoding("UTF-8");
 	      resp.setContentType("text/html; charset=utf-8");
 	      AdminDAO adminDAO = new AdminDAO();
 	      Result result = new Result();
+	      
 	      req.setAttribute("banners", adminDAO.selectAll());
 	      
 	      

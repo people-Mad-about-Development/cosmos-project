@@ -139,7 +139,7 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
