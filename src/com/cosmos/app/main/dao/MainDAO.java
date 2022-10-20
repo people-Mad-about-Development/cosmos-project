@@ -25,9 +25,12 @@ public class MainDAO {
 		   return sqlSession.selectOne("Search.countReply", boardNumber);
 	   }
 	   
-
-	   
 	   public List<String> skillFile(int boardNumber){
 		   return sqlSession.selectList("Search.skillFile",boardNumber);
 	   }
+	   
+	   public List<BoardDTO> mySelectBoard(int userNumber){
+		   return sqlSession.selectList("Search.mySelectBoard", userNumber);
+	   }
+	   
 }

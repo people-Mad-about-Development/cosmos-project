@@ -33,15 +33,6 @@ public class MainSearchOkController extends HttpServlet implements Execute {
 			boardOne.setSkillFile(mainDAO.skillFile(boardOne.getBoardNumber()));
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		req.setAttribute("boards", boardDTO);
 		
 		result.setPath("/app/myPage/searchIndex.jsp");
