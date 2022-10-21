@@ -280,7 +280,7 @@ h
 								
 								<a href="#">	<!-- 수정페이지 링크 -->
 									<img class="" src="/assets/images/banner/${banner.getFileName()}" style="width:100%">
-								
+									
 								</a>
 								<div class="card-body">
 									<p>기간: <c:out value="${banner.getBannerDate()}"/>~<c:out value="${banner.getBannerDateEnd()}"/></p>

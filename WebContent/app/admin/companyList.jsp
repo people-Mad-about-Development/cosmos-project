@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -281,7 +283,7 @@
 										<div class="card">
 											<div class="card-head" id="card-head">
 												<header class="small">전체 회사
-													<span class="text-primary" id="total-member-count">1</span>
+													<span class="text-primary" id="total-member-count"></span>
 												</header>
 											</div>
 	
@@ -297,11 +299,13 @@
 														</li>
 														<li class="companyName">회사명</li>
 														<li class="explanation">설명</li>
-														<li class="companyDateJoin">생성일</li>
+														<li class="companyDateJoin">회사 주소</li>
 														<li class="companyPostCount">관련 게시글</li>
 														<li class="action"></li>
 													</ul>
-	
+											<c:choose>
+												<c:when test="${companies != null and fn:length(companies)>0}">
+													<c:forEach var="company" items="${companies}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check">
 															<div class="checkbox checkbox-styled no-margin">
@@ -313,12 +317,12 @@
 														</li>
 	
 														<li class="companyName">															
-															<a href="#" onclick="">넥슨</a> <!-- 회사 개별 정보가 들어간 Detail 페이지로 이동 -->
+															<a href="#" onclick=""><c:out value = "${company.getCompanyName()}"/></a> <!-- 회사 개별 정보가 들어간 Detail 페이지로 이동 -->
 														</li>	
-														<li class="explanation">메이플스토리로 유명한 게임 회사</li>														
-														<li class="companyDateJoin">1900-11-13</li>													
+														<li class="explanation" ><c:out value = "${company.getCompanyContent()}"/></li>														
+														<li class="companyDateJoin" ><c:out value = "${company.getCompanyUrl()}"/></li>													
 														<li class="companyPostCount">0</li>
-						
+												
 														<li class="action">
 															<div class="dropdown">
 																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
@@ -326,25 +330,27 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
+																		<a onclick="location.href='${pageContext.request.contextPath}/admin/companyDeleteOk.ad?companyName=${company.getCompanyName()}'">
 																			삭제
 																		</a>
 																	</li>
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			수정
-																		</a>
+													
 																	</li>																													
 																</ul>
-															</div>
-														</li>
-													</ul>
+															</ul>
+																		</c:forEach>
+																		</c:when>
+																	</c:choose>	
+														</div>
+													</li>
 												</div>
-												<nav class="text-center" id="paginate"></nav>
+														
+												<!-- <nav class="text-center" id="paginate"></nav> -->
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>			
 							</div>
 						</div>
 					</div>

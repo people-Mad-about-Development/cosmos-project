@@ -79,7 +79,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">사용자 목록</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">사용자 목록</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -295,7 +295,7 @@
 										<div class="card">
 											<div class="card-head" id="card-head">
 												<header class="small">전체 사용자
-													<span class="text-primary" id="total-member-count">6</span>명
+													<span class="text-primary" id="total-member-count">${count}</span>명
 												</header>
 		
 											</div>
@@ -321,14 +321,15 @@
 														<li class="action"></li>
 													</ul>
 												<c:choose>
-												<c:when test="${users != null and fn:length(users)>0}">
-													<c:forEach var="user" items="${users}">
+												<c:when test="${adminDTO != null and fn:length(adminDTO)>0}">
+													<c:forEach var="user" items="${adminDTO}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check"> <!-- CHECKBOX -->
 														<input type="text"  style="display:none" value = "${userNumber}" name =userNumber>
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input type="checkbox" class="terms">
+																	
 																	<span></span>
 																</label>
 															</div>
@@ -341,13 +342,13 @@
 														</li>		
 														<li class="account"><c:out value = "${user.getUserId()}"/></li>
 														<li class="dateJoin"><c:out value = "${user.getUserDate()}"/></li>				
-														<li class="participationProject">${project}</li>
-														<li class="participationStudy">${study}</li>														
+														<li class="participationProject">${user.getCountProject()}</li>
+														<li class="participationStudy">${user.getCountStudy()}</li>														
 														<li class="countPost">
-															<a href="#" onclick="">${count}</a> <!-- 마이페이지 내 게시글로 이동 -->
+															<a href="#" onclick="">${user.getCountAll()}</a> <!-- 마이페이지 내 게시글로 이동 -->
 														</li>
-														<li class="countComment">${reply}</li>
-														<li class="countQuestion">${inquiry}</li>
+														<li class="countComment">${user.getCountComment()}</li>
+														<li class="countQuestion">${user.getCountInquiry()}</li>
 																									
 														<li class="action">
 															<div class="dropdown">
@@ -356,7 +357,7 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="location.href='${pageContext.request.contextPath}/admin/memberDeleteOk.ad?userNickname=${user.getUserNickname()}'">
+																		<a onclick="location.href='${pageContext.request.contextPath}/admin/memberDeleteOk.ad?userId=${user.getUserId()}'">
 																			삭제
 																		</a>
 																	</li>																										

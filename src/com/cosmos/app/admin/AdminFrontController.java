@@ -39,10 +39,15 @@ public class AdminFrontController extends HttpServlet {
 
 		}else if(request.equals("/admin/memberListOk.ad")) {	// 사용자 조회
 			result =new MemberListOkController().execute(req, resp);
-		}else if(request.equals("/admin/memberDeletetOk.ad")) {	// 사용자 조회
+		}else if(request.equals("/admin/memberDeleteOk.ad")) {	// 삭제
 			result =new MemberDeleteOkController().execute(req, resp);
 		}
-		
+		else if(request.equals("/admin/companyListOk.ad")) {	// 회사 관리 
+			result =new CompanyListOkController().execute(req, resp);
+		}
+		else if(request.equals("/admin/companyDeleteOk.ad")) {	// 회사 삭제
+			result =new CompanyDeleteOkController().execute(req, resp);
+		}
 		if(result != null) {
 			if(result.isRedirect()) {
 				resp.sendRedirect(result.getPath());
@@ -51,7 +56,7 @@ public class AdminFrontController extends HttpServlet {
 				dispatcher.include(req, resp);
 			}
 		}
-	}
+		}
 }
 	
 

@@ -24,6 +24,7 @@ public class BannerListOkController implements Execute {
 	      req.setCharacterEncoding("UTF-8");
 	      resp.setCharacterEncoding("UTF-8");
 	      resp.setContentType("text/html; charset=utf-8");
+	      
 	      AdminDAO adminDAO = new AdminDAO();
 	      Result result = new Result();
 	      
