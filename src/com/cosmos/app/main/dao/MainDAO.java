@@ -17,6 +17,10 @@ public class MainDAO {
 	      sqlSession = sqlSessionFactory.openSession(true);
 	   }
 	   
+	   public List<BoardDTO> selectAllMain(){
+		   return sqlSession.selectList("Main.selectAllMain");
+	   }
+	   
 	   public List<BoardDTO> selectAll(String searchContent){
 		   return sqlSession.selectList("Search.selectBoard", searchContent);
 	   }

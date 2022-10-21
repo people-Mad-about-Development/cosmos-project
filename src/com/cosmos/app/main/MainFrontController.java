@@ -27,14 +27,14 @@ public class MainFrontController extends HttpServlet{
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
 		
-		if(request.equals("/main/mainbanner.ma")) {	//메인페이지.(배너를 가저올 용도)
-			new MainBannerController().execute(req, resp);
+		if(request.equals("/main/mainbanner.ma")) {	//배너를 가저올 용도
+			result = new MainBannerController().execute(req, resp);
 		
 		}else if(request.equals("/main/mainCategory.ma")) {//카테고리가져올정보
-			new MainCategoryController().execute(req, resp);
+			result = new MainCategoryController().execute(req, resp);
 		
 		}else if(request.equals("/main/mainBoard.ma")) {//전체모집글가져올정보
-			new MainBoardController().execute(req, resp);
+			result = new MainBoardController().execute(req, resp);
 		
 		}else if(request.equals("/main/mainSearch.ma")) {//모집글 검색기능
 			result = new MainSearchController().execute(req, resp);
@@ -43,10 +43,14 @@ public class MainFrontController extends HttpServlet{
 			result = new MainSearchOkController().execute(req, resp);
 		
 		}else if(request.equals("/main/alarmList.ma")) {//  알림함 이동 
-		result = new AlarmListController().execute(req, resp);
+			result = new AlarmListController().execute(req, resp);
 		
 		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
-			new AlarmListOkController().execute(req, resp);
+			result = new AlarmListOkController().execute(req, resp);
+			
+		}else if(request.equals("/main/main.ma")) {//  메인
+			result = new MainOkController().execute(req, resp);
+			
 		}
 		
 		if(result != null) {

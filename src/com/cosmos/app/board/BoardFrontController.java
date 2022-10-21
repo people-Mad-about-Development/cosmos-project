@@ -39,6 +39,8 @@ public class BoardFrontController extends HttpServlet {
 			result = new BoardDetailOkController().execute(req, resp);
 		}else if(request.equals("/board/listOk.bo")) {		// 게시판 목록
 			result = new BoardListController().execute(req, resp);
+		}else if(request.equals("/board/close.bo")) {		// 게시판 마감
+			result = new BoardCloseController().execute(req, resp);
 		}
 		
 			

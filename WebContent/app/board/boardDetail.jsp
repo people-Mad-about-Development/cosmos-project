@@ -13,7 +13,7 @@
     <div id="root">
         <div class="studyContent_postWrapper">
             <section class="studyContent_postHeader">
-                <a href="${pageContext.request.contextPath}/app/main/index.jsp">
+                <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
 		          <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
 		        viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
 		         xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -26,7 +26,7 @@
                 <div class="studyContent_title">[${board.getBoardCompany()}]${board.getBoardTitle()}</div>
                 
                 <div class="studyContent_userAndDate" style="pointer-events : none;">
-                    <img class="studyContent_companyImg" src="${pageContext.request.contextPath}/assets/images/company/navericon.png">
+                    <img class="studyContent_companyImg" src="<c:out value="${pageContext.request.contextPath}${comPany.getCompanyFile()}"/>">
                     
                 <div class="studyContent_companyName" style="pointer-events : none;">${board.getBoardCompany()}</div>
                     <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
@@ -34,11 +34,15 @@
                 <div class="studyContent_userName" style="pointer-events : none;">${board.getUserNickname()}</div>
                 <div class="studyContent_registeredDate">${board.getBoardDate()}</div>
                 </div>
+                
+                
                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons1">마감</button>
                     <button class="studyButtons_buttons2">수정</button>
                     <button class="studyButtons_buttons3" id="delete">삭제</button>
                 </section>
+                
+                
                 <div class="recommendPost_totalWrapper">
                     <div class="recommendPost_recommendWrapper">
                         <div class="recommendPost_userInfoWrapper">
@@ -149,10 +153,12 @@
                         <div class="studyContent_postComment">
                             <div class="commentInput_commentInput">
                                 <h1 class="commentInput_commentCount">0개의 댓글이 있습니다.</h1><!-- 댓글 등록하면 count증가 -->
-                                <textarea class="commentInput_commentText" placeholder="댓글을 입력하세요."></textarea>
-                                <div class="commentInput_buttonWrapper">
-                                    <button class="commentInput_buttonComplete" name="register">댓글 등록</button>
-                                </div>
+                                <form method="post" action="#" class="combined" style="width:auto;" name="replyForm">
+	                                <textarea class="commentInput_commentText" placeholder="댓글을 입력하세요."></textarea>
+	                                <div class="commentInput_buttonWrapper">
+	                                    <button class="commentInput_buttonComplete" name="register" onclick="send()">댓글 등록</button>
+	                                </div>
+                                </form>
                             </div>
                         </div>
                     </section>
@@ -175,7 +181,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton" onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" id="yes">네,지원할게요</button>
+            <button class="cancelButton_registerButton" id="yes" onclick="support()">네,지원할게요</button>
         </section>
       </div>
     </div>
@@ -194,7 +200,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton"onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" >네,마감할게요</button>
+            <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}'">네,마감할게요</button>
         </section>
       </div>
     </div>
@@ -244,6 +250,7 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
 <script>
 
 $( document ).ready(function() {

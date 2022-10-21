@@ -3,24 +3,45 @@
 <mapper namespace="Board">
 
 	<select id="selectAll" resultType="boardVO">
-		select (board_title, board_content, board_category, board_way, board_recruit_number, board_start_date, board_period, board_contact)
+		select (board_title, board_content, board_category, board_way, board_recruit_number, board_start_date, board_period, board_views, board_contact)
 		from tbl_board
 	</select>
 	
+	<!-- 게시글 작성 -->
 	<insert id="insertBoard" parameterType="boardVO">
 		insert into tbl_board (board_title, board_content, board_category, board_way, board_recruit_number, board_start_date, board_period, board_contact, board_company)
 		values(#{boardTitle}, #{boardContent}, #{boardCategory}, #{boardWay}, #{boardRecruitNumber}, #{boardStartDate}, #{boardPeriod}, #{boardContact}, #{boardCompany})
 	</insert>
 	
+	<!-- user company의 company name 조회 -->
 	<select id="selectUserCompany" parameterType="_int" resultType="boardDTO">
 		select company_name from tbl_user_company uc join tbl_company c on uc.company_number = c.company_number where user_number = #{userNumber}
 	</select>
 	
+	<!-- board 상세 페이지 조회 -->
 	<select id="selectBoardDetail" parameterType="_int" resultType="boardDTO">
-		select user_nickname, board_title, board_content , board_category , board_way , board_recruit_number , board_start_date , board_date , board_period , board_contact, board_company
+		select user_nickname, board_number, board_title, board_content , board_category , board_way , board_recruit_number , board_start_date , board_date , board_period , board_contact, board_company
 		from tbl_board b join tbl_user u on b.user_number = u.user_number where board_number = #{boardNumber}
 	</select>
 	
+	<!-- company img 조회 -->
+	<select id="selectCompany" parameterType="string" resultType="boardDTO">
+		select company_file FROM tbl_company c join tbl_board b on c.company_name = b.board_company  where c.company_name = #{boardCompany};
+	</select>
+	
+	<!-- 조회수 count 증가 -->
+	<update id="updateReadCount" parameterType="_int">
+		update tbl_board
+		set board_views = board_views + 1 
+		where board_number = #{boardNumber}
+	</update>
+	
+	<!-- 마감 -->
+	<update id="updateClose" parameterType="_int">
+		update tbl_board
+		set board_status='close'
+		where board_number = #{boardNumber}
+	</update>
 </mapper>
 
 
