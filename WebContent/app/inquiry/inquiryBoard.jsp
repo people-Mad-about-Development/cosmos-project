@@ -129,7 +129,7 @@
 			  
 	
 			  var resultInquiry = JSON.parse(result);
-		if(resultInquiry.length > 0){
+			if(resultInquiry.length > 0){
 			let text="";
 			var count=0;
 			resultInquiry.forEach(result=>{

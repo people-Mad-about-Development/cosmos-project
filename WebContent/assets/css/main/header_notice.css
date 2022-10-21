@@ -259,3 +259,21 @@ div{
     border-radius: 50%;
     background: red;
 }
+
+
+.noticeMoveInquiryBoard {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+    gap: 16px;
+}
+.noticeListOn {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #4a5e75;
+    text-decoration-color: #4a5e75;
+}
+

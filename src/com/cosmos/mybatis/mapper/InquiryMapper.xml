@@ -10,7 +10,25 @@
 	<select id="selectAll" parameterType="_int" resultType="inquiryDTO">
 		select inquiry_content, inquiry_status, inquiry_reply, inquiry_date ,u.user_nickname 
 		from tbl_user u join tbl_inquiry i on u.user_number = i.user_number and i.user_number = #{userNumber}
+		order by inquiry_number desc
 	</select>
+		
+	
+	
+	<select id="inquirySelect" parameterType="_int" resultType="alarmVO">
+	select a.inquiry_number  
+	from tbl_alarm a join tbl_inquiry i on a.inquiry_number = i.inquiry_number where i.user_number = 2 and i.inquiry_status ='complete';
+	= #{inquiryNumber}
+	</select>		
+	
+	<insert id="">
+		insert into tbl_alarm(user_number , inquiry_number , )
+		values(2,)
+	
+	
+	</insert>
+
+
 		
 	
 	
