@@ -214,7 +214,7 @@
     var $inqueryPageStart = $('.inqueryPageStart')
     var inqueryPage = $('.inqueryQuestWrapper')
     var $inqueryPageExit = $('.inqueryQuestionExit')
-    var check = -1;
+    var check_doctor = -1;	
     var inqeuryCheck = -1;
     var langCount = 0;
     var $inquerySubmit = $('.inquerySubmitButton');
@@ -283,7 +283,7 @@
 
 
     $inqueryPageExit.click(function () {
-    	 check *= -1;
+    	check_doctor *= -1;
         inqeuryCheck *= -1;
         $(this).closest('.inqueryQuestWrapper').removeClass('inqueryQuestionOn').addClass('inqueryQuestionOff')
     })
@@ -303,8 +303,8 @@
     })
 
     $inquerybutton.click(function () {
-        check *= -1;
-        if (check > 0) {
+    	check_doctor *= -1;
+        if (check_doctor > 0) {
             $inquery.removeClass('inqueryoff').addClass('inqueryon')
         } else {
             $inquery.removeClass('inqueryon').addClass('inqueryoff')
@@ -314,7 +314,7 @@
     var $inqueryExit = $('.inqueryHeaderRight')
 
     $inqueryExit.click(function () {
-        check *= -1;
+    	check_doctor *= -1;
         $(this).closest('.inqueryWrapper').removeClass('inqueryon').addClass('inqueryoff')
     })
 
@@ -405,6 +405,7 @@
 				alert("빈 내용은 입력하실 수 없습니다.")
 				return;
 		  }
+		  
 		  inqeuryCheck *= -1;
 		  $('.inquerySubmitButton').closest('.inqueryQuestWrapper').removeClass('inqueryQuestionOn').addClass('inqueryQuestionOff')
 		  $.ajax({

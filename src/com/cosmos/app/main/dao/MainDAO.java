@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardDTO;
 import com.cosmos.app.board.vo.BoardVO;
+import com.cosmos.app.inquiry.vo.InquiryDTO;
+import com.cosmos.app.main.vo.AlarmVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
 public class MainDAO {
@@ -36,5 +38,10 @@ public class MainDAO {
 	   public List<BoardDTO> mySelectBoard(int userNumber){
 		   return sqlSession.selectList("Search.mySelectBoard", userNumber);
 	   }
+	   
+	   public List<AlarmVO> selectAll(int inquiryNumber){
+		   return sqlSession.selectList("Inquiry.inquirySelect", inquiryNumber);
+	   }
+	   
 	   
 }
