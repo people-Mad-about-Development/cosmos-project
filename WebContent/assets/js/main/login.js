@@ -901,6 +901,9 @@ function checkNickname(userNickname){
 
 		success: function(data){
 			
+			console.log("리턴 닉네임");
+			console.log(data.userNickname);
+			
 			if(!data.result){
 				$("#checkResult").text("사용 가능한 닉네임입니다.")
 				$("#checkResult").css("color", "blue");

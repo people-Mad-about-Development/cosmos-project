@@ -6,6 +6,7 @@ import java.util.Base64;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
@@ -16,6 +17,7 @@ public class JoinOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
+		HttpSession session = req.getSession();
 		Result result = new Result();
 		
 		System.out.println("회원가입 들어옴");
@@ -39,7 +41,7 @@ public class JoinOkController implements Execute{
 		
 		System.out.println("변수 저장");
 		
-//		, new String(Base64.getDecoder().decode(userFile.getBytes()))
+//		memberPw = new String(Base64.getEncoder().encode(memberPw.getBytes()));
 			
 		userVO.setUserNickname(userNickname);
 		userVO.setUserIntroduce(userIntroduce);
@@ -51,9 +53,6 @@ public class JoinOkController implements Execute{
 		System.out.println("userVO 저장");
 
 		userDAO.join(userVO);
-		
-		
-		
 		
 		System.out.println("메소드");
 		
