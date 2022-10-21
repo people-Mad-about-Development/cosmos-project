@@ -39,8 +39,8 @@ public class MainDAO {
 		   return sqlSession.selectList("Search.mySelectBoard", userNumber);
 	   }
 	   
-	   public List<AlarmVO> selectAll(int inquiryNumber){
-		   return sqlSession.selectList("Inquiry.inquirySelect", inquiryNumber);
+	   public List<AlarmVO> alarmSelect(int userNumber){
+		   return sqlSession.selectList("Alarm.alarmSelect", userNumber);
 	   }
 	   
 	   

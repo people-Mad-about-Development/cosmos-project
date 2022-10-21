@@ -2,17 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Main">
 	
-	<insert id="insert" parameterType="alarmVO">
-		insert into tbl_alarm (inquiry_number,alarm_number)
-		values ("",2)
-	</insert>
-		
 
-	<select id="select" parameterType="_int" resultType="alarmVO">
-		select 
-		ta.inquiry_number  
-		from tbl_alarm ta join tbl_inquiry ti on ta.inquiry_number =ti.inquiry_number where ti.user_number = 2 and ti.inquiry_status ='complete'
-	</select>	
 	
 	<!-- 메인 모집글 목록 -->
 	<select id="selectAllMain" resultType="boardDTO">

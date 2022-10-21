@@ -69,12 +69,12 @@
         
         
         <ul class="noticeDropdownBar_noticeBody__240wL">
-         	<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">
+        <%--  	<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">
         <a class="noticeMoveInquiryBoard" href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >
         <span class="noticeListOn">문의 답변이 달렸습니다</span>
         </a>
         
-       	</li> 
+       	</li>  --%>
                </ul>
         
         </div>
@@ -132,28 +132,29 @@
     
     
     
-/*     listOk(); */
+    
+    	
+     listOk(); 
     
     		/* 알람함 리스트 (답변이 왔을때) */
-/*  	function listOk() {
-		
+  	function listOk() {
+		console.log("ajax 들어옴")
 		$.ajax({
 			url: "/main/alarmListOk.ma",
 			type:"get",
 			contentType: "application/json; charset=utf-8",
-			success: showList
+			success: showAlarmList
 			
-		})
+		});
     			
 	}
- */    		
-    	/* 	
+    		
+    	 	
     		function showAlarmListOk(result) {
-				
     			  var resultAlarmListOk = JSON.parse(result);
 				  if(resultAlarmListOk.length > 0){
     			  let text="";
-    			  var count=0;
+    			  var count=0;	
     			  resultAlarmListOk.forEach(result=>{
     			  
     				  console.log(result.alarmList)
@@ -163,18 +164,22 @@
     				 text+=`<a class="noticeDropdownBar_noticeLink__mBRje" `;
     				 text+=`href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >`;	
     				 if(result.inquiryStatus=="complete"){
-    				 text+=`<span class="noticeListOn">문의 답변이 달렸습니다</span>`;
+    				 text+=`+<span class="noticeListOn">문의 답변이 달렸습니다</span>+`;
     				 }
     				 text+=`</a>`;	
     				 text+=`</li>`;	
     			  
-    			  })
+    			  });
+    			  
+    			  $(".noticeDropdownBar_noticeBody__240wL").html(text);
     		
 			}
-     } */
+     } 
     
     
     
+     
+     
     
     
     

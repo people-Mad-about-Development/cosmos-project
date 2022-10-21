@@ -15,18 +15,7 @@
 		
 	
 	
-	<select id="inquirySelect" parameterType="_int" resultType="alarmVO">
-	select a.inquiry_number  
-	from tbl_alarm a join tbl_inquiry i on a.inquiry_number = i.inquiry_number where i.user_number = 2 and i.inquiry_status ='complete';
-	= #{inquiryNumber}
-	</select>		
 	
-	<insert id="">
-		insert into tbl_alarm(user_number , inquiry_number , )
-		values(2,)
-	
-	
-	</insert>
 
 
 		

@@ -26,6 +26,7 @@ public class MainFrontController extends HttpServlet{
 		String contextPath = req.getContextPath();
 		String request = requestURI.substring(contextPath.length());
 		Result result = null;
+
 		
 		if(request.equals("/main/mainbanner.ma")) {	//배너를 가저올 용도
 			result = new MainBannerController().execute(req, resp);
@@ -46,6 +47,7 @@ public class MainFrontController extends HttpServlet{
 			result = new AlarmListController().execute(req, resp);
 		
 		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
+			System.out.println("프론트 콘트롤 들오와랏 ");
 			result = new AlarmListOkController().execute(req, resp);
 			
 		}else if(request.equals("/main/main.ma")) {//  메인
