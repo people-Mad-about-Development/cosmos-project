@@ -49,6 +49,7 @@
 		<mapper resource="com/cosmos/mybatis/mapper/InquiryMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/AdminMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/SearchMapper.xml"/>
+		<mapper resource="com/cosmos/mybatis/mapper/AlarmMapper.xml"/>
 	</mappers>
 	
 </configuration>
