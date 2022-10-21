@@ -18,7 +18,7 @@
 <form action="${pageContext.request.contextPath}/board/writeOk.bo" method="post" name="newPage">
 	<div id="root">
         <div class="postRegister_postWrapper__1s7mv">
-            <a href="${pageContext.request.contextPath}/app/main/index.jsp">
+            <a href="javascript:;" onclick="history.back()">
                 <svg stroke="currentColosr" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="808080"
                     cursor="pointer" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
                     <path

@@ -29,5 +29,16 @@ public class BoardDAO {
     	return sqlSession.selectOne("Board.selectBoardDetail", boardNumber);
     }
     
+    public BoardDTO selectCompany(String boardCompany){
+    	return sqlSession.selectOne("Board.selectCompany", boardCompany);
+    }
+    
+    public void updateReadCount(int boardNumber) {
+		sqlSession.update("Board.updateReadCount", boardNumber);
+	}
+    
+    public void updateClose(int boardNumber) {
+		sqlSession.update("Board.updateClose", boardNumber);
+	}
 	
 }

@@ -10,24 +10,19 @@ import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
 
-public class BoardDetailOkController implements Execute{
+public class BoardCloseController implements Execute {
+
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BoardDAO boardDAO = new BoardDAO();
 		Result result = new Result();
 		
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
-		String boardCompany = req.getParameter("boardCompany");
+		
+		boardDAO.updateClose(boardNumber);
 
-		req.setAttribute("board", boardDAO.selectBoardDetail(boardNumber));
-		req.setAttribute("comPany", boardDAO.selectCompany(boardCompany));
-		boardDAO.updateReadCount(boardNumber);
-		
-		/* boardDAO.updateClose(boardNumber); */
-		
-		result.setPath("/app/board/boardDetail.jsp");
+		result.setPath(req.getContextPath() + "/main/mainBoard.ma");
 		return result;
-	
 	}
-}
 
+}

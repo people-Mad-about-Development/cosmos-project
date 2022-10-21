@@ -76,9 +76,9 @@
 					<div class="toggleSwitch">
 						<span class="toggleSwitch_switchTitle">최신 순</span> <label
 							for="swtichInput"
-							class="toggleSwitch_switchLabel toggleSwitch_Checked">
+							class="toggleSwitch_switchLabel toggleSwitch_UnChecked">
 							<input type="checkbox" class="toggleSwitch_switchCheckbox"
-							id="switchInput" name="switchInputtag" checked>
+							id="switchInput" name="switchInputtag" >
 							<div class="toggleSwitch_ball"></div>
 						</label>
 					</div>
@@ -91,15 +91,15 @@
 							<div class="toggleSwitch_ball"></div>
 						</label>
 					</div>
-					<!-- <div class="toggleSwitch">
-						<span class="toggleSwitch_switchTitle">모집 중만 보기</span> <label
+					<div class="toggleSwitch">
+						<span class="toggleSwitch_switchTitle">모집 임박순</span> <label
 							for="swtichInput"
 							class="toggleSwitch_switchLabel toggleSwitch_Checked"> <input
 							type="checkbox" class="toggleSwitch_switchCheckbox"
 							id="switchInput" name="switchInputtag" checked>
 							<div class="toggleSwitch_ball"></div>
 						</label>
-					</div> -->
+					</div>
 
 				</div>
 			</div>
@@ -111,19 +111,18 @@
 					<c:when test="${boards != null and fn:length(boards) > 0}">
 			            <c:forEach var="board" items="${boards}">
 
-							<a href="" class="studyItem studyItem_open">
+							<a href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}" class="studyItem studyItem_open">
 								<li>
 									<div class="studyItem_schedule">
-										<p class="studyItem_scheduleTitle">시작 예정일 |</p>
-										<p>2022.10.10</p>
+										<p class="studyItem_scheduleTitle">시작 예정일  |</p>
+										<p><c:out value="${board.getBoardStartDate()}"/></p>
 									</div>
-									<h1 class="studyItem_title">UI/UX 디자이너 모집합니다 - IT 지식/교육
-										콘텐츠 큐레이션 플랫폼</h1>
+									<h1 class="studyItem_title">[<c:out value="${board.getBoardCompany()}"/>]<c:out value="${board.getBoardTitle()}"/></h1>
 									<div class="studyItem_hashtag_wrapper">
 										<ul class="studyItem_hashtag">
-											<li>#프로젝트</li>
-											<li>#오프라인</li>
-											<li>#1명</li>
+											<li>#<c:out value="${board.getBoardCategory()}"/></li>
+			                            	<li>#<c:out value="${board.getBoardWay()}"/></li>
+			                            	<li>#<c:out value="${board.getBoardRecruitNumber()}"/>명</li>
 										</ul>
 									</div>
 									<div class="studyItem_language_wrapper">
@@ -141,8 +140,8 @@
 									</div>
 									<section class="studyItem_info">
 										<div class="avatar_user">
-											<img class="avatar_userImg avatar_small" src="" alt="avatar">
-											<div class="avatar_userName">amoo</div>
+											<img class="avatar_userImg avatar_small" >
+											<div class="avatar_userName"><c:out value="${board.getUserNickname()}"/></div>
 										</div>
 										<div class="studyItem_viewsAndComment">
 											<div class="studyItem_infoItem">
@@ -154,7 +153,7 @@
 														d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z">
                                         </path>
                                     </svg>
-												<p>0</p>
+												<p><c:out value="${board.getBoardViews()}"/></p>
 											</div>
 											<div class="studyItem_infoItem">
 												<svg stroke="currentColor" fill="currentColor"
