@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.main.vo.BannerVO;
+import com.cosmos.app.user.vo.CompanyVO;
 import com.cosmos.app.user.vo.UserVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
@@ -33,6 +34,10 @@ public class AdminDAO {
 	   }
 	   
 //	   사용자 관리
+	   public int userNumberSelect() {
+		return sqlSession.selectOne("Admin.selectAll");
+	   }
+	   
 	   public List<UserVO> userSelect() {
 		return sqlSession.selectList("Admin.userSelect");
 	   }
@@ -44,8 +49,8 @@ public class AdminDAO {
 		return sqlSession.selectOne("Admin.studySelect",userNumber);
 	   }
 	   
-	   public int countSelect() {
-		   return sqlSession.selectOne("Admin.countSelect");
+	   public int countSelect(int userNumber) {
+		   return sqlSession.selectOne("Admin.countSelect",userNumber);
 	   }
 	   
 	   public int replySelect(int userNumber) {
@@ -56,11 +61,21 @@ public class AdminDAO {
 		   return sqlSession.selectOne("Admin.inquirySelect",userNumber);
 	   }
 	   
-	   public void memberDelete(String userNickname) {
-			sqlSession.delete("Admin.bannerDelete", userNickname);
+	   public void memberDelete(String userId) {
+		    sqlSession.delete("Admin.memberDelete", userId);
 	   }
 	   
+	   public List<CompanyVO> companySelect() {
+			return sqlSession.selectList("Admin.companySelect");
+	   }
+	   public void companyDelete(String companyName) {
+			sqlSession.delete("Admin.companyDelete", companyName);
+	   }
 	   
+	   public int companyBoard(String boardCompany) {
+		   return sqlSession.selectOne("Admin.companyBoard",boardCompany);
+	   }
+	
 	   
 	
 	   

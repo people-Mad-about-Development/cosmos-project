@@ -20,21 +20,27 @@
 	
 	
 <!-- 사용자 관리 -->	
-	<!-- 사용자 조회 -->
-	<select id="userSelect" resultType = "userVO" >
-		select user_nickname,user_id,user_date from tbl_user ;
+	<!-- 유저넘버 조회 -->
+	<select id="userNumberSelect" resultType = "_int">
+		select count(user_id) from tbl_user
 	</select>
+	
+	<!-- 유저 테이블 전체 조회 -->
+	<select id="userSelect" resultType = "userVO" >
+		select  user_number,user_nickname,user_id,user_date from tbl_user ;
+	</select>
+	
 	<!-- 프로젝트 게시글 수 -->
 	<select id="projectSelect" parameterType = "_int" resultType = "_int" >
-		select count(board_number) from tbl_board where user_number = #{userNumber} and board_category = "프로젝트"
+		select count(board_number) from tbl_board where user_number =#{userNumber} and board_category ="프로젝트";
 	</select>
 	<!-- 스터디 게시글 수 -->
 	<select id="studySelect" parameterType = "_int" resultType = "_int" >
-		select count(board_number) from tbl_board where user_number = #{userNumber} and board_category = "스터디"
+		select count(board_number) from tbl_board where user_number =#{userNumber} and board_category ="스터디";
 	</select>
 	<!-- 게시글 총 갯수 -->
-	<select id="countSelect" resultType = "_int">
-		select count(board_number) from tbl_board
+	<select id="countSelect" parameterType = "_int" resultType = "_int">
+		select count(board_number) from tbl_board where user_number = #{userNumber}
 	</select>
 	<!-- 댓글 총 갯수 -->
 	<select id="replySelect" parameterType="_int" resultType = "_int" >
@@ -44,11 +50,27 @@
 	<select id="inquirySelect" parameterType="_int" resultType = "_int" >
 		select count(inquiry_number) from tbl_inquiry where user_number = #{userNumber};
 	</select>
-	
 	<!-- 삭제 -->
-	<delete id="memberDelete" parameterType ="String">
-		delete from tbl_user where user_nickname = #{userNickname}
+	<delete id="memberDelete" parameterType ="string">
+		delete from tbl_user where user_id = #{userId}
 	</delete>
+	
+	
+	
+<!-- 회사관리 -->
+	<!-- 회사 테이블 전체 조회 -->
+	<select id="companySelect"  resultType = "companyVO" >
+		select company_number,company_file,company_name,company_content,company_url from tbl_company 
+	</select>
+	<!-- 회사 삭제 -->
+	<delete id="companyDelete" parameterType = "string">
+		delete from tbl_company where company_name = #{companyName}
+	</delete>
+	
+	<!-- 회사 관련 게시물 -->
+	<select id = "companyBoard" parameterType = "string" resultType = "_int">
+		select count(board_company) from tbl_board where board_company = #{boardCompany};
+	</select>
 </mapper>
 
 

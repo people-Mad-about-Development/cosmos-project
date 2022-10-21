@@ -291,7 +291,7 @@
 														<li class="postTitle">제목</li>
 														<li class="postNick">작성자</li>
 														<li class="postDate">작성일</li>
-														<li class="postLike">좋아요 수</li>
+														
 														<li class="postView">조회수</li>
 														<li class="action"></li>
 													</ul>
@@ -311,7 +311,7 @@
 														<li class="postDate"><a href="#">성윤성윤</a></li><!-- 작성사 상세 페이지 이동 -->
 														<li class="postDate">2022-10-10 15:30</li>			
 														<li class="postLike">1</li>														
-														<li class="postView">36</li>														
+																											
 						
 														<li class="action">
 															<div class="dropdown">
@@ -344,8 +344,7 @@
 														<li class="postDate"><a href="#">로사로사</a></li><!-- 작성사 상세 페이지 이동 -->
 														<li class="postDate">2022-10-10 15:30</li>			
 														<li class="postLike">123</li>														
-														<li class="postView">356</li>														
-						
+														
 														<li class="action">
 															<div class="dropdown">
 																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">

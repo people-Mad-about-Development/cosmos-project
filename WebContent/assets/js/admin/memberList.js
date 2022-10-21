@@ -49,4 +49,37 @@
 	$terms.on("click", function(){
 	$all.prop("checked", $terms.filter(":checked").length == $terms.length);
    
+
+/*	function fn_userDel(){
+
+  	var userid = "";
+ 	var memberChk = document.getElementsByName("RowCheck");
+  	var chked = false;
+  	var indexid = false;
+  	for(i=0; i < memberChk.length; i++){
+   	if(memberChk[i].checked){
+    if(indexid){
+      userid = userid + '-';
+    }
+    userid = userid + memberChk[i].value;
+    indexid = true;
+   }
+  }
+  if(!indexid){
+   alert("삭제할 사용자를 체크해 주세요");
+   return;
+  }
+  document.userForm.delUserid.value = userid;       // 체크된 사용자 아이디를 '-'로 묶은 userid 를     
+
+                                                                              document.userForm.delUserid 의 value로 저장
+  
+  var agree=confirm("삭제 하시겠습니까?");
+     if (agree){
+   document.userForm.execute.value = "userDel";
+     document.userForm.submit();
+     }
+  }*/﻿
+
+ 
+
 });
