@@ -9,7 +9,7 @@
 <title>메인 페이지</title>
 </head>
 <body>
-	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/> 
+	 <jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/>  
 	<jsp:include page = "${pageContext.request.contextPath}/app/myPage/my_page.jsp"/>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/friend_info.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/myPage/friend.jsp"/> --%>

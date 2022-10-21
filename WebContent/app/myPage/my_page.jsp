@@ -15,6 +15,7 @@
 
 <body>
 
+ <form method ="post" action="${pageContext.request.contextPath}/user/updateOk.us" name="mypageForm" onsubmit="return false;" enctype="multipart/form-data">
 
     <div id="root">
         <div class="main_div">
@@ -24,9 +25,9 @@
                     src="${pageContext.request.contextPath}${UserInfo.getUserFile()}" alt="user avatar">
                 <div class="userImgUpload_imgControl">
                     <label class="userImgUpload_customLabel">이미지 선택
-                        <input id="imageUpload" type="file" accept="image/*">
+                        <input name="userImgFile" id="imageUpload" type="file" accept="image/*" value="${pageContext.request.contextPath}${UserInfo.getUserFile()}">
                     </label>
-                    <button class="userImgUpload_buttonImageDelete buttonImageDelete">이미지 제거</button>
+                    <button type = "button" class="userImgUpload_buttonImageDelete buttonImageDelete">이미지 제거</button>
                 </div>
             </div>
 
@@ -53,7 +54,7 @@
                 <h3 style="position: absolute; top: 10px">한 줄 소개</h3>
                 <div class="main_inputZone" >
                     <h3></h3>
-                    <input type="text" name="nickNameInput" value="${UserInfo.getUserIntroduce()}." id="introduce">
+                    <input type="text" name="introduceInput" value="${UserInfo.getUserIntroduce()}." id="introduce">
                 </div>
                 <p class="main_description">나를 소개하는 한 줄을 작성하세요.</p>
             </div>
@@ -64,10 +65,10 @@
                     <h3></h3>
                     <c:choose>
                     <c:when test="${UserInfo.getUserCareer() eq 'career'}">
-                    <input type="text" name="nickNameInput" value="${UserInfo.getUserCareerYear()}년" >
+                    <input type="text" name="userCareerYearInput" value="${UserInfo.getUserCareerYear()}년" readonly>
                     </c:when>
                     <c:otherwise>
-                    <input type="text" name="nickNameInput" value="신입" >
+                    <input type="text" name="userCareerYearInput" value="신입" readonly>
                     </c:otherwise>
                     </c:choose>
                 </div>
@@ -79,7 +80,10 @@
                 <h3 id="company_h3">현재 등록한 회사</h3>
                 <ul class="company">
                 	<c:forEach var="item" items="${UserCompanyInfo }">
-                    <li class="companyBar"><img src="${pageContext.request.contextPath}<c:out value="${item.getCompanyUrl()}"></c:out>" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span><c:out value="${item.getCompanyName()}"></c:out></span></li>
+                	<span class="companyBarWrapper">
+                    <li class="companyBar companyBarList"><img src="${pageContext.request.contextPath}<c:out value="${item.getCompanyUrl()}"></c:out>" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span><c:out value="${item.getCompanyName()}"></c:out></span></li>
+                    <input type="hidden" name="companyName" value=" ${item.getCompanyName()}">
+                	</span>
                 	</c:forEach>
                     <li class="companyBar" id="add_company"><span>+ 추가</span></li>
                 </ul>
@@ -94,12 +98,12 @@
                         </span>
                         <div class="select__control css-control" id="first_list">
                             <div
-                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
-                                <c:forEach var="item" items="${UserCanInfo}">
+                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3 InterestSkillWrapper_2f">
+                               <c:forEach var="item" items="${UserInterestInfo}">
                                 <div class="css-multiValue select__multi-value up_list" id="box2">
                                 <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="interestSkill">
                                     <div class="css-12jo7m5 select__multi-value__label"><c:out value="${item.getSkillName()}"></c:out></div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="x_btn2">
+                                    <div class="css-xb97g8 select__multi-value__remove InterestExitBye_2f" id="x_btn2">
                                         <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
                                             focusable="false" class="css-8mmkcg">
                                             <path
@@ -127,15 +131,15 @@
                                 <div class="select__indicator select__clear-indicator css-indicatorContainer"
                                     aria-hidden="true">
                                     <label for="btnSubmit"  class="css-8mmkcg" id="clear_btn">
-                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+                                         <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
                                             class="css-8mmkcg">
                                             <path
                                                 d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
 
                                             </path>
-                                        </svg>
+                                        </svg> 
                                     </label>    
-                                </div>
+                                </div> 
                                 <span class="select__indicator-separator css-indicatorSeparator"></span>
                                 <div class="select__indicator select__dropdown-indicator css-indicatorContainer"
                                     aria-hidden="true">
@@ -175,10 +179,12 @@
                         </span>
                         <div class="select__control css-control" id="second_list">
                             <div
-                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
-                                <div class="css-multiValue select__multi-value down_list" id="boxes1">
-                                    <div class="css-12jo7m5 select__multi-value__label">JavaScript</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn1">
+                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3 CanSkillWrapper_23f">
+                               <c:forEach var="item" items="${UserCanInfo}">
+                               <div class="css-multiValue select__multi-value down_list" id="boxes2">
+                                <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="CanSkill">
+                                    <div class="css-12jo7m5 select__multi-value__label"><c:out value="${item.getSkillName()}"></c:out></div>
+                                    <div class="css-xb97g8 select__multi-value__remove CanSkillExitBye_23f" id="xx_btn1">
                                         <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
                                             focusable="false" class="css-8mmkcg">
                                             <path
@@ -187,325 +193,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes2">
-                                    <div class="css-12jo7m5 select__multi-value__label">TypeScript</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn2">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes3">
-                                    <div class="css-12jo7m5 select__multi-value__label">React</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn3">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes4">
-                                    <div class="css-12jo7m5 select__multi-value__label">Vue</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn4">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes5">
-                                    <div class="css-12jo7m5 select__multi-value__label">Nodejs</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn5">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes6">
-                                    <div class="css-12jo7m5 select__multi-value__label">Spring</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn6">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes7">
-                                    <div class="css-12jo7m5 select__multi-value__label">Java</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn7">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes8">
-                                    <div class="css-12jo7m5 select__multi-value__label">Nextjs</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn8">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes9">
-                                    <div class="css-12jo7m5 select__multi-value__label">Nestjs</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn9">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes10">
-                                    <div class="css-12jo7m5 select__multi-value__label">Express</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn10">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes11">
-                                    <div class="css-12jo7m5 select__multi-value__label">Go</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn11">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes12">
-                                    <div class="css-12jo7m5 select__multi-value__label">C</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn12">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes13">
-                                    <div class="css-12jo7m5 select__multi-value__label">Python</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn13">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes14">
-                                    <div class="css-12jo7m5 select__multi-value__label">Djang</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn14">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes15">
-                                    <div class="css-12jo7m5 select__multi-value__label">Swift</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn15">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes16">
-                                    <div class="css-12jo7m5 select__multi-value__label">Kotlin</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn16">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes17">
-                                    <div class="css-12jo7m5 select__multi-value__label">MySQL</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn17">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes18">
-                                    <div class="css-12jo7m5 select__multi-value__label">MongoDB</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn18">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes19">
-                                    <div class="css-12jo7m5 select__multi-value__label">php</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn19">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes20">
-                                    <div class="css-12jo7m5 select__multi-value__label">GraphQL</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn20">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes21">
-                                    <div class="css-12jo7m5 select__multi-value__label">Firebase</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn21">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes22">
-                                    <div class="css-12jo7m5 select__multi-value__label">ReactNative</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn22">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes23">
-                                    <div class="css-12jo7m5 select__multi-value__label">Unity</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn23">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes24">
-                                    <div class="css-12jo7m5 select__multi-value__label">Flutter</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn24">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes25">
-                                    <div class="css-12jo7m5 select__multi-value__label">AWS</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn25">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes26">
-                                    <div class="css-12jo7m5 select__multi-value__label">Kubernetes</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn26">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes27">
-                                    <div class="css-12jo7m5 select__multi-value__label">Docker</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn27">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes28">
-                                    <div class="css-12jo7m5 select__multi-value__label">Git</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn28">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes29">
-                                    <div class="css-12jo7m5 select__multi-value__label">Figma</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn29">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value down_list" id="boxes30">
-                                    <div class="css-12jo7m5 select__multi-value__label">Zeplin</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xx_btn30">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
+                               </c:forEach>
+                               
+                               
+                              
                                 <div class="css-1g6gooi">
                                     <div class="select__input" style="display: inline-block;">
                                         <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -530,7 +221,7 @@
                                             </path>
                                         </svg>
                                     </label>
-                                </div>
+                                </div> 
                                 <span class="select__indicator-separator css-indicatorSeparator"></span>
                                 <div class="select__indicator select__dropdown-indicator css-indicatorContainer"
                                     aria-hidden="true">
@@ -547,7 +238,7 @@
                         <div class="select_menu css-langage-list select_menu2 list2">
                             <div class="">
                             <c:forEach var="item" items ="${SkillTotal}">
-                            	<div class="select_option css-list-option" id="react-select-1-option-1" tabindex="-1"> <c:out value="${item.getSkillName()}"></c:out> </div>
+                            	<div class="select_option css-list-option skillTotalList2" id="react-select-1-option-1" tabindex="-1"> <c:out value="${item.getSkillName()}"></c:out> </div>
                             </c:forEach>
                                 <!-- <div class="select_option css-list-option" id="react-select-2-options-1" tabindex="-1">JavaScript</div>
                                 <div class="select_option css-list-option" id="react-select-2-options-2" tabindex="-1">TypeScript</div>
@@ -587,8 +278,8 @@
             </div>
             <p class="setting_description">&nbsp할 수 있는 기술 태그를 등록해주세요.</p>
             <hr>
-            <button class="setting_buttonComplete setting_mainButton" name="complete">완료</button>
-            <button class="setting_buttonSignOut setting_mainButton" name="signOut" id="signOunt_btn">회원탈퇴</button>
+            <button type="button" class="setting_buttonComplete setting_mainButton" name="complete" onclick="myPageUpdateSubmit()">완료</button>
+            <button type="button" class="setting_buttonSignOut setting_mainButton" name="signOut" id="signOunt_btn">회원탈퇴</button>
         </div>
     </div>
 
@@ -631,149 +322,20 @@
                         <div class="setInterest_likeLanguageWrapper__3nMfg">
                             <div class=" css-2b097c-container">
                                 <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
-                                <div class="select__control css-control" id="select_company">
-                            <div
-                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3 ">
-                                <div class="css-multiValue select__multi-value c_list" id="c_box1">
-                                    <div class="css-12jo7m5 select__multi-value__label">네이버</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn1">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box2">
-                                    <div class="css-12jo7m5 select__multi-value__label">카카오</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn2">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box3">
-                                    <div class="css-12jo7m5 select__multi-value__label">쿠팡</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn3">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box4">
-                                    <div class="css-12jo7m5 select__multi-value__label">배달의 민족</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn4">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box5">
-                                    <div class="css-12jo7m5 select__multi-value__label">라이엇</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn5">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box6">
-                                    <div class="css-12jo7m5 select__multi-value__label">넥슨</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn6">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-multiValue select__multi-value c_list" id="c_box7">
-                                    <div class="css-12jo7m5 select__multi-value__label">토스</div>
-                                    <div class="css-xb97g8 select__multi-value__remove" id="xxx_btn7">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="css-1g6gooi">
-                                    <div class="select__input" style="display: inline-block;">
-                                        <input autocapitalize="none" autocomplete="off" autocorrect="off"
-                                            id="react-select-2-input" spellcheck="false" tabindex="0" type="text"
-                                            aria-autocomplete="list" value=""
-                                            style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
-                                        <div
-                                            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: Arial; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="select__indicators css-1wy0on6">
-                                <div class="select__indicator select__clear-indicator css-indicatorContainer"
-                                    aria-hidden="true">
-                                    <label for="btnSubmit"  class="css-8mmkcg" id="c_clear_btn">
-                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
-                                            class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-
-                                            </path>
-                                        </svg>
-                                    </label>
-                                </div>
-                                <span class="select__indicator-separator css-indicatorSeparator"></span>
-                                <div class="select__indicator select__dropdown-indicator css-indicatorContainer"
-                                    aria-hidden="true">
-                                    <label for="btnSubmit"  class="css-8mmkcg" id="c_select_btn">
-                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                                        <path
-                                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                        </path>
-                                        </svg>
-                                    </label>    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="c_select_menu css-langage-list select_menu2 company_list">
-                            <div class="">
-                                <div class="select_option css-list-option" id="c_react-select-1-options-1" tabindex="-1">네이버</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-2" tabindex="-1">카카오</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-3" tabindex="-1">쿠팡</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-4" tabindex="-1">배달의 민족</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-5" tabindex="-1">라이엇</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-6" tabindex="-1">넥슨</div>
-                                <div class="select_option css-list-option" id="c_react-select-1-options-7" tabindex="-1">토스</div>
-                                <div class="select_option css-list-option" id="react-select-2-option-8" tabindex="-1"onclick="javascript:change();" >직접입력</div>
-                            </div>
-                        </div>
+                           
                                	<div>
-                                    <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput"/>
+                                    <input type="text" id="selboxDirect" name="selboxDirect" class="selboxInput" style=""  onkeypress="enterCompanySubmit(event)" />
                                 </div>
                             </div>
                         </div>
+                    <button type="button" class="company_buttonNext company_btn_add" name="complete" onclick="company()">추가</button>
                     </div>
-                    <button class="company_buttonNext company_btn_add" name="complete">추가</button>
                 </div>
             </div>
         </div>
     </div>
 
-
+ </form>
 
 
 </body>
@@ -781,8 +343,13 @@
 /* 	$.getJSON("${UserCanInfoJson}",function(data){
 		console.log(data);
 	}) */
-	const userCanSkillJSON = `${UserCanInfoJson}`
-	const userCanSkillObject = JSON.parse(userCanSkillJSON);
+	const pageURI = "${pageContext.request.contextPath}";
+	const UserInterestInfoJson = `${UserInterestInfoJson}`
+	const userInterestSkillObject = JSON.parse(UserInterestInfoJson);
+	
+	
+	const UserCanInfoJson = `${UserCanInfoJson}`
+	const userCanSkillObject = JSON.parse(UserCanInfoJson);
 </script>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

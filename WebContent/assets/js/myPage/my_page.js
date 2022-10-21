@@ -137,11 +137,11 @@
                 $userImg.attr('src', $tempTr);
             }
         };
-    
-        $imgDelete.click(function(){
-            $userImg.attr('src', $tempTr);
-        });
+
     });
+        $imgDelete.click(function(){
+            $userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
+        });
     
     
     var $list1 = $(".select_menu1");
@@ -187,7 +187,7 @@
         );
       });*/
     
-      $(document).ready(function(){
+/*      $(document).ready(function(){
         $(".companyBar").hover(
           function(event){
             $(this).addClass('hover2');
@@ -197,14 +197,32 @@
           }
         );
       });
-    
+*/
+
+	$(".company").on("mouseover",".companyBar",function(){
+		 $(this).addClass('hover2');
+	});
+	
+		$(".company").on("mouseout",".companyBar",function(){
+		 $(this).removeClass('hover2');
+	});
+		
+		
+	$(".company").on("click",".companyBarList",function(){
+		$(this).parent().remove();
+	});
+	
+	
+	
+	
+    $.fn.showFlex = function () { this.css('display', 'flex'); }
     
     var $modal = $(".modal");
     var $modalContent = $(".loginModal_modalContent");
     var $add = $("#add_company");
     var $exit = $(".loginModal_exitWrapper");
     var $add_btn = $(".company_btn_add");
-    
+    var  $input_company = $(".select_option");
     
     
     $add.click(function(){
@@ -215,10 +233,10 @@
         $modal.hide();
     });
     
-    $add_btn.click(function(){
-        $modal.hide();
+/*    $add_btn.click(function(){
+	
     });
-    
+    */
 
 
     var $c_list = $(".c_select_menu");
@@ -237,10 +255,10 @@
     });
 
 */
-	$(document).ready(function(){
+	/*$(document).ready(function(){
         $("#selboxDirect").hide();
      });
-     
+     */
      function change(){
         $("#select_company").hide();
         $("#selboxDirect").show();
@@ -248,12 +266,12 @@
     }
     
     var $company = $(".selboxInput");
-    
+/*    
     $company.blur(function(){
         $company.hide();
         $("#select_company").show();
     
-    });
+    });*/
 
 
 var selectList = $(".skillTotalList");
@@ -275,12 +293,28 @@ $(".select_menu1").addClass("list1");
 $(this).remove();
 })
 	*/
-	
-	$(".css-langage-list").on("click",".skillTotalList",function(){
+	//관심 기술
+	$(".select_menu1").on("click",".skillTotalList",function(){
 		$(".select_menu1").addClass("list1");
-		$(".select__value-container").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text()+`" name="interestSkill">
+		$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text()+`" name="interestSkill">
 			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text()+`</div>`+
-			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove">`
+			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove InterestExitBye_2f">`
+			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
+			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
+			+`</svg>`
+			+`  </div>`
+			+`</div>`
+		);
+		$(this).remove();
+	})
+	
+	
+	//사용가능 언어
+		$(".select_menu2").on("click",".skillTotalList2",function(){
+		$(".select_menu2").addClass("list2");
+		$(".CanSkillWrapper_23f").append(`<div class="css-multiValue select__multi-value down_list" id="boxes2"><input type="hidden" type="text" value="`+$(this).text()+`" name="CanSkill">
+			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text()+`</div>`+
+			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove CanSkillExitBye_23f">`
 			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
 			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
 			+`</svg>`
@@ -292,23 +326,34 @@ $(this).remove();
 	
 	
 	
-$(".select__value-container--has-value").on("click",".select__multi-value__remove",function(){
+	
+$(".select__value-container--has-value").on("click",".InterestExitBye_2f",function(){
 	$(".select_menu1").append(`<div><div class="select_option css-list-option skillTotalList" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);
 	$(this).parent().remove();
 	
 })
 
+$(".select__value-container--has-value").on("click",".CanSkillExitBye_23f",function(){
+	$(".select_menu2").append(`<div><div class="select_option css-list-option skillTotalList2" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);
+	$(this).parent().remove();
+	
+})
+
 var step =0;
+var step2 =0;
 
-console.log(" "+userCanSkillObject[0].skillName)
-console.log($(".skillTotalList").eq(0).text())
-
-console.log((" "+userCanSkillObject[0].skillName+" ")==$(".skillTotalList").eq(0).text())
 
 	$(".skillTotalList").each((i,item)=>{
-			for(step = 0; step < userCanSkillObject.length;step++){
-		   	if((" "+userCanSkillObject[step].skillName+" ")  ==  $(".skillTotalList").eq(i).text()){
+			for(step = 0; step < userInterestSkillObject.length;step++){
+		   	if((userInterestSkillObject[step].skillName)  ==  $(".skillTotalList").eq(i).text().trim()){
 				$(".skillTotalList").eq(i).remove();
+		}
+		}
+		})
+	$(".skillTotalList2").each((i,item)=>{
+			for(step2 = 0; step2 < userCanSkillObject.length;step2++){
+		   	if((userCanSkillObject[step2].skillName)  ==  $(".skillTotalList2").eq(i).text().trim()){
+				$(".skillTotalList2").eq(i).remove();
 		}
 		}
 		})
@@ -326,3 +371,74 @@ console.log((" "+userCanSkillObject[0].skillName+" ")==$(".skillTotalList").eq(0
 	text+= `</div>`;
 	$(".select__value-container").html(text);
 }*/
+
+function company(){
+	var content = $("#selboxDirect").val();
+	var companyBarWrapper = $(".companyBarWrapper");
+	var companyDupulicateCheck = false;
+	
+	//회사 추가 유효성 검사 체크
+	if(!content.trim()){
+		alert("값을 입력해주세요.");
+		$("#selboxDirect").focus();
+		return;
+	}
+	companyBarWrapper.each((i,item)=>{
+		if(companyBarWrapper.eq(i).children().eq(1).val().trim()==content.trim()){
+			alert("중복된 회사입니다.")
+			companyDupulicateCheck = true;
+		}
+	})
+
+	if(companyDupulicateCheck){
+		return;
+	}
+	var wrapper =$(".company");
+	var wrapperbutton= $("#add_company");
+	
+	wrapperbutton.before(
+		`<span class="companyBarWrapper">`
+		+`<li class="companyBar companyBarList">`
+		+`<img src="`+pageURI+`/assets/images/fix/cosmosProfile.png" alt="" class="languageBarLogo">`
+		+`<span class="x" id="x1">ⓧ</span>`
+		+`<span>`+content.trim()+`</span></li>`
+		+`<input type="hidden" name="companyName" value="`+ content.trim()+`">`
+		+` </span>`
+	);
+		$("#selboxDirect").val("");
+        $modal.hide();
+}
+
+function enterCompanySubmit(e){
+	console.log(e.keyCode)
+	if(e.keyCode==13){
+		company()
+	}
+}
+console.log($(".InterestSkillWrapper_2f").children().length);
+function myPageUpdateSubmit(){
+	if(!$(`input[name="nickNameInput"]`).val().trim()){
+		alert("닉네임은 빈칸일 수 없습니다.");
+		$(`input[name="nickNameInput"]`).focus();
+		return;
+	}
+	
+	if(!$(`input[name="introduceInput"]`).val().trim()){
+		alert("자기소개는 빈칸일 수 없습니다.");
+		$(`input[name="introduceInput"]`).focus();
+		return;
+	}
+	
+	if($(".InterestSkillWrapper_2f").children().length<2){
+		alert("한 개 이상의 관심기술을 선택해주세요.");
+		$(".InterestSkillWrapper_2f").focus();
+		return;
+	}
+	if($(".CanSkillWrapper_23f").children().length<2){
+		alert("한 개 이상의 할 수 있는 기술을 선택해주세요.");
+		$(".CanSkillWrapper_23f").focus();
+		return;
+	}
+
+	mypageForm.submit();
+}

@@ -51,11 +51,11 @@ public class UserFrontController extends HttpServlet{
 	      }else if(request.equals("/user/companyInfo.us")) {//회사정보를 불러온 페이지
 	         result = new CompanyInfoController().execute(req, resp);
 	         
-	      }
-	         
-else if(request.equals("/user/userInfo.us")) {
+	      }else if(request.equals("/user/userInfo.us")) { //마이페이지 이동
 			result = new UserInfoController().execute(req,resp);
-		}
+	      }else if(request.equals("/user/updateOk.us")) {//마이페이지 정보 수정
+	    	 result = new UpdateOkController().execute(req,resp);
+	      }
 		
 		if(result != null) {
 			if(result.isRedirect()) {
