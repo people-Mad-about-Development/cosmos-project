@@ -46,8 +46,37 @@
 		select skill_name, skill_file from tbl_skill
 	</select>
 	
+	<select id="selectCompanyInfo" resultType="companyVO">
+		select company_name from tbl_company;
+	</select>
+	
+	<delete id="initInterestSkill" parameterType="_int">
+		delete from tbl_user_interest_skill where user_number = #{userNumber}
+	</delete>
+	<delete id="initCanSkill" parameterType="_int">
+		delete from tbl_user_can_skill where user_number = #{userNumber}
+	</delete>
+	<delete id="initCompany" parameterType="_int">
+		delete from tbl_user_company where user_number = #{userNumber}
+	</delete>
+	
+	<insert id="insertUserCanSkill" parameterType="userCanSkillVO">
+		insert into tbl_user_can_skill (user_number,skill_number)
+		values(#{userNumber},#{skillNumber})
+	</insert>
+	
+	<insert id="insertUserInterestSkill" parameterType="userInterestSkillVO">
+		insert into tbl_user_interest_skill (user_number,skill_number)
+		values(#{userNumber},#{skillNumber})
+	</insert>
+	
+	<insert id="insertUserCompany" parameterType="userCompanyVO">
+		insert into tbl_user_company (user_number,company_number)
+		values(#{userNumber},#{companyNumber})
+	</insert>
 	
 	
+
 	
 </mapper>
 

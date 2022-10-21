@@ -23,16 +23,24 @@ public class UserInfoController implements Execute {
 	     resp.setContentType("text/html; charset=utf-8");
 		 Result result = new Result();
 //		 int userNumber = (Integer)req.getSession().getAttribute("userNumber");
-		 int userNumber = 2;
+		 int userNumber = 3;
 		UserDAO userDAO = new UserDAO();
-		JSONArray replies = new JSONArray();
-		userDAO.userCanInfo(userNumber).forEach(skill -> {JSONObject reply = new JSONObject(skill); replies.put(reply);});
-		req.setAttribute("UserCanInfoJson", replies.toString());
+		JSONArray repliesCan = new JSONArray();
+		JSONArray repliesInterest = new JSONArray();
+		userDAO.userCanInfo(userNumber).forEach(canskill -> {JSONObject reply = new JSONObject(canskill); repliesCan.put(reply);});
+		userDAO.userInterestInfo(userNumber).forEach(Interestskill -> {JSONObject reply = new JSONObject(Interestskill); repliesInterest.put(reply);});
+		
+		
+		req.setAttribute("UserCanInfoJson", repliesCan.toString());
+		req.setAttribute("UserInterestInfoJson", repliesInterest.toString());
+		
+		
 		 req.setAttribute("UserInfo", userDAO.userInfo(userNumber));
 		 req.setAttribute("UserCompanyInfo", userDAO.userCompanyInfo(userNumber));
 		 req.setAttribute("UserCanInfo", userDAO.userCanInfo(userNumber));
 		 req.setAttribute("UserInterestInfo", userDAO.userInterestInfo(userNumber));
 		 req.setAttribute("SkillTotal", userDAO.skillTotalInfo());
+		 req.setAttribute("Company", userDAO.selectCompanyInfo());
 		 
 		 
 	     result.setPath("/app/myPage/myPageInclude.jsp");

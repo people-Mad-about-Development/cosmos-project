@@ -7,6 +7,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.user.vo.CompanyVO;
 import com.cosmos.app.user.vo.SkillVO;
+import com.cosmos.app.user.vo.UserCanSkillVO;
+import com.cosmos.app.user.vo.UserCompanyVO;
+import com.cosmos.app.user.vo.UserInterestSkillVO;
 import com.cosmos.app.user.vo.UserVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
@@ -50,6 +53,31 @@ public class UserDAO {
 		   sqlSession.selectList("user.join", userVO);
 	   }
 	
+	   public List<CompanyVO> selectCompanyInfo(){
+		   return sqlSession.selectList("user.selectCompanyInfo");
+	   }
 
+	   public void initInterestSkill(int userNumber) {
+		   sqlSession.delete("user.initInterestSkill",userNumber);
+	   }
+	   public void initCanSkill(int userNumber) {
+		   sqlSession.delete("user.initCanSkill",userNumber);
+	   }
+	   public void initCompany(int userNumber) {
+		   sqlSession.delete("user.initCompany",userNumber);
+	   }
+	   
+	   public void insertUserCanSkill(UserCanSkillVO userCanSkillVO) {
+		   sqlSession.insert("user.insertUserCanSkill",userCanSkillVO);
+	   }
+	   public void insertUserInterestSkill(UserInterestSkillVO userInterestSkillVO) {
+		   sqlSession.insert("user.insertUserInterestSkill",userInterestSkillVO);
+	   }
+	   public void insertUserCompany(UserCompanyVO userCompanyVO) {
+		   sqlSession.insert("user.insertUserCompany",userCompanyVO);
+	   }
+	   
+	   
+	   
 	   
 }
