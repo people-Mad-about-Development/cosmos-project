@@ -37,7 +37,9 @@ public class UserFrontController extends HttpServlet{
 	         result = new JoinOkController().execute(req, resp);
 	         
 	      }else if(request.equals("/user/login.us")) {   // 로그인 
-	         result = new LoginController().execute(req, resp);
+//	         result = new Result();
+//	         result.setPath("/app/main/index.jsp");
+		     result = new LoginController().execute(req, resp);
 	         
 	      }else if(request.equals("/user/loginOk.us")) {   // 로그인 완료
 	         result = new LoginOkController().execute(req, resp);
