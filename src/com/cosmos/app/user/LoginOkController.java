@@ -22,7 +22,6 @@ public class LoginOkController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String userId = req.getParameter("userId");
-		HttpSession session = req.getSession();
 		PrintWriter out = resp.getWriter();
 		JSONObject jsonObject = new JSONObject(); 
 		

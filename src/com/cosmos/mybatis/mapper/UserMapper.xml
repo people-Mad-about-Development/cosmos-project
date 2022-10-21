@@ -15,10 +15,6 @@
 		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userId})
 	</insert>
 	
-	<!-- <select id="login" parameterType="string" resultType="_int">
-		select member_number from tbl_member where user_id = #{userId}
-	</select> -->
-	
 	<!-- <select id="userSkillInfo" parameterType="_int" resultType="userSkillDTO">
 		SELECT  u.user_nickname, user_introduce, user_career, user_file, ts.skill_file, ts.skill_name  FROM tbl_user u INNER JOIN tbl_user_can_skill c ON u.user_number  = c.user_number  INNER JOIN tbl_skill ts ON c.skill_number  = ts.skill_number
 		where u.user_number = #{userNumber};

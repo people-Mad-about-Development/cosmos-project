@@ -505,7 +505,7 @@
 	
 	                <div class="loginModal_modalContent fourth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d">${userNickname} 님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
+	                    <h1 class="setInterest_title__Me11d">개빠사님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
 	                    <div class="setting_titleWrapper setting_Languages">
 	                <h3>할 수 있는<br>기술 태그</h3>
 	                <div class="setting_LanguageWrapper">
@@ -1074,7 +1074,7 @@
 	
 	                <div class="loginModal_modalContent sixth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d">은<br>어떤 어느 쪽에 해당 되시나요?</h1>
+	                    <h1 class="setInterest_title__Me11d">개빠사님은<br>어떤 어느 쪽에 해당 되시나요?</h1>
 	                    <div class="select_box">
 	                        <button type="button" class="setInterest_buttonNext__1B_lX one" name="complete">경력</button>
 	                        <button type="button" class="setInterest_buttonNext__1B_lX two" name="complete">신입</button>
@@ -1124,7 +1124,7 @@
         <div class="modalW">
             <div class="auto_alert">
                 <div>회원가입이 완료되었습니다!</div>
-                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button>
+                <button type="button" class="last" name="complete">확인</button>
             </div>
         </div>
     </div>
@@ -1134,7 +1134,7 @@
         <div class="modalW">
             <div class="auto_alert">
                 <div>로그인되었습니다!</div>
-                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button>
+                <button type="button" class="last" name="complete">확인</button>
             </div>
         </div>
     </div>

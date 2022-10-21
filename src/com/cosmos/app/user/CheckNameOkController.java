@@ -26,7 +26,6 @@ public class CheckNameOkController implements Execute{
 			
 		try {
 			jsonObject.put("result", new UserDAO().checkNickName(userNickname));
-			jsonObject.put("userNickname", userNickname);
 			out.print(jsonObject.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
