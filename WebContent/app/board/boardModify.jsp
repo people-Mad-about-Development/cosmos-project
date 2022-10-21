@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>프로젝트/스터디 생성</title>
+<title>프로젝트/스터디 수정</title>
 <link rel="icon" type="image/png" sizes="32x32"	href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/newPage.css"> 
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/board/writeOk.bo" method="post" name="newPage">
+<form action="${pageContext.request.contextPath}/board/modifyOk.bo?" method="post" name="modify">
 	<div id="root">
         <div class="postRegister_postWrapper__1s7mv">
             <a href="javascript:;" onclick="history.back()">
@@ -47,7 +47,7 @@
                                     <!-- 이거다 -->
                                     <!-- 스터디/프로젝트 바 -->
                                     <div class="css-1g6gooi">
-                                        <div name="Category" class="select__placeholder css-1wa3eu0-placeholder">스터디/프로젝트</div>
+                                        <div name="Category" class="select__placeholder css-1wa3eu0-placeholder">${board.getBoardCategory()}</div>
                                         <input style="display:none !important;" name="boardCategory">
                                         <div class="select__input" style="display:inline-block;">
 
@@ -100,7 +100,7 @@
                             <div class="select__control css-1iewm1a-control ">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 인원 미정 ~ 10 명 이상 바  -->
-                                    <div name="RecruitNumber" class="select__placeholder css-1wa3eu0-placeholder" >인원 미정~10명 이상</div>
+                                    <div name="RecruitNumber" class="select__placeholder css-1wa3eu0-placeholder" >${board.getBoardRecruitNumber()}</div>
                                     <input style="display:none !important;" name="boardRecruitNumber">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
@@ -161,7 +161,7 @@
                             <div class="select__control css-1iewm1a-control ">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 안에 온라인 / 오프라인 바  -->
-                                    <div name="Way" class="select__placeholder css-1wa3eu0-placeholder" >온라인/오프라인</div>
+                                    <div name="Way" class="select__placeholder css-1wa3eu0-placeholder" >${board.getBoardWay()}</div>
                                     <input style="display:none !important;" name="boardWay">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
@@ -213,7 +213,7 @@
                             <div class="select__control css-1iewm1a-control">
                                 <div class="select__value-container css-1hwfws3">
                                     <!-- 기간 미정 ~ 6개월 이상 선택 바  -->
-                                    <div name="Period" class="select__placeholder css-1wa3eu0-placeholder" >기간 미정~6개월 이상</div>
+                                    <div name="Period" class="select__placeholder css-1wa3eu0-placeholder" >${board.getBoardPeriod()}</div>
                                     <input style="display:none !important;" name="boardPeriod">
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
@@ -695,7 +695,7 @@
                                         <!-- 시작 예정일 안 달력 바  -->
                                         <input aria-invalid="false" placeholder="yyyy-mm-dd" type="date"
                                             class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-1uvydh2"
-                                            value="" id="mui-1" style="font-size: 18px;" name="boardStartDate">
+                                            value="${board.getBoardStartDate()}" id="mui-1" style="font-size: 18px;" name="boardStartDate">
                                         <fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac">
                                             <legend class="css-hdw1oc" style="display: none;">
                                                 <span class="notranslate">​</span>
@@ -717,7 +717,7 @@
                             <input class="input_customInput__1e1Il" id="input0" style="pointer-events: none;" value="카카오톡 오픈채팅">
                         </div>
                         <div class="postinfo_contactInput__3nnsb">
-                            <input class="input_customInput__1e1Il" id="input1" placeholder="링크를 입력해주세요" value="" name="boardContact">
+                            <input class="input_customInput__1e1Il" id="input1" placeholder="링크를 입력해주세요" value="${board.getBoardContact()}" name="boardContact">
                         </div>
                         
                         
@@ -729,7 +729,7 @@
                                 class="css-7pg0cj-a11yText"></span>
                             <div class="select__control css-1iewm1a-control">
                                 <div class="select__value-container select__value-container--has-value css-1hwfws3">
-                                    <div name="Company" class="select__single-value css-1uccc91-singleValue">회사 선택</div>
+                                    <div name="Company" class="select__single-value css-1uccc91-singleValue">${board.getBoardCompany()}</div>
                                     <div class="css-1g6gooi">
                                         <div class="select__input" style="display: inline-block;">
                                             <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -798,21 +798,22 @@
 
                 <section>
                     <label class="input_labelText__3R2TI" for="input">제목</label> 
-                    <input class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="" name="boardTitle">
-                        <textarea id="summernote" placeholder="" name="boardContent"> </textarea>
+                    <input class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="${board.getBoardTitle()}" name="boardTitle">
+                        <textarea id="summernote" placeholder="" name="boardContent">${board.getBoardContent()}</textarea>
                         <div></div>
 
                     <section class="writebutton_buttons__2qW83">
                         <!-- <button type="button" class="writebutton_cancelButton__2W7b_">취소</button> -->
                         <!-- <button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button> -->
                         
-                        <input type="button" class="writebutton_cancelButton__2W7b_" style="width:50px; height:35px;" value="취소" onclick=""/>
-                        <input type="button" class="writebutton_registerButton__n_O2M" style="width:70px; height:35px;" value="글 등록" onclick="send()"/>
+                        <input type="button" class="writebutton_cancelButton__2W7b_" style="width:50px; height:35px;" value="취소" onclick="history.back()"/>
+                        <input type="button" class="writebutton_registerButton__n_O2M" style="width:70px; height:35px;" value="수정" onclick="send()"/>
                     </section>
                 </section>
             </section>
         </div>
     </div>
+    <input style="display:none;" name="boardNumber" value="">
 </form>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -821,28 +822,43 @@
 <script src="${pageContext.request.contextPath}/assets/js/board/newPage.js"></script>
 <script>
 	/* var $JavaScript = document.getElementsByName('JavaScript'); */
+	
+	//programNumber   
+   function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      
+         var patId = getParameterByName('boardNumber'); // 1060192
+         modify.boardNumber.value = patId;
+         
+         console.log(patId);
+         console.log(modify.boardNumber.value);
+         
+         
 	var $JavaScript = $("#react-select-1-option-1");
 	var $Exit = $(".css-8mmkcg");
 	
 	$JavaScript.on("click", function(){
-		newPage.likeLanguages.value = $JavaScript[0].innerText;	
+		modify.likeLanguages.value = $JavaScript[0].innerText;	
 	})
 		
 	$Exit.on("click", function(){
-		newPage.likeLanguages.value = "";	
+		modify.likeLanguages.value = "";	
 	})
 	
 	function send(){
-	  	if(!newPage.boardTitle.value){
+	  	if(!modify.boardTitle.value){
 	       alert("제목을 작성해주세요.");
 	       return;
 	    }
 	    
-	    if(!newPage.boardContent.value){
+	    if(!modify.boardContent.value){
 	       alert("내용을 작성해주세요.");
 	       return;
 	    }
-	    
 	    
 	    var boardCategory= document.getElementsByName('Category');
 	    var boardRecruitNumber= document.getElementsByName('RecruitNumber');
@@ -850,37 +866,35 @@
 	    var boardPeriod= document.getElementsByName('Period');
 	    var boardCompany= document.getElementsByName('Company');
 	
-	    newPage.boardCategory.value = boardCategory[0].innerText;
-	    newPage.boardRecruitNumber.value = boardRecruitNumber[0].innerText;
-	    newPage.boardWay.value = boardWay[0].innerText;
-	    newPage.boardPeriod.value = boardPeriod[0].innerText;
-	    newPage.boardCompany.value = boardCompany[0].innerHTML;
+	    modify.boardCategory.value = boardCategory[0].innerText;
+	    modify.boardRecruitNumber.value = boardRecruitNumber[0].innerText;
+	    modify.boardWay.value = boardWay[0].innerText;
+	    modify.boardPeriod.value = boardPeriod[0].innerText;
+	    modify.boardCompany.value = boardCompany[0].innerHTML;
 	
-	    
-	    
-	    if(newPage.boardCategory.value =="스터디/프로젝트"){
+	    if(modify.boardCategory.value =="스터디/프로젝트"){
 	    	alert("모집 구분을 선택해주세요.");
 		    return;
 	    }
-	    if(newPage.boardRecruitNumber.value =="인원 미정~10명 이상"){
-	    	alert("모집 인원을 선택해주세요.");
-		    return;
-	    }
-	    if(newPage.boardWay.value =="온라인/오프라인"){
+	    if(modify.boardRecruitNumber.value =="온라인/오프라인"){
 	    	alert("진행 방식을 선택해주세요.");
 		    return;
 	    }
-	    if(newPage.boardPeriod.value =="기간 미정~6개월 이상"){
+	    if(modify.boardPeriod.value =="기간 미정~6개월 이상"){
 	    	alert("진행 기간을 선택해주세요.");
 		    return;
 	    }
-	    if(newPage.boardCompany.value =="회사 선택"){
+	    if(modify.boardRecruitNumber.value =="인원 미정~10명 이상"){
+	    	alert("모집 인원을 선택해주세요.");
+		    return;
+	    }
+	    if(modify.boardCompany.value =="회사 선택"){
 	    	alert("회사를 선택해주세요.");
 		    return;
 	    }
 	    
-	
-	    newPage.submit();
+	    
+	    modify.submit();
 	 }
 
 

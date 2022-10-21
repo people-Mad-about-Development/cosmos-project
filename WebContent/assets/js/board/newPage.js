@@ -1,8 +1,8 @@
 
-let dateElement = document.getElementById('mui-1');
+/*let dateElement = document.getElementById('mui-1');
 let date = new Date().toISOString().substring(0, 10);
 dateElement.value = date;
-dateElement.setAttribute("min", date);
+dateElement.setAttribute("min", date);*/
 
 function setMinValue() {
     if(dateElement.value < date) {

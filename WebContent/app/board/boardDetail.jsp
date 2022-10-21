@@ -26,7 +26,7 @@
                 <div class="studyContent_title">[${board.getBoardCompany()}]${board.getBoardTitle()}</div>
                 
                 <div class="studyContent_userAndDate" style="pointer-events : none;">
-                    <img class="studyContent_companyImg" src="<c:out value="${pageContext.request.contextPath}${comPany.getCompanyFile()}"/>">
+                    <img class="studyContent_companyImg" src="${pageContext.request.contextPath}${comPany.getCompanyFile()}">
                     
                 <div class="studyContent_companyName" style="pointer-events : none;">${board.getBoardCompany()}</div>
                     <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
@@ -38,7 +38,7 @@
                 
                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons1">마감</button>
-                    <button class="studyButtons_buttons2">수정</button>
+                    <button class="studyButtons_buttons2" onclick="location.href = '${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}'">수정</button>
                     <button class="studyButtons_buttons3" id="delete">삭제</button>
                 </section>
                 
@@ -107,7 +107,12 @@
                     </li>
                     <li class="studyInfo">
                         <span class="studyInfo_title">모집 인원</span>
-                        <span class="studyInfo_content">${board.getBoardRecruitNumber()}명</span>
+                        <span class="studyInfo_content">
+                        	<c:if test="${board.getBoardRecruitNumber()} == 100">
+                        		${board.getBoardRecruitNumber()} = "인원 미정"
+                        	</c:if>
+                        
+                        ${board.getBoardRecruitNumber()}명</span>
                     </li>
                     <li class="studyInfo">
                         <span class="studyInfo_title">지원 인원</span>
@@ -220,9 +225,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton"onclick="closeModal()">아니요</button>
-            <a href="index.jsp">
-            <button class="cancelButton_registerButton" >네,삭제할래요</button>
-            </a>
+            <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}'">네,삭제할래요</button>
         </section>
       </div>
     </div>
@@ -286,7 +289,6 @@ function closeModal() {
     $('.modal-wrapper,.modal-wrapper2,.modal-wrapper3 , .modal-wrapper4').toggleClass();
     window.location.reload();
 };
-
 
 
 

@@ -78,7 +78,7 @@
 							for="swtichInput"
 							class="toggleSwitch_switchLabel toggleSwitch_UnChecked">
 							<input type="checkbox" class="toggleSwitch_switchCheckbox"
-							id="switchInput" name="switchInputtag" >
+							id="switchInput" name="switchInputtag">
 							<div class="toggleSwitch_ball"></div>
 						</label>
 					</div>
@@ -193,10 +193,12 @@
     $toggle.click(function () {
         if ($(this).prev().is(":checked")) {
             $(this).prev().prop('checked', false);
-        } else {
+        } 
+         else {
             $switch.prop('checked', false);
             $(this).prev().prop('checked', true);
-        }
+        } 
+        
         $label.each((i, item) => {
             if ($label.eq(i).children().first().is(":checked")) {
                 $label.eq(i).removeClass('toggleSwitch_UnChecked').addClass('toggleSwitch_Checked')
@@ -204,9 +206,9 @@
                 $label.eq(i).addClass('toggleSwitch_UnChecked').removeClass('toggleSwitch_Checked')
             }
         })
+         
+        
     })
-
-
 
 
 
