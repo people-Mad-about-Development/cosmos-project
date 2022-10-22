@@ -1,10 +1,15 @@
 package com.cosmos.app.admin.dao;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.cosmos.app.admin.vo.ContentDTO;
+import com.cosmos.app.admin.vo.ReplyDTO;
+import com.cosmos.app.board.vo.BoardDTO;
+import com.cosmos.app.board.vo.BoardReplyVO;
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.main.vo.BannerVO;
 import com.cosmos.app.user.vo.CompanyVO;
@@ -35,7 +40,7 @@ public class AdminDAO {
 	   
 //	   사용자 관리
 	   public int userNumberSelect() {
-		return sqlSession.selectOne("Admin.selectAll");
+		return sqlSession.selectOne("Admin.userNumberSelect");
 	   }
 	   
 	   public List<UserVO> userSelect() {
@@ -76,8 +81,34 @@ public class AdminDAO {
 		   return sqlSession.selectOne("Admin.companyBoard",boardCompany);
 	   }
 	
-	   
+	   public int companyAll() {
+			return sqlSession.selectOne("Admin.companyAll");
+	   }
+	   public void companyInsert(CompanyVO companyVO) {
+			sqlSession.insert("Admin.companyInsert", companyVO);
+	   }
+	   public int contentAll(){
+		   return sqlSession.selectOne("Admin.contentAll");
+	   }
+	   public List<BoardVO> contentAllList(){
+		   return sqlSession.selectList("Admin.contentAll");
+	   }
+	   public List<ContentDTO> contentSelect(){
+		   return sqlSession.selectList("Admin.contentSelect");
+	   }
 	
+	   public void contentDelete(int boardNumber) {
+			sqlSession.delete("Admin.contentDelete", boardNumber);
+	   }
 	   
+	   public List<ReplyDTO> adminReplySelect(ReplyDTO replyDTO){
+		   return sqlSession.selectList("Admin.adminReplySelect",replyDTO);
+	   }
+	   public int replyAllCount(){
+		   return sqlSession.selectOne("Admin.replyAllCount");
+	   }
 	   
+	   public void adminReplyDelete(int boardReplyNumber) {
+			sqlSession.delete("Admin.adminReplyDelete", boardReplyNumber);
+	   }
 }

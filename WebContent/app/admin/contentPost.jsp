@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -139,12 +141,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
 								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+									<a href="${pageContext.request.contextPath}/admin/companyListOk.ad">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -273,7 +275,7 @@
 										<div class="card">
 											<div class="card-head" id="card-head">
 												<header class="small">전체 게시물
-													<span class="text-primary" id="total-member-count">2</span>
+													<span class="text-primary" id="total-member-count">${all}</span>
 												</header>
 											</div>
 	
@@ -295,7 +297,9 @@
 														<li class="postView">조회수</li>
 														<li class="action"></li>
 													</ul>
-	
+												<c:choose>
+												<c:when test="${contentList != null and fn:length(contentList)>0}">
+													<c:forEach var="content" items="${contentList}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check">
 															<div class="checkbox checkbox-styled no-margin">
@@ -306,11 +310,11 @@
 															</div>
 														</li>
 	
-														<li class="postCategory">스터디</li>
-														<li class="postTitle"><a href="#">자바 공부 달릴 사람!!</a></li> <!-- 작성한 게시글 페이지 이동 -->														
-														<li class="postDate"><a href="#">성윤성윤</a></li><!-- 작성사 상세 페이지 이동 -->
-														<li class="postDate">2022-10-10 15:30</li>			
-														<li class="postLike">1</li>														
+														<li class="postCategory">${content.getBoardCategory()}"</li>
+														<li class="postTitle"><a href="#">${content.getBoardTitle()}</a></li> <!-- 작성한 게시글 페이지 이동 -->														
+														<li class="postDate"><a href="#">${content.getUserNickname()}</a></li><!-- 작성사 상세 페이지 이동 -->
+														<li class="postDate">${content.getBoardDate()}</li>			
+														<li class="postLike">${content.getBoardViews()}</li>														
 																											
 						
 														<li class="action">
@@ -320,7 +324,7 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
+																		<a onclick="location.href='${pageContext.request.contextPath}/admin/contentDeleteOk.ad?boardNumber=${content.getBoardNumber()}'">
 																			삭제
 																		</a>
 																	</li>																												
@@ -328,40 +332,16 @@
 															</div>
 														</li>
 													</ul>
-
-													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
-														<li class="check">
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input type="checkbox" class="terms">
-																	<span></span>
-																</label>
-															</div>
-														</li>
-	
-														<li class="postCategory">프로젝트</li>
-														<li class="postTitle"><a href="#">기획 전부 확인해드립니다. 가져만 오세요</a></li> <!-- 작성한 게시글 페이지 이동 -->														
-														<li class="postDate"><a href="#">로사로사</a></li><!-- 작성사 상세 페이지 이동 -->
-														<li class="postDate">2022-10-10 15:30</li>			
-														<li class="postLike">123</li>														
-														
-														<li class="action">
-															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-flat">
-																	<i class="zmdi zmdi-more"></i>
-																</button>
-																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
-																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
-																			삭제
-																		</a>
-																	</li>																												
-																</ul>
+											
+													
+																</c:forEach>
+																</c:when>
+															</c:choose>
 															</div>
 														</li>
 													</ul>
 												</div>
-												<nav class="text-center" id="paginate"></nav>
+												<!-- <nav class="text-center" id="paginate"></nav> -->
 											</div>
 										</div>
 									</div>

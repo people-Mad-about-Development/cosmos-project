@@ -20,14 +20,14 @@ public class BannerInsertOkController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		 req.setCharacterEncoding("UTF-8");
-	      resp.setCharacterEncoding("UTF-8");
-	      resp.setContentType("text/html; charset=utf-8");
+	     resp.setCharacterEncoding("UTF-8");
+	     resp.setContentType("text/html; charset=utf-8");
 
 		AdminDAO adminDAO = new AdminDAO();
 		BannerVO bannerVO = new BannerVO();
 		Result result = new Result();
 
-		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "assets\\images\\banner";
+		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 		
 		int fileSize = 1024 * 1024 * 5; //5M 
 		

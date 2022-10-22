@@ -149,12 +149,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
 								<li class="active expanded" data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp" class=" active">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+									<a href="${pageContext.request.contextPath}/admin/companyListOk.ad" class=" active">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -280,6 +280,16 @@
 												<input type="hidden" name="photo_tmp_idx" value="" id="photo_tmp_idx">
 												<input type="hidden" name="from_permission" value=""> -->
 												<!-- 해당 사용자 상세내용 -->
+												
+												<div class="form-group">
+													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">회사명
+														<span class="text-danger">(필수)</span>
+													</label>
+													<div class="col-md-9">
+														<input type="text" required="required" name="uid" id="member_item_m20220929a41c742d48942" class="form-control" value="slions1113@gmail.com" data-nick="slions1113@gmail.com" aria-required="true">
+														<div class="form-control-line"></div>
+													</div>
+												</div>
 																													
 												<div class="form-group">
 													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">홈페이지
@@ -308,43 +318,7 @@
 								</div><!--end.card-->
 							</div><!--end.col-->
 	
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-head">
-										<header>관련 정보</header>
-									</div>
-									<div class="card-body border-top">
-										<div class="row">
-											<div>
-												<div class="form-group margin-bottom-xxxl">
-													<label class="col-sm-3 control-label text-right margin-top-5">등록일</label>
-													<div class="col-sm-9">
-														<p class="form-control-static">2022-09-29 00:00</p>
-													</div>
-												</div>
-											</div>
-	
-										</div>
-	
-										<div class="row">
-											<div>
-												<div class="form-group margin-bottom-xxxl">
-													<label class="control-label col-sm-3 text-right margin-top-5">관련</label>
-													<div class="form-control-static col-sm-9">
-														<div class="row margin-bottom-12">
-															<span style="display:inline-block;" class="col-xs-3">프로젝트</span>
-															<p>0</p>
-														</div>
-
-														<div class="row margin-bottom-12">
-															<span style="display:inline-block;" class="col-xs-3">스터디</span>
-															<p>0</p>
-														</div>
-	
-													</div>
-												</div>
-											</div>
-										</div>
+					
 									</div>
 								</div>
 							</div>

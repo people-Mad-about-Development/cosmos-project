@@ -46,10 +46,10 @@ public class MemberListOkController implements Execute {
 			adminDTOList.add(adminDTO);	
 		}
 		
-		
+		req.setAttribute("all",adminDAO.userNumberSelect());
 		
 		req.setAttribute("adminDTO", adminDTOList);
-
+		System.out.println(adminDTOList);
 		result.setPath(req.getContextPath() + "/app/admin/memberList.jsp");
 		return result;
 	}
