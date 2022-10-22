@@ -54,6 +54,9 @@ public class JoinOkController implements Execute{
 
 		userDAO.join(userVO);
 		
+		session.setAttribute("userId", userId);			
+		session.setAttribute("userNickname", userNickname);		
+		
 		System.out.println("메소드");
 		
 //		result.setRedirect(true);
