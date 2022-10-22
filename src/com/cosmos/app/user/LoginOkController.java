@@ -32,6 +32,11 @@ public class LoginOkController implements Execute {
 		try {
 			jsonObject.put("result", new UserDAO().checkId(userId));
 			out.print(jsonObject.toString());
+			if(new UserDAO().checkId(userId)) {
+				System.out.println(userId);
+				session.setAttribute("userId", userId);			
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

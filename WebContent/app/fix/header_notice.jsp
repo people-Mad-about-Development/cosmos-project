@@ -48,7 +48,7 @@
                             <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">설정</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
-                            <a href="#" style="display: inline-block;">로그아웃</a>
+                            <a href="${pageContext.request.contextPath}/user/logout.us" style="display: inline-block;">로그아웃</a>
                         </li>
                     </ul>
                 </div><!-- 생성 -->

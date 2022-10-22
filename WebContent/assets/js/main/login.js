@@ -50,6 +50,7 @@ $back.click(function(){
 });
 
 $google.click(function(){
+	gogle
     $first.toggleClass("active_lo hidden_lo");
     $second.toggleClass("active_lo hidden_lo");
 });
@@ -880,7 +881,6 @@ $company.blur(function(){
 	/*=============================================================== */
 
 // 아이디 중복검사
-let check = false;
 function checkNickname(userNickname){
 	nickCheck = false;
 	
@@ -910,6 +910,7 @@ function checkNickname(userNickname){
 				nickCheck = true;
 				console.log(data.result);
 				console.log(userId);
+				/*document.getElementById("nickh1").innerHTML = inputNick + document.getElementById("nickh1").innerHTML;*/
 			}else{
 				$("#checkResult").text("중복된 닉네임입니다.")
 				$("#checkResult").css("color", "red");
@@ -924,6 +925,7 @@ $("input[name='nickNameInput']").on("blur", function(){
 	console.log("blur");
 	console.log(inputNick);
 	checkNickname(inputNick);
+	
 });
 
 /*=============================================================== */
@@ -1048,7 +1050,9 @@ function nickSend() { // 닉네임 유효성 검사
 	}else if(nickCheck){
 		console.log("입력했고, 사용가능할때");
 		
-		document.getElementById("nickh1").innerHTML = document.getElementById("nickNameInput").value + document.getElementById("nickh1").innerHTML;
+		
+		
+/*		document.getElementById("nickh1").innerHTML = document.getElementById("nickNameInput").value + document.getElementById("nickh1").innerHTML;*/
 		
 	
 		    $(".setNickname_buttonNext__2pE6g").parents().closest($modalContent).toggleClass("active_lo hidden_lo");

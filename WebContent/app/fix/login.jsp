@@ -82,7 +82,7 @@
 	                <div class="loginModal_modalContent third hidden_lo">
 	                	
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d" id="nickh1">님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
+	                    <h1 class="setInterest_title__Me11d" id="nickh1">${nickNameInput.val()} 님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
 	                    <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
 	                    <div class="setting_titleWrapper setting_Languages">
 	                <h3>관심 있는<br>기술 태그</h3>
@@ -1124,7 +1124,7 @@
         <div class="modalW">
             <div class="auto_alert">
                 <div>회원가입이 완료되었습니다!</div>
-                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button>
+                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button> <!--  경로 수정 필요 -->
             </div>
         </div>
     </div>
@@ -1134,7 +1134,7 @@
         <div class="modalW">
             <div class="auto_alert">
                 <div>로그인되었습니다!</div>
-                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button>
+                <button type="button" class="last" name="complete" onclick="location.href = '${pageContext.request.contextPath}/user/login.us'">확인</button> <!-- 경로 수정 필요 -->
             </div>
         </div>
     </div>
@@ -1147,6 +1147,9 @@
 <script src="${pageContext.request.contextPath}/assets/js/main/login.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>Kakao.init('61e98904c3024813eecedb7a5c5b3bf9')</script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
 	/* var nick = document.getElementById("nickNameInput").value; */
