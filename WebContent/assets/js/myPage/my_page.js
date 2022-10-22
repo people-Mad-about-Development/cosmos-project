@@ -139,10 +139,30 @@
         };
 
     });
-        $imgDelete.click(function(){
-            $userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
-        });
-    
+
+
+	function Initprofile(){
+		var defaultProfile = "/assets/images/fix/cosmosProfile.png";
+		
+		$.ajax({
+			url:"/user/initProfileOk.us",
+			data:{default:defaultProfile},
+			type:"post",
+			success:function(){
+				alert("프로필사진이 초기화 되었습니다.")
+		 		$userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
+			}
+			
+		})
+		
+		
+		
+		
+		
+		
+	}
+
+
     
     var $list1 = $(".select_menu1");
     var $list1_btn = $("#select_btn");
@@ -399,7 +419,7 @@ function company(){
 	wrapperbutton.before(
 		`<span class="companyBarWrapper">`
 		+`<li class="companyBar companyBarList">`
-		+`<img src="`+pageURI+`/assets/images/fix/cosmosProfile.png" alt="" class="languageBarLogo">`
+		+`<img src="`+pageURI+`/assets/images/company/company.png" alt="" class="languageBarLogo">`
 		+`<span class="x" id="x1">ⓧ</span>`
 		+`<span>`+content.trim()+`</span></li>`
 		+`<input type="hidden" name="companyName" value="`+ content.trim()+`">`
@@ -442,3 +462,7 @@ function myPageUpdateSubmit(){
 
 	mypageForm.submit();
 }
+function deleteUser(){
+	location.href=pageURI+"/user/userDeleteOK.us"
+}
+

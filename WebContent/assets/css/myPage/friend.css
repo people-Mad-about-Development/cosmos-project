@@ -116,7 +116,10 @@ body {
 .ui.user.card>.image {
     width: 64px;
     height: 64px;
+    max-width: 64px;
+    max-height: 64px;
 }
+
 
 .ui.card>.image {
     -webkit-box-flex: 0;
@@ -606,6 +609,11 @@ background-color: #262626;
     border: none !important;
     border-radius: 5px;
     margin-top: 10px !important;
+}
+.ui.user.card>.image img{
+  object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 @-webkit-keyframes loginModal_loginAnimation__1_BmT{0%{opacity:0;top:-100%}to{opacity:1;top:50%}};
