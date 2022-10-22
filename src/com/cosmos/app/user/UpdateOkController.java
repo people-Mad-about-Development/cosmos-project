@@ -26,7 +26,7 @@ public class UpdateOkController implements Execute {
 		req.setCharacterEncoding("UTF-8");
 		
 		/* int loginNumber = req.getSession().getAttribute(""); */
-		int loginNumber = 3;
+		int loginNumber =  (Integer)req.getSession().getAttribute("sessionUserNumber");
 		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 		int fileSize = 1024 * 1024 * 5; //5M 
 		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "UTF-8", new DefaultFileRenamePolicy()); 
