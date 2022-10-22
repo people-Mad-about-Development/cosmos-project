@@ -4,7 +4,7 @@
 
 
 	<select id="alarmSelect" resultType="alarmVO" parameterType="_int"	>
-		select alarm_number, alarm_status, inquiry_number   
+		select a.alarm_number, a.alarm_status, ti.inquiry_number   
 		from tbl_alarm a join tbl_inquiry ti on a.inquiry_number = ti.inquiry_number 
 		where a.user_number = #{userNumber}
 	

@@ -30,6 +30,7 @@ public class AlarmListOkController implements Execute {
 		JSONArray replies = new JSONArray();
 		
 		mainDAO.alarmSelect(loginNumber).forEach(alarmVO->{
+			System.out.println("알람 리스또 오케이 들어와줘");
 			JSONObject reply = new JSONObject(alarmVO);
 			replies.put(reply);
 		});
