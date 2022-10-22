@@ -10,6 +10,7 @@ public class CommunityDTO {
 	private int boardNumber;
 	private String userNickname;
 	private int countFile;
+	private String userFile;
 	
 	public CommunityDTO() {
 		// TODO Auto-generated constructor stub
@@ -87,17 +88,24 @@ public class CommunityDTO {
 		this.countFile = countFile;
 	}
 
+	public String getUserFile() {
+		return userFile;
+	}
+
+	public void setUserFile(String userFile) {
+		this.userFile = userFile;
+	}
+
 	@Override
 	public String toString() {
 		return "CommunityDTO [communityNumber=" + communityNumber + ", communityTitle=" + communityTitle
 				+ ", communityContent=" + communityContent + ", communityDate=" + communityDate + ", communityCategory="
 				+ communityCategory + ", userNumber=" + userNumber + ", boardNumber=" + boardNumber + ", userNickname="
-				+ userNickname + ", countFile=" + countFile + "]";
+				+ userNickname + ", countFile=" + countFile + ", userFile=" + userFile + "]";
 	}
 
 	
 
-	
 	
 	
 }
