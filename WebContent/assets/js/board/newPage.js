@@ -1,18 +1,4 @@
-
-/*let dateElement = document.getElementById('mui-1');
-let date = new Date().toISOString().substring(0, 10);
-dateElement.value = date;
-dateElement.setAttribute("min", date);*/
-
-function setMinValue() {
-    if(dateElement.value < date) {
-        alert('현재 시간보다 이전의 날짜는 설정할 수 없습니다.');
-        dateElement.value = date;
-    }
-}
-
 var innerhtml;
-
 
 const new_comboBox = $('.select__menu');
 const select_div = $('.select__control');

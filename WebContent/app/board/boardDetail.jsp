@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/boardProject2.css">
 </head>
 <body style ="overflow: auto;">
+<jsp:include page = "${pageContext.request.contextPath}/app/fix/lastHeader.jsp"/>
     <div id="root">
-        <div class="studyContent_postWrapper">
+        <div class="studyContent_postWrapper" >
             <section class="studyContent_postHeader">
                 <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
 		          <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
@@ -25,14 +26,16 @@
 		       </a>
                 <div class="studyContent_title">[${board.getBoardCompany()}]${board.getBoardTitle()}</div>
                 
-                <div class="studyContent_userAndDate" style="pointer-events : none;">
-                    <img class="studyContent_companyImg" src="${pageContext.request.contextPath}${comPany.getCompanyFile()}">
-                    
-                <div class="studyContent_companyName" style="pointer-events : none;">${board.getBoardCompany()}</div>
-                    <img class="studyContent_userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
-                     
-                <div class="studyContent_userName" style="pointer-events : none;">${board.getUserNickname()}</div>
-                <div class="studyContent_registeredDate">${board.getBoardDate()}</div>
+                <div class="studyContent_userAndDate" style="position:relative;">
+                    <img class="studyContent_companyImg" src="${pageContext.request.contextPath}${comPany.getCompanyFile()}" style="cursor:default;">
+	                <div class="studyContent_companyName" style="cursor:default; pointer-events : none;">${board.getBoardCompany()}</div>
+	                
+	                <img class="studyContent_userImg" src="${pageContext.request.contextPath}${board.getUserFile()}" style="cursor:default;">
+	                <div class="studyContent_userName" style="cursor:default; pointer-events : none;">${board.getUserNickname()}</div>
+	                <div class="studyContent_registeredDate">${board.getBoardDate()}</div>
+	                 <a href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" class="community_go">
+	                	커뮤니티
+	                </a>
                 </div>
                 
                 
@@ -53,46 +56,21 @@
                             </div>
                         </div>
                         <ul class="recommendPost_listWrapper">
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">1.</div>
-                                <div class="recommendPost_title">사이드 프로젝트 프론트엔드, 백엔드 개발자분 모집합니다</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">2.</div>
-                                <div class="recommendPost_title">사이드 프로젝트를 진행하실 프론트엔드 2분 모집합니다</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">3.</div>
-                                <div class="recommendPost_title">본격적으로 딴짓 사이드 프로젝트 프론트엔드 개발자 구인!</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">4.</div>
-                                <div class="recommendPost_title">사이드 프로젝트 팀원 모집</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">5.</div>
-                                <div class="recommendPost_title">(두개의 스터디 모집 중) 만들면서 배우는 클린 아키텍처 / Hibernate 만들어보기</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">6.</div>
-                                <div class="recommendPost_title">[UI, UX 디자이너] 취업용 포트폴리오를 만드실 디자이너 한 분 충원합니다 !</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">7.</div>
-                                <div class="recommendPost_title">태블릿펜을 통한 그림심리검사앱</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">8.</div>
-                                <div class="recommendPost_title">신림역 주변 모각코 </div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">9.</div>
-                                <div class="recommendPost_title">[디스코드] 온라인 모각코 얼른 오세요 .. !</div>
-                            </li>
-                            <li class="recommendPost_postList">
-                                <div class="recommendPost_index">10.</div>
-                                <div class="recommendPost_title">채용혜택) 2022년 NH투자증권 빅데이터 경진대회</div>
-                            </li>
+                        	
+                        <c:choose>
+							<c:when test="${boards != null and fn:length(boards) > 0}">
+			            		<c:forEach var="boards" items="${boards}" end="9" varStatus="status">
+			            			<a href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${boards.getBoardNumber()}" style="text-decoration: none; color: black;">
+			                            <li class="recommendPost_postList">
+			                                <div class="recommendPost_index">${status.count}. </div>
+			                                <div class="recommendPost_title">${boards.getBoardTitle()}</div>
+			                            </li>
+		                            </a>
+		                            
+                            </c:forEach>
+                          </c:when>
+                    	</c:choose>
+                            
                     </ul>
                     </div>
                 </div>        
@@ -107,21 +85,27 @@
                     </li>
                     <li class="studyInfo">
                         <span class="studyInfo_title">모집 인원</span>
-                        <span class="studyInfo_content">
-                        	<c:if test="${board.getBoardRecruitNumber()} == 100">
-                        		${board.getBoardRecruitNumber()} = "인원 미정"
-                        	</c:if>
-                        
-                        ${board.getBoardRecruitNumber()}명</span>
+                        <span class="studyInfo_content">${board.getBoardRecruitNumber()}명</span>
                     </li>
+                    
                     <li class="studyInfo">
                         <span class="studyInfo_title">지원 인원</span>
-                      <!--   <span class="studyInfo_content" style="color:rgb(223, 65, 65)">10명</span>  -->
-                        <span class="studyInfo_content" style="color:green">명</span> 
-                        <a class ="apply_list" href="boardApply.jsp" rel="noreferrer" target="_blank">
+                        
+                        <c:choose>
+	                    	<c:when test="${board.getBoardRecruitNumber() <= board.getBoardSupport()}">
+		                        <span class="studyInfo_content Support" style="color:red">${board.getBoardSupport()}명</span>
+		                        
+	                        </c:when>
+	                        <c:otherwise>
+	                        	<span class="studyInfo_content Support" style="color:green">${board.getBoardSupport()}명</span>
+	                        </c:otherwise>
+                        </c:choose>
+                        <a class ="apply_list" href="${pageContext.request.contextPath}/board/supportDetail.bo?boardNumber=${board.getBoardNumber()}" rel="noreferrer" target="_blank">
                             <span class = "apply_info">지원자 정보</span>
                         </a>
                     </li>
+		                    
+		                    
                     <li class="studyInfo">
                         <span class="studyInfo_title">연락 방법</span>
                         <div class="contact_project">
@@ -172,8 +156,9 @@
     </div>
 
     <!-- Modal -->
-<div class="modal-wrapper">
-    <div class="modal">
+    
+<div class="modal-wrapper mwrapper">
+    <div class="modal-b">
       <div class="head">
         <a class="btn-close trigger" href="#">
           <i class="fa fa-times" aria-hidden="true"></i>
@@ -185,14 +170,15 @@
             지원 하시겠습니까?
           </div>
           <section class="cancelButton_buttons">
-            <button class="cancelButton_cancelButton" onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" id="yes" onclick="support()">네,지원할게요</button>
+            <button class="cancelButton_cancelButton 1" onclick="closeModal()">아니요</button>
+            <button class="cancelButton_registerButton" id="yes" onclick="send()">네,지원할게요</button>
         </section>
       </div>
     </div>
   </div>
-<div class="modal-wrapper2">
-    <div class="modal">
+  
+<div class="modal-wrapper2 mwrapper">
+    <div class="modal-b">
       <div class="head">
         <a class="btn-close trigger" href="#">
           <i class="fa fa-times" aria-hidden="true"></i>
@@ -204,15 +190,15 @@
             마감 처리 하시겠어요?
           </div>
           <section class="cancelButton_buttons">
-            <button class="cancelButton_cancelButton"onclick="closeModal()">아니요</button>
+            <button class="cancelButton_cancelButton 2"onclick="closeModal()">아니요</button>
             <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}'">네,마감할게요</button>
         </section>
       </div>
     </div>
   </div>
 
-<div class="modal-wrapper3">
-    <div class="modal">
+<div class="modal-wrapper3 mwrapper">
+    <div class="modal-b">
       <div class="head">
         <a class="btn-close trigger" href="#">
           <i class="fa fa-times" aria-hidden="true"></i>
@@ -224,71 +210,60 @@
             작성하신 글을 삭제 하시겠어요?
           </div>
           <section class="cancelButton_buttons">
-            <button class="cancelButton_cancelButton"onclick="closeModal()">아니요</button>
+            <button class="cancelButton_cancelButton 3"onclick="closeModal()">아니요</button>
             <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}'">네,삭제할래요</button>
         </section>
       </div>
     </div>
   </div>
-
-<div class="modal-wrapper4">
-    <div class="modal">
-      <div class="head">
-        <a class="btn-close trigger" href="#">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="content">
-          <div class="good-job">
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            지원이 완료되었습니다.
-          </div>
-          <section class="cancelButton_buttons">
-            <button class="cancelButton_registerButton" onclick="closeModal()" id="close">닫기</button>
-        </section>
-      </div>
-    </div>
-  </div>
+  
+	<div id="mwrapper"></div>
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
 <script>
 
-$( document ).ready(function() {
+	let boardNumber = "${board.getBoardNumber()}";
+	let userNumber = 3;
+	let boardSupport = "${board.getBoardSupport()}";
+
   $('.project_link').on('click', function() {
      $('.modal-wrapper').toggleClass('open');
     return false;
   });
-});
-
-$( document ).ready(function() {
+  
   $('.studyButtons_buttons1').on('click', function() {
      $('.modal-wrapper2').toggleClass('open');
     return false;
   });
-});
 
-$( document ).ready(function() {
   $('#delete').on('click', function() {
      $('.modal-wrapper3').toggleClass('open');
     return false;
   });
-});
 
-$( document ).ready(function() {
   $('#yes').on('click', function() {
      $('.modal-wrapper').toggleClass('open');
-     $('.modal-wrapper4').toggleClass('open');
     return false;
   });
-});
+  
+  $('.1').on('click', function() {
+     $('.modal-wrapper').toggleClass('open');
+    
+  });
+  $('.2').on('click', function() {
+     $('.modal-wrapper2').toggleClass('open');
+    return false;
+  });
+  $('.3').on('click', function() {
+     $('.modal-wrapper3').toggleClass('open');
+    return false;
+  });
 
-function closeModal() {        
-    $('.modal-wrapper,.modal-wrapper2,.modal-wrapper3 , .modal-wrapper4').toggleClass();
-    window.location.reload();
-};
+
 
 
 

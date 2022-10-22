@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
+import com.cosmos.app.main.dao.MainDAO;
 
 public class BoardDetailOkController implements Execute{
 	@Override
@@ -17,10 +18,12 @@ public class BoardDetailOkController implements Execute{
 		Result result = new Result();
 		
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
-		String boardCompany = req.getParameter("boardCompany");
 
+		
 		req.setAttribute("board", boardDAO.selectBoardDetail(boardNumber));
 		req.setAttribute("comPany", boardDAO.selectCompany(boardNumber));
+		req.setAttribute("boards", boardDAO.selectTitle());
+		
 		boardDAO.updateReadCount(boardNumber);
 		
 		/* boardDAO.updateClose(boardNumber); */
