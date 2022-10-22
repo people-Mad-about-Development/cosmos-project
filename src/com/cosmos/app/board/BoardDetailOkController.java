@@ -20,7 +20,7 @@ public class BoardDetailOkController implements Execute{
 		String boardCompany = req.getParameter("boardCompany");
 
 		req.setAttribute("board", boardDAO.selectBoardDetail(boardNumber));
-		req.setAttribute("comPany", boardDAO.selectCompany(boardCompany));
+		req.setAttribute("comPany", boardDAO.selectCompany(boardNumber));
 		boardDAO.updateReadCount(boardNumber);
 		
 		/* boardDAO.updateClose(boardNumber); */

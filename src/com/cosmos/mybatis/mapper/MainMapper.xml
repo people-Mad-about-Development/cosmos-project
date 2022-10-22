@@ -7,7 +7,7 @@
 	<!-- 메인 모집글 목록 -->
 	<select id="selectAllMain" resultType="boardDTO">
 		select user_nickname, board_number, board_title, board_category, board_way, board_recruit_number, board_start_date, board_date, board_period, board_views, board_company
-		from tbl_board b join tbl_user u on b.user_number = u.user_number where board_status = 'open' order by board_start_date
+		from tbl_board b join tbl_user u on b.user_number = u.user_number where board_status = 'open' and board_start_date > curdate() order by board_start_date
 	</select>
 	
 	

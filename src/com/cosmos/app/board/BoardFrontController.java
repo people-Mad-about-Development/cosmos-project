@@ -33,7 +33,9 @@ public class BoardFrontController extends HttpServlet {
 			result = new BoardWriteOkController().execute(req, resp);
 		}else if(request.equals("/board/deleteOk.bo")) {	// 삭제
 			result = new BoardDeleteOkController().execute(req, resp);
-		}else if(request.equals("/board/modifyOk.bo")) {	// 수정
+		}else if(request.equals("/board/modify.bo")) {	// 수정페이지
+			result = new BoardModifyController().execute(req, resp);
+		}else if(request.equals("/board/modifyOk.bo")) {	// 수정완료
 			result = new BoardModifyOkController().execute(req, resp);
 		}else if(request.equals("/board/detailOk.bo")) {	// 상세보기 
 			result = new BoardDetailOkController().execute(req, resp);

@@ -21,11 +21,13 @@ public class BoardWriteOkController implements Execute{
 		Result result = new Result();
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = new BoardVO();
-		BoardDTO boardDTO = new BoardDTO();
 		
-		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));
+		int userNumber = 3;
+		
+		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));;
 		
 		
+		boardVO.setUserNumber(userNumber);
 		boardVO.setBoardTitle(req.getParameter("boardTitle"));
 		boardVO.setBoardContent(req.getParameter("boardContent"));
 		boardVO.setBoardCategory(req.getParameter("boardCategory"));
@@ -38,8 +40,7 @@ public class BoardWriteOkController implements Execute{
 		
 		boardDAO.insert(boardVO);
 		
-		
-		result.setPath("/app/board/listOk.bo");
+		result.setPath("/main/mainBoard.ma");
 		
 		return result;
 	

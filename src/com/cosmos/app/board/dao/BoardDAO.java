@@ -29,8 +29,8 @@ public class BoardDAO {
     	return sqlSession.selectOne("Board.selectBoardDetail", boardNumber);
     }
     
-    public BoardDTO selectCompany(String boardCompany){
-    	return sqlSession.selectOne("Board.selectCompany", boardCompany);
+    public BoardDTO selectCompany(int boardNumber){
+    	return sqlSession.selectOne("Board.selectCompany", boardNumber);
     }
     
     public void updateReadCount(int boardNumber) {
@@ -40,5 +40,14 @@ public class BoardDAO {
     public void updateClose(int boardNumber) {
 		sqlSession.update("Board.updateClose", boardNumber);
 	}
+    
+    public void updateBoard(BoardVO boardVO) {
+    	sqlSession.update("Board.updateBoard", boardVO);
+    }
+    
+    public void deleteBoard(int boardNumber) {
+		sqlSession.delete("Board.deleteBoard", boardNumber);
+	}
+    
 	
 }
