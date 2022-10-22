@@ -40,6 +40,7 @@ public class MainDAO {
 	   }
 	   
 	   public List<AlarmVO> alarmSelect(int userNumber){
+		   System.out.println("메인 다오 들어옴");
 		   return sqlSession.selectList("Alarm.alarmSelect", userNumber);
 	   }
 	   
