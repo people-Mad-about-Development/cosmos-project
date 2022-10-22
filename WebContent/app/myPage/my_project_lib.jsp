@@ -24,7 +24,7 @@
                             <li class="community-aside__menu community-aside__menu--selected">
                             </li>
                             <li class="community-aside__menu ">
-                                <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=1"><span>공지사항</span></a>
+                                <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=1&userNumber=1"><span>공지사항</span></a>
                             </li>
                             <li class="community-aside__menu ">
                                 <a href="" style="color: #80008087;"><span>자료실</span></a>
@@ -54,7 +54,7 @@
                 		<c:forEach var="list" items="${LibList}">
 			                <ul class="question-list">
 			                    <li class="question-container">
-			                        <a href="">
+			                        <a href="#">
 			                            <div class="question">
 			                                <div class="question-info">
 			                                    <div class="question-title">

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 글쓰기</title>
+    <title>공지사항 수정하기</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/new_text.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -21,18 +21,18 @@
         <!-- 2번 프로젝트에 대해 설명 해주세여  -->
         <section>
             <div class="postRegister_postContentWrapper__3BXZ6">
-                <h2 class="postRegister_text__17jg3">공지사항 글쓰기</h2>
+                <h2 class="postRegister_text__17jg3">공지사항 수정</h2>
             </div>
             <section>
 
 
                 <!-- <div id="summernote" placeholder="입력해주세요" ></div> -->
-                <form action="${pageContext.request.contextPath}/community/noticeCreateOk.co?boardNumber=1&userNumber=1" name="textForm" method="post">
-                	<input name="textTitle" class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="">
-                    <textarea id="summernote" name="textContentSummerNote" placeholder=""> </textarea>
+                <form action="${pageContext.request.contextPath}/community/noticeModifyOk.co?communityNumber=${text.getCommunityNumber()}&boardNumber=1&userNumber=1" name="textForm" method="post">
+                	<input name="textTitle" class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="${text.getCommunityTitle()}">
+                    <textarea id="summernote" name="textContentSummerNote" placeholder="">${text.getCommunityContent()}</textarea>
                     <p id="letter-length" style="display: inline;"></p>/500
                     <section class="writebutton_buttons__2qW83">	
-                    	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button>
+                    	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">수정</button>
                     </section>
                 </form>
                 <section class="writebutton_buttons__2qW83">
