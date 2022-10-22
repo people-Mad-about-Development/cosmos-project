@@ -160,12 +160,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
