@@ -28,7 +28,8 @@ public class JoinOkController implements Execute{
 		System.out.println(req.getParameter("userNickname"));
 		System.out.println(req.getParameter("userIntroduce"));
 		System.out.println(req.getParameter("userCareer"));
-		System.out.println(Integer.parseInt(req.getParameter("userCareerYear")));
+		System.out.println(req.getParameter("userCareerYear"));
+//		System.out.println(Integer.parseInt(req.getParameter("userCareerYear")));
 		System.out.println(req.getParameter("userFile"));
 		System.out.println(req.getParameter("userId"));
 		
@@ -54,8 +55,7 @@ public class JoinOkController implements Execute{
 
 		userDAO.join(userVO);
 		
-		session.setAttribute("userId", userId);			
-		session.setAttribute("userNickname", userNickname);		
+		session.setAttribute("userId", userId);	
 		
 		System.out.println("메소드");
 		

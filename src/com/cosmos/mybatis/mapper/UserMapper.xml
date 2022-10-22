@@ -15,6 +15,10 @@
 		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userId})
 	</insert>
 	
+	<select id="userSession" parameterType="string" resultType="userVO">
+		select user_number, user_nickname, user_id from tbl_user where user_id = #{userId}
+	</select>
+	
 	<!-- <select id="login" parameterType="string" resultType="_int">
 		select member_number from tbl_member where user_id = #{userId}
 	</select> -->

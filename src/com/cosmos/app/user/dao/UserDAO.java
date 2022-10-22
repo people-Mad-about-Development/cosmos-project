@@ -30,6 +30,10 @@ public class UserDAO {
 		   return (Integer)sqlSession.selectOne("user.checkId", userId) == 1;
 	   }
 	   
+	   public UserVO userSession(String userId) {
+		   return sqlSession.selectOne("user.userSession", userId);
+	   }
+	   
 	   public UserVO userInfo(int userNumber) {
 		   return sqlSession.selectOne("user.userInfo",userNumber);
 	   }
