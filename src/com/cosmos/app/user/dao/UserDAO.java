@@ -77,7 +77,16 @@ public class UserDAO {
 		   sqlSession.insert("user.insertUserCompany",userCompanyVO);
 	   }
 	   
+	   public void updateUser(UserVO userVO) {
+		   sqlSession.update("user.updateUser", userVO);
+	   }
 	   
+	   public int getCompanyNumber(String companyName) {
+		 return  sqlSession.selectOne("user.getCompanyNumber",companyName);
+	   }
 	   
+	   public int getSkillNumber(String skillName) {
+		   return sqlSession.selectOne("user.getSkillNumber",skillName);
+	   }
 	   
 }

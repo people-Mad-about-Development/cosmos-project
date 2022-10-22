@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
+import com.cosmos.app.user.dao.UserDAO;
+import com.cosmos.app.user.vo.UserCanSkillVO;
+import com.cosmos.app.user.vo.UserCompanyVO;
+import com.cosmos.app.user.vo.UserInterestSkillVO;
+import com.cosmos.app.user.vo.UserVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -31,18 +36,53 @@ public class UpdateOkController implements Execute {
 		String [] interestSkills = multipartRequest.getParameterValues("interestSkill");
 		String [] CanSkills = multipartRequest.getParameterValues("CanSkill");
 		
+		UserVO userVO = new UserVO();
+		UserCanSkillVO userCanSkillVO = null;
+		UserInterestSkillVO userInterestSkillVO = null;
+		UserCompanyVO userCompanyVO = null;
+		UserDAO userDAO = new UserDAO();
+		
+		userVO.setUserNumber(loginNumber);
+		userVO.setUserNickname(userNickname);
+		userVO.setUserIntroduce(userIntroduce);
+		
+		String originSrc = userDAO.userInfo(loginNumber).getUserFile();
+		
 		Enumeration<String> fileNames = multipartRequest.getFileNames();
 		
 		while(fileNames.hasMoreElements()) {
 			String fileName = fileNames.nextElement();
 			String fileOriginalName = multipartRequest.getOriginalFileName(fileName);
 			String fileSystemName = multipartRequest.getFilesystemName(fileName);
-			
 			System.out.println(fileOriginalName);
-			System.out.println(fileSystemName);
-			System.out.println(fileName);
+			System.out.println(fileOriginalName=="Null");
+			System.out.println(fileOriginalName=="null");
+			System.out.println(fileOriginalName==null);
 		}
 		
+		/*
+		 * userVO.setUserFile("/upload/"+fileOriginalName);
+		 * 
+		 * //유저 정보수정 userDAO.updateUser(userVO); //유저각각의 스킬과 회사 db 수정 사전 작업
+		 * userDAO.initCanSkill(loginNumber); userDAO.initCompany(loginNumber);
+		 * userDAO.initInterestSkill(loginNumber); //유저 랑 연결된 테이블 수정 시작
+		 * 
+		 * for (String company : companyNames) { userCompanyVO=new UserCompanyVO();
+		 * userCompanyVO.setUserNumber(loginNumber);
+		 * userCompanyVO.setCompanyNumber(userDAO.getCompanyNumber(company.trim()));
+		 * userDAO.insertUserCompany(userCompanyVO); }
+		 * 
+		 * for (String canSkill : CanSkills) { userCanSkillVO= new UserCanSkillVO();
+		 * userCanSkillVO.setUserNumber(loginNumber);
+		 * userCanSkillVO.setSkillNumber(userDAO.getSkillNumber(canSkill));
+		 * userDAO.insertUserCanSkill(userCanSkillVO); }
+		 * 
+		 * for (String interestSkill : interestSkills) { userInterestSkillVO=new
+		 * UserInterestSkillVO(); userInterestSkillVO.setUserNumber(loginNumber);
+		 * userInterestSkillVO.setSkillNumber(userDAO.getSkillNumber(interestSkill)); }
+		 * 
+		 * 
+		 */
 		
 		
 		
