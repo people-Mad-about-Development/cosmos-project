@@ -27,7 +27,7 @@
                     <label class="userImgUpload_customLabel">이미지 선택
                         <input name="userImgFile" id="imageUpload" type="file" accept="image/*" value="${pageContext.request.contextPath}${UserInfo.getUserFile()}">
                     </label>
-                    <button type = "button" class="userImgUpload_buttonImageDelete buttonImageDelete">이미지 제거</button>
+                    <button type = "button" class="userImgUpload_buttonImageDelete buttonImageDelete" onclick="Initprofile()">이미지 제거</button>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
                 <h3 style="position: absolute; top: 10px">한 줄 소개</h3>
                 <div class="main_inputZone" >
                     <h3></h3>
-                    <input type="text" name="introduceInput" value="${UserInfo.getUserIntroduce()}." id="introduce">
+                    <input type="text" name="introduceInput" value="${UserInfo.getUserIntroduce()}" id="introduce">
                 </div>
                 <p class="main_description">나를 소개하는 한 줄을 작성하세요.</p>
             </div>
@@ -293,8 +293,8 @@
             <div class="cancelButton_wrapper">
                 <div>Cosmos에서 계정을 삭제하시겠어요?</div>
                 <section class="cancelButton_buttons">
-                    <button class="cancelButton_cancelButton" id="cancel_btn">아니요</button>
-                    <button class="cancelButton_registerButton">네, 삭제할래요</button>
+                    <button type = "button" class="cancelButton_cancelButton" id="cancel_btn">아니요</button>
+                    <button type= "button" class="cancelButton_registerButton" onclick="deleteUser()">네, 삭제할래요</button>
                 </section>
             </div>
         </div>

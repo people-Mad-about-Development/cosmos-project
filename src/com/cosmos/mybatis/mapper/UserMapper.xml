@@ -77,7 +77,7 @@
 	
 	<update id="updateUser" parameterType="userVO">
 	UPDATE tbl_user
-	SET user_nickname=#{userNickname}, user_introduce=#{userFile},user_file=#{userFile}
+	SET user_nickname=#{userNickname}, user_introduce=#{userIntroduce},user_file=#{userFile}
 	WHERE user_number=#{userNumber};
 	</update>
 	
@@ -90,6 +90,31 @@
 	<select id="getSkillNumber" parameterType="string" resultType="_int">
 		select skill_number from tbl_skill where skill_name = #{skillName}
 	</select>
+	
+	<select id="duplicateCompany" parameterType="string" resultType="_int">
+		select count(company_name) from tbl_company where company_name = #{companyName}
+	</select>
+	
+	<insert id="addCompany" parameterType="string">
+		INSERT INTO tbl_company (company_name, company_file, company_url) VALUES(#{companyName}, 'company.png', '/assets/images/company/company.png')
+	</insert>
+	
+	<update id="initProfile" parameterType="userVO">
+		UPDATE tbl_user SET user_file= #{userFile} WHERE user_number=#{userNumber}
+	</update>
+	
+	<delete id="userDelete" parameterType="_int">
+		delete from tbl_user where user_number = #{userNumber}
+	</delete>
+	
+	<select id="getFriends" parameterType="_int" resultType="userVO">
+		select tu.user_number, tu.user_nickname , tu.user_introduce , tu.user_career_year, tu.user_file   from tbl_user tu join tbl_friend tf on tu.user_number =tf.friend_number where tf.my_number = #{userNumber}
+	</select>
+	
+	<delete id="deleteFriend" parameterType="friendVO">
+		delete from tbl_friend where my_number = #{myNumber} and friend_number = #{friendNumber}
+	</delete>
+	
 	
 </mapper>
 

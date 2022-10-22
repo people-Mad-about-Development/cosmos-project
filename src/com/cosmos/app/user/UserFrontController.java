@@ -55,6 +55,14 @@ public class UserFrontController extends HttpServlet{
 			result = new UserInfoController().execute(req,resp);
 	      }else if(request.equals("/user/updateOk.us")) {//마이페이지 정보 수정
 	    	 result = new UpdateOkController().execute(req,resp);
+	      }else if(request.equals("/user/initProfileOk.us")) {//프로필 초기화
+	    	  new InitProfileOkControlloer().execute(req,resp);
+	      }else if(request.equals("/user/userDeleteOK.us")) {//회원탈퇴
+	    	  result = new UserDeleteOkController().execute(req,resp);
+	      }else if(request.equals("/user/friendInfo.us")) {//친구목록
+	    	  new FriendInfoController().execute(req,resp);
+	      }else if(request.equals("/user/deleteFriend.us")) {
+	    	  new DeleteFreindController().execute(req,resp);
 	      }
 		
 		if(result != null) {
