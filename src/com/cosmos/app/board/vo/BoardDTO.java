@@ -24,6 +24,7 @@ public class BoardDTO {
 	
 	private String companyName;
 	private String boardCompany;
+	private String companyFile;
 
 	public BoardDTO() {;}
 
@@ -40,6 +41,19 @@ public class BoardDTO {
 
 
 	
+	
+
+
+
+	public String getCompanyFile() {
+		return companyFile;
+	}
+
+
+
+	public void setCompanyFile(String companyFile) {
+		this.companyFile = companyFile;
+	}
 
 
 
@@ -203,7 +217,8 @@ public class BoardDTO {
 				+ ", boardDate=" + boardDate + ", boardPeriod=" + boardPeriod + ", boardViews=" + boardViews
 				+ ", boardContact=" + boardContact + ", userNumber=" + userNumber + ", userFile=" + userFile
 				+ ", userNickname=" + userNickname + ", countReply=" + countReply + ", skillFile=" + skillFile
-				+ ", companyName=" + companyName + ", boardCompany=" + boardCompany + "]";
+				+ ", companyName=" + companyName + ", boardCompany=" + boardCompany + ", companyFile=" + companyFile
+				+ "]";
 	}
 
 	

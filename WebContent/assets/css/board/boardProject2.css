@@ -718,7 +718,7 @@ button {
     visibility: visible;
   }
   
-  .modal {
+  .modal-b {
     width: 350px;
     height: 200px;
     display: block;
@@ -732,24 +732,24 @@ button {
     border-radius:4px;
   }
   
-  .modal-wrapper.open .modal {
+  .modal-wrapper.open .modal-b {
     margin-top: -200px;
     opacity: 1;
     margin-top: -78px;
   }
-  .modal-wrapper2.open .modal {
-    margin-top: -200px;
-    opacity: 1;
-    margin-top: -78px;
-  }
-  
-  .modal-wrapper3.open .modal {
+  .modal-wrapper2.open .modal-b {
     margin-top: -200px;
     opacity: 1;
     margin-top: -78px;
   }
   
-  .modal-wrapper4.open .modal {
+  .modal-wrapper3.open .modal-b {
+    margin-top: -200px;
+    opacity: 1;
+    margin-top: -78px;
+  }
+  
+  .modal-wrapper4.open .modal-b {
     margin-top: -200px;
     opacity: 1;
     margin-top: -78px;
@@ -795,33 +795,11 @@ textarea{
     width: 90px;
 }
 
-.goCommunity{
-	position : flex;
-	justify-content: flex-end;
-    left: 100px;
-    color: #4a5e75; 
-    box-sizing: inherit;
-    display: block;
-    bottom: -10px;
-    height: 32px;
-    margin-left : 64%;
-	top:284px;
-}
 
 .community_go{
-    justify-content: flex-end;
-	width: 100%;
-    display: flex;
-    grid-gap: 8px;
-    gap: 8px;
-    font-size: 16px;
-    padding: 11px 12px;
-    text-decoration: none;
-    box-sizing: inherit;
-    cursor: pointer;
-    height: 20px;
-    padding-top: 6px;
-    margin-top: 40px;
-    margin-left: -10px;
-    color: inherit;
+    position: absolute;
+    top: 42px;
+    left: 787px;
+    color: #9c00ff;
+    font-weight: bold;
 }
