@@ -16,7 +16,7 @@ public class UserDeleteOkController implements Execute {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		Result result = new Result();
-		int userNumber = 4;
+		 int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		UserDAO userDAO = new UserDAO();
 		
 		userDAO.userDelete(userNumber);

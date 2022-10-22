@@ -23,7 +23,7 @@ public class FriendInfoController implements Execute {
 	      resp.setCharacterEncoding("UTF-8");
 	      resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
-		int userNumber = 3;
+		 int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		UserDAO userDAO = new UserDAO();
 		JSONArray friends = new JSONArray();
 		

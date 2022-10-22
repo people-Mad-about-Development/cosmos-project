@@ -19,7 +19,7 @@ public class DeleteFreindController implements Execute {
 		
 		PrintWriter out = resp.getWriter();
 		int deleteduserNumber = Integer.valueOf(req.getParameter("userNumber"));
-		int userNumber = 3;
+		 int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		UserDAO userDAO = new UserDAO();
 		FriendVO friendVO = new FriendVO();
 		
