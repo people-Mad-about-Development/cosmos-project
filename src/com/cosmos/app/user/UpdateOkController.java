@@ -102,8 +102,6 @@ public class UpdateOkController implements Execute {
 				 userInterestSkillVO.setSkillNumber(userDAO.getSkillNumber(interestSkill.trim()));
 				 userDAO.insertUserInterestSkill(userInterestSkillVO);
 			  }
-		  
-		  
 		 
 		 result.setPath("/user/userInfo.us");
 		

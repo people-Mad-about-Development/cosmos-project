@@ -119,6 +119,18 @@
 		delete from tbl_friend where my_number = #{myNumber} and friend_number = #{friendNumber}
 	</delete>
 	
+	<select id="getUserNumber" parameterType="string" resultType="_int">
+		select user_number from tbl_user where user_nickname = #{userNickname}
+	</select>
+	
+	<insert id="addFriendOk" parameterType="friendVO">
+		insert into tbl_friend (my_number, friend_number)
+		values(#{myNumber},#{friendNumber})
+	</insert>
+	
+	<select id="checkFriend" parameterType="friendVO" resultType="_int">
+			select count(my_number) from tbl_friend where my_number=#{myNumber} and friend_number=#{friendNumber}
+	</select>
 	
 </mapper>
 

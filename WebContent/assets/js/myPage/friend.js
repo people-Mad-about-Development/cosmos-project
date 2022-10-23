@@ -74,7 +74,6 @@ const $friendList = $(".friendInfoList_2f");
 	
 	
 	$(".friendInfoList_2f").on("click",deletebutton,function(){
-			
 			var userNumber =  $(this).find(".friend_btn_2fd").attr("id");
 			$.ajax({
 			url: page_urI_2f+"/user/deleteFriend.us",
@@ -84,5 +83,52 @@ const $friendList = $(".friendInfoList_2f");
 		})
 	})
 	
+	function duplicatedNickname(){
+		
+		var friendInput = $(`input[name="nickNameInput"]`);
+		var friendName = friendInput.val().trim();
+		if(!friendName){
+			alert("빈문자열은 입력하실 수 없습니다.")
+			return;
+		}
+		
+		$.ajax({
+			url:page_urI_2f+"/user/friendDuplicateCheck.us",
+			type:"get",
+			data:{friendName:friendName},
+			success:function(data){
+				if(data=="true"){
+					friendAdd(friendName);
+				}else if(data=="false"){
+					alert("존재하지 않는 닉네임입니다.");
+					return;
+				}
+				
+			}
+		})
+	}
+	
+	function friendAdd(obj){
+		var friendName = obj;
+		
+		$.ajax({
+				url:page_urI_2f+"/user/friendAdd.us",
+				type:"get",
+				data:{friendName:friendName},
+				success:function(result){
+					if(result=="true"){
+						alert("이미 등록된 친구입니다.")
+						return;
+					}
+					alert("친구 등록이 완료되었습니다.")
+					 modal.style.display = "none";
+					show();
+				}
+			
+		})
+		
+		
+		
+	}
 
     
