@@ -315,12 +315,18 @@ $(this).remove();
 	*/
 	//관심 기술
 	$(".select_menu1").on("click",".skillTotalList",function(){
+		var check= false;
 		$(".select_menu1").addClass("list1");
-		$(".select__multi-value__label").each((i,item)=>{
-			console.log(i.text())
+		$(".selectSkillName_2f").each((i,item)=>{
+			if($(".selectSkillName_2f").eq(i).text().trim()==$(this).text().trim()){
+				alert("이미 추가하신 기술입니다.");
+				check=true;
+				return;
+			}
 		})
-		$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="interestSkill">
-			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text().trim()+`</div>`+
+		if(!check){
+			$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="interestSkill">
+			<div class="css-12jo7m5 select__multi-value__label selectSkillName_2f">`+$(this).text().trim()+`</div>`+
 			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove InterestExitBye_2f">`
 			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
 			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
@@ -328,15 +334,25 @@ $(this).remove();
 			+`  </div>`
 			+`</div>`
 		);
-		$(this).remove();
+		}
+		
 	})
 	
 	
 	//사용가능 언어
 		$(".select_menu2").on("click",".skillTotalList2",function(){
+			var check=false;
 		$(".select_menu2").addClass("list2");
-		$(".CanSkillWrapper_23f").append(`<div class="css-multiValue select__multi-value down_list" id="boxes2"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="CanSkill">
-			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text().trim()+`</div>`+
+		$(".selectSkillName_3f").each((i,item)=>{
+			if($(".selectSkillName_3f").eq(i).text().trim()==$(this).text().trim()){
+				alert("이미 추가하신 기술입니다.");
+				check=true;
+				return;
+			}
+		})
+		if(!check){
+			$(".CanSkillWrapper_23f").append(`<div class="css-multiValue select__multi-value down_list" id="boxes2"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="CanSkill">
+			<div class="css-12jo7m5 select__multi-value__label selectSkillName_3f">`+$(this).text().trim()+`</div>`+
 			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove CanSkillExitBye_23f">`
 			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
 			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
@@ -344,20 +360,21 @@ $(this).remove();
 			+`  </div>`
 			+`</div>`
 		);
-		$(this).remove();
+		}
+		
 	})
 	
 	
 	
-	
+	/*$(".select_menu1").append(`<div><div class="select_option css-list-option skillTotalList" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);*/
+
 $(".select__value-container--has-value").on("click",".InterestExitBye_2f",function(){
-	$(".select_menu1").append(`<div><div class="select_option css-list-option skillTotalList" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);
 	$(this).parent().remove();
 	
 })
 
 $(".select__value-container--has-value").on("click",".CanSkillExitBye_23f",function(){
-	$(".select_menu2").append(`<div><div class="select_option css-list-option skillTotalList2" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);
+	/*$(".select_menu2").append(`<div><div class="select_option css-list-option skillTotalList2" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);*/
 	$(this).parent().remove();
 	
 })
@@ -366,7 +383,7 @@ var step =0;
 var step2 =0;
 
 
-	$(".skillTotalList").each((i,item)=>{
+/*	$(".skillTotalList").each((i,item)=>{
 			for(step = 0; step < userInterestSkillObject.length;step++){
 		   	if((userInterestSkillObject[step].skillName)  ==  $(".skillTotalList").eq(i).text().trim()){
 				$(".skillTotalList").eq(i).remove();
@@ -380,7 +397,7 @@ var step2 =0;
 		}
 		}
 		})
-
+*/
 
 /*function createSlectList(){
 	let text ="";

@@ -102,7 +102,7 @@
                                <c:forEach var="item" items="${UserInterestInfo}">
                                 <div class="css-multiValue select__multi-value up_list" id="box2">
                                 <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="interestSkill">
-                                    <div class="css-12jo7m5 select__multi-value__label"><c:out value="${item.getSkillName()}"></c:out></div>
+                                    <div class="css-12jo7m5 select__multi-value__label selectSkillName_2f"><c:out value="${item.getSkillName()}"></c:out></div>
                                     <div class="css-xb97g8 select__multi-value__remove InterestExitBye_2f" id="x_btn2">
                                         <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
                                             focusable="false" class="css-8mmkcg">
@@ -183,7 +183,7 @@
                                <c:forEach var="item" items="${UserCanInfo}">
                                <div class="css-multiValue select__multi-value down_list" id="boxes2">
                                 <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="CanSkill">
-                                    <div class="css-12jo7m5 select__multi-value__label"><c:out value="${item.getSkillName()}"></c:out></div>
+                                    <div class="css-12jo7m5 select__multi-value__label selectSkillName_3f"><c:out value="${item.getSkillName()}"></c:out></div>
                                     <div class="css-xb97g8 select__multi-value__remove CanSkillExitBye_23f" id="xx_btn1">
                                         <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
                                             focusable="false" class="css-8mmkcg">

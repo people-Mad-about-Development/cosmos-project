@@ -70,6 +70,9 @@ public class UserFrontController extends HttpServlet{
 	    	  new FriendDuplicateCheckController().execute(req,resp);
 	      }else if(request.equals("/user/friendAdd.us")) {
 	    	  new FriendAddController().execute(req,resp);
+	      }else if(request.equals("/user/FriendInfoList.us")) {
+	    	  result = new Result();
+	    	  result.setPath("/app/myPage/friend.jsp");
 	      }
 		
 		if(result != null) {
