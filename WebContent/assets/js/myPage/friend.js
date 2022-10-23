@@ -36,7 +36,7 @@ const $friendList = $(".friendInfoList_2f");
 				text+= `<div class="stackable content">`;
 				text+= `<div class="main">`;
 				text+= `<div class="user-name">`;
-				text+= `<span class="name">`+friend.userNickname+`</span></div>`;
+				text+= `<a class="name" onclick="friendDetailMove(this)" style="cursor:pointer;" data-id="`+friend.userNumber+`">`+friend.userNickname+`</a></div>`;
 				text+= ` <div class="user-title nowrap">`;
 				if(friend.userCareerYear>0){
 				text+= ` <span class="job-title">`+friend.userCareerYear+`년</span></div>`;
@@ -57,7 +57,7 @@ const $friendList = $(".friendInfoList_2f");
 				text+= ` <div class="relationship-extra-info"><div class="relationship"></div></div> </div>`;
 				text+= `<div class="extra"><div class="request-button" data-url="/api/users/324116/request_button">`;
 				text+= `<div class="ui mini basic buttons friend_btn">`;
-				text+= `<a  class="ui basic button friend_btn_2fd" id="`+friend.userNumber+`">친구삭제</a> </div> </div> </div> </div> </div>`;
+				text+= `<a onclick="deleteFriend(this)"' class="ui basic button friend_btn_2fd" id="`+friend.userNumber+`">친구삭제</a> </div> </div> </div> </div> </div>`;
 				if(!(item ==friends.length-1)){
 				text+= `<div class="ui divider"></div>`;
 				}
@@ -72,16 +72,23 @@ const $friendList = $(".friendInfoList_2f");
 	
 	const deletebutton = $(".friend_btn_2fd");
 	
-	
-	$(".friendInfoList_2f").on("click",deletebutton,function(){
-			var userNumber =  $(this).find(".friend_btn_2fd").attr("id");
-			$.ajax({
+	function deleteFriend(obj){
+		var button = $(obj);
+		var userNumber =  button.attr("id");
+		$.ajax({
 			url: page_urI_2f+"/user/deleteFriend.us",
 			data:{userNumber: userNumber},
 			type:"post",
 			success: function(){show();}
 		})
-	})
+		}
+	
+	function friendDetailMove(obj){
+		var button = $(obj);
+		var userNumber = parseInt(button.data("id"));
+		var link = page_urI_2f+"/app/myPage/friend_info.jsp?userNumber="+userNumber;
+			location.href=link;
+	}
 	
 	function duplicatedNickname(){
 		

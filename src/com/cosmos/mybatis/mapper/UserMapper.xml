@@ -132,32 +132,6 @@
 			select count(my_number) from tbl_friend where my_number=#{myNumber} and friend_number=#{friendNumber}
 	</select>
 	
-	<select id="skillSelect"  resultType = "skillVO" >
-		select skill_number,skill_name,skill_category,skill_file from tbl_skill
-	</select>
-	
-	<select id="companySelect"  resultType = "companyVO" >
-		select company_number,company_file,company_name,company_content,company_url from tbl_company 
-	</select>
-	
-	<insert id="userInterestSkillJoin" parameterType="userDTO">
-		insert into tbl_user_interest_skill
-		(user_number, skill_number)
-		values(#{userNumber}, #{skillNumber})
-	</insert>
-	
-	<insert id="userCanSkillJoin" parameterType="userDTO">
-		insert into tbl_user_can_skill
-		(user_number, skill_number)
-		values(#{userNumber}, #{skillNumber})
-	</insert>
-	
-	<insert id="userCompanyJoin" parameterType="userDTO">
-		insert into tbl_user_company
-		(user_number, company_number)
-		values(#{userNumber}, #{companyNumber})
-	</insert>
-	
 	
 </mapper>
 

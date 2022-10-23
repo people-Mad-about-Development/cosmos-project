@@ -316,6 +316,9 @@ $(this).remove();
 	//관심 기술
 	$(".select_menu1").on("click",".skillTotalList",function(){
 		$(".select_menu1").addClass("list1");
+		$(".select__multi-value__label").each((i,item)=>{
+			console.log(i.text())
+		})
 		$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="interestSkill">
 			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text().trim()+`</div>`+
 			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove InterestExitBye_2f">`
