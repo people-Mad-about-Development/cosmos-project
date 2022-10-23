@@ -22,6 +22,7 @@ public class MainBoardController extends HttpServlet implements Execute {
 		Result result = new Result();
 		
 		req.setAttribute("boards", mainDAO.selectAllMain());
+		req.setAttribute("banner", mainDAO.selectBanner());
 		
 		result.setPath("/app/main/index.jsp");
 		

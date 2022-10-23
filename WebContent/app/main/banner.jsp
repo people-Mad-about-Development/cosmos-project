@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    <title>메인페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <!-- Link Swiper's CSS -->
     <link
@@ -93,8 +93,15 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner/banner2.png" alt=""></div>
-        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner/banner1.png" alt=""><!-- onclick="movePage()" --></div>
+        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner/001.gif" alt="" style="width:1904px;"></div>
+        <c:choose>
+			<c:when test="${banner != null and fn:length(banner) > 0}">
+	            <c:forEach var="banner" items="${banner}">
+	            	<div class="swiper-slide"><img src="${pageContext.request.contextPath}${banner.getBannerUrl()}" alt=""></div>
+	            </c:forEach>
+	        </c:when>
+	    </c:choose>
+        
       </div>
       <!-- <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div> -->

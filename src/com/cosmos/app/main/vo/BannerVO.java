@@ -7,10 +7,20 @@ public class BannerVO {
 	private String bannerDateEnd;
 	private String fileName;
 	private String bannerUrl;
+	private String bannerStatus;
 	
-	public BannerVO() {
-		// TODO Auto-generated constructor stub
+	public BannerVO() {;}
+	
+	
+
+	public String getBannerStatus() {
+		return bannerStatus;
 	}
+	public void setBannerStatus(String bannerStatus) {
+		this.bannerStatus = bannerStatus;
+	}
+
+
 
 	public int getBannerNumber() {
 		return bannerNumber;
@@ -63,7 +73,8 @@ public class BannerVO {
 	@Override
 	public String toString() {
 		return "BannerVO [bannerNumber=" + bannerNumber + ", bannerTitle=" + bannerTitle + ", bannerDate=" + bannerDate
-				+ ", bannerDateEnd=" + bannerDateEnd + ", fileName=" + fileName + ", bannerUrl=" + bannerUrl + "]";
+				+ ", bannerDateEnd=" + bannerDateEnd + ", fileName=" + fileName + ", bannerUrl=" + bannerUrl
+				+ ", bannerStatus=" + bannerStatus + "]";
 	}
 
 	

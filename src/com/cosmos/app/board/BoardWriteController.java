@@ -9,16 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
+import com.cosmos.app.user.dao.UserDAO;
 
 public class BoardWriteController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BoardDAO boardDAO = new BoardDAO();
 		Result result = new Result();
-
+		UserDAO userDAO = new UserDAO();
+		
+		
+		
 		int userNumber = 3;
 		
 		req.setAttribute("boards", boardDAO.selectUserCompany(userNumber));
+		req.setAttribute("skills", userDAO.skillTotalInfo());
 		
 		result.setPath("/app/board/newPage.jsp");
 
