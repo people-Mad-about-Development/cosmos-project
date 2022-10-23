@@ -49,11 +49,9 @@ $back.click(function(){
     $(this).parents().closest($modalContent).prev().toggleClass("active_lo hidden_lo");
 });
 
-$google.click(function(){
-	gogle
-    $first.toggleClass("active_lo hidden_lo");
-    $second.toggleClass("active_lo hidden_lo");
-});
+/*$google.click(function(){
+	googleLogin();
+});*/
 $github.click(function(){
     $first.toggleClass("active_lo hidden_lo");
     $second.toggleClass("active_lo hidden_lo");
@@ -932,6 +930,7 @@ $("input[name='nickNameInput']").on("blur", function(){
 
 // 카카오 로그인
 function kakaoLogin() {
+	userId = "";
     Kakao.Auth.login({
         success: function(response) {
             Kakao.API.request({  // 사용자 정보 가져오기 
@@ -963,69 +962,7 @@ function kakaoLogin() {
 						}
 					});
 
-/*					if(userId) {
-					    $first.toggleClass("active_lo hidden_lo");
-					    $second.toggleClass("active_lo hidden_lo");						
-					}
-					*/
-					// 로그인
-					/*$.ajax({
-						url: contextPath + "/user/checkNameOk.us",
-						type: "get",
-						data: {userNickname: userNickname},
-						dataType: "json",
-				
-						success: function(data){
-							
-							if(!data.result){
-								$("#checkResult").text("사용 가능한 닉네임입니다.")
-								$("#checkResult").css("color", "blue");
-								nickCheck = true;
-								console.log(userId);
-							}else{
-								$("#checkResult").text("중복된 닉네임입니다.")
-								$("#checkResult").css("color", "red");
-								nickCheck = false;
-							}
-						}
-					});*/
 
-
-/*                        $.ajax({
-                        type : "post",
-                        url : '/member/idDuplicateCheck.go', // ID중복체크를 통해 회원가입 유무를 결정한다.
-                        data : {"userid":kakaoId},
-                        dataType:"json",
-                        success : function(json){               
-                           if(json.idExists){
-                              // 존재하는 경우 로그인 처리
-                              createHiddenLoginForm(kakaoId);
-                              
-                           } else{
-                              // 회원가입
-                              $.ajax({
-                                 type : "post",
-                                  url : '/member/kakaoSignUp.go',
-                                  data : {"userid":kakaoId},
-                                  dataType :"json",
-                                  success : function(json){
-                                     if(json.success){
-                                        // 로그인
-                                        createHiddenLoginForm(kakaoId);                               
-                                     } else {
-                                        alert('카카오 회원가입 실패. 다른 방식으로 회원가입을 진행해주세요.');
-                                     }
-                                  },
-                                  error: function(request, status, error){
-                                            alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-                                         }
-                              });
-                           }                  
-                        },
-                        error: function(request, status, error){
-                                  alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-                               }
-                     }); */
                 }
             });
             // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
@@ -1034,6 +971,67 @@ function kakaoLogin() {
             alert(error);
         }
     });
+}
+
+/*=============================================================== */
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
+
+function googleLogin(response) {
+   console.log("들어옴");
+   console.log(response);
+   const responsePayload = parseJwt(response.credential);
+   console.log("ID: " + responsePayload.sub);
+	userId = "";
+	userId = responsePayload.sub + "g";
+
+   $.ajax({
+      url: contextPath + "/user/loginOk.us", // 컨트롤러
+      type: "post",
+      data: {userId : userId},
+	  dataType: "json",
+      contentType:  "application/x-www-form-urlencoded",
+		success: function(data){
+			console.log(data);
+			console.log(data.result);
+			if(!data.result){
+					console.log("중복확인, 로그인 중지")
+					$first.toggleClass("active_lo hidden_lo");
+					$second.toggleClass("active_lo hidden_lo");		
+					console.log(data.result);
+					console.log(userId);
+				}else if(data.result){
+					console.log("중복없음, 로그인 진행")
+					console.log(data.result);		
+					$modal.addClass("hidden_lo");
+					$modal.removeClass("active_lo");
+					$(".ten").toggleClass("active_lo hidden_lo");
+				}
+	}
+
+
+   })
+   
+   frm_login_google.submit();	
+}
+
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: "609009193609-b797q62q035jhkamfo8ebei82sr5612j.apps.googleusercontent.com",
+    callback: googleLogin
+  });
+	google.accounts.id.renderButton(
+		document.getElementById("googleButton_button"),
+		{ type: "icon", width : "400px"}  // 로고 커스터마이징
+	);
 }
 
 /*=============================================================== */
@@ -1050,8 +1048,18 @@ function nickSend() { // 닉네임 유효성 검사
 	}else if(nickCheck){
 		console.log("입력했고, 사용가능할때");
 		
-		
-		
+		let addNick1 = document.getElementById("addNick1");	
+		let addNick2 = document.getElementById("addNick2");	
+		let addNick3 = document.getElementById("addNick3");	
+		let addNick4 = document.getElementById("addNick4");	
+		let addNick5 = document.getElementById("addNick5");	
+
+		addNick1.innerHTML = inputNick;
+		addNick2.innerHTML = inputNick;
+		addNick3.innerHTML = inputNick;
+		addNick4.innerHTML = inputNick;
+		addNick5.innerHTML = inputNick;
+
 /*		document.getElementById("nickh1").innerHTML = document.getElementById("nickNameInput").value + document.getElementById("nickh1").innerHTML;*/
 		
 	
@@ -1085,14 +1093,19 @@ function join() { // 유저 정보 정리
 	document.getElementsByName("userId").value(userId);*/
 
 	/*임시값*/
-	var userIntroduce = "테스트";
-	var userCareerYear = $("input[name='careerInput']").val();
-	/*var userFile = $(".userImg").attr("src");*/
+	var userIntroduce = "테스트";	
+	var userFile = $(".userImg").attr("src");
 	var userFile;
+	var userCareerYear = $("input[name='careerInput']").val();
 	
+	if(userCareerYear==""){
+		userCareerYear = "0";
+	}
 	
 	
 	console.log(userFile);
+	console.log("유저 커리어 이어");
+	console.log(userCareerYear);
 	console.log($("input[name='careerInput']").val());
 	
 	$.ajax({
