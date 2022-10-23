@@ -24,10 +24,7 @@
         </div>
         
         
-          <div class="header_search">
-            <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
-            <button class="header_search_button">검색</button>
-        </div>
+
         <div class="navbar">
             <button class="navbar_post">새 글 쓰기</button>
             <div class="notice">
@@ -44,9 +41,9 @@
                  <div class="dropdownBar_menuWrapper_header loginHeaderUnVisibie">
                     <ul class="dropdownBar_menu_list">
                     	<c:choose>
-                    		<c:when test="${sessionUserNumber} == 1">
+                    		<c:when test="${sessionUserNumber eq 1}">
 		                        <li class="dropdownBar_menuItem_header">
-		                            <a href="#" style="display: inline-block;">관리자 페이지</a>
+		                            <a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp" style="display: inline-block;">관리자 페이지</a>
 		                        </li>
 		                    </c:when>
                         </c:choose>
