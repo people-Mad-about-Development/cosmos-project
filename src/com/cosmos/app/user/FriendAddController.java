@@ -27,11 +27,11 @@ public class FriendAddController implements Execute {
 		int myNumber =  (Integer)req.getSession().getAttribute("sessionUserNumber");
 		friendVO.setFriendNumber(friendNumber);
 		friendVO.setMyNumber(myNumber);
+		System.out.println(friendNumber);
 		String checkFriend = null;
-		
 		if(userDAO.checkFriend(friendVO)>0) {
 			checkFriend ="true";
-		}else if(userDAO.checkMine(myNumber)==1) {
+		}else if(myNumber==friendNumber) {
 			checkFriend="mine";
 		}else {
 			userDAO.addFriendOk(friendVO);
