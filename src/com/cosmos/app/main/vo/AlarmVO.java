@@ -6,11 +6,42 @@ public class AlarmVO {
 	private int communityNumber;	// 커뮤니티 번호 
 	private int boardNumber;	//게시판 번호 
 	private int inquiryNumber;	// 문의사항 번호 											// 이놈 필요 
+	private String alarmStatus; // 읽은 알림 ,읽지 않은 알림 
 	
 	public AlarmVO() {;}
 
 	
 	
+
+
+
+
+
+
+	public String getAlarmStatus() {
+		return alarmStatus;
+	}
+
+
+
+
+
+
+
+
+
+	public void setAlarmStatus(String alarmStatus) {
+		this.alarmStatus = alarmStatus;
+	}
+
+
+
+
+
+
+
+
+
 	public int getInquiryNumber() {
 		return inquiryNumber;
 	}
@@ -57,11 +88,32 @@ public class AlarmVO {
 
 
 
+
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "AlarmVO [alarmNumber=" + alarmNumber + ", userNumber=" + userNumber + ", communityNumber="
-				+ communityNumber + ", boardNumber=" + boardNumber + ", inquiryNumber=" + inquiryNumber + "]";
+				+ communityNumber + ", boardNumber=" + boardNumber + ", inquiryNumber=" + inquiryNumber
+				+ ", alarmStatus=" + alarmStatus + "]";
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 	

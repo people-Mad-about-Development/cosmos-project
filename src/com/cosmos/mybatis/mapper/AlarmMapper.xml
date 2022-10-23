@@ -9,10 +9,16 @@
 		where a.user_number = #{userNumber}
 	</select>
 	
+	
+			<!-- 직계 함수 읽지않은 메세지 카운트 -->
+		<select id="countAlarm" parameterType="_int" resultType="_int">
+      select count(alarm_number)
+       from tbl_alarm	 
+     
+   </select>
 		
-			
-			
-
+		<!-- 전체 공지사항 메세지   -->
+		
 	
 </mapper>
 

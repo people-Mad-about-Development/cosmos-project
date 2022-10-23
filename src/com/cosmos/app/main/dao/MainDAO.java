@@ -47,4 +47,17 @@ public class MainDAO {
 	   public List<MainDAO> selectBanner() {
 		   return sqlSession.selectList("Main.selectBanner");
 	   }
+	   
+	   public int countAlarm() {
+		  System.out.println("셀렉 알람 카운트 들어옴 ! ");
+		   return sqlSession.selectOne("Alarm.countAlarm");
+	   }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 }
