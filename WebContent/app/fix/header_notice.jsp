@@ -35,9 +35,13 @@
                 </svg>
                  <div class="dropdownBar_menuWrapper_header loginHeaderUnVisibie">
                     <ul class="dropdownBar_menu_list">
-                        <li class="dropdownBar_menuItem_header">
-                            <a href="#" style="display: inline-block;">관리자 페이지</a>
-                        </li>
+                    	<c:choose>
+                    		<c:when test="${sessionUserNumber} == 2">
+		                        <li class="dropdownBar_menuItem_header">
+		                            <a href="#" style="display: inline-block;">관리자 페이지</a>
+		                        </li>
+		                    </c:when>
+                        </c:choose>
                         <li class="dropdownBar_menuItem_header">
                             <a href="${pageContext.request.contextPath}/user/FriendInfoList.us" style="display: inline-block;"> 친구 목록</a>
                         </li>
