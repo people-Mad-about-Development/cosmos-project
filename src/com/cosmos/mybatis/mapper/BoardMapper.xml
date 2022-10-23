@@ -20,7 +20,7 @@
 	
 	<!-- board 상세 페이지 조회 -->
 	<select id="selectBoardDetail" parameterType="_int" resultType="boardDTO">
-		select user_nickname, user_file, b.user_number, board_number, board_title, board_content , board_category , board_way , board_recruit_number, board_support, board_start_date , board_date , board_period , board_contact, board_company
+		select user_nickname, user_file, b.user_number, b.board_number, board_title, board_content , board_category , board_way , board_recruit_number, board_support, board_start_date , board_date , board_period , board_contact, board_company
 		from tbl_board b join tbl_user u on b.user_number = u.user_number where board_number = #{boardNumber}
 	</select>
 	

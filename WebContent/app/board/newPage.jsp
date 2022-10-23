@@ -13,8 +13,12 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/newPage.css"> 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
 </head>
 <body>
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
 
 <form action="${pageContext.request.contextPath}/board/writeOk.bo" method="post" name="newPage">
 	<div id="root">
@@ -473,6 +477,9 @@
 	    
 	
 	    newPage.submit();
+	    
+	    $(".dimmed_233vf").css("display","grid");
+		location.href=pageURI+"/board/writeOk.us"
 	 }
 
 

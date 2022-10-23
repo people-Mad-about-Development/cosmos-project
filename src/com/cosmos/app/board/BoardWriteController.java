@@ -19,8 +19,8 @@ public class BoardWriteController implements Execute {
 		UserDAO userDAO = new UserDAO();
 		
 		
-		
-		int userNumber = 3;
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
+		/* int userNumber = 3; */
 		
 		req.setAttribute("boards", boardDAO.selectUserCompany(userNumber));
 		req.setAttribute("skills", userDAO.skillTotalInfo());
