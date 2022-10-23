@@ -42,7 +42,7 @@
                             <a href="#" style="display: inline-block;">새 글 작성</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
-                            <a href="${pageContext.request.contextPath}/main/mainSearch.ma?userNumber=1" style="display: inline-block;">내 작성글</a>
+                            <a href="${pageContext.request.contextPath}/main/mainSearch.ma?" style="display: inline-block;">내 작성글</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
                             <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">설정</a>

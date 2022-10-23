@@ -23,7 +23,7 @@ public class MainSearchController implements Execute {
 		List<Integer> boardNumbers = null;
 		List<String> skillFiles = null;
 		
-		int userNumber = Integer.valueOf((req.getParameter("userNumber")));
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		boardDTO = mainDAO.mySelectBoard(userNumber);
 		
 		for (BoardDTO boardOne : boardDTO) {
