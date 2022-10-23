@@ -11,7 +11,8 @@
 </head>
 <body>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/fix/header.jsp"/> --%>
-	<jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/>
+	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/fix/header_notice.jsp"/> --%>
+	<jsp:include page = "${pageContext.request.contextPath}/app/fix/lastHeader.jsp"/>
 	<jsp:include page = "${pageContext.request.contextPath}/app/fix/login.jsp"/>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/main/banner.jsp"/> --%>
 	<%-- <jsp:include page = "${pageContext.request.contextPath}/app/main/categorySearch.jsp"/> --%>  
