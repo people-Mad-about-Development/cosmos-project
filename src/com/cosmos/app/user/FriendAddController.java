@@ -31,10 +31,11 @@ public class FriendAddController implements Execute {
 		
 		if(userDAO.checkFriend(friendVO)>0) {
 			checkFriend ="true";
+		}else if(userDAO.checkMine(myNumber)==1) {
+			checkFriend="mine";
 		}else {
 			userDAO.addFriendOk(friendVO);
 		}
-		
 		
 		
 		out.print(checkFriend);

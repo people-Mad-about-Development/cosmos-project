@@ -132,6 +132,10 @@
 			select count(my_number) from tbl_friend where my_number=#{myNumber} and friend_number=#{friendNumber}
 	</select>
 	
+	<select id="checkMine" parameterType="_int" resultType="_int">
+		select count(user_number) from tbl_user where user_number = #{userNumber}
+	</select>
+	
 	
 </mapper>
 

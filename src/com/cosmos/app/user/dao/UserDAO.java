@@ -152,4 +152,8 @@ public class UserDAO {
 		   return sqlSession.selectOne("user.checkFriend",friendVO);
 	   }
 	   
+	   public int checkMine(int userNumber) {
+		   return sqlSession.selectOne("user.checkMine",userNumber);
+	   }
+	   
 }
