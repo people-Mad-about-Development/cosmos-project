@@ -85,7 +85,7 @@
                         <input class="setNickname_nicknameInput__1J1el" type="text" name="nickNameInput" value=""
                             autocomplete="off">
                     </div>
-                    <button class="setNickname_buttonNext__2pE6g" name="complete">추가하기</button>
+                    <button type = "button" class="setNickname_buttonNext__2pE6g" name="complete" onclick="duplicatedNickname()">추가하기</button>
                 </div>
             </div>
         </div>

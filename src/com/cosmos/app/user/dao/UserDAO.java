@@ -116,4 +116,17 @@ public class UserDAO {
 	   public void deleteFriend(FriendVO friendVO) {
 		   sqlSession.delete("user.deleteFriend",friendVO);
 	   }
+	   
+	   public int getUserNumber(String userNickname) {
+		   return sqlSession.selectOne("user.getUserNumber", userNickname);
+	   }
+	   
+	   public void addFriendOk(FriendVO friendVO) {
+		   sqlSession.insert("user.addFriendOk",friendVO);
+	   }
+	   
+	   public int checkFriend(FriendVO friendVO) {
+		   return sqlSession.selectOne("user.checkFriend",friendVO);
+	   }
+	   
 }

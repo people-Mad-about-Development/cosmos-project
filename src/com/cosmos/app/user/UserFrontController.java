@@ -63,6 +63,10 @@ public class UserFrontController extends HttpServlet{
 	    	  new FriendInfoController().execute(req,resp);
 	      }else if(request.equals("/user/deleteFriend.us")) {
 	    	  new DeleteFreindController().execute(req,resp);
+	      }else if(request.equals("/user/friendDuplicateCheck.us")) {
+	    	  new FriendDuplicateCheckController().execute(req,resp);
+	      }else if(request.equals("/user/friendAdd.us")) {
+	    	  new FriendAddController().execute(req,resp);
 	      }
 		
 		if(result != null) {
