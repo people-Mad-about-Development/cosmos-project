@@ -19,6 +19,11 @@
 		
 		<!-- 전체 공지사항 메세지   -->
 		
+		<select id="">
+		select a.alr
+		
+		</select>
+		
 	
 </mapper>
 

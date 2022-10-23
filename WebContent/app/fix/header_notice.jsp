@@ -16,6 +16,14 @@
         <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
             <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
+        <div>
+            <form action="${pageContext.request.contextPath}/main/mainSearchOk.ma" name="searchForm" method="get" enctype="multipart/form-data" class="header_search">
+               <input type="text" name="header_search_input" placeholder="회사나 제목을 입력해주세요...">
+               <button type="button" class="header_search_button" onclick="searchSend()">검색</button>
+            </form>
+        </div>
+        
+        
           <div class="header_search">
             <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
             <button class="header_search_button">검색</button>
@@ -65,15 +73,15 @@
     </nav>
     
     <div class="noticeDropdownBar_noticeWrapper loginHeaderUnVisibie">
-        <div class="noticeDropdownBar_noticeHeader">
-            <span>읽지 않은 알림 (<span class="noticeCount">0</span>) </span>
+       <!--  <div class="noticeDropdownBar_noticeHeader"> -->
+           <!--  <span>읽지 않은 알림 (<span class="noticeCount">0</span>) </span>
             <div class="noticeDropdownBar_exitWrapper">
                 <svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
                 </svg>
             </div>
         </div>
-        <div class="noticeDropdownBar_empty">알림함이 비어있습니다.
+        <div class="noticeDropdownBar_empty">알림함이 비어있습니다. -->
         
         
         	<!-- 문의 답변  -->
@@ -218,6 +226,45 @@
     
     
     
+    /* 읽지않은 알림 카운트 */
+    
+  /*   countOk();
+    
+    
+    function countOk() {
+    	$.ajax({
+			url: "/main/alarmListOk.ma",
+			type:"get",
+			dataType : "json",
+			success: countShowOk
+			
+		});
+    	
+    	
+	}
+    
+    		function countShowOk(count) {
+    			
+    			console.log("ajax 들어옴  카운트")
+    			console.log(count)
+    			let text="";
+		
+    			
+    			text+=`<div class="noticeDropdownBar_noticeHeader">`
+	   			text+=` +<span>읽지 않은 알림 (<span class="noticeCount">"count"</span>) </span>+`
+    			text+=`<div class="noticeDropdownBar_exitWrapper">`
+    			text+=`<svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">`
+    			text+=`<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>`
+    			text+=`</svg>`
+    			text+=`</div>`
+    			text+=`</div>`
+    			text+=`<div class="noticeDropdownBar_empty">알림함이 비어있습니다</div>`
+    			
+    		  $(".noticeDropdownBar_noticeWrapper loginHeaderUnVisibie").html(text);
+    			
+    			
+			} */
+    		
     
     
     
@@ -242,15 +289,36 @@
     			  let text="";
     			  var count=0;	
     			  resultAlarmListOk.forEach(result=>{
-    			  
-    				  /* console.log(result.alarmList) */
+    			  	alert("데이터 보내기 성공")
+    				  console.log(result.alarmList)
     				  count++;
     			
+    			  	 text+=`<div class="noticeDropdownBar_noticeHeader">`
+    		   		 text+=` <span>읽지 않은 알림 (<span class="noticeCount">`+resultAlarmListOk+`</span>) </span>`
+    	    		 text+=`<div class="noticeDropdownBar_exitWrapper">`
+    	    		 text+=`<svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">`
+    	    		 text+=`<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>`
+    	    		 text+=`</svg>`
+    	    		 text+=`</div>`
+    	    		 text+=`</div>`
+    	    		 text+=`<div class="noticeDropdownBar_empty">알림함이 비어있습니다</div>`
     				 text+= `<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">`;                         
     				 text+=`<a class="noticeDropdownBar_noticeLink__mBRje"`+`href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >`;	
     				 text+=`<span class="noticeListOn">문의 답변이 달렸습니다</span>`;
     				 text+=`</a>`;	
-    				 text+=`</li>`;	
+    				 text+=`</li>`;
+    				 text+=`<br>`;
+    				 text+= `<li class="noticeBoardList">`;                         
+      				 text+=` <a class="noticeMoveProjectLib" href="${pageContext.request.contextPath}/app/myPage/my_project_lib.jsp" >`;	
+      				 text+=`<span class="noticeProjectLib">프로젝트 게시판이 올라왔습니다</span>`;
+      				 text+=`</a>`;	
+      				 text+=`</li>`;	
+      				 text+=`<br>`;
+      				 text+= `<li class="projectNotice">`;                         
+     				 text+=` <a class="moveNoticeProject" href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" >`;	
+     				 text+=`<span class="noticeProject">프로젝트 공지사항이 올라왔습니다</span>`;
+     				 text+=`</a>`;	
+     				 text+=`</li>`;	
     			  
     			  });
     			  
@@ -263,7 +331,7 @@
     		
     		/* 프로젝트 자료실  알림 */
     		
-    	projectLibListOk();
+    /* 	projectLibListOk();
     		
     		function projectLibListOk() {
     			$.ajax({
@@ -298,12 +366,12 @@
   			  $(".noticeBoardReply").html(text);
   		
 			}
-   } 
+   }  */
 
     		
     		
     		/* 프로젝트  공지사항 알림  */
-    		projectNoticeListOk();
+    /* 		projectNoticeListOk();
     		
     		function projectNoticeListOk() {
     			$.ajax({
@@ -338,12 +406,12 @@
   			  $(".projectnotice").html(text);
   		
 			}
-   } 
+   } */ 
     		
     		
     		/* 프로젝트 모집 댓글 알림   */
     		
-    		projectReplyOk();
+    /* 		projectReplyOk();
     		
     		function projectReplyOk() {
     			$.ajax({
@@ -378,11 +446,11 @@
   			  $(".projectReply").html(text);
   		
 			}
-   } 
+   } */ 
     		
     		/* 스터디 모집 댓글 알림   */
     		
-    		projectStudyOk();
+/*     		projectStudyOk();
     		
     		function projectStudyOk() {
     			$.ajax({
@@ -418,12 +486,12 @@
   		
 			}
    } 
-    		
+ */    		
 
     		
     		<!-- 프로젝트 (컴퍼니) 모집함  -->
     		
-    		projectCompanyOk();
+/*     		projectCompanyOk();
     		
     		function projectCompanyOk() {
     			$.ajax({
@@ -459,11 +527,11 @@
   		
 			}
    } 
-
+ */
     		
     		<!-- 스터디 (컴퍼니) 모집함  -->
     		
-    		studyCompanyOk();
+/*     		studyCompanyOk();
     		
     		function studyCompanyOk() {
     			$.ajax({
@@ -498,13 +566,13 @@
   			  $(".studyCompanyReply").html(text);
   		
 			}
-   } 
+   }  */
     		
 
     		
     		<!-- 전체 공지사항 알람 띵동  -->
     		
-    		adminListOk();
+    	/* 	adminListOk();
     		
     		function adminListOk() {
     			$.ajax({
@@ -540,13 +608,21 @@
   		
 			}
    } 
+    		 */
+    		
+    		 function searchSend(){
+                 var content = searchForm.header_search_input.value;
+                 if(!content){
+                    alert("검색어를 입력하세요");
+                    return;
+                 }
+                 
+                 searchForm.submit()
+              }       
     		
     		
     		
-    		
-    		
-    		
-    		
+    
   
      
      
