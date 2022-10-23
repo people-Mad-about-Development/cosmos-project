@@ -2,14 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Alarm">
 
-
+			<!-- 문의 하기 답변 완료 알림함   -->
 	<select id="alarmSelect" resultType="alarmVO" parameterType="_int"	>
 		select a.alarm_number, a.alarm_status, ti.inquiry_number   
 		from tbl_alarm a join tbl_inquiry ti on a.inquiry_number = ti.inquiry_number 
 		where a.user_number = #{userNumber}
-	
 	</select>
-
+	
+		
+			
+			
 
 	
 </mapper>
