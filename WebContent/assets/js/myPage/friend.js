@@ -86,7 +86,7 @@ const $friendList = $(".friendInfoList_2f");
 	function friendDetailMove(obj){
 		var button = $(obj);
 		var userNumber = parseInt(button.data("id"));
-		var link = page_urI_2f+"/app/myPage/friend_info.jsp?userNumber="+userNumber;
+		var link = page_urI_2f+"/user/FriendDetail.us?userNumber="+userNumber;
 			location.href=link;
 	}
 	

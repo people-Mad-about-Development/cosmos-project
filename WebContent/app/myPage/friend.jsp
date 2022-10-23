@@ -11,7 +11,7 @@
 </head>
 <body>  
     <div class="search_results" style="margin-top:50px;">
-         <a href="back.jsp" style="width:10%">
+         <a href="${pageContext.request.contextPath}/main/mainBoard.ma" style="width:10%">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >

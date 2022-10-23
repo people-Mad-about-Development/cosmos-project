@@ -35,8 +35,6 @@ public class UserInfoController implements Execute {
 		
 		req.setAttribute("UserCanInfoJson", repliesCan.toString());
 		req.setAttribute("UserInterestInfoJson", repliesInterest.toString());
-		
-		
 		 req.setAttribute("UserInfo", userDAO.userInfo(userNumber));
 		 req.setAttribute("UserCompanyInfo", userDAO.userCompanyInfo(userNumber));
 		 req.setAttribute("UserCanInfo", userDAO.userCanInfo(userNumber));

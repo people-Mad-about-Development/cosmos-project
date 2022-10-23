@@ -17,6 +17,18 @@
 
 
     <div id="root">
+    	<div class="search_results" style="margin-top: 52px; margin-left: 26%;">
+         <a href="${pageContext.request.contextPath}/user/FriendInfoList.us" style="width:10%">
+          <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
+        viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
+         xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
+          <path
+                    d="M 257.5 445.1 l -22.2 22.2 c -9.4 9.4 -24.6 9.4 -33.9 0 L 7 273 c -9.4 -9.4 -9.4 -24.6 0 -33.9 L 201.4 44.7 c 9.4 -9.4 24.6 -9.4 33.9 0 l 22.2 22.2 c 9.5 9.5 9.3 25 -0.4 34.3 L 136.6 216 H 424 c 13.3 0 24 10.7 24 24 v 32 c 0 13.3 -10.7 24 -24 24 H 136.6 l 120.5 114.8 c 9.8 9.3 10 24.8 0.4 34.3 Z">
+                </path>
+       </svg>
+       </a>
+       </div>
+    
         <div class="main_div">
             <h1>친구 정보 상세보기</h1>
             <div class="userImgUpload">
@@ -38,39 +50,45 @@
 
             <div class="main_inputZone">
                 <h3>닉네임</h3>
-                <input type="text" name="nickNameInput" value="오메가호근몬">
+                   <input type="text" name="nickNameInput" value="${UserInfo.getUserNickname()}" readonly>
             </div>
             <hr>
 
             <div class="main_inputZone" >
                 <h3>한 줄 소개</h3>
-                <input type="text" name="nickNameInput" value="" id="introduce">
+                 <input type="text" name="introduceInput" value="${UserInfo.getUserIntroduce()}" id="introduce" readonly>
             </div>
             <hr>
             
             <div class="main_inputZone" >
                 <h3>경력</h3>
-                <input type="text" name="nickNameInput" value="" >
+                <c:choose>
+                    <c:when test="${UserInfo.getUserCareer() eq 'career'}">
+                    <input type="text" name="userCareerYearInput" value="${UserInfo.getUserCareerYear()}년" readonly>
+                    </c:when>
+                    <c:otherwise>
+                    <input type="text" name="userCareerYearInput" value="신입" readonly>
+                    </c:otherwise>
+                    </c:choose>
             </div>
             <hr>
             
             <div class="main_inputZone" >
                 <h3 id="company_h3">현재 등록한 회사</h3>
                 <ul class="company">
-                    <li class="companyBar" id="naver"><img src="${pageContext.request.contextPath}/assets/images/company/navericon.png" alt="" class="languageBarLogo"><span>네이버</span></li>
-                    <li class="companyBar" id="kakao"><img src="${pageContext.request.contextPath}/assets/images/company/kakaoicon.png" alt="" class="languageBarLogo"><span>카카오</span></li>
-                    <li class="companyBar" id="coupang"><img src="${pageContext.request.contextPath}/assets/images/company/coupangicon.png" alt="" class="languageBarLogo"><span>쿠팡</span></li>
-                    <li class="companyBar" id="baemin"><img src="${pageContext.request.contextPath}/assets/images/company/baeminicon.png" alt="" class="languageBarLogo"><span>배달의민족</span></li>
-                    <li class="companyBar" id="riot"><img src="${pageContext.request.contextPath}/assets/images/company/liotIcon.png" alt="" class="languageBarLogo"><span>라이엇</span></li>
-                    <li class="companyBar" id="nexon"><img src="${pageContext.request.contextPath}/assets/images/company/nexon.png" alt="" class="languageBarLogo"><span>넥슨</span></li>
-                    <li class="companyBar" id="toss"><img src="${pageContext.request.contextPath}/assets/images/company/company.png" alt="" class="languageBarLogo"><span>토스</span></li>
+                   <c:forEach var="item" items="${UserCompanyInfo }">
+                	<span class="companyBarWrapper">
+                    <li class="companyBar companyBarList"><img src="${pageContext.request.contextPath}<c:out value="${item.getCompanyUrl()}"></c:out>" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span><c:out value="${item.getCompanyName()}"></c:out></span></li>
+                    <input type="hidden" name="companyName" value=" ${item.getCompanyName()}">
+                	</span>
+                	</c:forEach>
                 </ul>
             </div>
             <hr>
 
 
             <div class="setting_titleWrapper setting_Languages">
-                <h3>할 수 있는 기술 태그</h3>
+                <h3>관심 기술 태그</h3>
                 <div class="setting_LanguageWrapper">
                     <div class=" css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -79,17 +97,12 @@
                         <div class="select__control css-control" id="first_list">
                             <div
                                 class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
-                                <div class="css-multiValue select__multi-value">
-                                    <div class="css-12jo7m5 select__multi-value__label">Java</div>
-                                    <div class="css-xb97g8 select__multi-value__remove">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
+                                <c:forEach var="item" items="${UserInterestInfo}">
+                                <div class="css-multiValue select__multi-value up_list" id="box2">
+                                <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="interestSkill">
+                                    <div class="css-12jo7m5 select__multi-value__label selectSkillName_2f"><c:out value="${item.getSkillName()}"></c:out></div>
                                 </div>
+                                </c:forEach>
                                 <div class="css-1g6gooi">
                                     <div class="select__input" style="display: inline-block;">
                                         <input autocapitalize="none" autocomplete="off" autocorrect="off"
@@ -111,7 +124,7 @@
            
            
             <div class="setting_titleWrapper setting_Languages">
-                <h3>관심 기술 태그</h3>
+                <h3>할 수 있는 기술 태그</h3>
                 <div class="setting_LanguageWrapper setInterest_likeLanguageWrapper__3nMfg">
                     <div class="css-container">
                         <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"
@@ -120,17 +133,13 @@
                         <div class="select__control css-control" id="second_list">
                             <div
                                 class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
-                                <div class="css-multiValue select__multi-value">
-                                    <div class="css-12jo7m5 select__multi-value__label">Java</div>
-                                    <div class="css-xb97g8 select__multi-value__remove">
-                                        <svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z">
-                                            </path>
-                                        </svg>
-                                    </div>
+                                 <c:forEach var="item" items="${UserCanInfo}">
+                               <div class="css-multiValue select__multi-value down_list" id="boxes2">
+                                <input type="hidden" type="text" value="<c:out value="${item.getSkillName()}"></c:out>" name="CanSkill">
+                                    <div class="css-12jo7m5 select__multi-value__label selectSkillName_3f"><c:out value="${item.getSkillName()}"></c:out></div>
+                                    
                                 </div>
+                               </c:forEach>
                                 <div class="css-1g6gooi">
                                     <div class="select__input" style="display: inline-block;">
                                         <input autocapitalize="none" autocomplete="off" autocorrect="off"
