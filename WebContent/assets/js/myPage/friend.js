@@ -132,6 +132,12 @@ const $friendList = $(".friendInfoList_2f");
 						alert("이미 등록된 친구입니다.")
 						return;
 					}
+					if(result=="mine"){
+						$(".dimmed_233vf").css("display","none");
+						alert("자기자신은 친구로 등록할 수 없습니다.")
+						return;
+					}
+					
 					$(".dimmed_233vf").css("display","none");
 					alert("친구 등록이 완료되었습니다.")
 					 modal.style.display = "none";
