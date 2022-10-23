@@ -244,6 +244,7 @@ div{
     align-items: center;
     padding: 1rem;
     color: #4a5275;
+    flex-direction: column;
 }
 
 
@@ -261,14 +262,25 @@ div{
     background: red;
 }
 
+.noticeDropdownBar_noticeBody__240wL .noticeBoardReply .Projectnotice .projectReply .projectStudyReply .projectCompanyReply .studyCompanyReply{
+    list-style: none;
+}
 
-.noticeMoveInquiryBoard {
+
+ .noticeDropdownBar_noticeTitleWrapper__6ye2L .noticeBoardList .projectNotice .projectReplyNotice .studyReplyNotice .projectCompanyReplyNotice .studyCompanyReplyNotice{
+    border-bottom: 1px solid #d7e2eb;
+    padding: 10px 16px;
+}
+
+
+
+.noticeMoveInquiryBoard .noticeMoveProjectLib .moveNoticeProject .moveBoardProject .moveBoardStudy .moveBoardProjectCompany .moveBoardStudyCompany {
     display: flex;
     flex-direction: column;
     grid-gap: 16px;
     gap: 16px;
 }
-.noticeListOn {
+.noticeListOn .noticeProjectLib .noticeProject .noticeReplyProject .noticeReplyStudy .noticeReplyProjectCompany .noticeReplyStudyCompany{
     display: flex;
     justify-content: flex-end;
     font-size: 16px;
@@ -277,4 +289,5 @@ div{
     -webkit-text-decoration-color: #4a5e75;
     text-decoration-color: #4a5e75;
 }
+
 

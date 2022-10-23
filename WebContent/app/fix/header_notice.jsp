@@ -68,6 +68,7 @@
         <div class="noticeDropdownBar_empty">알림함이 비어있습니다.
         
         
+        	<!-- 문의 답변  -->
         <ul class="noticeDropdownBar_noticeBody__240wL">
         <%--  	<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">
         <a class="noticeMoveInquiryBoard" href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >
@@ -76,6 +77,85 @@
         
        	</li>  --%>
                </ul>
+        
+        	<!-- 프로젝트 게시판   -->
+           <ul class="noticeBoardReply">
+         <%--   	<li class="noticeBoardList">
+        <a class="noticeMoveProjectLib" href="${pageContext.request.contextPath}/app/myPage/my_project_lib.jsp" >
+        <span class="noticeProjectLib">프로젝트 게시판이 올라왔습니다</span>
+        </a>
+        
+       	</li>   --%> 
+               </ul>
+			<!-- 프로젝트 공지사항  -->
+           <ul class="projectnotice">
+            	<%-- <li class="projectNotice">
+        <a class="moveNoticeProject" href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" >
+        <span class="noticeProject">프로젝트 공지사항이 올라왔습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+
+			<!-- 프로잭트 모집   -->
+           <ul class="projectReply">
+            	<%-- <li class="projectReplyNotice">
+        <a class="moveBoardProject" href="${pageContext.request.contextPath}/app/board/boardProject.jsp" >
+        <span class="noticeReplyProject">(프로젝트) 모집글 댓글이 달렸습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+
+			<!-- 스터디 모집함  -->
+           <ul class="projectStudyReply">
+            	<%-- <li class="studyReplyNotice">
+        <a class="moveBoardStudy" href="${pageContext.request.contextPath}/app/board/boardStudy.jsp" >
+        <span class="noticeReplyStudy">(스터디) 모집글 댓글이 달렸습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+			
+			
+			
+			<!-- 프로젝트 (컴퍼니) 모집함  -->
+           <ul class="projectCompanyReply">
+            	<%-- <li class="projectCompanyReplyNotice">
+        <a class="moveBoardProjectCompany" href="${pageContext.request.contextPath}/app/board/boardProject_company.jsp" >
+        <span class="noticeReplyProjectCompany">(프로젝트 회사) 모집글 댓글이 달렸습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+
+
+			<!-- 스터디 (컴퍼니) 모집함  -->
+           <ul class="studyCompanyReply">
+            	<%-- <li class="studyCompanyReplyNotice">
+        <a class="moveBoardStudyCompany" href="${pageContext.request.contextPath}/app/board/boardStudy_company.jsp" >
+        <span class="noticeReplyStudyCompany">(스터디 회사) 모집글 댓글이 달렸습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+
+
+			<!-- 관리자의 전체 공지사항   -->
+           <ul class="adminNotice">
+            	<%-- <li class="adminNotice1">
+        <a class="moveAdminNotice" href="${pageContext.request.contextPath}/app/admin/allNotice.jsp" >
+        <span class="noticeAdmin">전체 공지사항이 올라왔습니다</span>
+        </a>
+        
+       	</li>     --%>
+               </ul>
+        
+        
+        
+        
+        
+        
         
         </div>
     </div>
@@ -134,9 +214,9 @@
     
     
     	
-    
+    /* 문의하기 답변 완료   */
      listOk(); 
-    		/* 알람함 리스트 (답변이 왔을때) */
+    		
   	function listOk() {
 		$.ajax({
 			url: "/main/alarmListOk.ma",
@@ -147,8 +227,7 @@
 		});
     			
 	}
-    		
-    	 	
+    		/* 문의하기 답변 완료   */
     		function showAlarmListOk(result) {
     			  var resultAlarmListOk = JSON.parse(result);
 				  if(resultAlarmListOk.length > 0){
@@ -156,12 +235,12 @@
     			  var count=0;	
     			  resultAlarmListOk.forEach(result=>{
     			  
-    				  console.log(result.alarmList)
+    				  /* console.log(result.alarmList) */
     				  count++;
     			
     				 text+= `<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">`;                         
     				 text+=`<a class="noticeDropdownBar_noticeLink__mBRje"`+`href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >`;	
-    				 text+=`+<span class="noticeListOn">문의 답변이 달렸습니다</span>+`;
+    				 text+=`<span class="noticeListOn">문의 답변이 달렸습니다</span>`;
     				 text+=`</a>`;	
     				 text+=`</li>`;	
     			  
@@ -173,7 +252,294 @@
      } 
     
     
-    
+    		
+    		/* 프로젝트 자료실  알림 */
+    		
+    	projectLibListOk();
+    		
+    		function projectLibListOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: projectLibReplyOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function projectLibReplyOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="noticeBoardList">`;                         
+  				 text+=` <a class="noticeMoveProjectLib" href="${pageContext.request.contextPath}/app/myPage/my_project_lib.jsp" >`;	
+  				 text+=`<span class="noticeProjectLib">프로젝트 게시판이 올라왔습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".noticeBoardReply").html(text);
+  		
+			}
+   } 
+
+    		
+    		
+    		/* 프로젝트  공지사항 알림  */
+    		projectNoticeListOk();
+    		
+    		function projectNoticeListOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: projectNoticeOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function projectNoticeOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="projectNotice">`;                         
+  				 text+=` <a class="moveNoticeProject" href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" >`;	
+  				 text+=`<span class="noticeProject">프로젝트 공지사항이 올라왔습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".projectnotice").html(text);
+  		
+			}
+   } 
+    		
+    		
+    		/* 프로젝트 모집 댓글 알림   */
+    		
+    		projectReplyOk();
+    		
+    		function projectReplyOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: projectNoticeReplyOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function projectNoticeReplyOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="projectReplyNotice">`;                         
+  				 text+=` <a class="moveBoardProject" href="${pageContext.request.contextPath}/app/board/boardProject.jsp" >`;	
+  				 text+=`<span class="noticeReplyProject">(프로젝트) 모집글 댓글이 달렸습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".projectReply").html(text);
+  		
+			}
+   } 
+    		
+    		/* 스터디 모집 댓글 알림   */
+    		
+    		projectStudyOk();
+    		
+    		function projectStudyOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: studyNoticeReplyOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function studyNoticeReplyOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="studyReplyNotice">`;                         
+  				 text+=` <a class="moveBoardStudy" href="${pageContext.request.contextPath}/app/board/boardStudy.jsp" >`;	
+  				 text+=`<span class="noticeReplyStudy">(스터디) 모집글 댓글이 달렸습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".projectStudyReply").html(text);
+  		
+			}
+   } 
+    		
+
+    		
+    		<!-- 프로젝트 (컴퍼니) 모집함  -->
+    		
+    		projectCompanyOk();
+    		
+    		function projectCompanyOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: projectCompanyReplyOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function projectCompanyReplyOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="projectCompanyReplyNotice">`;                         
+  				 text+=`<a class="moveBoardProjectCompany" href="${pageContext.request.contextPath}/app/board/boardProject_company.jsp" >`;	
+  				 text+=`<span class="noticeReplyProjectCompany">(프로젝트 회사) 모집글 댓글이 달렸습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".projectCompanyReply").html(text);
+  		
+			}
+   } 
+
+    		
+    		<!-- 스터디 (컴퍼니) 모집함  -->
+    		
+    		studyCompanyOk();
+    		
+    		function studyCompanyOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: studyCompanyReplyOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function studyCompanyReplyOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="studyCompanyReplyNotice">`;                         
+  				 text+=`<a class="moveBoardStudyCompany" href="${pageContext.request.contextPath}/app/board/boardStudy_company.jsp" >`;	
+  				 text+=`<span class="noticeReplyStudyCompany">(스터디 회사) 모집글 댓글이 달렸습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".studyCompanyReply").html(text);
+  		
+			}
+   } 
+    		
+
+    		
+    		<!-- 전체 공지사항 알람 띵동  -->
+    		
+    		adminListOk();
+    		
+    		function adminListOk() {
+    			$.ajax({
+    				url: "/main/alarmListOk.ma",
+    				type:"get",
+    				contentType: "application/json; charset=utf-8",
+    				success: adminNoticeOk
+    				
+    			});
+    	    			
+			}
+    		
+    		function adminNoticeOk(result) {
+    				
+  			  var resultAlarmListOk = JSON.parse(result);
+				  if(resultAlarmListOk.length > 0){
+  			  let text="";
+  			  var count=0;	
+  			  resultAlarmListOk.forEach(result=>{
+  			  
+  				  console.log(result.alarmList)
+  				  count++;
+  			
+  				 text+= `<li class="adminNotice1">`;                         
+  				 text+=`<a class="moveAdminNotice" href="${pageContext.request.contextPath}/app/admin/allNotice.jsp" >`;	
+  				 text+=`<span class="noticeAdmin">전체 공지사항이 올라왔습니다</span>`;
+  				 text+=`</a>`;	
+  				 text+=`</li>`;	
+  			  
+  			  });
+  			  
+  			  $(".adminNotice").html(text);
+  		
+			}
+   } 
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+  
      
      
     
