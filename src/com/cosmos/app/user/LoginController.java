@@ -43,7 +43,7 @@ public class LoginController implements Execute{
 		System.out.println(sessionUserNumber);
 		System.out.println(sessionUserNickname);
 		
-		result.setPath("/app/main/mainBoard.ma"); // 추 후 수정 필요
+		result.setPath("/main/mainBoard.ma"); // 추 후 수정 필요
 		return result;
 	
 	}

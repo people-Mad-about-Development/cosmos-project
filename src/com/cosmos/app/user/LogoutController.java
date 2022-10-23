@@ -20,7 +20,7 @@ public class LogoutController implements Execute{
 //		session.removeAttribute("memberNumber"); //원하는 항목 삭제
 		session.invalidate(); //세션 전체 삭제, 로그아웃 시 안전하게 모든 항목 삭제가 올바른 방식이다.
 		
-		result.setPath("/app/main/mainBoard.ma"); // 추 후 메인페이지로 수정 예정
+		result.setPath("/main/mainBoard.ma"); // 추 후 메인페이지로 수정 예정
 		return result;
 	}
 	

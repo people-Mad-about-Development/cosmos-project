@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="header">
-        <a href="">
+        <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
             <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
           <div class="header_search">
@@ -36,7 +36,7 @@
                  <div class="dropdownBar_menuWrapper_header loginHeaderUnVisibie">
                     <ul class="dropdownBar_menu_list">
                     	<c:choose>
-                    		<c:when test="${sessionUserNumber} == 2">
+                    		<c:when test="${sessionUserNumber} == 1">
 		                        <li class="dropdownBar_menuItem_header">
 		                            <a href="#" style="display: inline-block;">관리자 페이지</a>
 		                        </li>
