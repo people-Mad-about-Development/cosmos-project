@@ -28,19 +28,20 @@
 	                    <h1 class="loginTitle">Cosmos에 오신 것을 환영합니다!</h1>
 	                    
 	                    <section class="socialLogin_loginWrapper">
-	                        <div class="googleButton_buttonWrapper">
-	                            <button class="googleButton_button">
+	                        <div class="googleButton_buttonWrapper" id="googleButton_buttonWrapper">
+	                            <button class="googleButton_button" id="googleButton_button">
 	                                <svg width="50" height="50" fill="none" viewBox="0 0 20 20">
 	                                    <path fill="#4285F4" d="M19.99 10.187c0-.82-.069-1.417-.216-2.037H10.2v3.698h5.62c-.113.92-.725 2.303-2.084 3.233l-.02.124 3.028 2.292.21.02c1.926-1.738 3.037-4.296 3.037-7.33z"></path>
 	                                    <path fill="#34A853" d="M10.2 19.931c2.753 0 5.064-.886 6.753-2.414l-3.218-2.436c-.862.587-2.017.997-3.536.997a6.126 6.126 0 0 1-5.801-4.141l-.12.01-3.148 2.38-.041.112c1.677 3.256 5.122 5.492 9.11 5.492z"></path>
 	                                    <path fill="#FBBC05" d="M4.398 11.937a6.008 6.008 0 0 1-.34-1.971c0-.687.125-1.351.329-1.971l-.006-.132-3.188-2.42-.104.05A9.79 9.79 0 0 0 .001 9.965a9.79 9.79 0 0 0 1.088 4.473l3.309-2.502z"></path>
 	                                    <path fill="#EB4335" d="M10.2 3.853c1.914 0 3.206.809 3.943 1.484l2.878-2.746C15.253.985 12.953 0 10.199 0 6.211 0 2.766 2.237 1.09 5.492l3.297 2.503A6.152 6.152 0 0 1 10.2 3.853z"></path>
 	                                </svg>
+	                              
 	                            </button>
 	                            <p class="googleButton_loginDescription">Google 로그인</p>
 	                        </div>
-	                        <div class="githubButton_buttonWrapper__5pwEe">
-	                            <button class="githubButton_button__Fhoyv">
+	                        <div class="githubButton_buttonWrapper__5pwEe" id="githubButton_buttonWrapper__5pwEe">
+	                            <button class="githubButton_button__Fhoyv" id = "">
 	                                <a href="javascript:;">
 	                                    <svg width="50" height="50" fill="currentColor" viewBox="0 0 20 20">
 	                                        <mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse">
@@ -82,7 +83,7 @@
 	                <div class="loginModal_modalContent third hidden_lo">
 	                	
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d" id="nickh1">${nickNameInput.val()} 님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
+	                    <h1 class="setInterest_title__Me11d"><span id="addNick1"> </span>님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
 	                    <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
 	                    <div class="setting_titleWrapper setting_Languages">
 	                <h3>관심 있는<br>기술 태그</h3>
@@ -505,7 +506,7 @@
 	
 	                <div class="loginModal_modalContent fourth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d">${userNickname} 님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
+	                    <h1 class="setInterest_title__Me11d"><span id="addNick2"> </span>님 이번에는<br>어떤 언어, 프레임워크을 할 수 있는지 알려주세요!</h1>
 	                    <div class="setting_titleWrapper setting_Languages">
 	                <h3>할 수 있는<br>기술 태그</h3>
 	                <div class="setting_LanguageWrapper">
@@ -927,7 +928,7 @@
 	
 	                <div class="loginModal_modalContent fifth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d">개빠사님이<br>다니는 회사를 알려주세요!</h1>
+	                    <h1 class="setInterest_title__Me11d"><span id="addNick3"> </span>님이<br>다니는 회사를 알려주세요!</h1>
 	                    <div class="setInterest_inputWrapper__2LHrv">
 	                        <h3 style="width: 14%;">회사 이름</h3>
 	                        <div class="setInterest_likeLanguageWrapper__3nMfg">
@@ -1074,7 +1075,7 @@
 	
 	                <div class="loginModal_modalContent sixth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setInterest_title__Me11d">은<br>어떤 어느 쪽에 해당 되시나요?</h1>
+	                    <h1 class="setInterest_title__Me11d"><span id="addNick4"> </span>은<br>어떤 어느 쪽에 해당 되시나요?</h1>
 	                    <div class="select_box">
 	                        <button type="button" class="setInterest_buttonNext__1B_lX one" name="complete">경력</button>
 	                        <button type="button" class="setInterest_buttonNext__1B_lX two" name="complete">신입</button>
@@ -1093,7 +1094,7 @@
 	
 	                <div class="loginModal_modalContent eighth hidden_lo">
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
-	                    <h1 class="setImage_title__1CzhH">개빠사님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
+	                    <h1 class="setImage_title__1CzhH"><span id="addNick5"> </span>님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
 	                    <div>미 업로드시 기본 이미지로 자동 설정됩니다.</div>
 	                    <div class="userImageUpload_image__2lcic imageUpload">
 	                        <img class="userImg" src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="user avatar">
@@ -1143,13 +1144,13 @@
 </body>
 <script>var contextPath = "${pageContext.request.contextPath}";</script>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main/login.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>Kakao.init('61e98904c3024813eecedb7a5c5b3bf9')</script>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
 	/* var nick = document.getElementById("nickNameInput").value; */
