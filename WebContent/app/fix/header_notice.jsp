@@ -38,9 +38,13 @@
                         <li class="dropdownBar_menuItem_header">
                             <a href="#" style="display: inline-block;">관리자 페이지</a>
                         </li>
+                        <li class="dropdownBar_menuItem_header">
+                            <a href="${pageContext.request.contextPath}/user/FriendInfoList.us" style="display: inline-block;"> 친구 목록</a>
+                        </li>
                         <li class="dropdownBar_menuItem_header dropdownBar_newPost_header">
                             <a href="#" style="display: inline-block;">새 글 작성</a>
                         </li>
+                    
                         <li class="dropdownBar_menuItem_header">
                             <a href="${pageContext.request.contextPath}/main/mainSearch.ma?" style="display: inline-block;">내 작성글</a>
                         </li>
