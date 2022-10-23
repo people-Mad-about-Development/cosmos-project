@@ -10,15 +10,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend_info.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
     <title>친구 정보 상세보기</title>
 </head>
 
 <body>
 
-
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
     <div id="root">
     	<div class="search_results" style="margin-top: 52px; margin-left: 26%;">
-         <a href="${pageContext.request.contextPath}/user/FriendInfoList.us" style="width:10%">
+         <a onclick="send()" style="width:10%">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -28,7 +31,12 @@
        </svg>
        </a>
        </div>
-    
+    	<script >
+    	function send(){
+    		$(".dimmed_233vf").css("display","grid");
+    		location.href="${pageContext.request.contextPath}/user/FriendInfoList.us"
+    	}
+    	</script>
         <div class="main_div">
             <h1>친구 정보 상세보기</h1>
             <div class="userImgUpload">

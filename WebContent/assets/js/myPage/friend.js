@@ -12,11 +12,11 @@ closeBtn.addEventListener("click", e => {
 })
 
 show()
-
 const $friendList = $(".friendInfoList_2f");
 
 
 	function show(){
+		$(".dimmed_233vf").css("display","grid");
 		$.ajax({
 			url: page_urI_2f+"/user/friendInfo.us",
 			type:"get",
@@ -26,7 +26,7 @@ const $friendList = $(".friendInfoList_2f");
 	}
 
 	function showList(friends){
-		
+			
 			let text="";
 				friends.forEach((friend,item)=>{
 				text+= `<div class="ui user card">`;
@@ -66,6 +66,7 @@ const $friendList = $(".friendInfoList_2f");
 			
 			
 		$friendList.html(text); 
+		$(".dimmed_233vf").css("display","none");
 		}
 		
 	
@@ -73,6 +74,7 @@ const $friendList = $(".friendInfoList_2f");
 	const deletebutton = $(".friend_btn_2fd");
 	
 	function deleteFriend(obj){
+		$(".dimmed_233vf").css("display","grid");
 		var button = $(obj);
 		var userNumber =  button.attr("id");
 		$.ajax({
@@ -84,6 +86,7 @@ const $friendList = $(".friendInfoList_2f");
 		}
 	
 	function friendDetailMove(obj){
+		$(".dimmed_233vf").css("display","grid");
 		var button = $(obj);
 		var userNumber = parseInt(button.data("id"));
 		var link = page_urI_2f+"/user/FriendDetail.us?userNumber="+userNumber;
@@ -91,7 +94,7 @@ const $friendList = $(".friendInfoList_2f");
 	}
 	
 	function duplicatedNickname(){
-		
+		$(".dimmed_233vf").css("display","grid");
 		var friendInput = $(`input[name="nickNameInput"]`);
 		var friendName = friendInput.val().trim();
 		if(!friendName){
@@ -107,6 +110,7 @@ const $friendList = $(".friendInfoList_2f");
 				if(data=="true"){
 					friendAdd(friendName);
 				}else if(data=="false"){
+					$(".dimmed_233vf").css("display","none");
 					alert("존재하지 않는 닉네임입니다.");
 					return;
 				}
@@ -117,16 +121,18 @@ const $friendList = $(".friendInfoList_2f");
 	
 	function friendAdd(obj){
 		var friendName = obj;
-		
+		$(".dimmed_233vf").css("display","grid");
 		$.ajax({
 				url:page_urI_2f+"/user/friendAdd.us",
 				type:"get",
 				data:{friendName:friendName},
 				success:function(result){
 					if(result=="true"){
+						$(".dimmed_233vf").css("display","none");
 						alert("이미 등록된 친구입니다.")
 						return;
 					}
+					$(".dimmed_233vf").css("display","none");
 					alert("친구 등록이 완료되었습니다.")
 					 modal.style.display = "none";
 					show();

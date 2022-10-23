@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.dimmed_233vf{
+	margin:0;
+	background-color:rgba(255,255,255,0.7);
+	z-index:999;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	/* display: grid; */
+	display:none;
+    place-items: center;
+	
+}
+
+.dimmed_image_23fds{
+	background-image:url("/assets/images/fix/dimmed.png");
+	width: 500px;
+    height: 500px;
+	background-repeat:no-repeat;
+	opacity:1;
+	animation: rotate_image 2s linear infinite;
+	transform-origin: 50% 50%;
+}
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
