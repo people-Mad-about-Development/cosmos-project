@@ -10,6 +10,7 @@ import com.cosmos.app.user.vo.FriendVO;
 import com.cosmos.app.user.vo.SkillVO;
 import com.cosmos.app.user.vo.UserCanSkillVO;
 import com.cosmos.app.user.vo.UserCompanyVO;
+import com.cosmos.app.user.vo.UserDTO;
 import com.cosmos.app.user.vo.UserInterestSkillVO;
 import com.cosmos.app.user.vo.UserVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
@@ -21,6 +22,28 @@ public class UserDAO {
 	   public UserDAO() {
 	      sqlSession = sqlSessionFactory.openSession(true);
 	   }
+	   
+	   public void userInterestSkillJoin(UserDTO userDTO){
+		   sqlSession.insert("user.userInterestSkillJoin", userDTO);
+	   }
+	   
+	   public void userCanSkillJoin(UserDTO userDTO){
+		   sqlSession.insert("user.userInterestSkillJoin", userDTO);
+	   }
+	   
+	   public void userCompanyJoin(UserDTO userDTO){
+		   sqlSession.insert("user.userCompanyJoin", userDTO);
+	   }
+	   
+	   public List<SkillVO> skillSelect(){
+		   return sqlSession.selectList("user.skillSelect");
+	   }
+	   
+	   public List<CompanyVO> companySelect(UserDTO userDTO){
+		   return sqlSession.selectList("user.companySelect");
+	   }
+	   
+	   
 	   
 	   public boolean checkNickName(String userNickname) {
 		   return (Integer)sqlSession.selectOne("user.checkNickName", userNickname) == 1;
