@@ -10,11 +10,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/my_page.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
     <title>내 정보 수정</title>
 </head>
 
 <body>
 
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
  <form method ="post" action="${pageContext.request.contextPath}/user/updateOk.us" name="mypageForm" onsubmit="return false;" enctype="multipart/form-data">
 
     <div id="root">

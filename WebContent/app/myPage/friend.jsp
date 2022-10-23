@@ -8,10 +8,18 @@
 <meta charset="UTF-8">
 <title>친구관리</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+
 </head>
 <body>  
+
+
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
+
     <div class="search_results" style="margin-top:50px;">
-         <a href="${pageContext.request.contextPath}/main/mainBoard.ma" style="width:10%">
+         <a onclick="send()" style="width:10%">
           <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
         viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
          xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -20,6 +28,13 @@
                 </path>
        </svg>
        </a>
+       
+       <script >
+    	function send(){
+    		$(".dimmed_233vf").css("display","grid");
+    		location.href="${pageContext.request.contextPath}/main/mainBoard.ma";
+    	}
+    	</script>
         <div class="ui segments">
             
             <div class="ui segment">

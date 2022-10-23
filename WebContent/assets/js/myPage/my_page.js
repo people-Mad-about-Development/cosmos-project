@@ -143,12 +143,13 @@
 
 	function Initprofile(){
 		var defaultProfile = "/assets/images/fix/cosmosProfile.png";
-		
+		$(".dimmed_233vf").css("display","grid");
 		$.ajax({
 			url:"/user/initProfileOk.us",
 			data:{default:defaultProfile},
 			type:"post",
 			success:function(){
+				$(".dimmed_233vf").css("display","none");
 				alert("프로필사진이 초기화 되었습니다.")
 		 		$userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
 			}
@@ -315,10 +316,12 @@ $(this).remove();
 	*/
 	//관심 기술
 	$(".select_menu1").on("click",".skillTotalList",function(){
+		$(".dimmed_233vf").css("display","grid");
 		var check= false;
 		$(".select_menu1").addClass("list1");
 		$(".selectSkillName_2f").each((i,item)=>{
 			if($(".selectSkillName_2f").eq(i).text().trim()==$(this).text().trim()){
+				$(".dimmed_233vf").css("display","none");
 				alert("이미 추가하신 기술입니다.");
 				check=true;
 				return;
@@ -334,6 +337,7 @@ $(this).remove();
 			+`  </div>`
 			+`</div>`
 		);
+		$(".dimmed_233vf").css("display","none");
 		}
 		
 	})
@@ -341,10 +345,12 @@ $(this).remove();
 	
 	//사용가능 언어
 		$(".select_menu2").on("click",".skillTotalList2",function(){
+			$(".dimmed_233vf").css("display","grid");
 			var check=false;
 		$(".select_menu2").addClass("list2");
 		$(".selectSkillName_3f").each((i,item)=>{
 			if($(".selectSkillName_3f").eq(i).text().trim()==$(this).text().trim()){
+				$(".dimmed_233vf").css("display","none");
 				alert("이미 추가하신 기술입니다.");
 				check=true;
 				return;
@@ -360,6 +366,7 @@ $(this).remove();
 			+`  </div>`
 			+`</div>`
 		);
+		$(".dimmed_233vf").css("display","none");
 		}
 		
 	})
@@ -369,13 +376,17 @@ $(this).remove();
 	/*$(".select_menu1").append(`<div><div class="select_option css-list-option skillTotalList" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);*/
 
 $(".select__value-container--has-value").on("click",".InterestExitBye_2f",function(){
+	$(".dimmed_233vf").css("display","grid");
 	$(this).parent().remove();
+	$(".dimmed_233vf").css("display","none");
 	
 })
 
 $(".select__value-container--has-value").on("click",".CanSkillExitBye_23f",function(){
 	/*$(".select_menu2").append(`<div><div class="select_option css-list-option skillTotalList2" id="react-select-1-option-1" tabindex="-1">`+$(this).parent().text()+` </div></div>`);*/
+	$(".dimmed_233vf").css("display","grid");
 	$(this).parent().remove();
+	$(".dimmed_233vf").css("display","none");
 	
 })
 
@@ -413,18 +424,22 @@ var step2 =0;
 }*/
 
 function company(){
+	$(".dimmed_233vf").css("display","grid");
+	
 	var content = $("#selboxDirect").val();
 	var companyBarWrapper = $(".companyBarWrapper");
 	var companyDupulicateCheck = false;
 	
 	//회사 추가 유효성 검사 체크
 	if(!content.trim()){
+		$(".dimmed_233vf").css("display","none");
 		alert("값을 입력해주세요.");
 		$("#selboxDirect").focus();
 		return;
 	}
 	companyBarWrapper.each((i,item)=>{
 		if(companyBarWrapper.eq(i).children().eq(1).val().trim()==content.trim()){
+			$(".dimmed_233vf").css("display","none");
 			alert("중복된 회사입니다.")
 			companyDupulicateCheck = true;
 		}
@@ -446,6 +461,7 @@ function company(){
 		+` </span>`
 	);
 		$("#selboxDirect").val("");
+		$(".dimmed_233vf").css("display","none");
         $modal.hide();
 }
 
@@ -457,32 +473,38 @@ function enterCompanySubmit(e){
 }
 console.log($(".InterestSkillWrapper_2f").children().length);
 function myPageUpdateSubmit(){
+	$(".dimmed_233vf").css("display","grid");
 	if(!$(`input[name="nickNameInput"]`).val().trim()){
+		$(".dimmed_233vf").css("display","none");
 		alert("닉네임은 빈칸일 수 없습니다.");
 		$(`input[name="nickNameInput"]`).focus();
 		return;
 	}
 	
 	if(!$(`input[name="introduceInput"]`).val().trim()){
+		$(".dimmed_233vf").css("display","none");
 		alert("자기소개는 빈칸일 수 없습니다.");
 		$(`input[name="introduceInput"]`).focus();
 		return;
 	}
 	
 	if($(".InterestSkillWrapper_2f").children().length<2){
+		$(".dimmed_233vf").css("display","none");
 		alert("한 개 이상의 관심기술을 선택해주세요.");
 		$(".InterestSkillWrapper_2f").focus();
 		return;
 	}
 	if($(".CanSkillWrapper_23f").children().length<2){
+		$(".dimmed_233vf").css("display","none");
 		alert("한 개 이상의 할 수 있는 기술을 선택해주세요.");
 		$(".CanSkillWrapper_23f").focus();
 		return;
 	}
-
+	
 	mypageForm.submit();
 }
 function deleteUser(){
+	$(".dimmed_233vf").css("display","grid");
 	location.href=pageURI+"/user/userDeleteOK.us"
 }
 
