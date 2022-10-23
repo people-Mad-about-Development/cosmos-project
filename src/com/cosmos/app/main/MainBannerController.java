@@ -9,13 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
+import com.cosmos.app.main.dao.MainDAO;
 
 public class MainBannerController extends HttpServlet implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return null;
+		MainDAO mainDAO = new MainDAO();
+		Result result = new Result();
+		
+		req.setAttribute("banner", mainDAO.selectBanner());
+		result.setPath("/app/main/index.jsp");
+		return result;
 	}
 
 }

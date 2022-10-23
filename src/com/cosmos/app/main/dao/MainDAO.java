@@ -44,5 +44,7 @@ public class MainDAO {
 		   return sqlSession.selectList("Alarm.alarmSelect", userNumber);
 	   }
 	   
-	   
+	   public List<MainDAO> selectBanner() {
+		   return sqlSession.selectList("Main.selectBanner");
+	   }
 }

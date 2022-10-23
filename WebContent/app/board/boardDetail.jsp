@@ -38,12 +38,13 @@
 	                </a>
                 </div>
                 
-                
+                <c:if test="${3 eq board.getUserNumber()}">
                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons1">마감</button>
                     <button class="studyButtons_buttons2" onclick="location.href = '${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}'">수정</button>
                     <button class="studyButtons_buttons3" id="delete">삭제</button>
                 </section>
+                </c:if>
                 
                 
                 <div class="recommendPost_totalWrapper">
@@ -100,9 +101,11 @@
 	                        	<span class="studyInfo_content Support" style="color:green">${board.getBoardSupport()}명</span>
 	                        </c:otherwise>
                         </c:choose>
-                        <a class ="apply_list" href="${pageContext.request.contextPath}/board/supportDetail.bo?boardNumber=${board.getBoardNumber()}" rel="noreferrer" target="_blank">
-                            <span class = "apply_info">지원자 정보</span>
-                        </a>
+                        <c:if test="${3 eq board.getUserNumber()}">
+	                        <a class ="apply_list" href="${pageContext.request.contextPath}/board/supportDetail.bo?boardNumber=${board.getBoardNumber()}" rel="noreferrer" target="_blank">
+	                            <span class = "apply_info">지원자 정보</span>
+	                        </a>
+                        </c:if>
                     </li>
 		                    
 		                    
@@ -227,8 +230,10 @@
 <script>
 
 	let boardNumber = "${board.getBoardNumber()}";
-	let userNumber = 3;
+	let userNumber = "${board.getUserNumber()}";
 	let boardSupport = "${board.getBoardSupport()}";
+	
+	console.log(${board.getUserNumber()});
 
   $('.project_link').on('click', function() {
      $('.modal-wrapper').toggleClass('open');

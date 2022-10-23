@@ -10,8 +10,11 @@
 		from tbl_board b join tbl_user u on b.user_number = u.user_number where board_status = 'open' and board_start_date >= curdate() order by board_start_date
 	</select>
 	
-	
-	
+	<!-- 배너 -->
+	<select id="selectBanner" resultType="bannerVO">
+		select banner_url
+		from tbl_banner where banner_status = 'open'
+	</select>
 	
 	
 	
