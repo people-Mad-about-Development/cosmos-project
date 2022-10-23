@@ -14,8 +14,10 @@ import com.cosmos.app.main.dao.MainDAO;
 public class BoardDetailOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("board detail controller 들어옴");
 		BoardDAO boardDAO = new BoardDAO();
 		Result result = new Result();
+		
 		
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
 
@@ -27,6 +29,7 @@ public class BoardDetailOkController implements Execute{
 		boardDAO.updateReadCount(boardNumber);
 		
 		/* boardDAO.updateClose(boardNumber); */
+		System.out.println("board detail dao 지남");
 		
 		result.setPath("/app/board/boardDetail.jsp");
 		return result;

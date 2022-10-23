@@ -8,9 +8,13 @@
 <meta charset="UTF-8">
 <title>프로젝트 모집</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/boardProject2.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
 </head>
 <body style ="overflow: auto;">
 <jsp:include page = "${pageContext.request.contextPath}/app/fix/lastHeader.jsp"/>
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
     <div id="root">
         <div class="studyContent_postWrapper" >
             <section class="studyContent_postHeader">
@@ -38,10 +42,10 @@
 	                </a>
                 </div>
                 
-                <c:if test="${3 eq board.getUserNumber()}">
+                <c:if test="${sessionUserNumber eq board.getUserNumber()}">
                 <section class="studyButtons_buttonWrapper">
                     <button class="studyButtons_buttons1">마감</button>
-                    <button class="studyButtons_buttons2" onclick="location.href = '${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}'">수정</button>
+                    <button class="studyButtons_buttons2" onclick="sendModify()">수정</button>
                     <button class="studyButtons_buttons3" id="delete">삭제</button>
                 </section>
                 </c:if>
@@ -61,7 +65,7 @@
                         <c:choose>
 							<c:when test="${boards != null and fn:length(boards) > 0}">
 			            		<c:forEach var="boards" items="${boards}" end="9" varStatus="status">
-			            			<a href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${boards.getBoardNumber()}" style="text-decoration: none; color: black;">
+			            			<a onclick="sendNew()" style="text-decoration: none; color: black;">
 			                            <li class="recommendPost_postList">
 			                                <div class="recommendPost_index">${status.count}. </div>
 			                                <div class="recommendPost_title">${boards.getBoardTitle()}</div>
@@ -101,7 +105,7 @@
 	                        	<span class="studyInfo_content Support" style="color:green">${board.getBoardSupport()}명</span>
 	                        </c:otherwise>
                         </c:choose>
-                        <c:if test="${3 eq board.getUserNumber()}">
+                        <c:if test="${sessionUserNumber eq board.getUserNumber()}">
 	                        <a class ="apply_list" href="${pageContext.request.contextPath}/board/supportDetail.bo?boardNumber=${board.getBoardNumber()}" rel="noreferrer" target="_blank">
 	                            <span class = "apply_info">지원자 정보</span>
 	                        </a>
@@ -194,7 +198,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton 2"onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}'">네,마감할게요</button>
+            <button class="cancelButton_registerButton" onclick="sendClose()">네,마감할게요</button>
         </section>
       </div>
     </div>
@@ -214,7 +218,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton 3"onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" onclick="location.href = '${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}'">네,삭제할래요</button>
+            <button class="cancelButton_registerButton" onclick="sendDelete()">네,삭제할래요</button>
         </section>
       </div>
     </div>
@@ -229,11 +233,6 @@
 <script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
 <script>
 
-	let boardNumber = "${board.getBoardNumber()}";
-	let userNumber = "${board.getUserNumber()}";
-	let boardSupport = "${board.getBoardSupport()}";
-	
-	console.log(${board.getUserNumber()});
 
   $('.project_link').on('click', function() {
      $('.modal-wrapper').toggleClass('open');
@@ -268,8 +267,26 @@
     return false;
   });
 
+  function sendNew(){
+		$(".dimmed_233vf").css("display","grid");
+		alert("sendNew");
+		console.log("sendNew");
+		location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
+	}
 
-
+  function sendModify(){
+		$(".dimmed_233vf").css("display","grid");
+		location.href="${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}"
+	}
+  function sendClose(){
+		$(".dimmed_233vf").css("display","grid");
+		location.href="${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}"
+	}
+  function sendDelete(){
+		$(".dimmed_233vf").css("display","grid");
+		location.href="${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}"
+	}
+  
 
 
 </script>

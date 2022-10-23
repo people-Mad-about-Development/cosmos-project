@@ -29,6 +29,7 @@
 	    <jsp:include page = "${pageContext.request.contextPath}/app/fix/login.jsp"/>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 function searchSend(){
 	var content = searchForm.header_search_input.value;
@@ -43,7 +44,11 @@ function searchSend(){
 $post = $(".navbar_post");
 
 $post.click(function(){
-	$(location).attr("href", "${pageContext.request.contextPath}/app/board/newPage.jsp");
+	Swal.fire(
+			'로그인 후 사용해주세요!',
+			'',
+			'warning'
+			);
 })
 </script>
 </html>

@@ -50,7 +50,7 @@ public class BoardDAO {
 		sqlSession.delete("Board.deleteBoard", boardNumber);
 	}
     
-    public List<BoardDAO> selectTitle() {
+    public List<BoardVO> selectTitle() {
     	return sqlSession.selectList("Board.selectTitle");
     }
     

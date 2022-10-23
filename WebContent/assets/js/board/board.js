@@ -3,7 +3,7 @@
  */
 
 function send(){
-	
+	$(".dimmed_233vf").css("display","grid");
 	$.ajax({
 		url: "/board/supportOk.bo",
 		type: "get",

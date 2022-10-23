@@ -22,8 +22,8 @@ public class BoardWriteOkController implements Execute{
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = new BoardVO();
 		
-		int userNumber = 3;
-		
+		/* int userNumber = 3; */
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));;
 		
 		
