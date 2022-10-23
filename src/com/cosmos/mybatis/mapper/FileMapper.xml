@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="File">
+	<insert id="insert" parameterType="fileVO">
+		insert into tbl_file 
+		(file_name, file_original, file_url, community_number)
+		values(#{fileName}, #{fileOriginal}, #{fileUrl}, #{communityNumber})
+	</insert>
+	
+	<select id="select" parameterType="_int" resultType="fileVO">
+		select file_name, file_original from tbl_file where community_number = #{communityNumber}
+	</select>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_file where community_number = #{communityNumber}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

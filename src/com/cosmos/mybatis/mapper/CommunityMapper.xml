@@ -23,7 +23,6 @@
 		insert into tbl_community
 		(community_title, community_content, community_category, user_number, board_number)
 		values (#{communityTitle}, #{communityContent}, 'announcement', #{userNumber}, #{boardNumber})
-		
 	</insert>
 	
 	<select id="detailNotice" parameterType="_int" resultType="communityDTO">
@@ -41,6 +40,32 @@
 		set community_title = #{communityTitle}, community_content = #{communityContent}
 		where community_number = #{communityNumber}
 	</update>	
+
+	<insert id="insertLibrary" parameterType="communityVO">
+		<selectKey resultType="int" keyProperty="communityNumber" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into tbl_community
+		(community_title, community_content, community_category, user_number, board_number)
+		values (#{communityTitle}, #{communityContent}, 'library', #{userNumber}, #{boardNumber})
+	</insert>
+	
+	<delete id="deleteLibrary" parameterType="_int">
+		delete from tbl_community where community_number = #{communityNumber}
+	</delete>
+	
+	<select id="detailLibrary" parameterType="_int" resultType="communityDTO">
+		select community_number, community_title, community_content, community_date, community_category, c.user_number, u.user_nickname, u.user_file 
+		from tbl_community c join tbl_user u on u.user_number = c.user_number
+		where community_number = #{communityNumber}
+	</select>
+	
+	<update id="modifyLibrary" parameterType="communityVO">
+		update tbl_community
+		set community_title = #{communityTitle}, community_content = #{communityContent}
+		where community_number = #{communityNumber}
+	</update>	
+	
 </mapper>
 
 
