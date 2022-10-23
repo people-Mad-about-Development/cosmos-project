@@ -227,6 +227,14 @@ input {
     width: 3rem;
 }
 
+.lastTopBar_backButton__3HlkH {
+    position: absolute;
+    left: 1rem;
+    opacity: .6;
+    cursor: pointer;
+    width: 3rem;
+}
+
 .setNickname_title__xgVq4 {
     margin-top: 4rem;
     text-align: center;

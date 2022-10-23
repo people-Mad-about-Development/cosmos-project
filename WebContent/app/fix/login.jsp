@@ -85,6 +85,8 @@
 	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
 	                    <h1 class="setInterest_title__Me11d"><span id="addNick1"> </span>님, 반가워요.<br>어떤 언어, 프레임워크에 관심이 있는지 알려주세요!</h1>
 	                    <div>관심 태그를 기반으로 소식을 추천해드려요.</div>
+	                    <input type="text" style="display:none" name="companyName" value=" ">
+	                    
 	                    <div class="setting_titleWrapper setting_Languages">
 	                <h3>관심 있는<br>기술 태그</h3>
 	                <div class="setting_LanguageWrapper">
@@ -94,7 +96,7 @@
 	                        </span>
 	                        <div class="select__control css-control" id="first_list">
 	                            <div
-	                                class="select__value-container select__value-container--is-multi select__value-container--has-value css-1hwfws3">
+	                                class="select__value-container select__valsue-container--is-multi select__value-container--has-value css-1hwfws3">
 	                                <div class="css-multiValue select__multi-value up_list" id="box1">
 	                                    <div class="css-12jo7m5 select__multi-value__label">JavaScript</div>
 	                                    <div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove">
@@ -1088,12 +1090,12 @@
 	                    <!-- <div>숫자만 입력해주세요.</div> -->
 	                    <div class="setNickname_inputWrapper__2SFvb">
 	                        <h3>경력</h3>
-	                        <input class="setNickname_nicknameInput__1J1el" type="text" name="careerInput" value="" placeholder="숫자만 입력해주세요." autocomplete="off"></div>
+	                        <input class="setNickname_nicknameInput__1J1el" type="text" name="careerInput" value="" placeholder="숫자만 입력해주세요." autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></div>
 	                        <button type="button" class="career_buttonNext" name="complete">다음</button>
 	                </div>
 	
 	                <div class="loginModal_modalContent eighth hidden_lo">
-	                    <img class="topBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
+	                    <img class="lastTopBar_backButton__3HlkH" src="${pageContext.request.contextPath}/assets/images/fix/arrow-left.png" alt="back-button">
 	                    <h1 class="setImage_title__1CzhH"><span id="addNick5"> </span>님만의 특별한 이미지를 설정해 보세요. <br>물론, 언제든지 변경할 수 있어요!</h1>
 	                    <div>미 업로드시 기본 이미지로 자동 설정됩니다.</div>
 	                    <div class="userImageUpload_image__2lcic imageUpload">

@@ -15,6 +15,7 @@ var $seventh = $(".seventh");
 var $eighth = $(".eighth");
 var $exit = $(".loginModal_exitWrapper");
 var $back = $(".topBar_backButton__3HlkH");
+var $lastBack = $(".lastTopBar_backButton__3HlkH");
 
 var $google = $(".googleButton_buttonWrapper");
 var $github = $(".githubButton_buttonWrapper__5pwEe");
@@ -48,6 +49,19 @@ $back.click(function(){
     $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
     $(this).parents().closest($modalContent).prev().toggleClass("active_lo hidden_lo");
 });
+
+$lastBack.click(function(){
+	if(userCareer == "career") {
+		console.log("경력자 드러옴");
+	    $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
+	    $(this).parents().closest($modalContent).prev().toggleClass("active_lo hidden_lo");		
+	}else{
+		console.log("신입생 드러옴");
+	    $(this).parents().closest($modalContent).toggleClass("active_lo hidden_lo");
+	    $(this).parents().closest($modalContent).prev().prev().toggleClass("active_lo hidden_lo");		
+	}
+});
+
 
 /*$google.click(function(){
 	googleLogin();
@@ -1079,9 +1093,20 @@ function nickSend() { // 닉네임 유효성 검사
 
 /*=============================================================== */
 
+var $myCompany = $(".css-multiValue");
+
+var style = $myCompany.css("display");
+
+    
+    $myCompany.click(function(){
+	console.log("추 테스트 들어옴");
+	console.log(style);
+    });
+
+console.log(style);
 
 
- 
+
 /*=============================================================== */
 	
 function join() { // 유저 정보 정리

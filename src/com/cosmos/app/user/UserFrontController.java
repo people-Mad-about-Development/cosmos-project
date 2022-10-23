@@ -30,7 +30,10 @@ public class UserFrontController extends HttpServlet{
 	      if(request.equals("/user/checkNameOk.us")) {   // 닉네임중복검사 
 	         result = new CheckNameOkController().execute(req, resp);
 	         
-	      }else if(request.equals("/user/join.us")) {   // 회원가입
+	      }else if(request.equals("/user/join.us")) {   // 회원가입 페이지 이동
+				/*
+				 * result = new Result(); result.setPath("/app/fix/header.jsp");
+				 */
 	         result = new JoinController().execute(req, resp);
 	         
 	      }else if(request.equals("/user/joinOk.us")) {   // 회원가입 완료
