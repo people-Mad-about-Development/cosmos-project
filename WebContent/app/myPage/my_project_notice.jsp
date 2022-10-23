@@ -27,7 +27,7 @@
                                 <a href="" style="color: #80008087;"><span>공지사항</span></a>
                             </li>
                             <li class="community-aside__menu ">
-                                <a href="${pageContext.request.contextPath}/community/libraryListOk.co?boardNumber=1"><span>자료실</span></a>
+                                <a href="${pageContext.request.contextPath}/community/libraryListOk.co?boardNumber=1&userNumber=1"><span>자료실</span></a>
                             </li>
                         </ul>
                     </li>
@@ -37,7 +37,7 @@
                 <div class="question-list-container">
                     <div class="post-container-header">
                         <h4 style="display: inline;">공지사항</h4>
-                        <button class="all-button write-btn">
+                        <button class="all-button write-btn"  onclick="location.href = '${pageContext.request.contextPath}/community/noticeCreate.co'">
                             <span class="write-icon"><svg id="icon" width="16" height="14"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path fill="#ffffff" fill-rule="evenodd"
@@ -55,7 +55,7 @@
                 		<c:forEach var="list" items="${noticeList}">
 			                <ul class="question-list">
 			                    <li class="question-container">
-			                        <a href="">
+			                        <a href="${pageContext.request.contextPath}/community/noticeDetailOk.co?boardNumber=${list.getBoardNumber()}&communityNumber=${list.getCommunityNumber()}&userNumber=1">
 			                            <div class="question">
 			                                <div class="question-info">
 			                                    <div class="question-title">

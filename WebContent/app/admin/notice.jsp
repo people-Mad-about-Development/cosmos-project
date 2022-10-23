@@ -140,12 +140,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
 								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+									<a href="${pageContext.request.contextPath}/admin/companyListOk.ad">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>

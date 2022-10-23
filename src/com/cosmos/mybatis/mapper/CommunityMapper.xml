@@ -19,8 +19,28 @@
 		where community_number = #{communityNumber}
 	</select>
 	
+	<insert id="insertNotice" parameterType="communityVO">
+		insert into tbl_community
+		(community_title, community_content, community_category, user_number, board_number)
+		values (#{communityTitle}, #{communityContent}, 'announcement', #{userNumber}, #{boardNumber})
+		
+	</insert>
 	
+	<select id="detailNotice" parameterType="_int" resultType="communityDTO">
+		select community_number, community_title, community_content, community_date, community_category, c.user_number, u.user_nickname, u.user_file 
+		from tbl_community c join tbl_user u on u.user_number = c.user_number
+		where community_number = #{communityNumber}
+	</select>
 	
+	<delete id="deleteNotice" parameterType="_int">
+		delete from tbl_community where community_number = #{communityNumber}
+	</delete>
+
+	<update id="modifyNotice" parameterType="communityVO">
+		update tbl_community
+		set community_title = #{communityTitle}, community_content = #{communityContent}
+		where community_number = #{communityNumber}
+	</update>	
 </mapper>
 
 

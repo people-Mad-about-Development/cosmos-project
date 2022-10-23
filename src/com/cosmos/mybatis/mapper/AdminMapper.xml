@@ -62,6 +62,8 @@
 	<select id="companySelect"  resultType = "companyVO" >
 		select company_number,company_file,company_name,company_content,company_url from tbl_company 
 	</select>
+	
+	
 	<!-- 회사 삭제 -->
 	<delete id="companyDelete" parameterType = "string">
 		delete from tbl_company where company_name = #{companyName}
@@ -71,6 +73,61 @@
 	<select id = "companyBoard" parameterType = "string" resultType = "_int">
 		select count(board_company) from tbl_board where board_company = #{boardCompany};
 	</select>
+	
+	<!-- 전체 회사 -->
+	<select id="companyAll" resultType = "_int">
+		select count(company_number) from tbl_company
+	</select>
+	
+	<!-- 회사 추가 -->
+	<insert id = "companyInsert" parameterType = "companyVO">
+		insert into tbl_company (company_name,company_file,company_url,company_content) 
+		values (#{companyName},#{companyFile},#{companyUrl},#{companyContent})
+	</insert>
+	
+<!-- 게시물 관리 -->
+	<!-- 게시물 전체 갯수 조회 -->
+		<select id="contentAll" resultType = "_int">
+			select count(board_number) from tbl_board;
+		</select>
+		
+	<!-- 게시물 전체 조회-->
+		<select id="contentAllList" resultType = "boardVO">
+			select * from tbl_board;
+		</select>
+		
+	<!-- 게시물 조회 -->
+	<select id="contentSelect" resultType="contentDTO">
+		select b.board_title, b.board_category, b.board_date, b.board_views, b.board_number, u.user_nickname,u.user_number 
+		from tbl_user u join tbl_board b on u.user_number = b.user_number
+	</select>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="contentDelete" parameterType = "_int">
+		delete from tbl_board where board_number = #{boardNumber}
+	</delete>
+	
+<!-- 댓글 관리 -->
+	<!-- 댓글 조회 -->
+	<select id = "adminReplySelect" parameterType = "replyDTO" resultType = "replyDTO">
+		select board_reply_content,board_title,board_date , user_nickname ,board_reply_number
+		from tbl_board_reply a , tbl_user b  , tbl_board c
+ 		where a.user_number = b.user_number 
+  		and  a.board_number = c.board_number order by board_date desc
+  	</select>
+	
+  	<!-- 댓글 전체 조회 -->
+  	<select id = "replyAllCount" resultType = "_int">
+  		select count(*)
+		from tbl_board_reply a,tbl_user b,tbl_board c 
+		where a.user_number = b.user_number 
+  		and  a.board_number = c.board_number
+  	</select>
+  	
+  	<!-- 댓글 삭제 -->
+  	<delete id="adminReplyDelete" parameterType = "_int">
+		delete from tbl_board_reply where board_reply_number = #{boardReplyNumber}
+	</delete>
 </mapper>
 
 

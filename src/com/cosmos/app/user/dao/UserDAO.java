@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.user.vo.CompanyVO;
+import com.cosmos.app.user.vo.FriendVO;
 import com.cosmos.app.user.vo.SkillVO;
 import com.cosmos.app.user.vo.UserCanSkillVO;
 import com.cosmos.app.user.vo.UserCompanyVO;
@@ -27,6 +28,10 @@ public class UserDAO {
 	   
 	   public boolean checkId(String userId) {
 		   return (Integer)sqlSession.selectOne("user.checkId", userId) == 1;
+	   }
+	   
+	   public UserVO userSession(String userId) {
+		   return sqlSession.selectOne("user.userSession", userId);
 	   }
 	   
 	   public UserVO userInfo(int userNumber) {
@@ -88,5 +93,27 @@ public class UserDAO {
 	   public int getSkillNumber(String skillName) {
 		   return sqlSession.selectOne("user.getSkillNumber",skillName);
 	   }
+	   public int duplicateCompany(String companyName) {
+		   return sqlSession.selectOne("user.duplicateCompany",companyName.trim());
+	   }
 	   
+	   public void addCompany(String companyName) {
+		    sqlSession.insert("user.addCompany", companyName.trim());
+	   }
+
+	   public void initProfile(UserVO userVO) {
+		   sqlSession.update("user.initProfile",userVO);
+	   }
+	   
+	   public void userDelete(int userNumber) {
+		   sqlSession.delete("user.userDelete",userNumber);
+	   }
+	   
+	   public List<UserVO> getFriends(int userNumber){
+		   return sqlSession.selectList("user.getFriends",userNumber);
+	   }
+	   
+	   public void deleteFriend(FriendVO friendVO) {
+		   sqlSession.delete("user.deleteFriend",friendVO);
+	   }
 }

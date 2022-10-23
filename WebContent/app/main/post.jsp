@@ -140,7 +140,7 @@
 									</div>
 									<section class="studyItem_info">
 										<div class="avatar_user">
-											<img class="avatar_userImg avatar_small" >
+											<img class="avatar_userImg avatar_small" src="${pageContext.request.contextPath}${board.getUserFile()}">
 											<div class="avatar_userName"><c:out value="${board.getUserNickname()}"/></div>
 										</div>
 										<div class="studyItem_viewsAndComment">

@@ -41,13 +41,25 @@ public class AdminFrontController extends HttpServlet {
 			result =new MemberListOkController().execute(req, resp);
 		}else if(request.equals("/admin/memberDeleteOk.ad")) {	// 삭제
 			result =new MemberDeleteOkController().execute(req, resp);
-		}
-		else if(request.equals("/admin/companyListOk.ad")) {	// 회사 관리 
+		}else if(request.equals("/admin/companyListOk.ad")) {	// 회사 관리 
 			result =new CompanyListOkController().execute(req, resp);
-		}
-		else if(request.equals("/admin/companyDeleteOk.ad")) {	// 회사 삭제
+		}else if(request.equals("/admin/companyDeleteOk.ad")) {	// 회사 삭제
 			result =new CompanyDeleteOkController().execute(req, resp);
+		}else if(request.equals("/admin/companyInsertOk.ad")) {	// 회사 추가
+			result =new CompanyInsertOkController().execute(req, resp);
+		}else if(request.equals("/admin/contentListOk.ad")) {	// 게시물 조회
+			result =new ContentListOkController().execute(req, resp);
+		}else if(request.equals("/admin/contentDeleteOk.ad")) {	// 게시물 조회
+			result =new ContentLDeleteOkController().execute(req, resp);
+		}else if(request.equals("/admin/replyListOk.ad")) {	// 게시물 조회
+			result =new ReplyListOkController().execute(req, resp);
+		}else if(request.equals("/admin/replyDeleteOk.ad")) {	// 게시물 조회
+			result =new ReplyDeleteOkController().execute(req, resp);
 		}
+		
+		
+		
+		
 		if(result != null) {
 			if(result.isRedirect()) {
 				resp.sendRedirect(result.getPath());

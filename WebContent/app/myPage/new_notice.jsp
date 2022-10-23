@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,26 +21,44 @@
         <!-- 2번 프로젝트에 대해 설명 해주세여  -->
         <section>
             <div class="postRegister_postContentWrapper__3BXZ6">
-                <h2 class="postRegister_text__17jg3">자료실 글쓰기</h2>
+                <h2 class="postRegister_text__17jg3">공지사항 글쓰기</h2>
             </div>
             <section>
-                <input class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="">
 
 
                 <!-- <div id="summernote" placeholder="입력해주세요" ></div> -->
-                <form method="post">
-                    <textarea id="summernote" name="editordata" placeholder=""> </textarea>
+                <form action="${pageContext.request.contextPath}/community/noticeCreateOk.co?boardNumber=1&userNumber=1" name="textForm" method="post">
+                	<input name="textTitle" class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="">
+                    <textarea id="summernote" name="textContentSummerNote" placeholder=""> </textarea>
                     <p id="letter-length" style="display: inline;"></p>/500
+                    <section class="writebutton_buttons__2qW83">	
+                    	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button>
+                    </section>
                 </form>
-
-
                 <section class="writebutton_buttons__2qW83">
-                    <button class="writebutton_cancelButton__2W7b_">취소</button>
-                    <button class="writebutton_registerButton__n_O2M">글 등록</button>
+                   	<button type="button" class="writebutton_cancelButton__2W7b_" onclick="history.back()">취소</button>
                 </section>
             </section>
     </div>
 </body>
+<script>
+
+function send(){
+	console.log("들어옴");
+   console.log(textForm.textContentSummerNote.value.length)
+   if(!textForm.textTitle.value){
+      alert("제목을 작성해주세요.");
+      return;
+   }
+   
+   if(textForm.textContentSummerNote.value.length==1){
+      alert("내용을 작성해주세요.");
+      return;
+   }
+   
+   textForm.submit();
+}
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

@@ -29,5 +29,21 @@ public class CommunityDAO {
 		   return sqlSession.selectOne("Community.countFile", communityNumber);
 	   }
 	   
+	   public void insertNotice(CommunityVO communityVO) {
+		   sqlSession.insert("Community.insertNotice", communityVO);
+	   }
+	   
+	   public CommunityDTO detailNotice(int communityNumber) {
+		   return sqlSession.selectOne("Community.detailNotice", communityNumber);
+	   }
+		 
+	   public void deleteNotice(int communityNumber) {
+		   sqlSession.delete("Community.deleteNotice", communityNumber);
+	   }
+	   
+	   public void modifyNotice(CommunityDTO communityDTO) {
+		   sqlSession.update("Community.modifyNotice", communityDTO);
+	   }
+	   
 	   
 }

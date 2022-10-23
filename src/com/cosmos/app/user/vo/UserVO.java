@@ -78,7 +78,13 @@ public class UserVO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
+	
+	public FriendDTO changeTOFriendDTO() {
+		FriendDTO friendDTO = new FriendDTO(this.userNumber, this.userNickname, this.userIntroduce, this.userCareer, this.userCareerYear, this.userFile, this.userDate, this.userId, null);
+		return friendDTO;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "UserVO [userNumber=" + userNumber + ", userNickname=" + userNickname + ", userIntroduce="

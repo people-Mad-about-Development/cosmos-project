@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardDTO;
 import com.cosmos.app.board.vo.BoardVO;
+import com.cosmos.app.board.vo.SupporterVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
 public class BoardDAO {
@@ -49,5 +50,16 @@ public class BoardDAO {
 		sqlSession.delete("Board.deleteBoard", boardNumber);
 	}
     
+    public List<BoardDAO> selectTitle() {
+    	return sqlSession.selectList("Board.selectTitle");
+    }
+    
+    public void insertSupport(SupporterVO supporterVO) {
+    	sqlSession.insert("Board.insertSupport", supporterVO);
+    }
+    
+    public void updateSupporter(BoardVO boardVO) {
+    	sqlSession.insert("Board.updateSupporter", boardVO);
+    }
 	
 }

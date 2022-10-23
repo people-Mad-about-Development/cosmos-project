@@ -48,7 +48,7 @@
                             <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">설정</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
-                            <a href="#" style="display: inline-block;">로그아웃</a>
+                            <a href="${pageContext.request.contextPath}/user/logout.us" style="display: inline-block;">로그아웃</a>
                         </li>
                     </ul>
                 </div><!-- 생성 -->
@@ -134,16 +134,15 @@
     
     
     	
-     listOk(); 
     
+     listOk(); 
     		/* 알람함 리스트 (답변이 왔을때) */
   	function listOk() {
-		console.log("ajax 들어옴")
 		$.ajax({
 			url: "/main/alarmListOk.ma",
 			type:"get",
 			contentType: "application/json; charset=utf-8",
-			success: showAlarmList
+			success: showAlarmListOk
 			
 		});
     			
@@ -159,13 +158,10 @@
     			  
     				  console.log(result.alarmList)
     				  count++;
-    				  
+    			
     				 text+= `<li class="noticeDropdownBar_noticeTitleWrapper__6ye2L false">`;                         
-    				 text+=`<a class="noticeDropdownBar_noticeLink__mBRje" `;
-    				 text+=`href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >`;	
-    				 if(result.inquiryStatus=="complete"){
+    				 text+=`<a class="noticeDropdownBar_noticeLink__mBRje"`+`href="${pageContext.request.contextPath}/app/inquiry/inquiryBoard.jsp" >`;	
     				 text+=`+<span class="noticeListOn">문의 답변이 달렸습니다</span>+`;
-    				 }
     				 text+=`</a>`;	
     				 text+=`</li>`;	
     			  

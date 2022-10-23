@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/newPage.css"> 
 </head>
 <body>
+
 <form action="${pageContext.request.contextPath}/board/writeOk.bo" method="post" name="newPage">
 	<div id="root">
         <div class="postRegister_postWrapper__1s7mv">
@@ -94,59 +95,10 @@
                     <!-- 모집 인원 -->
                     <li class="postinfo_listItem__OFhXr">
                         <label class="selectbox_labelText__3Q9iz" for="onoffline">모집 인원</label>
-                        <div class="css-2b097c-container css_newT1">
-                            <span aria-live=" polite" aria-atomic="false" aria-relevant="additions text"
-                                class="css-7pg0cj-a11yText"></span>
-                            <div class="select__control css-1iewm1a-control ">
-                                <div class="select__value-container css-1hwfws3">
-                                    <!-- 인원 미정 ~ 10 명 이상 바  -->
-                                    <div name="RecruitNumber" class="select__placeholder css-1wa3eu0-placeholder" >인원 미정~10명 이상</div>
-                                    <input style="display:none !important;" name="boardRecruitNumber">
-                                    <div class="css-1g6gooi">
-                                        <div class="select__input" style="display: inline-block;">
-                                            <input autocapitalize="none" autocomplete="off" autocorrect="off"
-                                                id="react-select-3-input" spellcheck="false" tabindex="0" type="text"
-                                                aria-autocomplete="list" value=""
-                                                style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
-                                            <div
-                                                style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: Arial; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="select__indicators css-1wy0on6">
-                                    <span class="select__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                    <div class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
-                                        aria-hidden="true">
-                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true"
-                                            focusable="false" class="css-8mmkcg">
-                                            <path
-                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 모집인원 더보기 버튼 누르면 나오는 div 마지막  -->
-                            <div class="select__menu css-26l3qy-menu newInAction">
-                                <div class="select__menu-list css-11unzgr">
-                                    <div class="select__option select__option--is-focused css-1n7v3ny-option" id="react-select-3-option-0" tabindex="-1">인원 미정</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1">1</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-2" tabindex="-1">2</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-3" tabindex="-1">3</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-4" tabindex="-1">4</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-5" tabindex="-1">5</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-6" tabindex="-1">6</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">7</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-8" tabindex="-1">8</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-9" tabindex="-1">9</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-10" tabindex="-1">10명 이상</div>
-                                </div>
-                            </div>
-
-                            <input name="onoffline" type="hidden" value="">
+                        <div class="postinfo_contactInput__3nnsb" style="margin:0 auto;">
+                            <input type="text" class="input_customInput__1e1Il" name="boardRecruitNumber" autocomplete="off" placeholder="인원 수는 숫자만 입력해주세요" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
+                      
                     </li>
                 </ul>
 
@@ -770,13 +722,6 @@
                                     	</c:when>
                                     </c:choose>
                                     
-                                    <!-- <div class="select__option css-yt9ioa-option" id="react-select-3-option-1" tabindex="-1">네이버</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-2" tabindex="-1">카카오</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-3" tabindex="-1">쿠팡</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-4" tabindex="-1">배달의민족</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-5" tabindex="-1">라이엇</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-6" tabindex="-1">넥슨</div>
-                                    <div class="select__option css-yt9ioa-option" id="react-select-3-option-7" tabindex="-1">토스</div> -->
                                 </div>
                             </div>
                             
@@ -820,17 +765,8 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/newPage.js"></script>
 <script>
-	/* var $JavaScript = document.getElementsByName('JavaScript'); */
-	var $JavaScript = $("#react-select-1-option-1");
-	var $Exit = $(".css-8mmkcg");
-	
-	$JavaScript.on("click", function(){
-		newPage.likeLanguages.value = $JavaScript[0].innerText;	
-	})
-		
-	$Exit.on("click", function(){
-		newPage.likeLanguages.value = "";	
-	})
+	let dateElement = document.getElementById('mui-1');
+	let date = new Date().toISOString().substring(0, 10);
 	
 	function send(){
 	  	if(!newPage.boardTitle.value){
@@ -842,16 +778,29 @@
 	       alert("내용을 작성해주세요.");
 	       return;
 	    }
+	    if(!newPage.boardContact.value){
+	       alert("연락 방법(링크)을 작성해주세요.");
+	       return;
+	    }
+	    if(!newPage.boardRecruitNumber.value){
+	    	alert("모집 인원을 입력해주세요.");
+		    return;
+	    }else if(newPage.boardRecruitNumber.value > 100){
+	    	alert("모집 인원은 최대 100명까지 입력할 수 있습니다.");
+	    	return;
+	    }
 	    
-	    
+	    if(dateElement.value < date) {
+	        alert('시작 예정일은 지난 날짜로 선택 할 수 없습니다.');
+	        dateElement.value = date;
+	        return;
+	    }
 	    var boardCategory= document.getElementsByName('Category');
-	    var boardRecruitNumber= document.getElementsByName('RecruitNumber');
 	    var boardWay= document.getElementsByName('Way');
 	    var boardPeriod= document.getElementsByName('Period');
 	    var boardCompany= document.getElementsByName('Company');
 	
 	    newPage.boardCategory.value = boardCategory[0].innerText;
-	    newPage.boardRecruitNumber.value = boardRecruitNumber[0].innerText;
 	    newPage.boardWay.value = boardWay[0].innerText;
 	    newPage.boardPeriod.value = boardPeriod[0].innerText;
 	    newPage.boardCompany.value = boardCompany[0].innerHTML;
@@ -862,10 +811,6 @@
 	    	alert("모집 구분을 선택해주세요.");
 		    return;
 	    }
-	    if(newPage.boardRecruitNumber.value =="인원 미정~10명 이상"){
-	    	alert("모집 인원을 선택해주세요.");
-		    return;
-	    }
 	    if(newPage.boardWay.value =="온라인/오프라인"){
 	    	alert("진행 방식을 선택해주세요.");
 		    return;
@@ -874,6 +819,7 @@
 	    	alert("진행 기간을 선택해주세요.");
 		    return;
 	    }
+	    
 	    if(newPage.boardCompany.value =="회사 선택"){
 	    	alert("회사를 선택해주세요.");
 		    return;

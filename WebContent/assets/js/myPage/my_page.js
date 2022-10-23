@@ -139,10 +139,30 @@
         };
 
     });
-        $imgDelete.click(function(){
-            $userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
-        });
-    
+
+
+	function Initprofile(){
+		var defaultProfile = "/assets/images/fix/cosmosProfile.png";
+		
+		$.ajax({
+			url:"/user/initProfileOk.us",
+			data:{default:defaultProfile},
+			type:"post",
+			success:function(){
+				alert("프로필사진이 초기화 되었습니다.")
+		 		$userImg.attr('src', pageURI+"/assets/images/fix/cosmosProfile.png");
+			}
+			
+		})
+		
+		
+		
+		
+		
+		
+	}
+
+
     
     var $list1 = $(".select_menu1");
     var $list1_btn = $("#select_btn");
@@ -296,8 +316,8 @@ $(this).remove();
 	//관심 기술
 	$(".select_menu1").on("click",".skillTotalList",function(){
 		$(".select_menu1").addClass("list1");
-		$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text()+`" name="interestSkill">
-			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text()+`</div>`+
+		$(".InterestSkillWrapper_2f").append(`<div class="css-multiValue select__multi-value up_list" id="box1"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="interestSkill">
+			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text().trim()+`</div>`+
 			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove InterestExitBye_2f">`
 			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
 			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
@@ -312,8 +332,8 @@ $(this).remove();
 	//사용가능 언어
 		$(".select_menu2").on("click",".skillTotalList2",function(){
 		$(".select_menu2").addClass("list2");
-		$(".CanSkillWrapper_23f").append(`<div class="css-multiValue select__multi-value down_list" id="boxes2"><input type="hidden" type="text" value="`+$(this).text()+`" name="CanSkill">
-			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text()+`</div>`+
+		$(".CanSkillWrapper_23f").append(`<div class="css-multiValue select__multi-value down_list" id="boxes2"><input type="hidden" type="text" value="`+$(this).text().trim()+`" name="CanSkill">
+			<div class="css-12jo7m5 select__multi-value__label">`+$(this).text().trim()+`</div>`+
 			`<div type="button" id="x_btn1" class="css-xb97g8 select__multi-value__remove CanSkillExitBye_23f">`
 			+`<svg height="14" width="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">`
 			+`<path d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path>`
@@ -399,7 +419,7 @@ function company(){
 	wrapperbutton.before(
 		`<span class="companyBarWrapper">`
 		+`<li class="companyBar companyBarList">`
-		+`<img src="`+pageURI+`/assets/images/fix/cosmosProfile.png" alt="" class="languageBarLogo">`
+		+`<img src="`+pageURI+`/assets/images/company/company.png" alt="" class="languageBarLogo">`
 		+`<span class="x" id="x1">ⓧ</span>`
 		+`<span>`+content.trim()+`</span></li>`
 		+`<input type="hidden" name="companyName" value="`+ content.trim()+`">`
@@ -442,3 +462,7 @@ function myPageUpdateSubmit(){
 
 	mypageForm.submit();
 }
+function deleteUser(){
+	location.href=pageURI+"/user/userDeleteOK.us"
+}
+

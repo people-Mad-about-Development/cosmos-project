@@ -26,7 +26,7 @@ public class UpdateOkController implements Execute {
 		req.setCharacterEncoding("UTF-8");
 		
 		/* int loginNumber = req.getSession().getAttribute(""); */
-		int loginNumber = 2;
+		int loginNumber =  (Integer)req.getSession().getAttribute("sessionUserNumber");
 		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 		int fileSize = 1024 * 1024 * 5; //5M 
 		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "UTF-8", new DefaultFileRenamePolicy()); 
@@ -36,6 +36,8 @@ public class UpdateOkController implements Execute {
 		String [] interestSkills = multipartRequest.getParameterValues("interestSkill");
 		String [] CanSkills = multipartRequest.getParameterValues("CanSkill");
 		
+		Result result = new Result();		
+				
 		UserVO userVO = new UserVO();
 		UserCanSkillVO userCanSkillVO = null;
 		UserInterestSkillVO userInterestSkillVO = null;
@@ -54,59 +56,59 @@ public class UpdateOkController implements Execute {
 			String fileName = fileNames.nextElement();
 			String fileOriginalName = multipartRequest.getOriginalFileName(fileName);
 			String fileSystemName = multipartRequest.getFilesystemName(fileName);
-			System.out.println(fileOriginalName);
-			System.out.println(fileOriginalName=="Null");
-			System.out.println(fileOriginalName=="null");
-			System.out.println(fileOriginalName==null);
+		
+			if(fileOriginalName==null) {
+				userVO.setUserFile(originSrc);
+			}else {
+				userVO.setUserFile("/upload/"+fileSystemName);
+			}
 		}
-		
-		/*
-		 * userVO.setUserFile("/upload/"+fileOriginalName);
-		 * 
-		 * //유저 정보수정 userDAO.updateUser(userVO); //유저각각의 스킬과 회사 db 수정 사전 작업
-		 * userDAO.initCanSkill(loginNumber); userDAO.initCompany(loginNumber);
-		 * userDAO.initInterestSkill(loginNumber); //유저 랑 연결된 테이블 수정 시작
-		 * 
-		 * for (String company : companyNames) { userCompanyVO=new UserCompanyVO();
-		 * userCompanyVO.setUserNumber(loginNumber);
-		 * userCompanyVO.setCompanyNumber(userDAO.getCompanyNumber(company.trim()));
-		 * userDAO.insertUserCompany(userCompanyVO); }
-		 * 
-		 * for (String canSkill : CanSkills) { userCanSkillVO= new UserCanSkillVO();
-		 * userCanSkillVO.setUserNumber(loginNumber);
-		 * userCanSkillVO.setSkillNumber(userDAO.getSkillNumber(canSkill));
-		 * userDAO.insertUserCanSkill(userCanSkillVO); }
-		 * 
-		 * for (String interestSkill : interestSkills) { userInterestSkillVO=new
-		 * UserInterestSkillVO(); userInterestSkillVO.setUserNumber(loginNumber);
-		 * userInterestSkillVO.setSkillNumber(userDAO.getSkillNumber(interestSkill)); }
-		 * 
-		 * 
-		 */
-		
-		
-		
-		/*
-		 * System.out.println("----"); String userFile =
-		 * multipartRequest.getParameter("userImgFile"); System.out.println("----");
-		 * System.out.println(userFile); System.out.println("----");
-		 * System.out.println(userNickname); System.out.println("---");
-		 * System.out.println(userIntroduce); System.out.println("---");
-		 * Arrays.stream(companyNames).forEach(System.out::print);
-		 * System.out.println("---");
-		 * Arrays.stream(interestSkills).forEach(System.out::print);
-		 * System.out.println("---");
-		 * Arrays.stream(CanSkills).forEach(System.out::print);
-		 * System.out.println("---");
-		 */
-				 
-		
-		
-		
-		
+		  
+		  //유저 정보수정 
+		  userDAO.updateUser(userVO); 
+		  //유저각각의 스킬과 회사 db 수정 사전 작업
+		  userDAO.initCanSkill(loginNumber); 
+		  userDAO.initCompany(loginNumber);
+		  userDAO.initInterestSkill(loginNumber);
+		  
+		  
+		  //유저 랑 연결된 테이블 수정 시작
+		  //회사 추가
+		  
+		  for (String cor : companyNames) {
+			if(userDAO.duplicateCompany(cor.trim())==0) {
+				userDAO.addCompany(cor.trim());
+			}
+		}
+		  
+		  
+		  //유저 회사 추가
+		  for (String company : companyNames) { 
+		  userCompanyVO=new UserCompanyVO();
+		  userCompanyVO.setUserNumber(loginNumber);
+		  userCompanyVO.setCompanyNumber(userDAO.getCompanyNumber(company.trim()));
+		  userDAO.insertUserCompany(userCompanyVO); 
+		  
+		  }
+		  
+		  for (String canSkill : CanSkills) { userCanSkillVO= new UserCanSkillVO();
+		  userCanSkillVO.setUserNumber(loginNumber);
+		  userCanSkillVO.setSkillNumber(userDAO.getSkillNumber(canSkill.trim()));
+		  userDAO.insertUserCanSkill(userCanSkillVO); }
+		  
+		  for (String interestSkill : interestSkills) { 
+				 userInterestSkillVO=new UserInterestSkillVO();
+				 userInterestSkillVO.setUserNumber(loginNumber);
+				 userInterestSkillVO.setSkillNumber(userDAO.getSkillNumber(interestSkill.trim()));
+				 userDAO.insertUserInterestSkill(userInterestSkillVO);
+			  }
+		  
+		  
+		 
+		 result.setPath("/user/userInfo.us");
 		
 		
-		return null;
+		return result;
 	}
 
 }

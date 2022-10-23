@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -139,12 +141,12 @@
 							</a>
 							<ul>
 								<li class="  " data-title="memberList">
-									<a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">   <!-- 이동할 페이지 url 작성 -->
+									<a href="${pageContext.request.contextPath}/admin/memberListOk.ad">   <!-- 이동할 페이지 url 작성 -->
 										<span class="title">사용자 목록</span>
 									</a>
 								</li>
 								<li class="  " data-title="companyList">  <!-- a태그의 클래스명이 li 태그 클래스에 출가된다. 활성화 된 클래스 표시(active) -->
-									<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
+									<a href="${pageContext.request.contextPath}/admin/companyListOk.ad">  <!-- 해당 페이지의 목록에 active가 들어가야지 음영처리가된다. -->
 										<span class="title">회사 목록</span>
 									</a>
 								</li>
@@ -273,7 +275,7 @@
 										<div class="card">
 											<div class="card-head" id="card-head">
 												<header class="small">전체 댓글
-													<span class="text-primary" id="total-member-count">1</span>
+													<span class="text-primary" id="total-member-count">${all}</span>
 												</header>
 											</div>
 	
@@ -293,7 +295,9 @@
 														<li class="commentDate">작성일</li>
 														<li class="action"></li>
 													</ul>
-	
+												<c:choose>
+												<c:when test="${replytList != null and fn:length(replytList)>0}">
+													<c:forEach var="reply" items="${replytList}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check">
 															<div class="checkbox checkbox-styled no-margin">
@@ -304,10 +308,10 @@
 															</div>
 														</li>
 	
-														<li class="commentNick"><a href="#">성윤성윤</a></li><!-- 작성사 상세 페이지 이동 -->
-														<li class="comment">COSMOS 화이팅! 앞으로도 힘냅시다! 2팀짱</li>														
-														<li class="commentPost"><a href="#">[프로젝트] 게시글 테스트입니다</a></li> <!-- 작성한 게시글 페이지 이동 -->														
-														<li class="commentDate">2022-10-10 15:17</li>			
+														<li class="commentNick"><a href="#">${reply.getUserNickname()}</a></li><!-- 작성사 상세 페이지 이동 -->
+														<li class="comment">${reply.getBoardReplyContent()}</li>														
+														<li class="commentPost"><a href="#">${reply.getBoardTitle()}</a></li> <!-- 작성한 게시글 페이지 이동 -->														
+														<li class="commentDate">${reply.getBoardDate()}</li>			
 						
 														<li class="action">
 															<div class="dropdown">
@@ -316,7 +320,7 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
+																		<a onclick="location.href='${pageContext.request.contextPath}/admin/replyDeleteOk.ad?boardReplyNumber=${reply.getBoardReplyNumber()}'">
 																			삭제
 																		</a>
 																	</li>																												
@@ -324,8 +328,11 @@
 															</div>
 														</li>
 													</ul>
+														</c:forEach>
+																		</c:when>
+																	</c:choose>	
 												</div>
-												<nav class="text-center" id="paginate"></nav>
+												<!-- <nav class="text-center" id="paginate"></nav> -->
 											</div>
 										</div>
 									</div>

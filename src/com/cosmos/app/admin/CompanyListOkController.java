@@ -20,22 +20,24 @@ public class CompanyListOkController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
 		req.setCharacterEncoding("UTF-8");
 	    resp.setCharacterEncoding("UTF-8");
 	    resp.setContentType("text/html; charset=utf-8");
 	    
 	    AdminDAO adminDAO = new AdminDAO();
-	    CompanyVO companyVO = new CompanyVO();
+//	    CompanyVO companyVO = new CompanyVO();
 	    BoardVO boardVO = new BoardVO();
+//	    List<CompanyBoardDTO> companyBoardDTO = new ArrayList<CompanyBoardDTO>();
 //	    CompanyDTO companyDTO = new CompanyDTO();
 	    Result result = new Result();
-//	    List<CompanyDTO> companyVOList = new ArrayList<CompanyDTO>();
 	    
-//	    String boardCompany = req.getParameter(boardCompany);
+	    String boardCompany = req.getParameter("boardCompany");
 	    
+	    req.setAttribute("all",adminDAO.companyAll());
 	    req.setAttribute("companies", adminDAO.companySelect());
-//	    req.setAttribute("companies", adminDAO.companyBoard(boardCompany));
+//	    req.setAttribute("boardCompany", adminDAO.companyBoard(boardCompany));
+	    
+	    System.out.println(boardCompany);
 	    
 
 	    result.setPath(req.getContextPath() + "/app/admin/companyList.jsp");
