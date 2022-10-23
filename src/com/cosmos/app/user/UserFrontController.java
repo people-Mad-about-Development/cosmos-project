@@ -73,6 +73,8 @@ public class UserFrontController extends HttpServlet{
 	      }else if(request.equals("/user/FriendInfoList.us")) {
 	    	  result = new Result();
 	    	  result.setPath("/app/myPage/friend.jsp");
+	      }else if(request.equals("/user/FriendDetail.us")) {
+	    	  result = new FriendDetailController().execute(req, resp);
 	      }
 		
 		if(result != null) {

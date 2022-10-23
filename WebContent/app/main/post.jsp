@@ -97,7 +97,6 @@
 <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="${pageContext.request.contextPath}/assets/images/banner/001.gif" alt="" style="width:1904px;"></div>
         <c:choose>
 			<c:when test="${banner != null and fn:length(banner) > 0}">
 	            <c:forEach var="banner" items="${banner}">
