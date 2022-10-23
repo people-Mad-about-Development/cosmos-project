@@ -37,7 +37,7 @@
                 <div class="question-list-container">
                     <div class="post-container-header">
                         <h4 style="display: inline;">자료실</h4>
-                        <button class="all-button write-btn" id="second-btn">
+                        <button class="all-button write-btn" id="second-btn" onclick="location.href = '${pageContext.request.contextPath}/community/libraryCreate.co'">
                             <span class="write-icon"><svg id="icon" width="16" height="14"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path fill="#ffffff" fill-rule="evenodd"
@@ -54,11 +54,11 @@
                 		<c:forEach var="list" items="${LibList}">
 			                <ul class="question-list">
 			                    <li class="question-container">
-			                        <a href="#">
+			                        <a href="${pageContext.request.contextPath}/community/libraryDetailOk.co?boardNumber=${list.getBoardNumber()}&communityNumber=${list.getCommunityNumber()}&userNumber=1">
 			                            <div class="question">
 			                                <div class="question-info">
 			                                    <div class="question-title">
-			                                        <h3 class="title-text"><c:out value="${list.getCommunityTitle()}"/>&nbsp;·&nbsp;[<c:out value="${list.getCountFile()}"/>]</h3>
+			                                        <h3 class="title-text"><c:out value="${list.getCommunityTitle()}"/>&nbsp;&nbsp;[<c:out value="${list.getCountFile()}"/>]</h3>
 			                                    </div>
 			                                    <p class="question-body">
 			                                        <c:out value="${list.getCommunityContent()}"/>

@@ -15,7 +15,6 @@
 		<typeAlias type="com.cosmos.app.community.vo.CommunityVO" alias="communityVO"/>
 		<typeAlias type="com.cosmos.app.community.vo.CommunityDTO" alias="communityDTO"/>
 		<typeAlias type="com.cosmos.app.community.vo.CommunityReplyVO" alias="communityReplyVO"/>
-		<typeAlias type="com.cosmos.app.community.vo.FileVO" alias="fileVO"/>
 		<typeAlias type="com.cosmos.app.inquiry.vo.InquiryVO" alias="inquiryVO"/>
 		<typeAlias type="com.cosmos.app.inquiry.vo.InquiryDTO" alias="inquiryDTO"/>
 		<typeAlias type="com.cosmos.app.main.vo.AlarmVO" alias="alarmVO"/>
@@ -30,6 +29,7 @@
 		<typeAlias type="com.cosmos.app.admin.vo.AdminDTO" alias="adminDTO"/>
 		<typeAlias type="com.cosmos.app.admin.vo.ContentDTO" alias="contentDTO"/>
 		<typeAlias type="com.cosmos.app.admin.vo.ReplyDTO" alias="replyDTO"/>
+		<typeAlias type="com.cosmos.app.file.vo.FileVO" alias="fileVO"/>
 	</typeAliases>
 
 	<environments default="mysql">
@@ -53,6 +53,7 @@
 		<mapper resource="com/cosmos/mybatis/mapper/AdminMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/SearchMapper.xml"/>
 		<mapper resource="com/cosmos/mybatis/mapper/AlarmMapper.xml"/>
+		<mapper resource="com/cosmos/mybatis/mapper/FileMapper.xml"/>
 	</mappers>
 	
 </configuration>

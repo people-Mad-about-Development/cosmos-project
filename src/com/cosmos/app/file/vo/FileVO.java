@@ -1,4 +1,4 @@
-package com.cosmos.app.community.vo;
+package com.cosmos.app.file.vo;
 
 public class FileVO {
 

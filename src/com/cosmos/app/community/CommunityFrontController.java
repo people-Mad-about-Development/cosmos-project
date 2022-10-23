@@ -44,7 +44,7 @@ public class CommunityFrontController extends HttpServlet{
 		}else if(request.equals("/community/noticeModifyOk.co")){	// 공지사항 수정 
 			result=new noticeModifyOkController().execute(req, resp);
 		
-		}else if(request.equals("/community/noticeModify.co")) {
+		}else if(request.equals("/community/noticeModify.co")) {	// 공지사항 수정 페이지로 이동
 			result=new noticeModifyController().execute(req, resp);
 			
 		}else if(request.equals("/community/noticeDetailOk.co")){	// 공지사항 상세페이지 
@@ -66,9 +66,15 @@ public class CommunityFrontController extends HttpServlet{
 		}else if(request.equals("/community/libraryModifyOk.co")){	// 자료실 수정 
 			result=new libraryModifyOkController().execute(req, resp);
 		
+		}else if(request.equals("/community/libraryModify.co")) {	// 공지사항 수정 페이지로 이동
+			result=new libraryModifyController().execute(req, resp);
+			
+		}else if(request.equals("/community/libraryDetailOk.co")){	// 자료실 상세페이지 
+			result=new libraryDetailOkController().execute(req, resp);
+		
 		}else if(request.equals("/community/libraryCreate.co")){	// 자료실 글작성 페이지로 이동  
 			result = new Result();
-			result.setPath("/app/myPage/new_lib.jsp?userNumber=" + req.getSession().getAttribute("userNumber"));
+			result.setPath("/app/myPage/new_lib.jsp?boardNumber=1&userNumber=1"/*req.getSession().getAttribute("userNumber"))*/);
 	
 		}
 		

@@ -71,6 +71,16 @@
      <servlet-name>AdminFrontController</servlet-name>
      <url-pattern>*.ad</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>FileFrontController</servlet-name>
+     <servlet-class>com.cosmos.app.file.FileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>FileFrontController</servlet-name>
+     <url-pattern>*.file</url-pattern>
+  </servlet-mapping>
 
 
   

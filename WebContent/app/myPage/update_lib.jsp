@@ -20,14 +20,14 @@
         <!-- 2번 프로젝트에 대해 설명 해주세여  -->
         <section>
             <div class="postRegister_postContentWrapper__3BXZ6">
-                <h2 class="postRegister_text__17jg3">자료실 글쓰기</h2>
+                <h2 class="postRegister_text__17jg3">자료실 수정하기</h2>
             </div>
             <section>
 
 
                 <!-- <div id="summernote" placeholder="입력해주세요" ></div> -->
-                <form action="${pageContext.request.contextPath}/community/libraryCreateOk.co?boardNumber=1&userNumber=1" name="textForm" method="post" enctype="multipart/form-data">
-                	<input name="textTitle" class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="">
+                <form action="${pageContext.request.contextPath}/community/libraryModifyOk.co?communityNumber=${text.getCommunityNumber()}&boardNumber=1&userNumber=1" name="textForm" method="post" enctype="multipart/form-data">
+                	<input name="textTitle" class="input_customInput__1e1Il" id="input" placeholder="글 제목을 입력해주세요!" value="${text.getCommunityTitle()}">
                 	
                 	<div style="display:flex;">
                               <div class="files">
@@ -59,7 +59,7 @@
                               </div>
                            </div>
                 	
-                    <textarea id="summernote" name="textContentSummerNote" placeholder=""> </textarea>
+                    <textarea id="summernote" name="textContentSummerNote" placeholder="">${text.getCommunityContent()}</textarea>
                     <p id="letter-length" style="display: inline;"></p>/500
                     <section class="writebutton_buttons__2qW83">	
                     	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button>
