@@ -22,8 +22,10 @@ public class UserInfoController implements Execute {
 	     resp.setCharacterEncoding("UTF-8");
 	     resp.setContentType("text/html; charset=utf-8");
 		 Result result = new Result();
-		 int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
-	/*	 int userNumber = 3;*/
+			/*
+			 * int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
+			 */
+		 int userNumber = 3;
 		UserDAO userDAO = new UserDAO();
 		JSONArray repliesCan = new JSONArray();
 		JSONArray repliesInterest = new JSONArray();
