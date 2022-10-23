@@ -34,6 +34,7 @@ public class AlarmListOkController implements Execute {
 		
 		Result result = new Result();
 		req.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8");
 		
 		// 문의 사항 답변 목록 
@@ -60,10 +61,13 @@ public class AlarmListOkController implements Execute {
 		
 		
 	    replies.put(count);
-		out.print(replies.toString());
+		System.out.println(replies);
+	    out.print(replies.toString());
 		
 		result.setPath(req.getContextPath() + "/app/fix/header_notice.jsp");
+		
 		out.close();
+		
 		return null;
 		
 		
