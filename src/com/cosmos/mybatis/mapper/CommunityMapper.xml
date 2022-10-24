@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Community">
+
+	<!-- 공지 사항 리스트 가져오기 -->
 	<select id="selectNoticeList" parameterType="_int" resultType="communityDTO">
 		select community_number, community_title, community_content, community_date, community_category, c.user_number, board_number, u.user_nickname
 		from tbl_community c join tbl_user u on u.user_number = c.user_number 
 		where board_number = #{boardNumber} and community_category = "announcement"
 	</select>
 	
+	<!-- 자료실 리스트 가져오기 -->
 	<select id="selectLibList" parameterType="_int" resultType="communityDTO">
 		select c.community_number, community_title, community_content, community_date, community_category, c.user_number, board_number, u.user_nickname
 		from tbl_community c join tbl_user u on u.user_number = c.user_number
 		where board_number = #{boardNumber} and community_category = "library"
 	</select>
 	
+	<!-- 자료실 첨부파일 갯수 가져오기 -->
 	<select id="countFile" parameterType="_int" resultType="_int">
 		select count(file_name) 
 		from tbl_file
 		where community_number = #{communityNumber}
 	</select>
 	
+	<!-- 공지 사항 insert -->
 	<insert id="insertNotice" parameterType="communityVO">
 		insert into tbl_community
 		(community_title, community_content, community_category, user_number, board_number)
 		values (#{communityTitle}, #{communityContent}, 'announcement', #{userNumber}, #{boardNumber})
 	</insert>
 	
+	<!-- 공지 사항 상세 보기 -->
 	<select id="detailNotice" parameterType="_int" resultType="communityDTO">
 		select community_number, community_title, community_content, community_date, community_category, c.user_number, u.user_nickname, u.user_file 
 		from tbl_community c join tbl_user u on u.user_number = c.user_number
 		where community_number = #{communityNumber}
 	</select>
 	
+	<!-- 공지 사항 삭제 -->
 	<delete id="deleteNotice" parameterType="_int">
 		delete from tbl_community where community_number = #{communityNumber}
 	</delete>
 
+	<!-- 공지 사항 수정 -->
 	<update id="modifyNotice" parameterType="communityVO">
 		update tbl_community
 		set community_title = #{communityTitle}, community_content = #{communityContent}
 		where community_number = #{communityNumber}
 	</update>	
 
+	<!-- 자료실 insert -->
 	<insert id="insertLibrary" parameterType="communityVO">
 		<selectKey resultType="int" keyProperty="communityNumber" order="AFTER">
 			SELECT LAST_INSERT_ID()
@@ -50,16 +59,19 @@
 		values (#{communityTitle}, #{communityContent}, 'library', #{userNumber}, #{boardNumber})
 	</insert>
 	
+	<!-- 자료실 삭제 -->
 	<delete id="deleteLibrary" parameterType="_int">
 		delete from tbl_community where community_number = #{communityNumber}
 	</delete>
 	
+	<!-- 자료실 상세 보기 -->
 	<select id="detailLibrary" parameterType="_int" resultType="communityDTO">
 		select community_number, community_title, community_content, community_date, community_category, c.user_number, u.user_nickname, u.user_file 
 		from tbl_community c join tbl_user u on u.user_number = c.user_number
 		where community_number = #{communityNumber}
 	</select>
 	
+	<!-- 자료실 수정 -->
 	<update id="modifyLibrary" parameterType="communityVO">
 		update tbl_community
 		set community_title = #{communityTitle}, community_content = #{communityContent}

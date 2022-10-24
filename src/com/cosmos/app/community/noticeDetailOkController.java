@@ -21,6 +21,7 @@ public class noticeDetailOkController implements Execute {
 		
 		int communityNumber = Integer.valueOf(req.getParameter("communityNumber"));
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		
 		communityDTO = communityDAO.detailNotice(communityNumber);
 		communityDTO.setBoardNumber(boardNumber);

@@ -37,9 +37,9 @@
 	                <img class="studyContent_userImg" src="${pageContext.request.contextPath}${board.getUserFile()}" style="cursor:default;">
 	                <div class="studyContent_userName" style="cursor:default; pointer-events : none;">${board.getUserNickname()}</div>
 	                <div class="studyContent_registeredDate">${board.getBoardDate()}</div>
-	                 <a href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" class="community_go">
-	                	커뮤니티
-	                </a>
+	                 <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=${board.boardNumber}" class="community_go">
+                      커뮤니티
+                   </a>
                 </div>
                 
                 <c:if test="${sessionUserNumber eq board.getUserNumber()}">

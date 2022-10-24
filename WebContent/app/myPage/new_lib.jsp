@@ -12,9 +12,15 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/new_text.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 
 <body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
 
     <div class="postRegister_postWrapper__1s7mv">
         <!-- 2번 프로젝트에 대해 설명 해주세여  -->
@@ -66,7 +72,13 @@
                     </section>
                 </form>
                 <section class="writebutton_buttons__2qW83">
-                   	<button type="button" class="writebutton_cancelButton__2W7b_" onclick="history.back()">취소</button>
+                   	<button type="button" class="writebutton_cancelButton__2W7b_" onclick="moveList()">취소</button>
+                   	<script>
+                   	function moveList(){
+	                   	$(".dimmed_233vf").css("display","grid");
+	                   	history.back()
+                   	}
+				 </script>
                 </section>
             </section>
     </div>
@@ -78,14 +90,16 @@
 <script>
 
 function send(){
-	console.log("들어옴");
+	$(".dimmed_233vf").css("display","grid");
    console.log(textForm.textContentSummerNote.value.length)
    if(!textForm.textTitle.value){
+	   $(".dimmed_233vf").css("display","none");
       alert("제목을 작성해주세요.");
       return;
    }
    
    if(textForm.textContentSummerNote.value.length==1){
+	   $(".dimmed_233vf").css("display","none");
       alert("내용을 작성해주세요.");
       return;
    }

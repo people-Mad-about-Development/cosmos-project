@@ -11,21 +11,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 자료실</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/my_project.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 
 <body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
     <main id="main">
         <section class="community-body">
             <nav class="community-body__navigation">
                 <ul class="community-aside">
                     <li class="community-aside_group">
-                        <h6 class="community-aside__group-name">코스모스</h6>
+                        <a class="community-aside__group-name" onclick="moveDetail()">상세 페이지로</a>
+                        <script >
+                           	function moveDetail(){
+                           	$(".dimmed_233vf").css("display","grid");
+                           	location.href= "${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${boardNumber}"
+                           	}
+						</script>
                         <ul class="community-aside__menu-list">
                             <li class="community-aside__menu community-aside__menu--selected">
                             </li>
                             <li class="community-aside__menu ">
-                                <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=1&userNumber=1"><span>공지사항</span></a>
+                                <a  onclick="noticeMove()"><span>공지사항</span></a>
                             </li>
+                            <script >
+                            	function noticeMove(){
+                            	$(".dimmed_233vf").css("display","grid");
+                            	location.href= "${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=${boardNumber}&userNumber=${userNumber}"
+                            	}
+							</script>
+                            
                             <li class="community-aside__menu ">
                                 <a href="" style="color: #80008087;"><span>자료실</span></a>
                             </li>
@@ -37,7 +56,7 @@
                 <div class="question-list-container">
                     <div class="post-container-header">
                         <h4 style="display: inline;">자료실</h4>
-                        <button class="all-button write-btn" id="second-btn" onclick="location.href = '${pageContext.request.contextPath}/community/libraryCreate.co'">
+                        <button class="all-button write-btn" id="second-btn" onclick="libPageMove()">
                             <span class="write-icon"><svg id="icon" width="16" height="14"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path fill="#ffffff" fill-rule="evenodd"
@@ -47,6 +66,14 @@
                                 </svg></span>
                             <span></span>
                         </button>
+                        
+                        <script >
+                        function libPageMove(){
+                        	 $(".dimmed_233vf").css("display","grid");
+                             location.href = '${pageContext.request.contextPath}/community/libraryCreate.co'
+                        }
+                       
+                        </script>
                     </div>
                 </div>
                 <c:choose>
@@ -54,7 +81,14 @@
                 		<c:forEach var="list" items="${LibList}">
 			                <ul class="question-list">
 			                    <li class="question-container">
-			                        <a href="${pageContext.request.contextPath}/community/libraryDetailOk.co?boardNumber=${list.getBoardNumber()}&communityNumber=${list.getCommunityNumber()}&userNumber=1">
+			                        <a onclick="detailLib()">
+			                            <script >
+					                        function detailLib(){
+					                        	 $(".dimmed_233vf").css("display","grid");
+					                             location.href = '${pageContext.request.contextPath}/community/libraryDetailOk.co?boardNumber=${list.getBoardNumber()}&communityNumber=${list.getCommunityNumber()}&userNumber=${list.getUserNumber()}'
+					                        }
+				                       
+				                        </script>
 			                            <div class="question">
 			                                <div class="question-info">
 			                                    <div class="question-title">

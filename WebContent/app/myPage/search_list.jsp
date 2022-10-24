@@ -10,10 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/search_list.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
     <title>검색 목록</title>
 </head>
 
 <body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<div class="dimmed_233vf"> 
+	<div class="dimmed_image_23fds"></div>
+</div>
     <section class="myPosts_pageWrapper">
         <div class="myPosts_myLikes">
             <main class="myPosts_main">
@@ -30,7 +36,13 @@
 				<c:choose>
 					<c:when test="${boards != null and fn:length(boards) > 0}">
 			            <c:forEach var="board" items="${boards}">   
-			                <a class="studyItem_studyItem studyItem_open" href="">
+			                <a class="studyItem_studyItem studyItem_open" onclick="moveDetail()">
+			                <script >
+	                           	function moveDetail(){
+		                           	$(".dimmed_233vf").css("display","grid");
+		                           	location.href= "${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
+	                           	}
+							</script>
 			                    <li>
 			                        <div class="studyItem_schedule">
 			                            <p class="studyItem_scheduleTitle">시작 예정일 |</p>

@@ -33,7 +33,8 @@ public class noticeCreateOkController implements Execute {
 		
 		communityDAO.insertNotice(communityVO);
 		
-		result.setPath("/community/noticeListOk.co");
+		result.setRedirect(true);
+		result.setPath(req.getContextPath()+"/community/noticeListOk.co?boardNumber=" +boardNumber);
 		
 		return result;
 	}

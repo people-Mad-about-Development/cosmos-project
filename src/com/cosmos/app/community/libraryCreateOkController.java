@@ -67,7 +67,8 @@ public class libraryCreateOkController implements Execute {
 			fileDAO.insert(fileVO);
 		}
 		
-		result.setPath("/community/libraryListOk.co");
+		result.setRedirect(true);
+		result.setPath(req.getContextPath()+"/community/libraryListOk.co?boardNumber="+boardNumber);
 		
 		return result;
 	}

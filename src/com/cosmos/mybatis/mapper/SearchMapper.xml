@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Search">
+
+	<!-- 검색 기능 -->
 	<select id="selectBoard" parameterType="string" resultType="boardDTO">
-		select board_number, board_start_date, board_title, board_category, board_way, board_recruit_number, board_period, board_views, user_nickname, user_file 
+		select board_number, board_start_date, board_title, board_category, board_way, board_recruit_number, board_period, board_views, user_nickname, user_file, u.user_number 
 		from tbl_user u join tbl_board b on u.user_number = b.user_number
 		WHERE board_title LIKE CONCAT('%',#{searchContent}, '%')
 	</select>
 	
+	<!-- 검색 창에 보일 댓글 수 -->
 	<select id="countReply" parameterType="_int" resultType="_int">
 		select count(board_reply_number)
 		from tbl_board b join tbl_board_reply  r on b.board_number = r.board_number 
 		where b.board_number = #{boardNumber};
 	</select>
 	
+	<!-- 언어 부분 -->
 	<select id="skillFile" parameterType="_int" resultType="string">
 		select ts.skill_file from tbl_board b inner join tbl_board_skill tbs on b.board_number = tbs.board_number inner join tbl_skill ts on tbs.skill_number = ts.skill_number 
 		where b.board_number = #{boardNumber};
 	</select>
 	
-	
+	<!-- 내 작성글 보기 -->
 	<select id="mySelectBoard" parameterType="_int" resultType="boardDTO">
 		select board_number, board_start_date, board_title, board_category, board_way, board_recruit_number, board_period, board_views, user_nickname, user_file 
 		from tbl_user u join tbl_board b on u.user_number = b.user_number
