@@ -61,6 +61,12 @@
 		select board_title, board_number from tbl_board order by board_number desc
 	</select>
 	
+	<!-- 지원하기 유효성 검사 -->
+	<select id="selectSupport" parameterType="supporterVO" resultType="_int">
+		select count(supporter_number)
+		from tbl_supporter where board_number = #{boardNumber} and supporter_number = #{supporterNumber}
+	</select>
+	
 	<!-- 지원하기 -->
 	<insert id="insertSupport" parameterType="supporterVO">
 		insert into tbl_supporter (board_number, supporter_number)

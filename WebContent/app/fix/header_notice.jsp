@@ -183,7 +183,7 @@
 <script>
 
     $loginSvg = $("div.loginUser");
-    console.log($loginSvg)
+
     $dropdownBar_menuWrapper_header = $(".dropdownBar_menuWrapper_header");
     loginSvgCheck = -1;
 
@@ -198,7 +198,7 @@
     })
 
     $noticeSvg = $("div.notice_wrapper");
-    console.log($noticeSvg)
+
     $noticeWrapper = $(".noticeDropdownBar_noticeWrapper");
     noticeSvgCheck = -1;
 	

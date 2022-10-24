@@ -2,35 +2,40 @@
  * 
  */
 
-function send(){
-	$(".dimmed_233vf").css("display","grid");
+function sendApply(){
 	$.ajax({
 		url: "/board/supportOk.bo",
 		type: "get",
-		data: {boardNumber: boardNumber, userNumber: userNumber, boardSupport: boardSupport},
+		data: {boardNumber: boardNumber,  boardSupport: boardSupport},
 		contentType: "application/json; charset=utf-8",
-		success: function(){showList();}
+		success: function(checkSupport){
+			if(checkSupport=="true"){
+				Swal.fire(
+					'이미 지원하셨습니다',
+					'',
+					'warning'
+				)
+				return;
+			}
+			let text = "";
+		
+			text += `<div class="modal-wrapper4 mwrapper open" >`
+			text += `<div class="modal-b">`
+			text += `<div class="content">`;
+			text += `<div class="good-job">`;
+			text += `<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>`
+			text += `지원이 완료되었습니다.`;
+			text += `</div>`;
+			text += `<section class="cancelButton_buttons">`;
+			text += `<button class="cancelButton_registerButton 4" id="close">닫기</button>`;
+			text += `</section>`;
+			text += `</div>`;
+			text += `</div>`;
+			text += `</div>`;
+			
+			$("#mwrapper").html(text);
+		}
 	});
-}
-
-function showList(){
-		let text = "";
-		
-		text += `<div class="modal-wrapper4 mwrapper open" >`
-		text += `<div class="modal-b">`
-		text += `<div class="content">`;
-		text += `<div class="good-job">`;
-		text += `<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>`
-		text += `지원이 완료되었습니다.`;
-		text += `</div>`;
-		text += `<section class="cancelButton_buttons">`;
-		text += `<button class="cancelButton_registerButton 4" id="close">닫기</button>`;
-		text += `</section>`;
-		text += `</div>`;
-		text += `</div>`;
-		text += `</div>`;
-		
-		$("#mwrapper").html(text);
 }
 
 

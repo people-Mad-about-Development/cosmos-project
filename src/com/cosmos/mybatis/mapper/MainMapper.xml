@@ -12,7 +12,7 @@
 	
 	<!-- 배너 -->
 	<select id="selectBanner" resultType="bannerVO">
-		select banner_url
+		select banner_url, file_name
 		from tbl_banner where banner_status = 'open'
 	</select>
 	

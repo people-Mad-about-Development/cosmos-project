@@ -16,9 +16,9 @@ public class BoardModifyController implements Execute {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Result result = new Result();
 		BoardDAO boardDAO = new BoardDAO();
-		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
 		
-		int userNumber = 3;
+		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		
 		req.setAttribute("boards", boardDAO.selectUserCompany(userNumber));
 		
