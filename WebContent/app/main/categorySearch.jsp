@@ -9,9 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/categorySearch.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css"> 
+
 </head>
 
 <body>
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<div class="dimmed_233vf"> 
+  	 <div class="dimmed_image_23fds"></div>
+</div>
     <section class="filter">
         <ul class="category">
             <li class="categoryItem active">인기</li>
@@ -93,9 +99,17 @@
                             <div class="inqeuryCardHeaderTitle">상담목록</div>
                         </div>
                         <div class="inqueryCardHeaderMoveWrapper">
-                            <button class="inqeuryCardHeaderMovePage" onclick="location.href = '${pageContext.request.contextPath}/inquiry/inquiryDetail.in'">
+                           <button class="inqeuryCardHeaderMovePage" onclick="moveInquiry()">
+                            <script>
+                      function moveInquiry(){
+                      $(".dimmed_233vf").css("display","grid");
+                      location.href= "${pageContext.request.contextPath}/inquiry/inquiryDetail.in"
+                      }
+           				  </script>
                                 <div name="check-circle" height="16" width="20" size="16" class="SVGIconstyled"></div>
                                 <div>문의하기페이지바로가기</div>
+                           
+                                
                             </button>
                         </div>
 
@@ -196,6 +210,10 @@
                         placeholder="문의 내용을 작성해주세요">${inquiry.getInquiryContent()}</textarea>
           <!--  보류   -->
                     <input class="inquerySubmitButton" name='inquerySubmit' type="button" value="문의 전송" onclick="send()" >
+                    
+            
+                    
+                    
                 </section>
 
 

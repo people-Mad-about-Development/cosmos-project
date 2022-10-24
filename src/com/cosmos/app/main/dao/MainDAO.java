@@ -38,19 +38,9 @@ public class MainDAO {
 	   public List<BoardDTO> mySelectBoard(int userNumber){
 		   return sqlSession.selectList("Search.mySelectBoard", userNumber);
 	   }
-	   
-	   public List<AlarmVO> alarmSelect(int userNumber){
-		   System.out.println("메인 다오 들어옴");
-		   return sqlSession.selectList("Alarm.alarmSelect", userNumber);
-	   }
-	   
+	   	   
 	   public List<MainDAO> selectBanner() {
 		   return sqlSession.selectList("Main.selectBanner");
-	   }
-	   
-	   public int countAlarm() {
-		  System.out.println("셀렉 알람 카운트 들어옴 ! ");
-		   return sqlSession.selectOne("Alarm.countAlarm");
 	   }
 	   
 	   

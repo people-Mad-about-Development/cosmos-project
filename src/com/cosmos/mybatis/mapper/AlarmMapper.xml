@@ -2,28 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Alarm">
 
-			<!-- 문의 하기 답변 완료 알림함   -->
-	<select id="alarmSelect" resultType="alarmVO" parameterType="_int"	>
-		select a.alarm_number, a.alarm_status, ti.inquiry_number   
-		from tbl_alarm a join tbl_inquiry ti on a.inquiry_number = ti.inquiry_number 
-		where a.user_number = #{userNumber}
+	
+	<select id="selectNotiFication" resultType="communityVO">
+				<!--상세보기로  -->
+		select community_number , community_title ,community_content , community_Date ,
+		from tbl_community 
+		where community_category = 'notification'
+	
+	</select>	
+	
+	
+	<select id="selectInquiry" parameterType="_int" resultType="InquiryVO" >
+		select inquiry_number , inquiry_content ,  inquiry_status , inquiry_reply , user_number , inquiry_date
+		from tbl_inquiry
+		where user_number = #{userNumber}
+		
+	
+	
+	
 	</select>
+
+
 	
-	
-			<!-- 직계 함수 읽지않은 메세지 카운트 -->
-		<select id="countAlarm" parameterType="_int" resultType="_int">
-      select count(alarm_number)
-       from tbl_alarm	 
-     
-   </select>
-		
-		<!-- 전체 공지사항 메세지   -->
-		
-		<select id="">
-		select a.alr
-		
-		</select>
-		
 	
 </mapper>
 

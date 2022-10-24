@@ -250,3 +250,8 @@ span {
 .questionSuccess {
     color: #00A2FD;
 }
+
+a{
+	cursor:  pointer
+	
+}

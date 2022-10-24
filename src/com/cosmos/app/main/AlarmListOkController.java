@@ -32,42 +32,35 @@ public class AlarmListOkController implements Execute {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		
-		Result result = new Result();
-		req.setCharacterEncoding("UTF-8");
-		req.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html; charset=utf-8");
-		
-		// 문의 사항 답변 목록 
-		PrintWriter out = resp.getWriter();
-		int loginNumber = 2;
-		MainDAO mainDAO = new MainDAO();
-		JSONArray replies = new JSONArray();
-		
-		mainDAO.alarmSelect(loginNumber).forEach(alarmVO->{
-			System.out.println("알람 리스또 오케이 들어와줘");
-			JSONObject reply = new JSONObject(alarmVO);
-			replies.put(reply);
-		});
-		System.out.println(replies.toString());
-		System.out.println("알림함 들어 와줘");
-		
-		// 읽지 않은 알림 카운트 
-		
-	    int countAlarm = mainDAO.countAlarm();
-	    JSONObject count = new JSONObject(countAlarm);
-		
-	    System.out.println("알람 목록 카운트 들어와봐");
-
-		
-		
-	    replies.put(count);
-		System.out.println(replies);
-	    out.print(replies.toString());
-		
-		result.setPath(req.getContextPath() + "/app/fix/header_notice.jsp");
-		
-		out.close();
-		
+		/*
+		 * Result result = new Result(); req.setCharacterEncoding("UTF-8");
+		 * req.setCharacterEncoding("UTF-8");
+		 * resp.setContentType("text/html; charset=utf-8");
+		 * 
+		 * // 문의 사항 답변 목록 PrintWriter out = resp.getWriter(); int loginNumber = 2;
+		 * MainDAO mainDAO = new MainDAO(); JSONArray replies = new JSONArray();
+		 * System.out.println(mainDAO.alarmSelect(loginNumber));
+		 * mainDAO.alarmSelect(loginNumber).forEach(alarmVO->{
+		 * System.out.println("알람 리스또 오케이 들어와줘");
+		 * 
+		 * JSONObject reply = new JSONObject(alarmVO); replies.put(reply); });
+		 * System.out.println(replies.toString()); System.out.println("알림함 들어 와줘");
+		 * 
+		 * // 읽지 않은 알림 카운트
+		 * 
+		 * int countAlarm = mainDAO.countAlarm(); JSONObject count = new
+		 * JSONObject(countAlarm);
+		 * 
+		 * System.out.println("알람 목록 카운트 들어와봐");
+		 * 
+		 * 
+		 * 
+		 * replies.put(count); out.print(replies.toString());
+		 * 
+		 * result.setPath(req.getContextPath() + "/app/fix/header_notice.jsp");
+		 * 
+		 * out.close();
+		 */
 		return null;
 		
 		
