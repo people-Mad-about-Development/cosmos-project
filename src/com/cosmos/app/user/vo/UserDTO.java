@@ -5,6 +5,7 @@ public class UserDTO {
 	private int userNumber;
 	private int skillNumber;
 	private int companyNumber;
+	
 	public int getUserNumber() {
 		return userNumber;
 	}

@@ -774,13 +774,11 @@ a{
 }
 
 
-.list1, .list2, .company_list {
+.list1, .list2, .list3 {
 	display: none;
 }
 
-.css-multiValue {
-	display: none;
-}
+
 
 .css-xb97g8:hover {
     background-color: rgb(255, 189, 173);

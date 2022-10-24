@@ -26,6 +26,7 @@
 		<typeAlias type="com.cosmos.app.user.vo.UserCompanyVO" alias="userCompanyVO"/>
 		<typeAlias type="com.cosmos.app.user.vo.UserInterestSkillVO" alias="userInterestSkillVO"/>
 		<typeAlias type="com.cosmos.app.user.vo.UserVO" alias="userVO"/>
+		<typeAlias type="com.cosmos.app.user.vo.UserDTO" alias="userDTO"/>		
 		<typeAlias type="com.cosmos.app.admin.vo.AdminDTO" alias="adminDTO"/>
 		<typeAlias type="com.cosmos.app.admin.vo.ContentDTO" alias="contentDTO"/>
 		<typeAlias type="com.cosmos.app.admin.vo.ReplyDTO" alias="replyDTO"/>
