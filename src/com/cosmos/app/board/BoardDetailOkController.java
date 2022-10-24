@@ -25,6 +25,8 @@ public class BoardDetailOkController implements Execute{
 		
 		req.setAttribute("board", boardDAO.selectBoardDetail(boardNumber));
 		req.setAttribute("comPany", boardDAO.selectCompany(boardNumber));
+		req.setAttribute("skills", boardDAO.selectBoardSkill(boardNumber));
+
 		req.setAttribute("boards", boardDAO.selectTitle());
 		
 		boardDAO.updateReadCount(boardNumber);

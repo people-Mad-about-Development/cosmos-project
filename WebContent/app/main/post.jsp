@@ -222,20 +222,16 @@
 											<li>#<c:out value="${board.getBoardCategory()}"/></li>
 			                            	<li>#<c:out value="${board.getBoardWay()}"/></li>
 			                            	<li>#<c:out value="${board.getBoardRecruitNumber()}"/>명</li>
+											<li>#<c:out value="${board.getBoardPeriod()}"/></li>
 										</ul>
 									</div>
 									<div class="studyItem_language_wrapper">
 										<ul class="studyItem_content">
-											<li class="studyItem_language"><img
-												src="https://holaworld.io/images/languages/figma.svg" alt=""
-												class="studyItem_languageImage">
-											</li>
-
-											<li class="studyItem_language"><img
-												src="https://holaworld.io/images/languages/zeplin.svg"
-												alt="" class="studyItem_languageImage">
-											</li>
-										</ul>
+			                        		<c:forEach var="skillFile" items="${board.getSkillFile()}">
+					                            <li class="studyItem_language"><img class="studyItem_languageImage"
+					                                    src="${skillFile}" alt="language"></li>
+		                            		</c:forEach>
+			                        	</ul>
 									</div>
 									<section class="studyItem_info">
 										<div class="avatar_user">

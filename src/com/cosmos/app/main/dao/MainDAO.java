@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardDTO;
+import com.cosmos.app.board.vo.BoardSkillDTO;
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.inquiry.vo.InquiryDTO;
 import com.cosmos.app.main.vo.AlarmVO;
@@ -44,6 +45,9 @@ public class MainDAO {
 		   return sqlSession.selectList("Main.selectBanner");
 	   }
 	   
+	   public List<BoardSkillDTO> selectSkill() {
+		   return sqlSession.selectList("Main.selectSkill");
+	   }
 	   
 	   
 	   

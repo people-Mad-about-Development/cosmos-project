@@ -142,9 +142,18 @@
                     <li class="studyInfo">
                         <span class="studyInfo_title">사용 언어</span>
                         <ul class="studyInfo_languageList">
-                            <li class="studyInfo_language">
-                                <img class="studyInfo_languageImage" src="https://holaworld.io/images/languages/javascript.svg" alt="language">
-                            </li>
+                        
+                        <c:choose>
+							<c:when test="${skills != null and fn:length(skills) > 0}">
+			            		<c:forEach var="skill" items="${skills}">
+			            		
+		                            <li class="studyInfo_language">
+		                                <img class="studyInfo_languageImage" src="${skill.getSkillFile()}" alt="language">
+		                            </li>
+		                            
+	                            </c:forEach>
+                            </c:when>
+                        </c:choose>
                             
                         </ul>
                     </li>
@@ -163,10 +172,10 @@
                         <div class="studyContent_postComment">
                             <div class="commentInput_commentInput">
                                 <h1 class="commentInput_commentCount">0개의 댓글이 있습니다.</h1><!-- 댓글 등록하면 count증가 -->
-                                <form method="post" action="#" class="combined" style="width:auto;" name="replyForm">
-	                                <textarea class="commentInput_commentText" placeholder="댓글을 입력하세요."></textarea>
+                                <form method="post" class="combined" style="width:auto;" name="replyForm">
+	                                <textarea class="commentInput_commentText" placeholder="댓글을 입력하세요." name="Reply"></textarea>
 	                                <div class="commentInput_buttonWrapper">
-	                                    <button class="commentInput_buttonComplete" name="register" onclick="send()">댓글 등록</button>
+	                                    <button type="button" class="commentInput_buttonComplete" name="register" onclick="sendReply()">댓글 등록</button>
 	                                </div>
                                 </form>
                             </div>
@@ -241,7 +250,7 @@
 	<div id="mwrapper"></div>
 
 </body>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
@@ -252,9 +261,6 @@
 	  $('.modal-wrapper').toggleClass('open');
 	    return false;
   }
- /*  $('.project_link').on('click', function() {
-    
-  }); */
   function closeModal(){
 	  $('.modal-wrapper').toggleClass('open');
   }
@@ -274,10 +280,6 @@
     return false;
   });
   
-  /* $('.1').on('click', function() {
-     $('.modal-wrapper').toggleClass('open');
-    
-  }); */
   $('.2').on('click', function() {
      $('.modal-wrapper2').toggleClass('open');
     return false;
@@ -286,42 +288,20 @@
      $('.modal-wrapper3').toggleClass('open');
     return false;
   });
-
-  function sendNew(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
-	}
-
-  function sendModify(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}"
-	}
-  function sendClose(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}"
-	}
-  function sendDelete(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}"
-	}
- /*  function sendMain(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/main/mainBoard.ma"
-	} */
   
+  function sendReply(){
+	  Swal.fire(
+			  '서비스 준비중입니다.',
+			  '',
+			  'warning'
+	  )
+	  replyForm.Reply.value = "";
+  }
+
 
 
 </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
-<script>
-	function alert(){
-		Swal.fire(
-				'준비중 입니다.',
-				'',
-				'error'
-			)
-	}
-</script>
 </html>
