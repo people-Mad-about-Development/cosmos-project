@@ -131,8 +131,8 @@
 	
 <!-- 공지사항 등록 -->
 	<insert id = "noticeInsert" parameterType = "communityVO">
-		insert into tbl_community (community_title, community_content, community_date,community_file)
-		values(#{communityTitle},#{communityContent}, #{communityDate},#{communityFile});
+		insert into tbl_community (community_title, community_content, community_date,community_file,community_category)
+		values(#{communityTitle},#{communityContent}, #{communityDate},#{communityFile},'notification');
 	</insert>
 	
 <!-- 문의글 -->
