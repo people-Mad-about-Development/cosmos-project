@@ -590,72 +590,36 @@ console.log(style);
 /*=============================================================== */
 	
 function join() { // 유저 정보 정리
-/*	document.getElementsByName("userNickname").value(inputNick);
-	document.getElementsByName("userIntroduce").value();
-	document.getElementsByName("userCareer").value(userCareer);
-	document.getElementsByName("userCareerYear").value();
-	document.getElementsByName("userFile").value();
-	document.getElementsByName("userId").value(userId);*/
+/*   document.getElementsByName("userNickname").value(inputNick);
+   document.getElementsByName("userIntroduce").value();
+   document.getElementsByName("userCareer").value(userCareer);
+   document.getElementsByName("userCareerYear").value();
+   document.getElementsByName("userFile").value();
+   document.getElementsByName("userId").value(userId);*/
 
-	/*임시값*/
-/*	var userIntroduce = "테스트";	
-	var userFile = $(".userImg").attr("src");
-	var userFile;
-	var userCareerYear = $("input[name='careerInput']").val();
-	var interestSkill = $("input[name='interestSkill']").val()
-	var CanSkill = $("input[name='CanSkill']").val()
-	var userCompany = $("input[name='userCompany']").val()
-	
-	if(userCareerYear==""){
-		userCareerYear = "0";
-	}*/
-	
-	
-	
-	var formData = new FormDate($("#userJoinForm")[0])
-	
-	
-	console.log(userFile);
-	console.log("유저 커리어 이어");
-	console.log(userCareerYear);
-	console.log($("input[name='careerInput']").val());
-	
-	// formdata 형식
-	$.ajax({
-		url: contextPath + "/user/joinOk.us",
-		enctype:'multipart/form-data',
-		processData:false,
-		type: "post",
-		data: formData,
-		dataType: "json",
-		success : function(data){
-			alert("파일 업로드 성공");
-		}
-	});
+   /*임시값*/
+   var userIntroduce = "테스트";   
+   var userFile = $(".userImg").attr("src");
+   var userFile;
+   var userCareerYear = $("input[name='careerInput']").val();
+   
+   if(userCareerYear==""){
+      userCareerYear = "0";
+   }
+   
+   
+   console.log(userFile);
+   console.log("유저 커리어 이어");
+   console.log(userCareerYear);
+   
+   $.ajax({
+      url: contextPath + "/user/joinOk.us",
+      type: "post",
+      data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId},
+      dataType: "json"
+   });
 
-
-	// form 데이터 다 넣은거
-/*	$.ajax({
-		url: contextPath + "/user/joinOk.us",
-		enctype:'multipart/form-data',
-		processData:false,
-		type: "post",
-		data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId, interestSkill: interestSkill, CanSkill:CanSkill, userCompany:userCompany},
-		dataType: "json"
-	});*/
-
-
-	// 기본 
-/*	$.ajax({
-		url: contextPath + "/user/joinOk.us",
-		enctype:'multipart/form-data',
-		processData:false,
-		type: "post",
-		data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId},
-		dataType: "json"
-	});*/
-
-		
+      
 
 }
 

@@ -41,7 +41,7 @@ public class MainBoardController extends HttpServlet implements Execute {
 		req.setAttribute("skills", userDAO.skillTotalInfo());
 		req.setAttribute("companies", adminDAO.companySelect());	
 		
-		result.setPath("/app/main/index.jsp");
+		result.setPath("/app/main/main.jsp");
 		
 		return result;
 	}
