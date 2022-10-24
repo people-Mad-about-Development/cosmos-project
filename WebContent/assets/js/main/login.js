@@ -592,14 +592,21 @@ function join() { // 유저 정보 정리
 	document.getElementsByName("userId").value(userId);*/
 
 	/*임시값*/
-	var userIntroduce = "테스트";	
+/*	var userIntroduce = "테스트";	
 	var userFile = $(".userImg").attr("src");
 	var userFile;
 	var userCareerYear = $("input[name='careerInput']").val();
+	var interestSkill = $("input[name='interestSkill']").val()
+	var CanSkill = $("input[name='CanSkill']").val()
+	var userCompany = $("input[name='userCompany']").val()
 	
 	if(userCareerYear==""){
 		userCareerYear = "0";
-	}
+	}*/
+	
+	
+	
+	var formData = new FormDate($("#userJoinForm")[0])
 	
 	
 	console.log(userFile);
@@ -607,12 +614,40 @@ function join() { // 유저 정보 정리
 	console.log(userCareerYear);
 	console.log($("input[name='careerInput']").val());
 	
+	// formdata 형식
 	$.ajax({
 		url: contextPath + "/user/joinOk.us",
+		enctype:'multipart/form-data',
+		processData:false,
+		type: "post",
+		data: formData,
+		dataType: "json",
+		success : function(data){
+			alert("파일 업로드 성공");
+		}
+	});
+
+
+	// form 데이터 다 넣은거
+/*	$.ajax({
+		url: contextPath + "/user/joinOk.us",
+		enctype:'multipart/form-data',
+		processData:false,
+		type: "post",
+		data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId, interestSkill: interestSkill, CanSkill:CanSkill, userCompany:userCompany},
+		dataType: "json"
+	});*/
+
+
+	// 기본 
+/*	$.ajax({
+		url: contextPath + "/user/joinOk.us",
+		enctype:'multipart/form-data',
+		processData:false,
 		type: "post",
 		data: {userNickname: inputNick, userIntroduce: userIntroduce, userCareer: userCareer, userCareerYear: userCareerYear, userFile: userFile, userId: userId},
 		dataType: "json"
-	});
+	});*/
 
 		
 
@@ -725,20 +760,6 @@ var step2 =0;
 
 /*=============================================================== */
 // 이미지 경로
- $(".files").change(function(e){
-               var file = e.target.files[0];
-               var img = $(this).find("img");
-               var reader = new FileReader();
-               reader.readAsDataURL(file);
-               
-                reader.onload = function(e){
-                   if(e.target.result.indexOf("image") != -1){
-                      img.attr("src", e.target.result)
-                   }else{
-                      img.attr("src", "${pageContext.request.contextPath}/images/no_img.jpg");
-                   }
-                }
-             });
- 
+
  
 /*=============================================================== */
