@@ -24,7 +24,7 @@ public class InquiryListOkController extends HttpServlet implements Execute {
 		resp.setContentType("text/html; charset=utf-8");
 		
 		PrintWriter out = resp.getWriter();
-		int loginNumber = 2;
+		int loginNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		InquiryDAO inquiryDAO = new InquiryDAO();
 		JSONArray replies = new JSONArray();
 		

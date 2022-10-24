@@ -9,9 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 자료실</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/inquiry/inquiryBoard.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+	   
 </head>
 
 <body>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<div class="dimmed_233vf"> 
+   <div class="dimmed_image_23fds"></div>
+</div>
+
     <main id="inquery_main">
         <section class="community-body">
             <nav class="community-body__navigation">
@@ -19,9 +26,15 @@
                     <li class="community-aside_group">
                     
                     	<div>
-                    	<a href="${pageContext.request.contextPath}/app/main/index.jsp">
+                    	<a  onclick="moveMain()">
 						<img   src="/assets/images/fix/logo.png" alt="logo" class="logo" style="width: 105px" >
 						</a>
+					<script>
+                      function moveMain(){
+                      $(".dimmed_233vf").css("display","grid");
+                      location.href= "${pageContext.request.contextPath}/main/mainBoard.ma"
+                      }
+             		</script>				
                     	</div>
                         <ul class="community-aside__menu-list">
                             <li class="community-aside__menu community-aside__menu--selected">

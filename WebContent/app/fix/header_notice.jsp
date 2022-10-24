@@ -10,11 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/header_notice.css">
+    
+    
 </head>
 <body>
     <nav class="header">
         <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
             <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
+            
         </a>
         <div>
             <form action="${pageContext.request.contextPath}/main/mainSearchOk.ma" name="searchForm" method="get" enctype="multipart/form-data" class="header_search">
@@ -70,15 +73,16 @@
     </nav>
     
     <div class="noticeDropdownBar_noticeWrapper loginHeaderUnVisibie">
-       <!--  <div class="noticeDropdownBar_noticeHeader"> -->
-           <!--  <span>읽지 않은 알림 (<span class="noticeCount">0</span>) </span>
+        <div class="noticeDropdownBar_noticeHeader"> 
+             <span>읽지 않은 알림 (<span class="noticeCount">0</span>) </span>
             <div class="noticeDropdownBar_exitWrapper">
                 <svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
                 </svg>
             </div>
         </div>
-        <div class="noticeDropdownBar_empty">알림함이 비어있습니다. -->
+        <a href="" >
+        <div class="noticeDropdownBar_empty" onclick="alarmSend()">서비스 준비 중입니다 </a> 
         
         
         	<!-- 문의 답변  -->
@@ -218,6 +222,7 @@
     $post = $(".navbar_post");
     
     $post.click(function(){
+    	/*  $(".dimmed_233vf").css("display","grid"); */
     	$(location).attr("href", "${pageContext.request.contextPath}/board/write.bo");
     })
     
@@ -266,10 +271,10 @@
     
     
     	
-    /* 문의하기 답변 완료   */
-     listOk(); 
+  /*   /* 문의하기 답변 완료   */
+   /*   listOk();  */
     		
-  	function listOk() {
+  /* 	function listOk() {
 		$.ajax({
 			url: "/main/alarmListOk.ma",
 			type:"get",
@@ -280,7 +285,7 @@
     			
 	}
     		/* 문의하기 답변 완료   */
-    		function showAlarmListOk(result) {
+    		/* function showAlarmListOk(result) {
     			  var resultAlarmListOk = JSON.parse(result);
 				  if(resultAlarmListOk.length > 0){
     			  let text="";
@@ -291,7 +296,7 @@
     				  count++;
     			
     			  	 text+=`<div class="noticeDropdownBar_noticeHeader">`
-    		   		 text+=` <span>읽지 않은 알림 (<span class="noticeCount">`+resultAlarmListOk+`</span>) </span>`
+    		   		 text+=` <span>읽지 않은 알림 (<span class="noticeCount">`+count+`</span>) </span>`
     	    		 text+=`<div class="noticeDropdownBar_exitWrapper">`
     	    		 text+=`<svg class = "notification" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">`
     	    		 text+=`<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>`
@@ -315,15 +320,45 @@
      				 text+=` <a class="moveNoticeProject" href="${pageContext.request.contextPath}/app/myPage/my_project_notice.jsp" >`;	
      				 text+=`<span class="noticeProject">프로젝트 공지사항이 올라왔습니다</span>`;
      				 text+=`</a>`;	
-     				 text+=`</li>`;	
+     				 text+=`</li>`;
+     				 text+=`<br>`;
+     				 text+= `<li class="projectReplyNotice">`;                         
+      				 text+=` <a class="moveBoardProject" href="${pageContext.request.contextPath}/app/board/boardProject.jsp" >`;	
+      				 text+=`<span class="noticeReplyProject">(프로젝트) 모집글 댓글이 달렸습니다</span>`;
+      				 text+=`</a>`;	
+      				 text+=`</li>`;
+      				 text+=`<br>`;
+      				 text+= `<li class="studyReplyNotice">`;                         
+      				 text+=` <a class="moveBoardStudy" href="${pageContext.request.contextPath}/app/board/boardStudy.jsp" >`;	
+      				 text+=`<span class="noticeReplyStudy">(스터디) 모집글 댓글이 달렸습니다</span>`;
+      				 text+=`</a>`;	
+      				 text+=`</li>`;
+      				 text+=`<br>`;
+      				 text+= `<li class="projectCompanyReplyNotice">`;                         
+     				 text+=`<a class="moveBoardProjectCompany" href="${pageContext.request.contextPath}/app/board/boardProject_company.jsp" >`;	
+     				 text+=`<span class="noticeReplyProjectCompany">(프로젝트 회사) 모집글 댓글이 달렸습니다</span>`;
+     				 text+=`</a>`;	
+     				 text+=`</li>`;
+     				 text+=`<br>`;
+     				 text+= `<li class="studyCompanyReplyNotice">`;                         
+      				 text+=`<a class="moveBoardStudyCompany" href="${pageContext.request.contextPath}/app/board/boardStudy_company.jsp" >`;	
+      				 text+=`<span class="noticeReplyStudyCompany">(스터디 회사) 모집글 댓글이 달렸습니다</span>`;
+      				 text+=`</a>`;	
+      				 text+=`</li>`;
+      				 text+=`<br>`;
+      				 text+= `<li class="adminNotice1">`;                         
+      				 text+=`<a class="moveAdminNotice" href="${pageContext.request.contextPath}/app/admin/allNotice.jsp" >`;	
+      				 text+=`<span class="noticeAdmin">전체 공지사항이 올라왔습니다</span>`;
+      				 text+=`</a>`;	
+      				 text+=`</li>`;	
+      				 
     			  
     			  });
     			  
     			  $(".noticeDropdownBar_noticeBody__240wL").html(text);
     		
 			}
-     } 
-    
+     }  */
     
     		
     		/* 프로젝트 자료실  알림 */
@@ -611,6 +646,17 @@
                  var content = searchForm.header_search_input.value;
                  if(!content){
                     alert("검색어를 입력하세요");
+                    return;
+                 }
+                 
+                 searchForm.submit()
+              }       
+    		
+    		
+    		 function alarmSend(){
+                 var content = searchForm.header_search_input.value;
+                 if(!content){
+                    alert("서비스 준비 중 입니다");
                     return;
                  }
                  

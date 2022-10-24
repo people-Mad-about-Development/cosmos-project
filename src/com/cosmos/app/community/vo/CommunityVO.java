@@ -6,7 +6,7 @@ public class CommunityVO {
 	private String communityTitle;
 	private String communityContent;
 	private String communityDate;
-	private String communityCategory;
+	private String communityCategory;			// 전공 ? 
 	private int userNumber;
 	private int boardNumber;
 	
