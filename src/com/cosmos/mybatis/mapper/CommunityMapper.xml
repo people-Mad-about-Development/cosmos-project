@@ -7,6 +7,7 @@
 		select community_number, community_title, community_content, community_date, community_category, c.user_number, board_number, u.user_nickname
 		from tbl_community c join tbl_user u on u.user_number = c.user_number 
 		where board_number = #{boardNumber} and community_category = "announcement"
+		order by community_number desc
 	</select>
 	
 	<!-- 자료실 리스트 가져오기 -->
@@ -14,6 +15,7 @@
 		select c.community_number, community_title, community_content, community_date, community_category, c.user_number, board_number, u.user_nickname
 		from tbl_community c join tbl_user u on u.user_number = c.user_number
 		where board_number = #{boardNumber} and community_category = "library"
+		order by community_number desc
 	</select>
 	
 	<!-- 자료실 첨부파일 갯수 가져오기 -->
