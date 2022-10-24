@@ -79,6 +79,16 @@
 		set board_support = #{boardSupport} + 1
 		where board_number = #{boardNumber}
 	</update>
+	
+	<select id="getLastBoardNumber" resultType="_int">
+			SELECT LAST_INSERT_ID()
+		</select>
+		
+		<insert id="insertBoardSkill" parameterType="boardSkillVO">
+		insert into tbl_board_skill(board_number,skill_number) values(#{boardNumber},#{skillNumber})
+		</insert>
+	
+	
 </mapper>
 
 

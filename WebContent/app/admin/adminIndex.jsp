@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -114,7 +111,7 @@
 				
 					<ul id="main-menu" class="gui-controls">
 						<li class="  " data-title="preview">
-							<a href="${pageContext.request.contextPath}/main/mainBoard.ma" > <!-- 우리 cosmos 홈페이지 url 교체 필요 -->
+							<a href="${pageContext.request.contextPath}/main/mainBoard.ma" target="_blank"> <!-- 우리 cosmos 홈페이지 url 교체 필요 -->
 								<div class="gui-icon">
 									<i class="db-preview"></i>
 								</div>
@@ -125,7 +122,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="active expanded expanding" data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -173,7 +170,7 @@
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
+									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -341,19 +338,16 @@
 								</div>
 							</div>
 						</div>		
-					
+	
 						<div class="row flex-box">
 							<div class="ma-item col-md-6 col-sm-6 col-xs-12 _item">
 								<div class="card">
 									<div class="card-head">
-										<header><a href="${pageContext.request.contextPath}/admin/memberListOk.ad">신규 회원 </a></header>
+										<header><a href="${pageContext.request.contextPath}/app/admin/memberList.jsp">신규 회원 </a></header>
 									</div>
 	
 									<div class="card-body border-top">
 										<ul class="list list-preview">
-										<c:choose>
-						<c:when test="${adminDTO != null and fn:length(adminDTO)>0}">
-							<c:forEach var="admin" items="${adminDTO}">
 											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
@@ -361,19 +355,18 @@
 													</div>
 													<div class="tile-text">
 														<div>
-															<span>${admin.getUserNickname()}</span>
+															<span>호근호근</span>
 															<span class="text-default-bright list-badge header-badge badge-danger">N</span>
 														</div>
 														<small class="text-12">
-															<span>${admin.getUserId()}</span>
+															<span>123@d1k.dnd</span>
 															<em class="opacity-50 text-gray-bright">|</em>
-															<span>${admin.getUserDate()}</span>
+															<span>2022-10-09 17:34</span>
 														</small>
 													</div>
 												</a>
 											</li>
-											
-											<!-- <li class="tile">최대 6개 반복
+											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
 														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt="">
@@ -391,7 +384,7 @@
 													</div>
 												</a>
 											</li>
-											<li class="tile">최대 6개 반복
+											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
 														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt="">
@@ -409,7 +402,7 @@
 													</div>
 												</a>
 											</li>
-											<li class="tile">최대 6개 반복
+											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
 														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt="">
@@ -427,7 +420,7 @@
 													</div>
 												</a>
 											</li>
-											<li class="tile">최대 6개 반복
+											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
 														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt="">
@@ -444,13 +437,12 @@
 														</small>
 													</div>
 												</a>
-											</li> -->
+											</li>
 
- 
-											<!-- <li class="tile">최대 6개 반복
+											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
-														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt=""> 나중에 개인별 설정한 프로필 사진으로 변경 필요
+														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt=""> <!-- 나중에 개인별 설정한 프로필 사진으로 변경 필요 -->
 													</div>
 													<div class="tile-text">
 														<div>
@@ -463,10 +455,7 @@
 														</small>
 													</div>
 												</a>
-											</li> -->
-											</c:forEach>
-											</c:when>
-											</c:choose>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -479,10 +468,6 @@
 									</div>
 									<div class="card-body border-top">
 										<ul class="list list-preview">
-											<c:choose>
-											<c:when test="${contentList != null and fn:length(contentList)>0}">
-												<c:forEach var="content" items="${contentList}">
-										
 											<li class="tile">
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
@@ -490,19 +475,16 @@
 													</div>
 													<div class="tile-text">
 														<div>
-															<span>${content.getBoardTitle()}</span>
+															<span>[스터디] COSMOS 2팀 화이팅</span>
 														</div>
 														<small class="text-12">
-															<span>${content.getUserNickname()}</span><em class="opacity-50 text-gray-bright">|</em>
-															<span>${content.getBoardDate()}</span>
+															<span>관리자</span><em class="opacity-50 text-gray-bright">|</em>
+															<span>2022-10-04 13:45</span>
 														</small>
 													</div>
 												</a>
 											</li>	
-											</c:forEach>
-											</c:when>
-											</c:choose>
-											<!-- 
+											
 											<li class="tile">
 												<a class="tile-content" href="#">
 													<div class="tile-icon">
@@ -519,7 +501,7 @@
 														</small>
 													</div>
 												</a>
-											</li>		 -->
+											</li>		
 										</ul>
 									</div>
 								</div>
@@ -534,29 +516,7 @@
 									</div>
 									<div class="card-body border-top">
 										<ul class="list list-preview">
-											<c:choose>
-											<c:when test="${inquirytList != null and fn:length(inquirytList)>0}">
-												<c:forEach var="inquiry" items="${inquirytList}">
-											<li class="tile">
-												<a class="tile-content" href="#">
-													<div class="tile-icon">
-														<img class="" src="https://testchoo.imweb.me/common/img/default_profile.png" alt="">
-													</div>
-													<div class="tile-text">
-														<div>
-															<span>${inquiry.getInquiryContent()}</span>
-														</div>
-														<small class="text-12">
-															<span>${inquiry.getUserNickname()}</span><em class="opacity-50 text-gray-bright">|</em>
-															<span>${inquiry.getInquiryDate()}</span>
-														</small>
-													</div>
-												</a>
-											</li>	
-										
-											</c:forEach>
-											</c:when>
-											</c:choose>
+											<li class="tile" style="min-height:auto;">데이터가 없습니다.</li>
 										</ul>
 									</div>
 								</div>
@@ -570,31 +530,23 @@
 	
 									<div class="card-body border-top">
 										<ul class="list list-preview">
-										<c:choose>
-											<c:when test="${companies != null and fn:length(companies)>0}">
-												<c:forEach var="company" items="${companies}">
-										
-										
 											<li class="tile"><!-- 최대 6개 반복 -->
 												<a class="tile-content" href="#"> <!-- 각 회원별 상세페이지로 이동할 수 있도록 주소 변경 필요 -->
 													<div class="tile-icon">
-														<img class="" src="${pageContext.request.contextPath}${company.getCompanyFile()}" alt=""> <!-- 나중에 개인별 설정한 프로필 사진으로 변경 필요 -->
+														<img class="" src="${pageContext.request.contextPath}/assets/images/company/nexon.png" alt=""> <!-- 나중에 개인별 설정한 프로필 사진으로 변경 필요 -->
 													</div>
 													<div class="tile-text">
 														<div>
-															<span>${company.getCompanyName()}</span>
+															<span>넥슨</span>
 														</div>
 														<small class="text-12">
-															<span>${company.getCompanyUrl()}</span>
-															<em class="opacity-50 text-gray-bright"></em>
-															<span></span>
+															<span>www.nexon.com</span>
+															<em class="opacity-50 text-gray-bright">|</em>
+															<span>2022-10-03 00:00</span>
 														</small>
 													</div>
 												</a>
 											</li>
-											</c:forEach>
-											</c:when>
-											</c:choose>
 										</ul>
 									</div>
 								</div>

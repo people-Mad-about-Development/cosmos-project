@@ -11,7 +11,9 @@ import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
 import com.cosmos.app.board.vo.BoardDTO;
+import com.cosmos.app.board.vo.BoardSkillVO;
 import com.cosmos.app.board.vo.BoardVO;
+import com.cosmos.app.user.dao.UserDAO;
 
 public class BoardWriteOkController implements Execute{
 	@Override
@@ -21,11 +23,11 @@ public class BoardWriteOkController implements Execute{
 		Result result = new Result();
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = new BoardVO();
-
-
+		UserDAO userDAO = new UserDAO();
+		BoardSkillVO boardSkillVO = null;
 		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		int boardRecruitNumber = Integer.parseInt(req.getParameter("boardRecruitNumber"));
-
+		String [] canskills = req.getParameterValues("interestSkill");
 		
 		
 		boardVO.setUserNumber(userNumber);
@@ -39,7 +41,16 @@ public class BoardWriteOkController implements Execute{
 		boardVO.setBoardContact(req.getParameter("boardContact"));
 		boardVO.setBoardCompany(req.getParameter("boardCompany"));
 		
-		boardDAO.insert(boardVO);
+		 boardDAO.insert(boardVO); 
+		 int lastBoardNumber = boardDAO.getLastBoardNumber();
+		 for (String skill : canskills) {
+			 boardSkillVO = new BoardSkillVO();
+			 boardSkillVO.setSkillNumber(userDAO.getSkillNumber(skill));
+			 boardSkillVO.setBoardNumber(lastBoardNumber);
+			 boardDAO.insertBoardSkill(boardSkillVO);
+			}
+		 
+		 
 		
 		result.setPath("/main/mainBoard.ma");
 		
