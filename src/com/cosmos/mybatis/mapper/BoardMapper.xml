@@ -81,12 +81,20 @@
 	</update>
 	
 	<select id="getLastBoardNumber" resultType="_int">
-			SELECT LAST_INSERT_ID()
-		</select>
+		SELECT LAST_INSERT_ID()
+	</select>
 		
-		<insert id="insertBoardSkill" parameterType="boardSkillVO">
-		insert into tbl_board_skill(board_number,skill_number) values(#{boardNumber},#{skillNumber})
-		</insert>
+	<!-- 게시글 skill 추가 -->
+	<insert id="insertBoardSkill" parameterType="boardSkillVO">
+		insert into tbl_board_skill(board_number, skill_number)
+		values(#{boardNumber}, #{skillNumber})
+	</insert>
+	
+	<!-- 게시글 skill 조회 -->
+	<select id="selectBoardSkill" parameterType="_int" resultType="boardSkillDTO">
+		select skill_file
+		from tbl_skill s join tbl_board_skill bs on s.skill_number = bs.skill_number where board_number = #{boardNumber}
+	</select>
 	
 	
 </mapper>

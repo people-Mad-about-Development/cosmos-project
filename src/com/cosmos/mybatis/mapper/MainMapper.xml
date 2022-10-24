@@ -16,8 +16,11 @@
 		from tbl_banner where banner_status = 'open'
 	</select>
 	
-	
-	
+	<!-- Skill 전체 조회 -->
+	<select id="selectSkill" resultType="boardSkillDTO">
+		select skill_file, board_number
+		from tbl_skill s join tbl_board_skill bs on s.skill_number = bs.skill_number
+	</select>
 	
 	
 </mapper>

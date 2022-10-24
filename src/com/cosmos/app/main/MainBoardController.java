@@ -25,13 +25,21 @@ public class MainBoardController extends HttpServlet implements Execute {
 		UserDAO userDAO = new UserDAO();
 		AdminDAO adminDAO = new AdminDAO();
 
+
+		List<BoardDTO> boardDTO = null;
+		List<String> skillFiles = null;
 		
-		req.setAttribute("boards", mainDAO.selectAllMain());
+		boardDTO = mainDAO.selectAllMain();
+		
+		for (BoardDTO boardOne : boardDTO) {
+			boardOne.setSkillFile(mainDAO.skillFile(boardOne.getBoardNumber()));
+		}
+		
 		req.setAttribute("banner", mainDAO.selectBanner());
-		
+		req.setAttribute("boards", boardDTO);
 		// 회사, 스킬 전체 DB 조회 가서 가져온다.
 		req.setAttribute("skills", userDAO.skillTotalInfo());
-		req.setAttribute("companies", adminDAO.companySelect());		
+		req.setAttribute("companies", adminDAO.companySelect());	
 		
 		result.setPath("/app/main/index.jsp");
 		

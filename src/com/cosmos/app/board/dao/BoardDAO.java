@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardDTO;
+import com.cosmos.app.board.vo.BoardSkillDTO;
 import com.cosmos.app.board.vo.BoardSkillVO;
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.board.vo.SupporterVO;
@@ -73,5 +74,9 @@ public class BoardDAO {
     
     public void insertBoardSkill(BoardSkillVO boardSkillVO) {
     	sqlSession.insert("Board.insertBoardSkill",boardSkillVO);
+    }
+    
+    public List<BoardSkillDTO> selectBoardSkill(int boardNumber) {
+    	return sqlSession.selectList("Board.selectBoardSkill", boardNumber);
     }
 }
