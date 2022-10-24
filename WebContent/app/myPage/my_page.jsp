@@ -50,6 +50,7 @@
                 <div class="main_inputZone">
                         <h3></h3>
                         <input type="text" name="nickNameInput" value="${UserInfo.getUserNickname()}">
+                         <button type = "button" class="userImgUpload_buttonImageDelete duplicatedNickname" onclick="duplicatedNickname()" style="height:3rem;">중복검사</button>
                 </div>
                 <p class="main_description">Hola에서 사용되는 이름입니다.</p>
             </div>

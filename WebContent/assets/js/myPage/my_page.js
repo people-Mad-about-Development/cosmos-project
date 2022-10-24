@@ -145,7 +145,7 @@
 		var defaultProfile = "/assets/images/fix/cosmosProfile.png";
 		$(".dimmed_233vf").css("display","grid");
 		$.ajax({
-			url:"/user/initProfileOk.us",
+			url:pageURI+"/user/initProfileOk.us",
 			data:{default:defaultProfile},
 			type:"post",
 			success:function(){
@@ -472,11 +472,50 @@ function enterCompanySubmit(e){
 	}
 }
 console.log($(".InterestSkillWrapper_2f").children().length);
-function myPageUpdateSubmit(){
+let duplicatedCheck_2f = false;
+function duplicatedNickname(){
 	$(".dimmed_233vf").css("display","grid");
-	if(!$(`input[name="nickNameInput"]`).val().trim()){
+	var nickname = $(`input[name="nickNameInput"]`).val().trim();
+	if(!nickname){
 		$(".dimmed_233vf").css("display","none");
 		alert("닉네임은 빈칸일 수 없습니다.");
+		$(`input[name="nickNameInput"]`).focus();
+		return;
+	}
+	$.ajax({
+			url:pageURI+"/user/duplicatedNickname.us",
+			data:{userNickname:nickname},
+			type:"post",
+			success:function(data){
+				if(data=="other"){
+					$(".dimmed_233vf").css("display","none");
+					alert("중복된 닉네임입니다.");
+					return;
+				}else if(data =="mine"){
+					$(".dimmed_233vf").css("display","none");
+					alert("닉네임을 유지합니다.");
+					duplicatedCheck_2f=true;
+					return;					
+				}else if(data =="false"){
+					$(".dimmed_233vf").css("display","none");
+					alert("사용가능한 닉네임입니다.")
+					duplicatedCheck_2f=true;
+					return;
+				}
+				$(".dimmed_233vf").css("display","none");
+				
+			}
+			
+		})
+	
+}
+
+
+function myPageUpdateSubmit(){
+	$(".dimmed_233vf").css("display","grid");
+	if(!duplicatedCheck_2f){
+		$(".dimmed_233vf").css("display","none");
+		alert("중복검사를 실시해주세요");
 		$(`input[name="nickNameInput"]`).focus();
 		return;
 	}
