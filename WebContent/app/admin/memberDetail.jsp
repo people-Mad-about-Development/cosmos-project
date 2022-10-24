@@ -122,7 +122,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -160,17 +160,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>

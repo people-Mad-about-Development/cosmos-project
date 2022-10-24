@@ -39,3 +39,10 @@
 		$all.prop("checked", $terms.filter(":checked").length == $terms.length);
 	});
 
+/*var $keyword_search1 = $('#keyword_search1')
+
+    $keyword_search1.onfocus = function (e){
+	console.log("함수")
+	alert('준비중입니다.');
+	return;
+}*/

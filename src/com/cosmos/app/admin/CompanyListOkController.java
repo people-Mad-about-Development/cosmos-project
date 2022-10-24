@@ -40,6 +40,7 @@ public class CompanyListOkController implements Execute {
 	    System.out.println(boardCompany);
 	    
 
+
 	    result.setPath(req.getContextPath() + "/app/admin/companyList.jsp");
 	    return result;
 	}

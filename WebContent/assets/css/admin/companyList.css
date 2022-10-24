@@ -17,6 +17,8 @@ body {
     padding-left: 230px;
 }
 
+
+
 .fold_area {
     height: 50px;
     color: #fff;
@@ -155,7 +157,7 @@ section {
 }
 
 .col-md-10 {
-    width: 66.6666666%;
+    width: 100%;
 }
 
 

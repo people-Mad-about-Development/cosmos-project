@@ -124,7 +124,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -162,17 +162,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -246,7 +246,7 @@
 														<div id="prefetch">
 															<span class="twitter-typeahead" >
 																<input type="hidden" name="q" value="YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30=" class="form-control typeahead">
-																<input type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
+																<input onclick="alert('준비중입니다.')" type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
 																<pre class="bar" aria-hidden="true"></pre>
 																<div class="tt-menu">
 																	<div class="tt-dataset tt-dataset-users"></div>
@@ -259,24 +259,24 @@
 										</div>
 									</div>
 
-									<div class="col-md-2 hidden-xs">
+									 <%-- <div class="col-md-2 hidden-xs">
 										<div class="card">
 											<div class="companyAdd">
 												<a href="${pageContext.request.contextPath}/app/admin/companyDetail.jsp" >회사 추가</a>
 											</div>
 										</div>
-									</div>
+									</div>  --%>
 
-									<div class="col-md-2 hidden-xs">
+									<!-- <div class="col-md-2 hidden-xs">
 										<div class="card">
 											<div class="companyDelete">
 												<a href="#modal;" rel="modal:open">선택 회사 삭제</a>
 												<span>
-													<!-- <button type="button" class="button" style="display:none";></button> -->
+													<button type="button" class="button" style="display:none";></button>
 												</span>
 											</div>
 										</div>
-									</div>
+									</div> -->
 	
 	
 									<div class="col-md-12">
@@ -300,7 +300,7 @@
 														<li class="companyName">회사명</li>
 														<li class="explanation">설명</li>
 														<li class="companyDateJoin">회사 주소</li>
-														<li class="companyPostCount">관련 게시글</li>
+														
 														<li class="action"></li>
 													</ul>
 											<c:choose>
@@ -321,7 +321,7 @@
 														</li>	
 														<li class="explanation" ><c:out value = "${company.getCompanyContent()}"/></li>														
 														<li class="companyDateJoin" ><c:out value = "${company.getCompanyUrl()}"/></li>													
-														<li class="companyPostCount">${boardCompany}</li>
+														
 												
 														<li class="action">
 															<div class="dropdown">

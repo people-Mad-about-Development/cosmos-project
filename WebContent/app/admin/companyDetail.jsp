@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>회사 추가 및 수정</title>
+<title>회사 수정</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -78,7 +78,7 @@
 						<li class="header-nav-brand">
 							<div class="brand-holder">
 								<span class="location_text">
-									<a href="${pageContext.request.contextPath}/app/admin/companyDetail.jsp">회사 추가 및 수정</a>	<!-- 동일 페이지로 재이동 -->
+									<a href="${pageContext.request.contextPath}/app/admin/companyDetail.jsp">회사 수정</a>	<!-- 동일 페이지로 재이동 -->
 								</span>
 							</div>
 						</li>
@@ -88,7 +88,7 @@
 				<div class="headerbar-right">
 					<ul class="header-nav header-nav-options _option_list">
 						<li>
-							<a class="btn btn-primary hidden-xs" onclick="location.href='/admin/config/popup/?mode=add'">저장</a>
+							<button type = "button" class="btn btn-primary hidden-xs"  onclick = "send()" >저장</button>
 							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;" onclick="location.href='#'"><i class="btl bt-plus vertical-middle"></i></a>
 						</li>
 					</ul><!--end .header-nav-options -->
@@ -132,7 +132,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -170,17 +170,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/app/admin/InquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -240,7 +240,7 @@
 				<div class="card style-transparent card-top no-tab">
 					<div class="card-head">
 						<header>
-							<a href="${pageContext.request.contextPath}/app/admin/companyList.jsp" onclick="window.location = '#';"> <!-- 회사 목록 리스트 주소 입력 필요 / 이 전 페이지 -->
+							<a href="${pageContext.request.contextPath}/admin/companyListOk.ad" onclick="window.location = '#';"> <!-- 회사 목록 리스트 주소 입력 필요 / 이 전 페이지 -->
 								<i class="zmdi zmdi-arrow-back"></i>리스트로 돌아가기
 							</a>
 						</header>
@@ -258,7 +258,7 @@
 									<div class="card-body border-top">										
 										<div class="profile-image text-center margin-bottom-xxl">
 											<div id="fileupload_profile_img">
-												<img class="company" src="${pageContext.request.contextPath}/assets/images/company/nexon.png" id="profile_img" width="72" height="72" class="img-circle">
+												<img class="company" src="${pageContext.request.contextPath}/assets/images/company/company.png" id="profile_img" width="72" height="72" class="img-circle">
 												<div id="drop_profile_img">
 													<input type="file" name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
 												</div>
@@ -267,11 +267,11 @@
 												</div>
 											</div>
 											
-											<h3 class="text-15">관리자</h3>
+											<h3 class="text-15"></h3>
 										</div><!--end.profile-image-->
 		
 										<div class="profile-info">
-											<form id="dof" method="post" class="form-horizontal form-validate" role="form" target="hidden_frame" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+											<form name="companyForm" id="dof" method="get" class="form-horizontal form-validate" enctype="multipart/form-data"  onsubmit="return false;"  >
 												<!-- 해당 회사 상세내용 아래 방법으로 코드 작성  -->
 												<!-- <input type="hidden" name="idx" value="22645265">
 												<input type="hidden" name="code" value="m20220929a41c742d48942">
@@ -282,21 +282,21 @@
 												<!-- 해당 사용자 상세내용 -->
 												
 												<div class="form-group">
-													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">회사명
-														<span class="text-danger">(필수)</span>
+													<label  class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">회사명
+														<span class="text-danger"></span>
 													</label>
 													<div class="col-md-9">
-														<input type="text" required="required" name="uid" id="member_item_m20220929a41c742d48942" class="form-control" value="slions1113@gmail.com" data-nick="slions1113@gmail.com" aria-required="true">
+														<input name="companyName"type="text" required="required"  id="member_item_m20220929a41c742d48942" class="form-control" aria-required="true">
 														<div class="form-control-line"></div>
 													</div>
 												</div>
 																													
 												<div class="form-group">
-													<label class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">홈페이지
-														<span class="text-danger">(필수)</span>
-													</label>
+													
+													<label  class="col-sm-3 control-label text-right" for="member_item_m20220929a41c742d48942">홈페이지</label>
+														<span class="text-danger"></span>
 													<div class="col-md-9">
-														<input type="text" required="required" name="uid" id="member_item_m20220929a41c742d48942" class="form-control" value="slions1113@gmail.com" data-nick="slions1113@gmail.com" aria-required="true">
+														<input name="companyUrl" type="text" required="required"  id="member_item_m20220929a41c742d48942" class="form-control"  aria-required="true">
 														<div class="form-control-line"></div>
 													</div>
 												</div>
@@ -304,10 +304,10 @@
 												<div class="_type_form_wrap">
 													<div class="form-group">
 														<label class="col-sm-3 control-label text-right" for="user_name">설명
-															<span class="text-danger">(필수)</span>
+															<span class="text-danger"></span>
 														</label>
 														<div class="col-md-9">
-															<input type="text" autocomplete="off" required="" name="name" id="user_name" class="form-control" value="메이플스토리로 유명한 게임회사" aria-required="true">
+															<input  name="companyContent" type="text"  id="user_name" class="form-control" >
 															<div class="form-control-line"></div>
 														</div>
 													</div>
@@ -333,5 +333,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/admin/companyDetail.js"></script>
-
+<script>
+	const pageURI = "${pageContext.request.contextPath}";
+</script>
 </html>

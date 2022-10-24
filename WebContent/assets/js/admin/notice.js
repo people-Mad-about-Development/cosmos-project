@@ -55,3 +55,22 @@
 	$('.close').click(function(){
 		$(this).parent().style.backgroundImage = url('/cosmos_new/imageSelect.jpg');
 	}) */
+	
+	
+	
+	 function send_alarm(){
+               if(!noticeInsert.communityTitle.value){
+                  alert("제목을 작성해주세요.");
+                  return;
+               }
+               
+               if(!noticeInsert.communityContent.value){
+                  alert("내용을 입력해주세요.");
+                  return;
+               }
+
+               
+               noticeInsert.submit();
+            }
+	
+ 

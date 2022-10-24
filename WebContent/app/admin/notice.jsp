@@ -123,7 +123,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -161,17 +161,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -237,16 +237,16 @@
 										<header>공지사항 작성</header>
 									</div>							
 									<div class="card-body">
-										<form role="form" class="form-horizontal form-validate" novalidate="novalidate">		
+										<form enctype="multipart/form-data" method="post" name = "noticeInsert" role="form" class="form-horizontal form-validate" novalidate="novalidate" action="${pageContext.request.contextPath}/admin/noticeInsertOk.ad" target = "hidden">		
 											<div class="form-group">
 												<div class="col-sm-10">
-													<input type="text" required="" name="alarm_subject" id="alarm_subject" class="form-control" aria-required="true" placeholder="제목">
+													<input type="text" required="" name="communityTitle" id="alarm_subject" class="form-control" aria-required="true" placeholder="제목">
 													<div class="form-control-line"></div>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="col-sm-12">
-													<textarea rows="3" required="" name="alarm_content" id="alarm_content" class="form-control" maxlength="925" placeholder="내용" aria-required="true" data-autosize-on="true"></textarea>
+													<textarea rows="3" required="" name="communityContent" id="alarm_content" class="form-control" maxlength="925" placeholder="내용" aria-required="true" data-autosize-on="true"></textarea>
 													<div class="form-control-line"></div>
 													<!-- <p class="help-block chars" id="chars_app_title">0/2500</p> --> <!-- 사용할거면 기능 구현 필요 -->
 												</div>
@@ -262,16 +262,17 @@
 															</label>	
 														</div>
 													</div>
-													<input type="file" id="attach" style='display:none;' name="files[]" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
+													<input type="file" id="attach" style='display:none;' name="fileName" style="width: 100%" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" >
 													<span class="help-block">권장 해상도 : 720 x 320</span>
 												</div>
 											</div>
-										</form>
+										
 									</div>
 									<div class="card-actionbar">
 										<div class="card-actionbar-row">
 											<a class="btn btn-raised btn-primary ink-reaction" id="sendsms" onclick="send_alarm()">보내기</a>
 										</div>
+										</form>
 									</div>
 								</div>
 							</div>
