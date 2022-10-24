@@ -300,7 +300,7 @@
 	
 														<li class="commentNick"><a href="#">${reply.getUserNickname()}</a></li><!-- 작성사 상세 페이지 이동 -->
 														<li class="comment">${reply.getBoardReplyContent()}</li>														
-														<li class="commentPost"><a href="#">${reply.getBoardTitle()}</a></li> <!-- 작성한 게시글 페이지 이동 -->														
+														<li class="commentPost"><a href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${reply.getBoardNumber()}">${reply.getBoardTitle()}</a></li> <!-- 작성한 게시글 페이지 이동 -->														
 														<li class="commentDate">${reply.getBoardReplyDate()}</li>			
 						
 														<li class="action">

@@ -262,3 +262,14 @@ body {
 small>em{
     margin: 0 8px;
 }
+
+#sum{
+	 filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+#ready{
+	position:absolute;
+	left:50px;
+	
+}

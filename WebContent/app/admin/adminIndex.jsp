@@ -233,7 +233,8 @@
 					<div class="section-body">
 						<div class="row flex-box">
 							<div class="ma-item col-md-6 col-sm-12 col-xs-12">
-								<div class="card">
+								<div class="card" id = "sum">
+							<h3>준비중</h3>
 									<div class="card-head">
 										<header><a href="${pageContext.request.contextPath}/app/admin/statVisitor.jsp">방문자 현황</a></header>
 										<div class="float_r text-12 text-right force-padding no-padding-y">
@@ -264,7 +265,7 @@
 							</div>
 	
 							<div class="ma-item col-md-6 col-sm-12 col-xs-12">
-								<div class="card">
+								<div class="card" id = "sum">
 									<div class="card-head">
 										<header><a href="${pageContext.request.contextPath}/app/admin/statAnalytics.jsp">일자별 요약</a></header>
 									</div>
