@@ -9,6 +9,7 @@ import com.cosmos.app.board.vo.BoardDTO;
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.inquiry.vo.InquiryDTO;
 import com.cosmos.app.main.vo.AlarmVO;
+import com.cosmos.app.main.vo.BannerVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
 
 public class MainDAO {
@@ -39,7 +40,7 @@ public class MainDAO {
 		   return sqlSession.selectList("Search.mySelectBoard", userNumber);
 	   }
 	   	   
-	   public List<MainDAO> selectBanner() {
+	   public List<BannerVO> selectBanner() {
 		   return sqlSession.selectList("Main.selectBanner");
 	   }
 	   

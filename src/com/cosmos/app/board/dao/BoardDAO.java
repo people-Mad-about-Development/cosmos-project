@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.cosmos.app.board.vo.BoardDTO;
+import com.cosmos.app.board.vo.BoardSkillVO;
 import com.cosmos.app.board.vo.BoardVO;
 import com.cosmos.app.board.vo.SupporterVO;
 import com.cosmos.mybatis.config.MyBatisConfig;
@@ -66,4 +67,11 @@ public class BoardDAO {
     	sqlSession.insert("Board.updateSupporter", boardVO);
     }
 	
+    public int getLastBoardNumber() {
+    	return sqlSession.selectOne("Board.getLastBoardNumber");
+    }
+    
+    public void insertBoardSkill(BoardSkillVO boardSkillVO) {
+    	sqlSession.insert("Board.insertBoardSkill",boardSkillVO);
+    }
 }

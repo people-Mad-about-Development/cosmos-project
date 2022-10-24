@@ -37,7 +37,6 @@ public class BannerInsertOkController implements Execute {
 		bannerVO.setBannerTitle(multipartRequest.getParameter("bannerTitle")); 
 		bannerVO.setBannerDate(multipartRequest.getParameter("bannerDate")); 
 		bannerVO.setBannerDateEnd(multipartRequest.getParameter("bannerDateEnd")); 
-		bannerVO.setBannerUrl(uploadPath); 
 		
 		Enumeration files = multipartRequest.getFileNames();
 	    String name = (String) files.nextElement();
@@ -49,6 +48,7 @@ public class BannerInsertOkController implements Execute {
 		System.out.println(bannerVO);
 		
 		
+		bannerVO.setBannerUrl(req.getContextPath()+"/upload/"+filename); 
 		adminDAO.insert(bannerVO);
 		req.setAttribute("banners", adminDAO.selectAll());
 		
