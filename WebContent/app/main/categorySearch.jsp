@@ -95,9 +95,7 @@
             <main class="inqueryMain">
                 <section class="inqueryAnswerWrapper">
                     <div class="inqueryCardHeader">
-                        <div class="inqueryCardHeaderTitleWrapper">
-                            <div class="inqeuryCardHeaderTitle">상담목록</div>
-                        </div>
+
                         <div class="inqueryCardHeaderMoveWrapper">
                            <button class="inqeuryCardHeaderMovePage" onclick="moveInquiry()">
                             <script>
@@ -126,13 +124,8 @@
                                 <div class="UserChatItemContent">
                                     <div class="UserChatItemContentTitle">
                                         <div class="Head-ch-front">코스모스</div>
-                                        <div class="Time-ch-front">7:23PM</div>
                                     </div>
                                     <div class="UserChatItemContentList">누구나 자유롭게 학습하는 공간, 코스모스에 오신 것을 환영해요!</div>
-                                </div>
-                                <div class="UserChatItemButtons">
-                                    <div class="UserChatItemBadge">1</div>
-                                    <div class="UserChatItemPrev"></div>
                                 </div>
 
                             </a>
@@ -154,7 +147,7 @@
                                     <div class="UserChatItemContentTitle">
                                         <div class="Head-ch-front">코스모스</div>
                                     </div>
-                                    <div class="UserChatItemContentList">안녕하세요 코스모스입니다. 오늘도 코스모스를 이용해주셔서 감사합니다.</div>
+                                    <div class="UserChatItemContentList">문의하기는 새 문의하기를 이용해 주세요 감사합니다!</div>
                                 </div>
                                 <div class="UserChatItemButtons ghost">
                                     <div class="UserChatItemBadge ghost">1</div>

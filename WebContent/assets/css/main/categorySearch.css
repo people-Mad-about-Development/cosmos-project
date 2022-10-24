@@ -129,6 +129,7 @@ ul {
 }
 
 .Topbutton {
+    z-index : 10;
     position: fixed;
     right: 1.5rem;
     bottom: 1.5rem;
@@ -143,6 +144,7 @@ ul {
 }
 
 .Inquery {
+	z-index : 10;
     position: fixed;
     right: 1.5rem;
     bottom: 6.5rem;

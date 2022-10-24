@@ -31,6 +31,7 @@ public class MemberDeleteOkController implements Execute {
 		
 		result.setRedirect(true);
 		result.setPath(req.getContextPath() + "/admin/memberListOk.ad");
+		
 		return result;
 
 		
