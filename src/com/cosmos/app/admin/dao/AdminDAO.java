@@ -11,6 +11,9 @@ import com.cosmos.app.admin.vo.ReplyDTO;
 import com.cosmos.app.board.vo.BoardDTO;
 import com.cosmos.app.board.vo.BoardReplyVO;
 import com.cosmos.app.board.vo.BoardVO;
+import com.cosmos.app.community.vo.CommunityVO;
+import com.cosmos.app.inquiry.vo.InquiryDTO;
+import com.cosmos.app.inquiry.vo.InquiryVO;
 import com.cosmos.app.main.vo.BannerVO;
 import com.cosmos.app.user.vo.CompanyVO;
 import com.cosmos.app.user.vo.UserVO;
@@ -111,4 +114,23 @@ public class AdminDAO {
 	   public void adminReplyDelete(int boardReplyNumber) {
 			sqlSession.delete("Admin.adminReplyDelete", boardReplyNumber);
 	   }
+	   public void noticeInsert(CommunityVO communityVO) {
+			 sqlSession.insert("Admin.noticeInsert", communityVO);
+	    }
+	   public List<InquiryDTO> inquiryList(){
+		   return sqlSession.selectList("Admin.inquiryList");
+	   }
+	   public int inquiryAll() {
+			return sqlSession.selectOne("Admin.inquiryAll");
+	   }
+	   
+	   public void inquiryDelete(int inquiryNumber) {
+			sqlSession.delete("Admin.inquiryDelete", inquiryNumber);
+	   }
+	   
+	   public void update(InquiryDTO inquiryDTO) {
+			sqlSession.update("Admin.update", inquiryDTO);
+	   }
+
+	
 }

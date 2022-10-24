@@ -141,7 +141,7 @@ h
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -179,17 +179,17 @@ h
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -256,7 +256,7 @@ h
 									<div class="card-head">
 									<header>
 										<a href="#" id = "title"><c:out value="${banner.getBannerTitle()}"/></a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
-										<span class="badge style-primary">게재중</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
+										<span class="badge style-primary"></span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
 									</header>
 									
 									<div class="tools">
@@ -278,10 +278,10 @@ h
 									</div>
 								</div>
 								
-								<a href="#">	<!-- 수정페이지 링크 -->
+									<!-- 수정페이지 링크 -->
 									<img class="" src="/upload/${banner.getFileName()}" style="width:100%">
 									
-								</a>
+								
 								<div class="card-body">
 									<p>기간: <c:out value="${banner.getBannerDate()}"/>~<c:out value="${banner.getBannerDateEnd()}"/></p>
 
@@ -297,7 +297,7 @@ h
 								<div class="card-head">
 									<header>
 										<a href="#">cosmos</a> <!-- 해당 정보가 들어간 수정페이지 이동 필요 -->
-										<span class="badge">기간만료</span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
+										<span class="badge"></span> <!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->
 									</header>
 									
 									<div class="tools">
@@ -319,9 +319,9 @@ h
 									</div>
 								</div>
 								
-								<a href="#">	<!-- 수정페이지 링크 -->
+									<!-- 수정페이지 링크 -->
 									<img class="" src="https://cdn.imweb.me/upload/S2022092970b48c0a5356a/438f17fdbb82e.jpg" style="width:100%">
-								</a>
+								
 								
 								<div class="card-body">
 									<p>기간: 2022-01-01 ~ 2022-02-03</p>

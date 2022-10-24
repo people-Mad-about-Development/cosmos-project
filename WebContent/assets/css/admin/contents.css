@@ -118,6 +118,10 @@ section.content {
     width: 100%;
 }
 
+.col-md-10 {
+    width: 100%;
+}
+
 section {
     max-width: 1200px;
     margin: 0 auto;

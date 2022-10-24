@@ -79,7 +79,15 @@
      document.userForm.submit();
      }
   }*/﻿
-
+	
  
 
 });
+
+
+
+function click(){
+	console.log("함수")
+	 alert('준비중입니다.');
+	return;
+}

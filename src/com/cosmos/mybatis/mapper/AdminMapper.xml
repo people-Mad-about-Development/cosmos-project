@@ -27,7 +27,7 @@
 	
 	<!-- 유저 테이블 전체 조회 -->
 	<select id="userSelect" resultType = "userVO" >
-		select  user_number,user_nickname,user_id,user_date from tbl_user ;
+		select  user_number,user_nickname,user_id,user_date from tbl_user order by user_date desc ;
 	</select>
 	
 	<!-- 프로젝트 게시글 수 -->
@@ -81,8 +81,8 @@
 	
 	<!-- 회사 추가 -->
 	<insert id = "companyInsert" parameterType = "companyVO">
-		insert into tbl_company (company_name,company_file,company_url,company_content) 
-		values (#{companyName},#{companyFile},#{companyUrl},#{companyContent})
+		insert into tbl_company (company_name,company_url,company_content,company_number) 
+		values (#{companyName},#{companyUrl},#{companyContent},#{companyNumber})
 	</insert>
 	
 <!-- 게시물 관리 -->
@@ -110,7 +110,7 @@
 <!-- 댓글 관리 -->
 	<!-- 댓글 조회 -->
 	<select id = "adminReplySelect" parameterType = "replyDTO" resultType = "replyDTO">
-		select board_reply_content,board_title,board_date , user_nickname ,board_reply_number
+		select board_reply_content,board_title,board_date , user_nickname ,board_reply_number ,board_reply_date
 		from tbl_board_reply a , tbl_user b  , tbl_board c
  		where a.user_number = b.user_number 
   		and  a.board_number = c.board_number order by board_date desc
@@ -128,6 +128,36 @@
   	<delete id="adminReplyDelete" parameterType = "_int">
 		delete from tbl_board_reply where board_reply_number = #{boardReplyNumber}
 	</delete>
+	
+<!-- 공지사항 등록 -->
+	<insert id = "noticeInsert" parameterType = "communityVO">
+		insert into tbl_community (community_title, community_content, community_date,community_file)
+		values(#{communityTitle},#{communityContent}, #{communityDate},#{communityFile});
+	</insert>
+	
+<!-- 문의글 -->
+	<!-- 문의글 조회 -->
+	<select id = "inquiryList" resultType = "inquiryDTO">
+		select  i.inquiry_content,u.user_nickname,i.inquiry_date,i.inquiry_status,i.inquiry_number
+		from tbl_inquiry i join tbl_user u on i.user_number = u.user_number order by inquiry_date desc;
+	</select>
+	
+	<!-- 문의글 전체 조회 -->
+	<select id = "inquiryAll" resultType = "_int">
+		select count(*)  
+		from tbl_inquiry i join tbl_user u on i.user_number = u.user_number ;
+	</select>
+	
+	<!-- 문의글 삭제 -->
+	<delete id="inquiryDelete" parameterType = "_int">
+		delete from tbl_inquiry where inquiry_number = #{inquiryNumber}
+	</delete>
+	
+	<!-- 문의글 수정 -->
+	<update id = "update" parameterType = "inquiryDTO">
+		update tbl_inquiry set inquiry_content = #{inquiryContent}
+		where inquiry_number = #{inquiryNumber}
+	</update>
 </mapper>
 
 

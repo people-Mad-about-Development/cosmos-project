@@ -8,6 +8,7 @@ public class ReplyDTO {
 	private int boardNumber;
 	private int userNumber;
 	private int boardReplyNumber;
+	private String boardReplyDate;
 	
 	public ReplyDTO() {
 	}
@@ -68,11 +69,19 @@ public class ReplyDTO {
 		this.boardReplyNumber = boardReplyNumber;
 	}
 
+	public String getBoardReplyDate() {
+		return boardReplyDate;
+	}
+
+	public void setBoardReplyDate(String boardReplyDate) {
+		this.boardReplyDate = boardReplyDate;
+	}
+
 	@Override
 	public String toString() {
 		return "ReplyDTO [boardReplyContent=" + boardReplyContent + ", boardTitle=" + boardTitle + ", boardDate="
 				+ boardDate + ", userNickname=" + userNickname + ", boardNumber=" + boardNumber + ", userNumber="
-				+ userNumber + ", boardReplyNumber=" + boardReplyNumber + "]";
+				+ userNumber + ", boardReplyNumber=" + boardReplyNumber + ", boardReplyDate=" + boardReplyDate + "]";
 	}
 
 	

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -122,7 +124,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -160,17 +162,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="active expanded" data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp" class=" active"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad" class=" active"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -244,7 +246,7 @@
 														<div id="prefetch">
 															<span class="twitter-typeahead" >
 																<input type="hidden" name="q" value="YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30=" class="form-control typeahead">
-																<input type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
+																<input onclick="alert('준비중입니다.')" type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
 																<pre class="bar" aria-hidden="true"></pre>
 																<div class="tt-menu">
 																	<div class="tt-dataset tt-dataset-users"></div>
@@ -257,26 +259,26 @@
 										</div>
 									</div>
 
-									<div class="col-md-2 hidden-xs">
+									<!-- <div class="col-md-2 hidden-xs">
 										<div class="card">
 											<div class="companyDelete">
 												<a href="#modal;" rel="modal:open">선택 문의글 삭제</a>
 												<span>
-													<!-- <button type="button" class="button" style="display:none";></button> -->
+													<button type="button" class="button" style="display:none";></button>
 												</span>
 											</div>
 										</div>
 									</div>
-	
+	 -->
 	
 									<div class="col-md-12">
 										<div class="card">
 											<div class="card-head" id="card-head">
 												<header class="small">전체 문의글
-													<span class="text-primary" id="total-member-count">1</span>
+													<span class="text-primary" id="total-member-count">${all}</span>
 												</header>
 											</div>
-	
+										
 											<div class="card-body no-padding">
 												<div class="li_table" id="UI_TABLE">
 													<ul class="subject _thead" id="table-header" >
@@ -288,12 +290,15 @@
 															</div>
 														</li>
 														<li class="inquiryTitle">제목</li>
+														<!-- <li class="inquiryReply">답변</li> -->
 														<li class="inquiryNick">작성자</li>
 														<li class="inquiryDate">작성일</li>
 														<li class="inquiryState">진행 상태</li>
 														<li class="action"></li>
 													</ul>
-	
+											<c:choose>
+												<c:when test="${inquirytList != null and fn:length(inquirytList)>0}">
+													<c:forEach var="inquiry" items="${inquirytList}">
 													<ul class="content _tbody" id="member_item_m20220929a41c742d48942" data-nick="관리자" data-app="">
 														<li class="check">
 															<div class="checkbox checkbox-styled no-margin">
@@ -304,10 +309,12 @@
 															</div>
 														</li>
 	
-														<li class="inquiryTitle"><a href="#">새 게시글 작성은 어떻게 할 수 있나요?</a></li> <!-- 작성한 문의글 페이지 이동 -->														
-														<li class="inquiryNick"><a href="#">성윤성윤</a></li><!-- 작성사 상세 페이지 이동 -->
-														<li class="inquiryDate">2022-10-10 15:30</li>			
-														<li class="inquiryState"> <span class="badge">답변 작성 중</span></li>	<!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->													
+														<li class="inquiryTitle" id=""><a href="#">${inquiry.getInquiryContent()}</a></li> <!-- 작성한 문의글 페이지 이동 -->		
+														<%-- <li class="inquiryReply" id="title1"><a href="#">${inquiry.getInquiryReply()}</a></li>	 --%>
+														<!-- <input name="inquiryReply" type='text' id ='title' onKeyPress='if(event.keyCode==13){sendApply();}'></input> -->			 								
+														<li class="inquiryNick"><a href="#">${inquiry.getUserNickname()}</a></li><!-- 작성사 상세 페이지 이동 -->
+														<li class="inquiryDate">${inquiry.getInquiryDate()}</li>			
+														<li class="inquiryState"> <span class="badge">${inquiry.getInquiryStatus()}</span></li>	<!-- 조건에 따른 토글 클래스로 색상 변경, 기본 badge -->													
 						
 														<li class="action">
 															<div class="dropdown">
@@ -316,7 +323,7 @@
 																</button>
 																<ul class="dropdown-menu animation-dock right" role="menu" aria-labelledby="dLabel">
 																	<li>
-																		<a href="javascript:;" onclick="adminMember.openDeleteMember('[{member_code\:m20220929a41c742d48942,delete_old_auth_log\:false}]')">
+																		<a  onclick="location.href='${pageContext.request.contextPath}/admin/inquiryDeleteOk.ad?inquiryNumber=${inquiry.getInquiryNumber()}'">
 																			삭제
 																		</a>
 																	</li>																												
@@ -324,8 +331,11 @@
 															</div>
 														</li>
 													</ul>
+													</c:forEach>
+													</c:when>
+													</c:choose>	
 												</div>
-												<nav class="text-center" id="paginate"></nav>
+												<!-- <nav class="text-center" id="paginate"></nav> -->
 											</div>
 										</div>
 									</div>
@@ -339,4 +349,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/admin/contentInquiry.js"></script>
+<script>
+
+</script>
 </html>

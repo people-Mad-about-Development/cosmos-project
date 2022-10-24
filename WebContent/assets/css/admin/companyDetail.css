@@ -90,18 +90,17 @@ body {
     width    : 72px;
     height   : 72px;
     z-index  : 50;
-    cursor   : pointer
+    
 }
 
-#drop_profile_img input {
+/* #drop_profile_img input {
     width    : 72px;
     height   : 72px;
     position : absolute;
     left     : 0;
     top      : 0;
     z-index  : 50;
-    cursor   : pointer
-}
+} */
 
 #fileupload_profile_img .over {
     display       : none;
@@ -115,9 +114,9 @@ body {
     z-index       : 5
 }
 
-#fileupload_profile_img:hover .over {
+/* #fileupload_profile_img:hover .over {
     display : block;
-}
+} */
 
 #fileupload_profile_img .zmdi {
     position  : absolute;

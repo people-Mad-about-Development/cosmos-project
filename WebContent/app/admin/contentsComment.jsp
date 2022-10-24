@@ -124,7 +124,7 @@
 						<li class="spacer"></li> <!-- 공간 여백 div -->
 
 						<li class="  " data-title="adminPage">
-							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
 								<div class="gui-icon">
 									<i class="db-dashboard"></i>
 								</div>
@@ -162,17 +162,17 @@
 							</a>
 							<ul>
 								<li class="  " data-title="contentsPost">
-									<a href="${pageContext.request.contextPath}/app/admin/contentPost.jsp">
+									<a href="${pageContext.request.contextPath}/admin/contentListOk.ad">
 										<span class="title">게시물 관리</span>
 									</a>
 								</li>
 								<li class="active expanded" data-title="contentsComment"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentsComment.jsp"  class=" active">
+									<a href="${pageContext.request.contextPath}/admin/replyListOk.ad"  class=" active">
 										<span class="title">댓글 관리</span>
 									</a>
 								</li>
 								<li class="  " data-title="contentsInjuiry"> 
-									<a href="${pageContext.request.contextPath}/app/admin/contentInquiry.jsp"> 
+									<a href="${pageContext.request.contextPath}/admin/inquirySelectOk.ad"> 
 										<span class="title">문의글 관리</span>
 									</a>
 								</li>
@@ -246,7 +246,7 @@
 														<div id="prefetch">
 															<span class="twitter-typeahead" >
 																<input type="hidden" name="q" value="YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30=" class="form-control typeahead">
-																<input type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
+																<input onclick="alert('준비중입니다.')" type="text" class="form-control typeahead tt-input searchBar" id="keyword_search1" name="keyword" placeholder="검색" autocomplete="off" spellcheck="false" dir="auto" value="">
 																<pre class="bar" aria-hidden="true"></pre>
 																<div class="tt-menu">
 																	<div class="tt-dataset tt-dataset-users"></div>
@@ -259,17 +259,7 @@
 										</div>
 									</div>
 
-									<div class="col-md-2 hidden-xs">
-										<div class="card">
-											<div class="companyDelete">
-												<a href="#modal;" rel="modal:open">선택 댓글 삭제</a>
-												<span>
-													<!-- <button type="button" class="button" style="display:none";></button> -->
-												</span>
-											</div>
-										</div>
-									</div>
-	
+									
 	
 									<div class="col-md-12">
 										<div class="card">
@@ -311,7 +301,7 @@
 														<li class="commentNick"><a href="#">${reply.getUserNickname()}</a></li><!-- 작성사 상세 페이지 이동 -->
 														<li class="comment">${reply.getBoardReplyContent()}</li>														
 														<li class="commentPost"><a href="#">${reply.getBoardTitle()}</a></li> <!-- 작성한 게시글 페이지 이동 -->														
-														<li class="commentDate">${reply.getBoardDate()}</li>			
+														<li class="commentDate">${reply.getBoardReplyDate()}</li>			
 						
 														<li class="action">
 															<div class="dropdown">

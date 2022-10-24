@@ -6,9 +6,10 @@ public class CommunityVO {
 	private String communityTitle;
 	private String communityContent;
 	private String communityDate;
-	private String communityCategory;			// 전공 ? 
+	private String communityCategory;
 	private int userNumber;
 	private int boardNumber;
+	private String communityFile;
 	
 	public CommunityVO() {
 		// TODO Auto-generated constructor stub
@@ -70,15 +71,20 @@ public class CommunityVO {
 		this.boardNumber = boardNumber;
 	}
 
+	public String getCommunityFile() {
+		return communityFile;
+	}
+
+	public void setCommunityFile(String communityFile) {
+		this.communityFile = communityFile;
+	}
+
 	@Override
 	public String toString() {
 		return "CommunityVO [communityNumber=" + communityNumber + ", communityTitle=" + communityTitle
 				+ ", communityContent=" + communityContent + ", communityDate=" + communityDate + ", communityCategory="
-				+ communityCategory + ", userNumber=" + userNumber + ", boardNumber=" + boardNumber + "]";
+				+ communityCategory + ", userNumber=" + userNumber + ", boardNumber=" + boardNumber + ", communityFile="
+				+ communityFile + "]";
 	}
-
-	
-	
-	
 	
 }

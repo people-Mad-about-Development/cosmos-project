@@ -5,7 +5,7 @@
  // base.html
 
 	// 문서로드 완료 후 자바 스크립트 진행
-	document.addEventListener('DOMContentLoaded', function() {
+/*	document.addEventListener('DOMContentLoaded', function() {
 		const alertBox = document.querySelector('#alertBox');
 		const contentArea = document.querySelector('#content');
 
@@ -13,10 +13,10 @@
 		alertBox.classList.add('alert__wrap');
 		contentArea.prepend(alertBox);
 	});
-
-	$(function(){
+*/
+/*	$(function(){
 		SADMIN_MENU_ALERT.openAlert();
-	});
+	});*/
 
 	// 좌측 슬라이드 배너 작동
 	$('.gui-folder').click(function(){
@@ -42,5 +42,24 @@
 	$all.prop("checked", $terms.filter(":checked").length == $terms.length);
    
 	});
-
+	
+/*	$(".inquiryReply").click(function(){
+			$("#title1").replaceWith("<input value='' type='text' id ='title' onKeyPress='if(event.keyCode==13){sendApply();}'></input>");
+		});
+	
+	
+   function sendApply(){
+	console.log("드러오오옹")
+	let inquiryReply = $('#title').val();
+   $.ajax({
+      url: "/admin/inquiryUpdateOk.ad",
+      type: "get",
+      data: {inquiryReply: inquiryReply},
+      contentType: "application/json; charset=utf-8",
+      success: function(){
+		location.href = "/admin/inquirySelectOk.ad"}
+   });
+}*/
+	
+	
 	
