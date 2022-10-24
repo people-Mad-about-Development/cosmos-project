@@ -20,8 +20,11 @@ public class noticeListOkController implements Execute {
 		
 		
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		
+		req.setAttribute("boardNumber", boardNumber);
 		req.setAttribute("noticeList", communityDAO.selectNoticeList(boardNumber));
+		req.setAttribute("userNumber", userNumber);
 		
 		result.setPath("/app/myPage/my_project_notice.jsp");
 		

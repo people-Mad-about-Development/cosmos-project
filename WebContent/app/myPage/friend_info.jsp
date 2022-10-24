@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend_info.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
     <title>친구 정보 상세보기</title>
 </head>
 

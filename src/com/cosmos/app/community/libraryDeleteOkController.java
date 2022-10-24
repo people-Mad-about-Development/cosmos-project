@@ -28,7 +28,7 @@ public class libraryDeleteOkController implements Execute {
 		communityDAO.deleteLibrary(communityNumber);
 		
 		result.setRedirect(true);
-		result.setPath("/community/libraryListOk.co?boardNumber="+boardNumber);
+		result.setPath(req.getContextPath() +"/community/libraryListOk.co?boardNumber="+boardNumber);
 		return result;
 	}
 

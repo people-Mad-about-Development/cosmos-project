@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자료실 글쓰기</title>
+    <title>자료실 수정하기</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/new_text.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                     <textarea id="summernote" name="textContentSummerNote" placeholder="">${text.getCommunityContent()}</textarea>
                     <p id="letter-length" style="display: inline;"></p>/500
                     <section class="writebutton_buttons__2qW83">	
-                    	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">글 등록</button>
+                    	<button type="button" class="writebutton_registerButton__n_O2M" onclick="send()">수정</button>
                     </section>
                 </form>
                 <section class="writebutton_buttons__2qW83">

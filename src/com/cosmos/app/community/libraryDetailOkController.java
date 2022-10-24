@@ -26,6 +26,7 @@ public class libraryDetailOkController implements Execute {
 		
 		int communityNumber = Integer.valueOf(req.getParameter("communityNumber"));
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		
 		
 		fileVO = fileDAO.select(communityNumber);
@@ -34,6 +35,9 @@ public class libraryDetailOkController implements Execute {
 		
 		req.setAttribute("text", communityDTO);
 		req.setAttribute("files", fileVO);
+		req.setAttribute("userNumber", userNumber);
+		
+		System.out.println(userNumber);
 		
 		result.setPath("/app/myPage/in_lib.jsp");
 		

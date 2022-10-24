@@ -9,7 +9,7 @@
 <title>친구관리</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage/friend.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
-
+<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 <body>  
 

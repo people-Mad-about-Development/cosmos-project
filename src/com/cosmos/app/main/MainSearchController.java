@@ -20,8 +20,6 @@ public class MainSearchController implements Execute {
 		Result result = new Result();
 		MainDAO mainDAO = new MainDAO();
 		List<BoardDTO> boardDTO = null;
-		List<Integer> boardNumbers = null;
-		List<String> skillFiles = null;
 		
 		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		boardDTO = mainDAO.mySelectBoard(userNumber);

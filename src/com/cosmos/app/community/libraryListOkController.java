@@ -24,13 +24,15 @@ public class libraryListOkController implements Execute {
 		
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
 		communityDTO = communityDAO.selectLibList(boardNumber);
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
 		
 		for (CommunityDTO text : communityDTO) {
 			text.setCountFile(communityDAO.countFile(text.getCommunityNumber()));
 		}
 		
-		
+		req.setAttribute("boardNumber", boardNumber);
 		req.setAttribute("LibList", communityDTO);
+		req.setAttribute("userNumber", userNumber);
 		
 		result.setPath("/app/myPage/my_project_lib.jsp");
 		
