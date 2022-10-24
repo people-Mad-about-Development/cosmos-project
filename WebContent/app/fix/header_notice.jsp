@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="loginUser">
-                <img src="https://hola-post-image.s3.ap-northeast-2.amazonaws.com/default.PNG" alt="userImg" class="loginUser">
+                <img src="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png" alt="userImg" class="loginUser">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 10l5 5 5-5z"></path>
                 </svg>
@@ -61,7 +61,7 @@
                             <a href="${pageContext.request.contextPath}/main/mainSearch.ma?" style="display: inline-block;">내 작성글</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
-                            <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">설정</a>
+                            <a href="${pageContext.request.contextPath}/user/userInfo.us" style="display: inline-block;">내 정보</a>
                         </li>
                         <li class="dropdownBar_menuItem_header">
                             <a href="${pageContext.request.contextPath}/user/logout.us" style="display: inline-block;">로그아웃</a>

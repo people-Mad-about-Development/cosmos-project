@@ -67,8 +67,14 @@ $lastBack.click(function(){
 	googleLogin();
 });*/
 $github.click(function(){
-    $first.toggleClass("active_lo hidden_lo");
-    $second.toggleClass("active_lo hidden_lo");
+    /*$first.toggleClass("active_lo hidden_lo");
+    $second.toggleClass("active_lo hidden_lo");*/
+	Swal.fire(
+			'서비스 준비중입니다',
+			'',
+			'warning'
+	);
+
 });
 $kakao.click(function(){
 	kakaoLogin();
