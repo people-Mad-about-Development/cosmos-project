@@ -35,7 +35,7 @@
 	</select>
 	
 	<select id="userCompanyInfo" parameterType="_int" resultType="companyVO">
-		select tc.company_name, tc.company_url  from tbl_user_company tuc join tbl_company tc on tuc.company_number = tc.company_number and tuc.user_number =#{userNumber}
+		select tc.company_name, tc.company_url, tc.company_file  from tbl_user_company tuc join tbl_company tc on tuc.company_number = tc.company_number and tuc.user_number =#{userNumber}
 	</select>
 	
 	<select id="userInterestInfo" parameterType="_int" resultType="skillVO">
@@ -100,7 +100,7 @@
 	</select>
 	
 	<insert id="addCompany" parameterType="string">
-		INSERT INTO tbl_company (company_name, company_file, company_url) VALUES(#{companyName}, 'company.png', '/assets/images/company/company.png')
+		INSERT INTO tbl_company (company_name, company_file) VALUES(#{companyName}, '/assets/images/company/company.png')
 	</insert>
 	
 	<update id="initProfile" parameterType="userVO">
