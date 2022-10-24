@@ -1,0 +1,10 @@
+diff a/WebContent/app/admin/adminIndex.jsp b/WebContent/app/admin/adminIndex.jsp	(rejected hunks)
+@@ -122,7 +122,7 @@
+ 						<li class="spacer"></li> <!-- 공간 여백 div -->
+ 
+ 						<li class="active expanded expanding" data-title="adminPage">
+-							<a href="${pageContext.request.contextPath}/admin/homeListOk.ad"> <!-- 관리자 메인 화면 링크-->
++							<a href="${pageContext.request.contextPath}/app/admin/adminIndex.jsp"> <!-- 관리자 메인 화면 링크-->
+ 								<div class="gui-icon">
+ 									<i class="db-dashboard"></i>
+ 								</div>
