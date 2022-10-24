@@ -85,7 +85,7 @@
                 <ul class="company">
                 	<c:forEach var="item" items="${UserCompanyInfo }">
                 	<span class="companyBarWrapper">
-                    <li class="companyBar companyBarList"><img src="${pageContext.request.contextPath}<c:out value="${item.getCompanyUrl()}"></c:out>" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span><c:out value="${item.getCompanyName()}"></c:out></span></li>
+                    <li class="companyBar companyBarList"><img src="${pageContext.request.contextPath}<c:out value="${item.getCompanyFile()}"></c:out>" alt="" class="languageBarLogo"><span class="x" id="x1">ⓧ</span><span><c:out value="${item.getCompanyName()}"></c:out></span></li>
                     <input type="hidden" name="companyName" value=" ${item.getCompanyName()}">
                 	</span>
                 	</c:forEach>
