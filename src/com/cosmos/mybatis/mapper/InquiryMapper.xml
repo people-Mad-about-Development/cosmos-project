@@ -4,8 +4,8 @@
 	
 		<!-- 문의하기 등록    -->
 	<insert id="insert" parameterType="inquiryVO">
-		insert into tbl_inquiry (inquiry_content, inquiry_reply, user_number)
-		values (#{inquiryContent},"",2)
+		insert into tbl_inquiry (inquiry_content, inquiry_reply ,  user_number)
+		values (#{inquiryContent},"",#{userNumber})
 	</insert>
 	
 		<!--문의하기 게시판에 답변중,답변완료  -->

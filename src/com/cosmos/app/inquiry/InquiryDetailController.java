@@ -15,7 +15,7 @@ public class InquiryDetailController implements Execute {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Result result = new Result();
 		result.setPath("/app/inquiry/inquiryBoard.jsp");
-//		result.setPath("inquiry/inquiryDetail.in");
+//		result.setPath("inquiry/inquiryDetail.in");	
 		
 		return result;
 	}

@@ -25,7 +25,8 @@ public class InquiryWriteOkController extends HttpServlet implements Execute {
 		InquiryVO inquiryVO = new InquiryVO();
 		InquiryDAO inquiryDAO = new InquiryDAO();
 		PrintWriter out = resp.getWriter();
-		
+		int userNumber = (Integer)req.getSession().getAttribute("sessionUserNumber");
+		inquiryVO.setUserNumber(userNumber);
 		inquiryVO.setInquiryContent(content);
 		
 		inquiryDAO.insert(inquiryVO);
