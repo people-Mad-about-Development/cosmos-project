@@ -50,5 +50,13 @@ $post.click(function(){
 			'warning'
 			);
 })
+
+
+
+
+
+
+
+
 </script>
 </html>
