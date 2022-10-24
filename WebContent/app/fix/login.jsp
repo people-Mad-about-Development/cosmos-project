@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 </head>
 <body>
+	<form name="userJoinForm" id="userJoinForm" method="post" enctype="multipart/form-data">
 	    <div class="modal">
 	        <div class="black_bg"></div>
 	        <div class="modalW">
@@ -359,6 +360,8 @@
 							<input type="text" style="display:none" name="userId" value=" ">
 					    </form> --%>
 	                    <button type="button" class="setImage_buttonNext__3RJzU" name="complete" onclick="join()">가입 완료</button>
+	                    <!-- 기존 -->
+	                    <!-- <button type="button" class="setImage_buttonNext__3RJzU" name="complete" onclick="join()">가입 완료</button> -->
 	                </div>
 	
 	            </div>
@@ -383,6 +386,7 @@
             </div>
         </div>
     </div>
+</form>
 
 
 </body>
