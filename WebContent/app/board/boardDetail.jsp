@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 모집</title>
+<link rel="icon" type="image/png" sizes="32x32"	href="${pageContext.request.contextPath}/assets/images/fix/cosmosProfile.png">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/board/boardProject2.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/dimmed.css">
 </head>
@@ -18,7 +19,7 @@
     <div id="root">
         <div class="studyContent_postWrapper" >
             <section class="studyContent_postHeader">
-                <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
+                <a onclick="location.href='${pageContext.request.contextPath}/main/mainBoard.ma'">
 		          <svg stroke="currentColosr" fill="currentColor" stroke-width="0"
 		        viewBox="0 0 448 512" color="808080" cursor="pointer" height="30" width="30"
 		         xmlns="http://www.w3.org/2000/svg" style="color: rgb(128, 128, 128);" >
@@ -37,7 +38,8 @@
 	                <img class="studyContent_userImg" src="${pageContext.request.contextPath}${board.getUserFile()}" style="cursor:default;">
 	                <div class="studyContent_userName" style="cursor:default; pointer-events : none;">${board.getUserNickname()}</div>
 	                <div class="studyContent_registeredDate">${board.getBoardDate()}</div>
-	                 <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=${board.boardNumber}" class="community_go">
+	                 
+	                <a href="${pageContext.request.contextPath}/community/noticeListOk.co?boardNumber=${board.boardNumber}" class="community_go">
                       커뮤니티
                    </a>
                 </div>
@@ -106,7 +108,7 @@
 	                        </c:otherwise>
                         </c:choose>
                         <c:if test="${sessionUserNumber eq board.getUserNumber()}">
-	                        <a class ="apply_list" href="${pageContext.request.contextPath}/board/supportDetail.bo?boardNumber=${board.getBoardNumber()}" rel="noreferrer" target="_blank">
+	                        <a class ="apply_list" href="javascript:;" rel="noreferrer" onclick="alert()">
 	                            <span class = "apply_info">지원자 정보</span>
 	                        </a>
                         </c:if>
@@ -115,11 +117,23 @@
 		                    
                     <li class="studyInfo">
                         <span class="studyInfo_title">연락 방법</span>
-                        <div class="contact_project">
-                            <a class ="project_link" href="#" rel="noreferrer" target="_blank">
-                                지원하기
-                            </a>
-                        </div>
+                        
+                        <c:choose>
+	                    	<c:when test="${board.getBoardRecruitNumber() <= board.getBoardSupport() and empty sessionUserNumber}">
+	                    	
+	                    	</c:when>
+	                    	<c:otherwise>
+	                    		<c:if test="${sessionUserNumber ne board.getUserNumber()}">
+	                    	
+			                        <div class="contact_project">
+			                            <a class ="project_link" href="javascript:;" onclick="supportModalOpen()" rel="noreferrer" >
+			                                지원하기
+			                            </a>
+			                        </div>
+		                        </c:if>
+		                    </c:otherwise>
+		                </c:choose>
+                        
                     </li>
                     <li class="studyInfo">
                         <span class="studyInfo_title">진행 기간</span>
@@ -178,7 +192,7 @@
           </div>
           <section class="cancelButton_buttons">
             <button class="cancelButton_cancelButton 1" onclick="closeModal()">아니요</button>
-            <button class="cancelButton_registerButton" id="yes" onclick="send()">네,지원할게요</button>
+            <button class="cancelButton_registerButton" id="yes" onclick="sendApply()">네,지원할게요</button>
         </section>
       </div>
     </div>
@@ -217,7 +231,7 @@
             작성하신 글을 삭제 하시겠어요?
           </div>
           <section class="cancelButton_buttons">
-            <button class="cancelButton_cancelButton 3"onclick="closeModal()">아니요</button>
+            <button class="cancelButton_cancelButton 3" onclick="closeModal()">아니요</button>
             <button class="cancelButton_registerButton" onclick="sendDelete()">네,삭제할래요</button>
         </section>
       </div>
@@ -229,15 +243,21 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
+
 <script>
-
-
-  $('.project_link').on('click', function() {
-     $('.modal-wrapper').toggleClass('open');
-    return false;
-  });
+	let boardNumber = "${board.getBoardNumber()}";
+    let boardSupport = "${board.getBoardSupport()}";
+	
+  function  supportModalOpen(){
+	  $('.modal-wrapper').toggleClass('open');
+	    return false;
+  }
+ /*  $('.project_link').on('click', function() {
+    
+  }); */
+  function closeModal(){
+	  $('.modal-wrapper').toggleClass('open');
+  }
   
   $('.studyButtons_buttons1').on('click', function() {
      $('.modal-wrapper2').toggleClass('open');
@@ -254,10 +274,10 @@
     return false;
   });
   
-  $('.1').on('click', function() {
+  /* $('.1').on('click', function() {
      $('.modal-wrapper').toggleClass('open');
     
-  });
+  }); */
   $('.2').on('click', function() {
      $('.modal-wrapper2').toggleClass('open');
     return false;
@@ -269,8 +289,6 @@
 
   function sendNew(){
 		$(".dimmed_233vf").css("display","grid");
-		alert("sendNew");
-		console.log("sendNew");
 		location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
 	}
 
@@ -286,8 +304,24 @@
 		$(".dimmed_233vf").css("display","grid");
 		location.href="${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}"
 	}
+ /*  function sendMain(){
+		$(".dimmed_233vf").css("display","grid");
+		location.href="${pageContext.request.contextPath}/main/mainBoard.ma"
+	} */
   
 
 
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
+<script>
+	function alert(){
+		Swal.fire(
+				'준비중 입니다.',
+				'',
+				'error'
+			)
+	}
 </script>
 </html>

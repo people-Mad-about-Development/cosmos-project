@@ -38,7 +38,6 @@ public class BoardFrontController extends HttpServlet {
 		}else if(request.equals("/board/modifyOk.bo")) {	// 수정완료
 			result = new BoardModifyOkController().execute(req, resp);
 		}else if(request.equals("/board/detailOk.bo")) {	// 상세보기 
-			System.out.println("Front 들어옴");
 			result = new BoardDetailOkController().execute(req, resp);
 		}else if(request.equals("/board/listOk.bo")) {		// 게시판 목록
 			result = new BoardListController().execute(req, resp);

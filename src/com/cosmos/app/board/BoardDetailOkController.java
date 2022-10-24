@@ -5,20 +5,21 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cosmos.app.Execute;
 import com.cosmos.app.Result;
 import com.cosmos.app.board.dao.BoardDAO;
 import com.cosmos.app.main.dao.MainDAO;
+import com.cosmos.app.user.vo.UserVO;
 
 public class BoardDetailOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("board detail controller 들어옴");
 		BoardDAO boardDAO = new BoardDAO();
 		Result result = new Result();
-		
-		
+
+
 		int boardNumber = Integer.valueOf(req.getParameter("boardNumber"));
 
 		
@@ -28,8 +29,6 @@ public class BoardDetailOkController implements Execute{
 		
 		boardDAO.updateReadCount(boardNumber);
 		
-		/* boardDAO.updateClose(boardNumber); */
-		System.out.println("board detail dao 지남");
 		
 		result.setPath("/app/board/boardDetail.jsp");
 		return result;

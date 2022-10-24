@@ -287,7 +287,7 @@
     var $toggle = $('.toggleSwitch_ball');
     var $label = $('.toggleSwitch_switchLabel');
     var $title = $('.main_category_item');
-    console.log($switch)
+
     
     $toggle.click(function () {
         if ($(this).prev().is(":checked")) {

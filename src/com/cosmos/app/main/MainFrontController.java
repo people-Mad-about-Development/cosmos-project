@@ -47,7 +47,6 @@ public class MainFrontController extends HttpServlet{
 			result = new AlarmListController().execute(req, resp);
 		
 		}else if(request.equals("/main/alarmListOk.ma")) {//  알림함 목록
-			System.out.println("메인 프론트 콘트롤 알람 리스트 오케잉 들오와랏 ");
 			result = new AlarmListOkController().execute(req, resp);
 			
 		}else if(request.equals("/main/main.ma")) {//  메인

@@ -54,6 +54,10 @@ public class BoardDAO {
     	return sqlSession.selectList("Board.selectTitle");
     }
     
+    public int selectSupport(SupporterVO supporterVO) {
+    	return sqlSession.selectOne("Board.selectSupport", supporterVO);
+    }
+    
     public void insertSupport(SupporterVO supporterVO) {
     	sqlSession.insert("Board.insertSupport", supporterVO);
     }

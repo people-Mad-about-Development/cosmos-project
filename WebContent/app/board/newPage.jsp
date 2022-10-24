@@ -478,8 +478,9 @@
 	
 	    newPage.submit();
 	    
+	    /* const pageURI = "${pageContext.request.contextPath}";
 	    $(".dimmed_233vf").css("display","grid");
-		location.href=pageURI+"/board/writeOk.us"
+		location.href=pageURI+"/board/writeOk.bo" */
 	 }
 
 
