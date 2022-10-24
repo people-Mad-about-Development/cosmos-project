@@ -23,28 +23,18 @@ public class UserDAO {
 	      sqlSession = sqlSessionFactory.openSession(true);
 	   }
 	   
-	   public void userInterestSkillJoin(UserDTO userDTO){
-		   sqlSession.insert("user.userInterestSkillJoin", userDTO);
+	   public void interestSkillJoin(UserInterestSkillVO userInterestSkillVO){
+		   sqlSession.insert("user.interestSkillJoin", userInterestSkillVO);
 	   }
 	   
-	   public void userCanSkillJoin(UserDTO userDTO){
-		   sqlSession.insert("user.userInterestSkillJoin", userDTO);
+	   public void canSkillJoin(UserCanSkillVO userCanSkillVO){
+		   sqlSession.insert("user.canSkillJoin", userCanSkillVO);
 	   }
 	   
-	   public void userCompanyJoin(UserDTO userDTO){
-		   sqlSession.insert("user.userCompanyJoin", userDTO);
+	   public void userCompanyJoin(UserCompanyVO userCompanyVO){
+		   sqlSession.insert("user.userCompanyJoin", userCompanyVO);
 	   }
-	   
-	   public List<SkillVO> skillSelect(){
-		   return sqlSession.selectList("user.skillSelect");
-	   }
-	   
-	   public List<CompanyVO> companySelect(UserDTO userDTO){
-		   return sqlSession.selectList("user.companySelect");
-	   }
-	   
-	   
-	   
+ 	   
 	   public boolean checkNickName(String userNickname) {
 		   return (Integer)sqlSession.selectOne("user.checkNickName", userNickname) == 1;
 	   }

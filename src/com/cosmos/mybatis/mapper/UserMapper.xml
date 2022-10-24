@@ -1,144 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-	<select id="checkNickName" parameterType="string" resultType="_int">
-		select count(user_nickname) from tbl_user where user_nickname = #{userNickname}
-	</select>
-	
-	<select id="checkId" parameterType="string" resultType="_int">
-		select count(user_id) from tbl_user where user_id = #{userId}
-	</select>
-	
-	<insert id="join" parameterType="userVO">
-		insert into tbl_user
-		(user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_id)
-		values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userId})
-	</insert>
-	
-	<select id="userSession" parameterType="string" resultType="userVO">
-		select user_number, user_nickname, user_id from tbl_user where user_id = #{userId}
-	</select>
-	
-	<!-- <select id="login" parameterType="string" resultType="_int">
-		select member_number from tbl_member where user_id = #{userId}
-	</select> -->
-	
-	<!-- <select id="userSkillInfo" parameterType="_int" resultType="userSkillDTO">
-		SELECT  u.user_nickname, user_introduce, user_career, user_file, ts.skill_file, ts.skill_name  FROM tbl_user u INNER JOIN tbl_user_can_skill c ON u.user_number  = c.user_number  INNER JOIN tbl_skill ts ON c.skill_number  = ts.skill_number
-		where u.user_number = #{userNumber};
-	</select> -->
-	
-	<select id="userInfo" parameterType="_int" resultType="userVO">
-		select user_nickname, user_introduce,user_career, user_career_year, user_file from tbl_user
-		where user_number = #{userNumber}
-		
-	</select>
-	
-	<select id="userCompanyInfo" parameterType="_int" resultType="companyVO">
-		select tc.company_name, tc.company_url, tc.company_file  from tbl_user_company tuc join tbl_company tc on tuc.company_number = tc.company_number and tuc.user_number =#{userNumber}
-	</select>
-	
-	<select id="userInterestInfo" parameterType="_int" resultType="skillVO">
-		select ts.skill_name , ts.skill_file  from tbl_user_interest_skill tuis join tbl_skill ts on tuis.skill_number = ts.skill_number and tuis.user_number =#{userNumber}
-	</select>
-	
-	<select id="userCanInfo" parameterType="_int" resultType="skillVO">
-		select ts.skill_name, ts.skill_file from tbl_user_can_skill tucs join tbl_skill ts on tucs.skill_number =ts.skill_number and tucs.user_number =#{userNumber}
-	</select>
-	
-	<select id="skillTotalInfo" resultType="skillVO">
-		select skill_name, skill_file from tbl_skill
-	</select>
-	
-	<select id="selectCompanyInfo" resultType="companyVO">
-		select company_name from tbl_company;
-	</select>
-	
-	<delete id="initInterestSkill" parameterType="_int">
-		delete from tbl_user_interest_skill where user_number = #{userNumber}
-	</delete>
-	<delete id="initCanSkill" parameterType="_int">
-		delete from tbl_user_can_skill where user_number = #{userNumber}
-	</delete>
-	<delete id="initCompany" parameterType="_int">
-		delete from tbl_user_company where user_number = #{userNumber}
-	</delete>
-	
-	<insert id="insertUserCanSkill" parameterType="userCanSkillVO">
-		insert into tbl_user_can_skill (user_number,skill_number)
-		values(#{userNumber},#{skillNumber})
-	</insert>
-	
-	<insert id="insertUserInterestSkill" parameterType="userInterestSkillVO">
-		insert into tbl_user_interest_skill (user_number,skill_number)
-		values(#{userNumber},#{skillNumber})
-	</insert>
-	
-	<insert id="insertUserCompany" parameterType="userCompanyVO">
-		insert into tbl_user_company (user_number,company_number)
-		values(#{userNumber},#{companyNumber})
-	</insert>
-	
-	<update id="updateUser" parameterType="userVO">
-	UPDATE tbl_user
-	SET user_nickname=#{userNickname}, user_introduce=#{userIntroduce},user_file=#{userFile}
-	WHERE user_number=#{userNumber};
-	</update>
-	
-	<!--회사 번호 추출 -->
-	<select id="getCompanyNumber" parameterType="string" resultType="_int">
-		select company_number from tbl_company where company_name =#{companyName}
-	</select>
-	
-	<!--사용가능 언어 기술 추출 -->
-	<select id="getSkillNumber" parameterType="string" resultType="_int">
-		select skill_number from tbl_skill where skill_name = #{skillName}
-	</select>
-	
-	<select id="duplicateCompany" parameterType="string" resultType="_int">
-		select count(company_name) from tbl_company where company_name = #{companyName}
-	</select>
-	
-	<insert id="addCompany" parameterType="string">
-		INSERT INTO tbl_company (company_name, company_file) VALUES(#{companyName}, '/assets/images/company/company.png')
-	</insert>
-	
-	<update id="initProfile" parameterType="userVO">
-		UPDATE tbl_user SET user_file= #{userFile} WHERE user_number=#{userNumber}
-	</update>
-	
-	<delete id="userDelete" parameterType="_int">
-		delete from tbl_user where user_number = #{userNumber}
-	</delete>
-	
-	<select id="getFriends" parameterType="_int" resultType="userVO">
-		select tu.user_number, tu.user_nickname , tu.user_introduce , tu.user_career_year, tu.user_file   from tbl_user tu join tbl_friend tf on tu.user_number =tf.friend_number where tf.my_number = #{userNumber}
-	</select>
-	
-	<delete id="deleteFriend" parameterType="friendVO">
-		delete from tbl_friend where my_number = #{myNumber} and friend_number = #{friendNumber}
-	</delete>
-	
-	<select id="getUserNumber" parameterType="string" resultType="_int">
-		select user_number from tbl_user where user_nickname = #{userNickname}
-	</select>
-	
-	<insert id="addFriendOk" parameterType="friendVO">
-		insert into tbl_friend (my_number, friend_number)
-		values(#{myNumber},#{friendNumber})
-	</insert>
-	
-	<select id="checkFriend" parameterType="friendVO" resultType="_int">
-			select count(my_number) from tbl_friend where my_number=#{myNumber} and friend_number=#{friendNumber}
-	</select>
-	
-	<select id="checkMine" parameterType="_int" resultType="_int">
-		select count(user_number) from tbl_user where user_number = #{userNumber}
-	</select>
-	
-	
+   <select id="checkNickName" parameterType="string" resultType="_int">
+      select count(user_nickname) from tbl_user where user_nickname = #{userNickname}
+   </select>
+   
+   <select id="checkId" parameterType="string" resultType="_int">
+      select count(user_id) from tbl_user where user_id = #{userId}
+   </select>
+   
+   <insert id="join" parameterType="userVO">
+      insert into tbl_user
+      (user_number, user_nickname, user_introduce, user_career, user_career_year, user_file, user_id)
+      values(#{userNumber}, #{userNickname}, #{userIntroduce}, #{userCareer}, #{userCareerYear}, #{userFile}, #{userId})
+   </insert>
+   
+   <select id="userSession" parameterType="string" resultType="userVO">
+      select user_number, user_nickname, user_id from tbl_user where user_id = #{userId}
+   </select>
+   
+   <!-- <select id="login" parameterType="string" resultType="_int">
+      select member_number from tbl_member where user_id = #{userId}
+   </select> -->
+   
+   <!-- <select id="userSkillInfo" parameterType="_int" resultType="userSkillDTO">
+      SELECT  u.user_nickname, user_introduce, user_career, user_file, ts.skill_file, ts.skill_name  FROM tbl_user u INNER JOIN tbl_user_can_skill c ON u.user_number  = c.user_number  INNER JOIN tbl_skill ts ON c.skill_number  = ts.skill_number
+      where u.user_number = #{userNumber};
+   </select> -->
+   
+   <select id="userInfo" parameterType="_int" resultType="userVO">
+      select user_nickname, user_introduce,user_career, user_career_year, user_file from tbl_user
+      where user_number = #{userNumber}
+      
+   </select>
+   
+   <select id="userCompanyInfo" parameterType="_int" resultType="companyVO">
+      select tc.company_name, tc.company_url, tc.company_file  from tbl_user_company tuc join tbl_company tc on tuc.company_number = tc.company_number and tuc.user_number =#{userNumber}
+   </select>
+   <select id="userInterestInfo" parameterType="_int" resultType="skillVO">
+      select ts.skill_name , ts.skill_file  from tbl_user_interest_skill tuis join tbl_skill ts on tuis.skill_number = ts.skill_number and tuis.user_number =#{userNumber}
+   </select>
+   
+   <select id="userCanInfo" parameterType="_int" resultType="skillVO">
+      select ts.skill_name, ts.skill_file from tbl_user_can_skill tucs join tbl_skill ts on tucs.skill_number =ts.skill_number and tucs.user_number =#{userNumber}
+   </select>
+   
+   <select id="skillTotalInfo" resultType="skillVO">
+      select skill_name, skill_file from tbl_skill
+   </select>
+   
+   <select id="selectCompanyInfo" resultType="companyVO">
+      select company_name from tbl_company;
+   </select>
+   
+   <delete id="initInterestSkill" parameterType="_int">
+      delete from tbl_user_interest_skill where user_number = #{userNumber}
+   </delete>
+   <delete id="initCanSkill" parameterType="_int">
+      delete from tbl_user_can_skill where user_number = #{userNumber}
+   </delete>
+   <delete id="initCompany" parameterType="_int">
+      delete from tbl_user_company where user_number = #{userNumber}
+   </delete>
+   
+   <insert id="insertUserCanSkill" parameterType="userCanSkillVO">
+      insert into tbl_user_can_skill (user_number,skill_number)
+      values(#{userNumber},#{skillNumber})
+   </insert>
+   
+   <insert id="insertUserInterestSkill" parameterType="userInterestSkillVO">
+      insert into tbl_user_interest_skill (user_number,skill_number)
+      values(#{userNumber},#{skillNumber})
+   </insert>
+   
+   <insert id="insertUserCompany" parameterType="userCompanyVO">
+      insert into tbl_user_company (user_number,company_number)
+      values(#{userNumber},#{companyNumber})
+   </insert>
+   
+   <update id="updateUser" parameterType="userVO">
+   UPDATE tbl_user
+   SET user_nickname=#{userNickname}, user_introduce=#{userIntroduce},user_file=#{userFile}
+   WHERE user_number=#{userNumber};
+   </update>
+   
+   <!--회사 번호 추출 -->
+   <select id="getCompanyNumber" parameterType="string" resultType="_int">
+      select company_number from tbl_company where company_name =#{companyName}
+   </select>
+   
+   <!--사용가능 언어 기술 추출 -->
+   <select id="getSkillNumber" parameterType="string" resultType="_int">
+      select skill_number from tbl_skill where skill_name = #{skillName}
+   </select>
+   
+   <select id="duplicateCompany" parameterType="string" resultType="_int">
+      select count(company_name) from tbl_company where company_name = #{companyName}
+   </select>
+   
+     <insert id="addCompany" parameterType="string">
+      INSERT INTO tbl_company (company_name, company_file) VALUES(#{companyName}, '/assets/images/company/company.png')
+   </insert>
+   
+   <update id="initProfile" parameterType="userVO">
+      UPDATE tbl_user SET user_file= #{userFile} WHERE user_number=#{userNumber}
+   </update>
+   
+   <delete id="userDelete" parameterType="_int">
+      delete from tbl_user where user_number = #{userNumber}
+   </delete>
+   
+   <select id="getFriends" parameterType="_int" resultType="userVO">
+      select tu.user_number, tu.user_nickname , tu.user_introduce , tu.user_career_year, tu.user_file   from tbl_user tu join tbl_friend tf on tu.user_number =tf.friend_number where tf.my_number = #{userNumber}
+   </select>
+   
+   <delete id="deleteFriend" parameterType="friendVO">
+      delete from tbl_friend where my_number = #{myNumber} and friend_number = #{friendNumber}
+   </delete>
+   
+   <select id="getUserNumber" parameterType="string" resultType="_int">
+      select user_number from tbl_user where user_nickname = #{userNickname}
+   </select>
+   
+   <insert id="addFriendOk" parameterType="friendVO">
+      insert into tbl_friend (my_number, friend_number)
+      values(#{myNumber},#{friendNumber})
+   </insert>
+   
+   <select id="checkFriend" parameterType="friendVO" resultType="_int">
+         select count(my_number) from tbl_friend where my_number=#{myNumber} and friend_number=#{friendNumber}
+   </select>
+   
+   <select id="checkMine" parameterType="_int" resultType="_int">
+      select count(user_number) from tbl_user where user_number = #{userNumber}
+   </select>
+   
+   <insert id="interestSkillJoin" parameterType="userInterestSkillVO">
+      insert into tbl_user_interest_skill
+      (user_number, skill_number)
+      values(#{userNumber}, #{skillNumber})
+   </insert>
+   
+   <insert id="canSkillJoin" parameterType="userCanSkillVO">
+      insert into tbl_user_can_skill
+      (user_number, skill_number)
+      values(#{userNumber}, #{skillNumber})
+   </insert>
+   
+   <insert id="userCompanyJoin" parameterType="userCompanyVO">
+      insert into tbl_user_company
+      (user_number, company_number)
+      values(#{userNumber}, #{companyNumber})
+   </insert>
+   
+   
 </mapper>
-
 
 
 
