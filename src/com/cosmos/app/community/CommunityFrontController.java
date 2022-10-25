@@ -52,7 +52,7 @@ public class CommunityFrontController extends HttpServlet{
 		
 		}else if(request.equals("/community/noticeCreate.co")){	// 공지사항 글작성 페이지로 이동  
 			result = new Result();
-			result.setPath("/app/myPage/new_notice.jsp?boardNumber=1&userNumber=1"/*req.getSession().getAttribute("userNumber")*/);
+			result.setPath("/app/myPage/new_notice.jsp?boardNumber=1&userNumber=" + req.getSession().getAttribute("userNumber"));
 	
 		}else if(request.equals("/community/libraryCreateOk.co")) {	// 자료실 생성하기
 			result=new libraryCreateOkController().execute(req, resp);
@@ -74,7 +74,7 @@ public class CommunityFrontController extends HttpServlet{
 		
 		}else if(request.equals("/community/libraryCreate.co")){	// 자료실 글작성 페이지로 이동  
 			result = new Result();
-			result.setPath("/app/myPage/new_lib.jsp?boardNumber=1&userNumber=1"/*req.getSession().getAttribute("userNumber"))*/);
+			result.setPath("/app/myPage/new_lib.jsp?boardNumber=1&userNumber=" + req.getSession().getAttribute("userNumber"));
 	
 		}
 		
