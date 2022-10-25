@@ -46,7 +46,7 @@
                     	<c:choose>
                     		<c:when test="${sessionUserNumber eq 1}">
 		                        <li class="dropdownBar_menuItem_header">
-		                            <a href="${pageContext.request.contextPath}/admin/adminListOk.ad" style="display: inline-block;">관리자 페이지</a>
+		                            <a href="${pageContext.request.contextPath}/admin/homeListOk.ad" style="display: inline-block;">관리자 페이지</a>
 		                        </li>
 		                    </c:when>
                         </c:choose>

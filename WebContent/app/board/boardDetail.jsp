@@ -289,6 +289,35 @@
     return false;
   });
   
+	function sendNew(){
+			$(".dimmed_233vf").css("display","grid");
+			location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
+		}
+
+	function sendModify(){
+			$(".dimmed_233vf").css("display","grid");
+			location.href="${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}"
+		}
+	function sendClose(){
+			$(".dimmed_233vf").css("display","grid");
+			location.href="${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}"
+		}
+	function sendDelete(){
+			$(".dimmed_233vf").css("display","grid");
+			location.href="${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}"
+		}
+	/*  function sendMain(){
+			$(".dimmed_233vf").css("display","grid");
+			location.href="${pageContext.request.contextPath}/main/mainBoard.ma"
+	} */
+	
+	function alert(){
+		Swal.fire(
+				'서비스 준비중 입니다.',
+				'',
+				'warning'
+			)
+	}
   function sendReply(){
 	  Swal.fire(
 			  '서비스 준비중입니다.',
@@ -301,7 +330,5 @@
 
 
 </script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="${pageContext.request.contextPath}/assets/js/board/reply.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/board/board.js"></script>
 </html>

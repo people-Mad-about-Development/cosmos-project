@@ -1,35 +1,7 @@
 /**
  * 
  */
- function sendNew(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
-	}
 
-  function sendModify(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/modify.bo?boardNumber=${board.getBoardNumber()}"
-	}
-  function sendClose(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/close.bo?boardNumber=${board.getBoardNumber()}"
-	}
-  function sendDelete(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/board/deleteOk.bo?boardNumber=${board.getBoardNumber()}"
-	}
- /*  function sendMain(){
-		$(".dimmed_233vf").css("display","grid");
-		location.href="${pageContext.request.contextPath}/main/mainBoard.ma"
-	} */
-	
-	function alert(){
-		Swal.fire(
-				'준비중 입니다.',
-				'',
-				'error'
-			)
-	}
 	
 function sendApply(){
 	$.ajax({
