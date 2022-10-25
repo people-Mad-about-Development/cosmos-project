@@ -51,8 +51,8 @@ public class BoardWriteOkController implements Execute{
 			}
 		 
 		 
-		
-		result.setPath("/main/mainBoard.ma");
+		result.setRedirect(true);
+		result.setPath(req.getContextPath() + "/main/mainBoard.ma");
 		
 		return result;
 	
