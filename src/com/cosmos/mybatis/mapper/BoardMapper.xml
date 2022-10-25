@@ -92,7 +92,7 @@
 	
 	<!-- 게시글 skill 조회 -->
 	<select id="selectBoardSkill" parameterType="_int" resultType="boardSkillDTO">
-		select skill_file
+		select skill_file, skill_name
 		from tbl_skill s join tbl_board_skill bs on s.skill_number = bs.skill_number where board_number = #{boardNumber}
 	</select>
 	

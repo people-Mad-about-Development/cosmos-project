@@ -4,7 +4,16 @@ public class BoardSkillDTO {
 	private int boardNumber;
 	private int skillNumber;
 	private String skillFile;
+	private String skillName;
 	
+	
+	
+	public String getSkillName() {
+		return skillName;
+	}
+	public void setSkillName(String skillName) {
+		this.skillName = skillName;
+	}
 	public int getBoardNumber() {
 		return boardNumber;
 	}
@@ -27,7 +36,7 @@ public class BoardSkillDTO {
 	@Override
 	public String toString() {
 		return "BoardSkillDTO [boardNumber=" + boardNumber + ", skillNumber=" + skillNumber + ", skillFile=" + skillFile
-				+ "]";
+				+ ", skillName=" + skillName + "]";
 	}
 	
 }

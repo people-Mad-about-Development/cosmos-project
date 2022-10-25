@@ -11,12 +11,12 @@
 </head>
 <body>
     <nav class="header">
-        <a href="">
+        <a href="${pageContext.request.contextPath}/main/mainBoard.ma">
             <img src="${pageContext.request.contextPath}/assets/images/fix/logo.png" alt="logo" class="logo">
         </a>
          <div>
             <form action="${pageContext.request.contextPath}/main/mainSearchOk.ma" name="searchForm" method="get" enctype="multipart/form-data" class="header_search">
-	            <input type="text" name="header_search_input" placeholder="키워드를 입력해주세요...">
+	            <input type="text" name="header_search_input" placeholder="회사나 제목을 입력해주세요...">
 	            <button type="button" class="header_search_button" onclick="searchSend()">검색</button>
             </form>
         </div>
