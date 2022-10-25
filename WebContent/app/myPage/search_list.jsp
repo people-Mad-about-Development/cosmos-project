@@ -36,13 +36,13 @@
 				<c:choose>
 					<c:when test="${boards != null and fn:length(boards) > 0}">
 			            <c:forEach var="board" items="${boards}">   
-			                <a class="studyItem_studyItem studyItem_open" onclick="moveDetail()">
-			                <script >
+			                <a class="studyItem_studyItem studyItem_open" href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"><!-- onclick="moveDetail()" -->
+			                <!-- <script >
 	                           	function moveDetail(){
 		                           	$(".dimmed_233vf").css("display","grid");
 		                           	location.href= "${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
 	                           	}
-							</script>
+							</script> -->
 			                    <li>
 			                        <div class="studyItem_schedule">
 			                            <p class="studyItem_scheduleTitle">시작 예정일 |</p>
