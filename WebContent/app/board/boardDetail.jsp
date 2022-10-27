@@ -67,7 +67,7 @@
                         <c:choose>
 							<c:when test="${boards != null and fn:length(boards) > 0}">
 			            		<c:forEach var="boards" items="${boards}" end="9" varStatus="status">
-			            			<a onclick="sendNew()" style="text-decoration: none; color: black;">
+			            			<a onclick="location.href='${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${boards.getBoardNumber()}'" style="text-decoration: none; color: black;">
 			                            <li class="recommendPost_postList">
 			                                <div class="recommendPost_index">${status.count}. </div>
 			                                <div class="recommendPost_title">${boards.getBoardTitle()}</div>
@@ -289,10 +289,10 @@
     return false;
   });
   
-	function sendNew(){
+	/* function sendNew(){
 			$(".dimmed_233vf").css("display","grid");
-			location.href="${pageContext.request.contextPath}/board/detailOk.bo?boardNumber=${board.getBoardNumber()}"
-		}
+			
+		} */
 
 	function sendModify(){
 			$(".dimmed_233vf").css("display","grid");
